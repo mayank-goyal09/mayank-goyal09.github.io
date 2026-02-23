@@ -220,6 +220,11 @@ if (audio && soundBtn) {
 
   function type() {
     const current = texts[textIndex];
+
+    if (cursorEl) {
+      cursorEl.style.transform = isDeleting ? "translateY(4px) scaleX(-1)" : "translateY(4px) scaleX(1)";
+    }
+
     if (!isDeleting) {
       typingEl.textContent = current.slice(0, charIndex + 1);
       charIndex++;
