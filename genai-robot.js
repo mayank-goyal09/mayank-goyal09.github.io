@@ -186,7 +186,7 @@
     var starBurstTex = createStarBurstTexture();
 
     // ─── STARFIELD — Pinprick Stars ───
-    var starCount = 8000;
+    var starCount = 12000;
     var starGeo = new THREE.BufferGeometry();
     var starPositions = new Float32Array(starCount * 3);
     var starColors = new Float32Array(starCount * 3);
@@ -201,11 +201,11 @@
 
         var color = new THREE.Color();
         var c = Math.random();
-        if (c < 0.45) color.setHex(0xffffff);
-        else if (c < 0.65) color.setHex(0xddeeff);
-        else if (c < 0.80) color.setHex(0x00bfff);
-        else if (c < 0.90) color.setHex(0x00ffff);
-        else if (c < 0.96) color.setHex(0xff00ff);
+        // Vast majority white for deep space realism, with occasional colorful accents
+        if (c < 0.80) color.setHex(0xffffff);
+        else if (c < 0.88) color.setHex(0xddeeff);
+        else if (c < 0.94) color.setHex(0x00ffff);
+        else if (c < 0.98) color.setHex(0xff00ff);
         else color.setHex(0x7b2ff7);
 
         var brightness = 0.4 + Math.random() * 0.6;
@@ -245,11 +245,11 @@
 
         var tc = Math.random();
         var tColor = new THREE.Color();
-        if (tc < 0.4) tColor.setHex(0xffffff);
-        else if (tc < 0.6) tColor.setHex(0xccddff);
-        else if (tc < 0.75) tColor.setHex(0x88ddff);
-        else if (tc < 0.88) tColor.setHex(0xff99ee);
-        else tColor.setHex(0xaa88ff);
+        // Mostly white twinklers too
+        if (tc < 0.70) tColor.setHex(0xffffff);
+        else if (tc < 0.85) tColor.setHex(0xccddff);
+        else if (tc < 0.95) tColor.setHex(0x88ddff);
+        else tColor.setHex(0xff99ee);
 
         twinkleBaseColors[ti * 3] = tColor.r;
         twinkleBaseColors[ti * 3 + 1] = tColor.g;
@@ -769,7 +769,7 @@
 
         // Gliding animation (moving forward in Z axis)
         var speedBase = 0.016; // Time delta approx
-        var zSpeed = 8.0 * speedBase;
+        var zSpeed = 1.0 * speedBase; // Very slow and steady drift instead of fast warp
 
         // Glide normal stars
         var sPos = starGeo.getAttribute('position');
