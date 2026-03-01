@@ -318,7 +318,10 @@ body {
         0 4px 24px rgba(0, 255, 255, 0.06),
         0 0 1px rgba(0, 255, 255, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.04);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* Snappy spring easing, no artificial z-index delay so it feels instantly responsive */
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.3s ease-out,
+        z-index 0s;
     cursor: pointer;
     overflow: visible;
 }
@@ -346,11 +349,12 @@ body {
 /* No ::after needed — single-layer glass */
 
 .project-card:hover {
-    transform: translateY(-6px) scale(1.02);
+    transform: translateY(-8px) scale(1.04);
+    z-index: 100;
     box-shadow:
-        0 12px 40px rgba(0, 255, 255, 0.15),
-        0 0 25px rgba(0, 255, 255, 0.08),
-        0 0 50px rgba(123, 47, 247, 0.05);
+        0 16px 48px rgba(0, 255, 255, 0.2),
+        0 0 30px rgba(0, 255, 255, 0.1),
+        0 0 60px rgba(123, 47, 247, 0.08);
 }
 
 .project-card:hover::before {
