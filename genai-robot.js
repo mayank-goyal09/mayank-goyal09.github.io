@@ -1,8 +1,8 @@
 /* ============================================================
    🤖 GENAI ROBOT — Cute Spherical Space Bot
    Celestial Deep-Space Nebula Edition
-   Deep Midnight Purple (#120321) → Electric Violet → Deep Space Blue
-   Rich nebula clouds, 4-pointed stars, magenta/cyan internal glow
+   ⚡ PERFORMANCE OPTIMIZED — Reduced particle counts, throttled
+   star updates, lower shadow resolution, capped pixel ratio
    ============================================================ */
 
 (function () {
@@ -31,10 +31,9 @@
 
     var SPEECH = [
         "Hey! I'm your GenAI guide. Hover over the projects around me! 🤖",
-        "That Discord Bot handles text, images, audio — all with Gemini! 🎮",
-        "The News Curator runs fully autonomously — zero input! 📰",
-        "YouTube Studio AI is like having a personal strategist! 🎬",
-        "Prompt engineering is the new literacy of AI 💬",
+        "That Discord Bot handles text, images & audio — all locally with Ollama! 🎮",
+        "The News Curator runs fully autonomously — zero human input! 📰",
+        "RedGlyph reviews your code like a senior engineer! 🔴",
         "I can see your cursor... following it with my eyes! 👀",
         "Click me again — I love the attention! ✨",
         "These projects showcase the power of Generative AI 🧠"
@@ -49,6 +48,7 @@
     var bouncing = false, bounceV = 0, bounceY = 0;
     var excited = false, excitedT = 0;
     var squishing = false, squishT = 0;
+    var frameCount = 0; // For throttling heavy updates
 
     // ─── SCENE ───
     var container = document.getElementById('robotScene');
@@ -66,11 +66,13 @@
     camera.position.set(0, 2.0, 6.5);
     camera.lookAt(0, 1.2, 0);
 
-    var renderer = new THREE.WebGLRenderer({ antialias: true });
+    var renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'low-power' });
     renderer.setSize(W, H);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    // ⚡ PERF: Cap pixel ratio at 1.5 instead of 2
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    // ⚡ PERF: Use BasicShadowMap instead of PCFSoftShadowMap
+    renderer.shadowMap.type = THREE.PCFShadowMap;
     container.appendChild(renderer.domElement);
 
     // ─── LIGHTING — Internal Nebula Glow ───
@@ -82,7 +84,8 @@
     var keyLight = new THREE.DirectionalLight(0xeeddff, 0.9);
     keyLight.position.set(5, 10, 7);
     keyLight.castShadow = true;
-    keyLight.shadow.mapSize.set(2048, 2048);
+    // ⚡ PERF: Reduced shadow map from 2048 to 1024
+    keyLight.shadow.mapSize.set(1024, 1024);
     keyLight.shadow.camera.near = 0.5;
     keyLight.shadow.camera.far = 30;
     keyLight.shadow.camera.left = -6;
@@ -102,11 +105,6 @@
     rimLight.position.set(0, 3, -5);
     scene.add(rimLight);
 
-    // Second rim from below-behind for strong edge separation
-    var rimLight2 = new THREE.DirectionalLight(0xe040a0, 0.3);
-    rimLight2.position.set(-2, -1, -4);
-    scene.add(rimLight2);
-
     // Magenta accent from below-right — nebula internal glow
     var magentaLight = new THREE.PointLight(0xFF00FF, 0.35, 15);
     magentaLight.position.set(4, -1, 2);
@@ -122,24 +120,19 @@
     underGlow.position.set(0, -0.5, 0);
     scene.add(underGlow);
 
-    // Central nebula spotlight — soft magenta/cyan wash
-    var nebulaSpot = new THREE.PointLight(0xe040a0, 0.15, 50);
-    nebulaSpot.position.set(0, 5, -15);
-    scene.add(nebulaSpot);
-
     // ─── BACKGROUND GEN: GLOW TEXTURE ───
     function createGlowTexture() {
         var canvas = document.createElement('canvas');
-        canvas.width = 64;
-        canvas.height = 64;
+        canvas.width = 32;  // ⚡ PERF: Reduced from 64 to 32
+        canvas.height = 32;
         var ctx = canvas.getContext('2d');
-        var grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+        var grad = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
         grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
         grad.addColorStop(0.2, 'rgba(255, 255, 255, 0.8)');
         grad.addColorStop(0.5, 'rgba(255, 255, 255, 0.2)');
         grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
         ctx.fillStyle = grad;
-        ctx.fillRect(0, 0, 64, 64);
+        ctx.fillRect(0, 0, 32, 32);
         return new THREE.CanvasTexture(canvas);
     }
     var glowTex = createGlowTexture();
@@ -147,19 +140,19 @@
     // ─── 4-POINTED STAR GLOW TEXTURE ───
     function createStarBurstTexture() {
         var canvas = document.createElement('canvas');
-        canvas.width = 128;
-        canvas.height = 128;
+        canvas.width = 64;  // ⚡ PERF: Reduced from 128 to 64
+        canvas.height = 64;
         var ctx = canvas.getContext('2d');
-        var cx = 64, cy = 64;
+        var cx = 32, cy = 32;
 
         // Soft core glow
-        var coreGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 32);
+        var coreGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 16);
         coreGrad.addColorStop(0, 'rgba(255, 255, 255, 1)');
         coreGrad.addColorStop(0.15, 'rgba(255, 255, 255, 0.7)');
         coreGrad.addColorStop(0.4, 'rgba(200, 220, 255, 0.15)');
         coreGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
         ctx.fillStyle = coreGrad;
-        ctx.fillRect(0, 0, 128, 128);
+        ctx.fillRect(0, 0, 64, 64);
 
         // 4-pointed spikes
         ctx.globalCompositeOperation = 'lighter';
@@ -167,15 +160,15 @@
             ctx.save();
             ctx.translate(cx, cy);
             ctx.rotate(s * Math.PI / 2);
-            var spikeGrad = ctx.createLinearGradient(0, 0, 0, -60);
+            var spikeGrad = ctx.createLinearGradient(0, 0, 0, -30);
             spikeGrad.addColorStop(0, 'rgba(255, 255, 255, 0.6)');
             spikeGrad.addColorStop(0.3, 'rgba(200, 220, 255, 0.2)');
             spikeGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
             ctx.fillStyle = spikeGrad;
             ctx.beginPath();
-            ctx.moveTo(-2, 0);
-            ctx.lineTo(0, -60);
-            ctx.lineTo(2, 0);
+            ctx.moveTo(-1.5, 0);
+            ctx.lineTo(0, -30);
+            ctx.lineTo(1.5, 0);
             ctx.closePath();
             ctx.fill();
             ctx.restore();
@@ -186,7 +179,8 @@
     var starBurstTex = createStarBurstTexture();
 
     // ─── STARFIELD — Pinprick Stars ───
-    var starCount = 12000;
+    // ⚡ PERF: Reduced from 12000 to 5000 (still looks rich)
+    var starCount = 5000;
     var starGeo = new THREE.BufferGeometry();
     var starPositions = new Float32Array(starCount * 3);
     var starColors = new Float32Array(starCount * 3);
@@ -201,7 +195,6 @@
 
         var color = new THREE.Color();
         var c = Math.random();
-        // Vast majority white for deep space realism, with occasional colorful accents
         if (c < 0.80) color.setHex(0xffffff);
         else if (c < 0.88) color.setHex(0xddeeff);
         else if (c < 0.94) color.setHex(0x00ffff);
@@ -230,12 +223,13 @@
     scene.add(stars);
 
     // ─── TWINKLING STARS — Bright pulsing layer ───
-    var twinkleCount = 1200;
+    // ⚡ PERF: Reduced from 1200 to 500 (still sparkly)
+    var twinkleCount = 500;
     var twinkleGeo = new THREE.BufferGeometry();
     var twinklePos = new Float32Array(twinkleCount * 3);
     var twinkleCol = new Float32Array(twinkleCount * 3);
-    var twinklePhases = new Float32Array(twinkleCount); // random phase per star
-    var twinkleSpeeds = new Float32Array(twinkleCount); // random speed per star
+    var twinklePhases = new Float32Array(twinkleCount);
+    var twinkleSpeeds = new Float32Array(twinkleCount);
     var twinkleBaseColors = new Float32Array(twinkleCount * 3);
 
     for (var ti = 0; ti < twinkleCount; ti++) {
@@ -245,7 +239,6 @@
 
         var tc = Math.random();
         var tColor = new THREE.Color();
-        // Mostly white twinklers too
         if (tc < 0.70) tColor.setHex(0xffffff);
         else if (tc < 0.85) tColor.setHex(0xccddff);
         else if (tc < 0.95) tColor.setHex(0x88ddff);
@@ -259,7 +252,7 @@
         twinkleCol[ti * 3 + 2] = tColor.b;
 
         twinklePhases[ti] = Math.random() * Math.PI * 2;
-        twinkleSpeeds[ti] = 2.0 + Math.random() * 5.0; // Faster, more varied twinkling
+        twinkleSpeeds[ti] = 2.0 + Math.random() * 5.0;
     }
 
     twinkleGeo.setAttribute('position', new THREE.BufferAttribute(twinklePos, 3));
@@ -278,7 +271,8 @@
     scene.add(twinkleStars);
 
     // ─── LARGE 4-POINTED GLOWING STARS ───
-    var bigStarCount = 60;
+    // ⚡ PERF: Reduced from 60 to 25
+    var bigStarCount = 25;
     var bigStarGeo = new THREE.BufferGeometry();
     var bigStarPos = new Float32Array(bigStarCount * 3);
     var bigStarCol = new Float32Array(bigStarCount * 3);
@@ -321,7 +315,8 @@
     scene.add(nebulaGroup);
 
     function createNebulaLayer(centers, size, opacity) {
-        var count = 300; // Drastically reduce to stop massive lag and white/pink blowout
+        // ⚡ PERF: Reduced from 300 to 150 (still atmospheric)
+        var count = 150;
         var geo = new THREE.BufferGeometry();
         var pos = new Float32Array(count * 3);
         var col = new Float32Array(count * 3);
@@ -358,7 +353,7 @@
         nebulaGroup.add(pts);
     }
 
-    // Central stellar dust trail — magenta/cyan pockets (lowered opacity)
+    // Central stellar dust trail — magenta/cyan pockets
     createNebulaLayer([
         { x: 0, y: 0, z: -12, r: 0.88, g: 0.0, b: 0.88, radius: 8 },
         { x: -8, y: 0.5, z: -14, r: 0.7, g: 0.0, b: 0.9, radius: 12 },
@@ -384,6 +379,7 @@
     ], 35.0, 0.015);
 
     // ─── MATERIALS ───
+    // ⚡ PERF: Reduced geometry segments on the robot meshes
     var matBody = new THREE.MeshStandardMaterial({ color: CFG.bodyColor, metalness: 0.7, roughness: 0.25 });
     var matBodyLight = new THREE.MeshStandardMaterial({ color: CFG.bodyColorLight, metalness: 0.6, roughness: 0.3 });
     var matScreen = new THREE.MeshStandardMaterial({
@@ -403,24 +399,26 @@
     var robot = new THREE.Group();
 
     // ── MAIN SPHERICAL BODY ──
+    // ⚡ PERF: Reduced segments from 32 to 24
     var bodySphere = new THREE.Mesh(
-        new THREE.SphereGeometry(1.1, 32, 32),
+        new THREE.SphereGeometry(1.1, 24, 24),
         matBody
     );
     bodySphere.position.y = 1.6;
     bodySphere.castShadow = true;
     robot.add(bodySphere);
 
-    // Slight highlight sphere (lighter shade on top)
+    // Slight highlight sphere
     var bodyHighlight = new THREE.Mesh(
-        new THREE.SphereGeometry(1.12, 32, 32, 0, Math.PI * 2, 0, Math.PI * 0.4),
+        new THREE.SphereGeometry(1.12, 24, 24, 0, Math.PI * 2, 0, Math.PI * 0.4),
         matBodyLight
     );
     bodyHighlight.position.y = 1.6;
     robot.add(bodyHighlight);
 
     // ── RIM LIGHT GLOW RING — backlit neon edge ──
-    var rimGlowGeo = new THREE.TorusGeometry(1.15, 0.015, 16, 64);
+    // ⚡ PERF: Reduced torus segments from 64 to 32
+    var rimGlowGeo = new THREE.TorusGeometry(1.15, 0.015, 12, 32);
     var rimGlowMat = new THREE.MeshBasicMaterial({
         color: 0x00ffff,
         transparent: true,
@@ -433,7 +431,7 @@
 
     // Second rim ring — magenta
     var rimGlow2 = new THREE.Mesh(
-        new THREE.TorusGeometry(1.14, 0.012, 16, 64),
+        new THREE.TorusGeometry(1.14, 0.012, 12, 32),
         new THREE.MeshBasicMaterial({ color: 0xe040a0, transparent: true, opacity: 0.2 })
     );
     rimGlow2.position.y = 1.6;
@@ -463,15 +461,15 @@
     screen.position.set(0, 0.05, 0.97);
     headGroup.add(screen);
 
-    // Screen border glow — enhanced
+    // Screen border glow
     var screenEdge = new THREE.Mesh(
-        new THREE.RingGeometry(0.72, 0.78, 32),
+        new THREE.RingGeometry(0.72, 0.78, 24),
         new THREE.MeshBasicMaterial({ color: CFG.screenGlow, transparent: true, opacity: 0.2 })
     );
     screenEdge.position.set(0, 0.05, 0.98);
     headGroup.add(screenEdge);
 
-    // ── CUTE EYES ── (crescent / happy eyes like ^_^)
+    // ── CUTE EYES ──
     var eyeGroup = new THREE.Group();
     eyeGroup.position.set(0, 0.18, 0.99);
 
@@ -485,7 +483,7 @@
         eyeShape.quadraticCurveTo(-ew * 0.3, eh * 1.4, -ew, 0);
 
         var eyeMesh = new THREE.Mesh(
-            new THREE.ShapeGeometry(eyeShape, 16),
+            new THREE.ShapeGeometry(eyeShape, 12),
             matEye
         );
         eyeMesh.position.x = xPos;
@@ -497,7 +495,7 @@
     eyeGroup.add(leftEye);
     eyeGroup.add(rightEye);
 
-    // Eye glow lights — brighter for rim effect
+    // Eye glow lights
     var leftEyeLight = new THREE.PointLight(CFG.eyeColor, 0.4, 2);
     leftEyeLight.position.set(-0.25, 0, 0.1);
     eyeGroup.add(leftEyeLight);
@@ -515,7 +513,7 @@
     smileShape.quadraticCurveTo(0, -0.15, -0.28, 0);
 
     var smile = new THREE.Mesh(
-        new THREE.ShapeGeometry(smileShape, 16),
+        new THREE.ShapeGeometry(smileShape, 12),
         matSmile
     );
     smile.position.set(0, -0.1, 0.99);
@@ -528,7 +526,7 @@
         var earGroup = new THREE.Group();
 
         var ear = new THREE.Mesh(
-            new THREE.SphereGeometry(0.32, 16, 16),
+            new THREE.SphereGeometry(0.32, 12, 12),
             matEar
         );
         ear.position.set(xPos * 1.3, 0, 0);
@@ -537,7 +535,7 @@
 
         // Connector ring
         var ring = new THREE.Mesh(
-            new THREE.TorusGeometry(0.12, 0.04, 8, 16),
+            new THREE.TorusGeometry(0.12, 0.04, 6, 12),
             matBolt
         );
         ring.position.set(xPos * 1.05, 0, 0);
@@ -573,7 +571,7 @@
     boltGroup.add(boltHead);
 
     var boltTopRing = new THREE.Mesh(
-        new THREE.TorusGeometry(0.14, 0.03, 8, 16),
+        new THREE.TorusGeometry(0.14, 0.03, 6, 12),
         matBoltRing
     );
     boltTopRing.position.y = 0.15;
@@ -582,7 +580,7 @@
 
     for (var threadI = 0; threadI < 3; threadI++) {
         var threadRing = new THREE.Mesh(
-            new THREE.TorusGeometry(0.1, 0.02, 8, 16),
+            new THREE.TorusGeometry(0.1, 0.02, 6, 12),
             matBoltRing
         );
         threadRing.position.y = -0.08 - threadI * 0.1;
@@ -596,7 +594,7 @@
 
     // ── SHADOW BLOB ──
     var shadowBlob = new THREE.Mesh(
-        new THREE.CircleGeometry(1.0, 32),
+        new THREE.CircleGeometry(1.0, 24),
         new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 0.15 })
     );
     shadowBlob.rotation.x = -Math.PI / 2;
@@ -604,11 +602,12 @@
     robot.add(shadowBlob);
 
     // ── FLOATING SPARKLES around the bot ──
-    var sparkleCount = 10;
+    // ⚡ PERF: Reduced from 10 to 6
+    var sparkleCount = 6;
     var sparkles = [];
     for (var sp = 0; sp < sparkleCount; sp++) {
         var sparkle = new THREE.Mesh(
-            new THREE.SphereGeometry(0.03, 6, 6),
+            new THREE.SphereGeometry(0.03, 4, 4),
             new THREE.MeshBasicMaterial({
                 color: sp % 3 === 0 ? 0x00ffdd : (sp % 3 === 1 ? 0xaa88ff : 0xff88dd),
                 transparent: true,
@@ -631,7 +630,7 @@
 
     // ─── Small floating planet in background ───
     var planet = new THREE.Mesh(
-        new THREE.SphereGeometry(0.25, 16, 16),
+        new THREE.SphereGeometry(0.25, 12, 12),
         new THREE.MeshStandardMaterial({
             color: 0x4a5577,
             metalness: 0.4,
@@ -645,7 +644,7 @@
 
     // Second small planet/asteroid
     var planet2 = new THREE.Mesh(
-        new THREE.SphereGeometry(0.15, 12, 12),
+        new THREE.SphereGeometry(0.15, 8, 8),
         new THREE.MeshStandardMaterial({
             color: 0x665588,
             metalness: 0.3,
@@ -727,9 +726,8 @@
             sp.material.opacity = 0.3 + Math.sin(t * 2 + si) * 0.4;
         }
 
-        // Bolt ring glow
+        // ⚡ PERF: Removed per-frame boltRing emissive allocation (was creating new Color every frame!)
         var boltPulse = (Math.sin(t * 1.5) + 1) / 2;
-        matBoltRing.emissive = new THREE.Color(CFG.boltRingColor);
         matBoltRing.emissiveIntensity = 0.1 + boltPulse * 0.2;
 
         // Big star twinkle
@@ -757,6 +755,9 @@
         boltGroup.rotation.y = t * 0.3;
     }
 
+    // ⚡ PERF: Set the emissive color once (was being set every frame!)
+    matBoltRing.emissive = new THREE.Color(CFG.boltRingColor);
+
     function animStars(t) {
         // Subtle drift rotations
         stars.rotation.y = t * 0.005;
@@ -767,14 +768,16 @@
         nebulaGroup.rotation.z = Math.sin(t * 0.2) * 0.01;
         nebulaGroup.position.y = Math.sin(t * 0.12) * 0.5;
 
+        // ⚡ PERF: Only update star positions every 3rd frame
+        if (frameCount % 3 !== 0) return;
+
         // Gliding animation (moving forward in Z axis)
-        var speedBase = 0.016; // Time delta approx
-        var zSpeed = 1.0 * speedBase; // Very slow and steady drift instead of fast warp
+        var zSpeed = 0.048; // Adjusted for 3-frame interval
 
         // Glide normal stars
         var sPos = starGeo.getAttribute('position');
         for (var i = 0; i < starCount; i++) {
-            sPos.array[i * 3 + 2] += zSpeed * 0.5; // Slight parallax (slower)
+            sPos.array[i * 3 + 2] += zSpeed * 0.5;
             if (sPos.array[i * 3 + 2] > 5) sPos.array[i * 3 + 2] = -95;
         }
         sPos.needsUpdate = true;
@@ -782,7 +785,7 @@
         // Glide big stars
         var bPos = bigStarGeo.getAttribute('position');
         for (var i = 0; i < bigStarCount; i++) {
-            bPos.array[i * 3 + 2] += zSpeed * 1.5; // Faster (closer)
+            bPos.array[i * 3 + 2] += zSpeed * 1.5;
             if (bPos.array[i * 3 + 2] > 10) bPos.array[i * 3 + 2] = -60;
         }
         bPos.needsUpdate = true;
@@ -830,6 +833,7 @@
     function loop() {
         requestAnimationFrame(loop);
         var t = clock.getElapsedTime();
+        frameCount++;
 
         animIdle(t);
         animHead();
@@ -913,12 +917,9 @@
     function showProjectSpeech(title) {
         if (!bubble || !speechEl) return;
         var msgs = {
-            'Discord': "Multi-modal Gemini bot — text, images, audio & vision! 🎮",
-            'News': "Fully autonomous pipeline — RSS → LLM → Email! 📰",
-            'YouTube': "AI-powered channel strategist and analytics! 🎬",
-            'Prompt': "The art and science of talking to AI models! 💬",
-            'Wildlife': "Computer vision meets conservation! 🦁",
-            'Chatbot': "The brain behind this portfolio's AI assistant! 🧠"
+            'Discord': "Multi-modal AI bot — text, images, audio & vision, all locally with Ollama! 🎮",
+            'News': "Fully autonomous pipeline — RSS → LLM → Voice → Email! 📰",
+            'RedGlyph': "AI code reviewer — catches bugs like a senior engineer! 🔴"
         };
         var msg = "Check this out — one of my favorite builds! ✨";
         var keys = Object.keys(msgs);
