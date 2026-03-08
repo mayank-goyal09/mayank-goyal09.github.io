@@ -50,103 +50,51 @@
         <div class="speech-tail"></div>
     </div>
 
-    <!-- 📋 PROJECT CARDS (Positioned around robot) -->
+    <!-- 📋 PROJECT CARDS (Positioned around robot — 3 real projects) -->
 
-    <!-- TOP-LEFT: Card 1 -->
-    <div class="project-card card-pos-tl" data-project="discord-bot" id="card1">
+    <!-- LEFT: Card 1 — AI Discord Assistant -->
+    <div class="project-card card-pos-left" data-project="discord-bot" id="card1">
         <div class="card-border-glow"></div>
         <div class="card-number">01</div>
         <h3 class="card-title">🤖 AI Discord Assistant</h3>
-        <p class="card-desc">Multi-modal Discord bot with text, image, audio & vision AI — powered by Gemini with
-            conversational memory.</p>
+        <p class="card-desc">Multi-modal Discord bot — text chat, image generation, audio transcription & vision AI. Powered by Ollama with Mistral, Stable Diffusion & Faster-Whisper running 100% locally.</p>
         <div class="card-tags">
             <span class="tag tag-primary">LLM</span>
             <span class="tag">Discord.py</span>
             <span class="tag">Multi-Modal</span>
         </div>
-        <div class="card-stack">Python · Google Gemini · Hugging Face</div>
-        <a class="card-link" href="https://github.com/mayank-goyal09" target="_blank" rel="noopener">View Code →</a>
+        <div class="card-stack">Python · FastAPI · Ollama · Stable Diffusion · Whisper</div>
+        <a class="card-link" href="https://github.com/mayank-goyal09/ai-discord-assistant" target="_blank" rel="noopener">View Code →</a>
     </div>
 
-    <!-- TOP-RIGHT: Card 2 -->
-    <div class="project-card card-pos-tr" data-project="news-curator" id="card2">
+    <!-- RIGHT: Card 2 — News Curator -->
+    <div class="project-card card-pos-right" data-project="news-curator" id="card2">
         <div class="card-border-glow"></div>
         <div class="card-number">02</div>
         <h3 class="card-title">📰 AI News Curator</h3>
-        <p class="card-desc">Autonomous pipeline: RSS ingestion → LLM summarization → audio digest → formatted email
-            briefings with images.</p>
+        <p class="card-desc">Autonomous pipeline: RSS ingestion → LLM curation via Ollama → voice digest with TTS → formatted HTML email briefings. 5 categories, zero human input.</p>
         <div class="card-tags">
             <span class="tag tag-primary">RAG</span>
             <span class="tag">Automation</span>
             <span class="tag">TTS</span>
         </div>
-        <div class="card-stack">Python · Gemini · RSS · SMTP</div>
-        <a class="card-link" href="https://github.com/mayank-goyal09" target="_blank" rel="noopener">View Code →</a>
+        <div class="card-stack">Python · Ollama · RSS · pyttsx3 · SMTP</div>
+        <a class="card-link" href="https://github.com/mayank-goyal09/news-curator" target="_blank" rel="noopener">View Code →</a>
     </div>
 
-    <!-- BOTTOM-LEFT: Card 3 -->
-    <div class="project-card card-pos-bl" data-project="youtube-studio" id="card3">
+    <!-- BOTTOM-CENTER: Card 3 — RedGlyph -->
+    <div class="project-card card-accent card-pos-bottom" data-project="redglyph" id="card3">
         <div class="card-border-glow"></div>
         <div class="card-number">03</div>
-        <h3 class="card-title">🎬 YouTube Studio AI</h3>
-        <p class="card-desc">AI-powered channel analytics dashboard — content suggestions, performance insights &
-            strategic recommendations.</p>
+        <h3 class="card-title">🔴 RedGlyph — AI Code Reviewer</h3>
+        <p class="card-desc">AI-powered code reviewer using Google Gemini 2.5 Flash via LangGraph. Quality scores, severity-based issues, fix suggestions & session email reports. CI/CD deployed.</p>
         <div class="card-tags">
-            <span class="tag tag-primary">LLM</span>
-            <span class="tag">YouTube API</span>
-            <span class="tag">Analytics</span>
+            <span class="tag tag-accent">Gemini</span>
+            <span class="tag">LangGraph</span>
+            <span class="tag">CI/CD</span>
         </div>
-        <div class="card-stack">Python · Gemini · Streamlit</div>
-        <a class="card-link" href="https://github.com/mayank-goyal09/YouTube-Studio" target="_blank" rel="noopener">View
-            Code →</a>
-    </div>
-
-    <!-- BOTTOM-RIGHT: Card 4 -->
-    <div class="project-card card-pos-br" data-project="prompt-lab" id="card4">
-        <div class="card-border-glow"></div>
-        <div class="card-number">04</div>
-        <h3 class="card-title">💬 Prompt Engineering Lab</h3>
-        <p class="card-desc">Advanced prompting techniques — chain-of-thought, few-shot learning, system prompts &
-            structured output generation.</p>
-        <div class="card-tags">
-            <span class="tag tag-primary">Prompting</span>
-            <span class="tag">LangChain</span>
-            <span class="tag">GenAI</span>
-        </div>
-        <div class="card-stack">Python · LangChain · OpenAI</div>
-        <a class="card-link" href="https://github.com/mayank-goyal09" target="_blank" rel="noopener">View Code →</a>
-    </div>
-
-    <!-- MID-LEFT: Card 5 (accent card) -->
-    <div class="project-card card-accent card-pos-ml" data-project="wildlife" id="card5">
-        <div class="card-border-glow"></div>
-        <div class="card-number">05</div>
-        <h3 class="card-title">🦁 Wildlife AI Detection</h3>
-        <p class="card-desc">YOLOv8-powered wildlife population counter — real-time animal detection from camera trap
-            imagery.</p>
-        <div class="card-tags">
-            <span class="tag tag-accent">YOLO</span>
-            <span class="tag">CV</span>
-            <span class="tag">Detection</span>
-        </div>
-        <div class="card-stack">Python · YOLOv8 · OpenCV</div>
-        <a class="card-link" href="https://github.com/mayank-goyal09" target="_blank" rel="noopener">View Code →</a>
-    </div>
-
-    <!-- MID-RIGHT: Card 6 (accent card) -->
-    <div class="project-card card-accent card-pos-mr" data-project="chatbot" id="card6">
-        <div class="card-border-glow"></div>
-        <div class="card-number">06</div>
-        <h3 class="card-title">🧠 Cosmic AI Chatbot</h3>
-        <p class="card-desc">Portfolio-integrated AI assistant with knowledge base, quick actions & futuristic
-            conversational UI.</p>
-        <div class="card-tags">
-            <span class="tag tag-accent">NLP</span>
-            <span class="tag">Chatbot</span>
-            <span class="tag">UI/UX</span>
-        </div>
-        <div class="card-stack">JavaScript · Custom NLP Engine</div>
-        <a class="card-link" href="https://github.com/mayank-goyal09" target="_blank" rel="noopener">View Code →</a>
+        <div class="card-stack">Python · FastAPI · Gemini · LangGraph · Docker</div>
+        <a class="card-link" href="https://github.com/mayank-goyal09/RedGlyph" target="_blank" rel="noopener">View Code →</a>
     </div>
 
     <!-- 🏷️ PAGE TITLE OVERLAY -->
