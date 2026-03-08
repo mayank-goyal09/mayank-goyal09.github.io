@@ -306,7 +306,7 @@ body {
 .project-card {
     position: fixed;
     z-index: 10;
-    width: 280px;
+    width: 300px;
     padding: 24px 22px;
     /* Glassmorphism surface — 20-30% opacity */
     background: rgba(12, 2, 22, 0.3);
@@ -318,7 +318,7 @@ body {
         0 4px 24px rgba(0, 255, 255, 0.06),
         0 0 1px rgba(0, 255, 255, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.04);
-    /* Snappy spring easing, no artificial z-index delay so it feels instantly responsive */
+    /* Snappy spring easing */
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
         box-shadow 0.3s ease-out,
         z-index 0s;
@@ -345,8 +345,6 @@ body {
     pointer-events: none;
     transition: background 0.4s ease;
 }
-
-/* No ::after needed — single-layer glass */
 
 .project-card:hover {
     transform: translateY(-8px) scale(1.04);
@@ -521,53 +519,40 @@ body {
 }
 
 /* ============================================================
-   📐 CARD POSITIONS (Arranged around center robot)
+   📐 CARD POSITIONS — 3 cards: left, right, bottom-center
    ============================================================ */
 
-/* Top-Left */
-.card-pos-tl {
-    top: 8%;
-    left: 3%;
-}
-
-/* Top-Right */
-.card-pos-tr {
-    top: 6%;
-    right: 3%;
-}
-
-/* Mid-Left */
-.card-pos-ml {
-    top: 42%;
+/* Left card — vertically centered */
+.card-pos-left {
+    top: 50%;
     left: 2%;
     transform: translateY(-50%);
 }
 
-.card-pos-ml:hover {
-    transform: translateY(calc(-50% - 6px)) scale(1.02);
+.card-pos-left:hover {
+    transform: translateY(calc(-50% - 6px)) scale(1.04);
 }
 
-/* Mid-Right */
-.card-pos-mr {
-    top: 42%;
+/* Right card — vertically centered */
+.card-pos-right {
+    top: 50%;
     right: 2%;
     transform: translateY(-50%);
 }
 
-.card-pos-mr:hover {
-    transform: translateY(calc(-50% - 6px)) scale(1.02);
+.card-pos-right:hover {
+    transform: translateY(calc(-50% - 6px)) scale(1.04);
 }
 
-/* Bottom-Left */
-.card-pos-bl {
+/* Bottom-center card */
+.card-pos-bottom {
     bottom: 8%;
-    left: 5%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* Bottom-Right */
-.card-pos-br {
-    bottom: 6%;
-    right: 4%;
+.card-pos-bottom:hover {
+    transform: translateX(-50%) translateY(-8px) scale(1.04);
 }
 
 /* ============================================================
@@ -579,28 +564,19 @@ body {
     animation: card-float-in 0.8s ease forwards;
 }
 
-.card-pos-tl {
+.card-pos-left {
+    animation-name: card-float-in-left;
     animation-delay: 0.3s;
 }
 
-.card-pos-tr {
+.card-pos-right {
+    animation-name: card-float-in-right;
     animation-delay: 0.5s;
 }
 
-.card-pos-ml {
+.card-pos-bottom {
+    animation-name: card-float-in-bottom;
     animation-delay: 0.7s;
-}
-
-.card-pos-mr {
-    animation-delay: 0.9s;
-}
-
-.card-pos-bl {
-    animation-delay: 1.1s;
-}
-
-.card-pos-br {
-    animation-delay: 1.3s;
 }
 
 @keyframes card-float-in {
@@ -617,84 +593,62 @@ body {
     }
 }
 
-/* Fix: mid cards need special handling since they use translateY(-50%) */
-.card-pos-ml {
-    animation-name: card-float-in-mid;
-}
-
-.card-pos-mr {
-    animation-name: card-float-in-mid;
-}
-
-@keyframes card-float-in-mid {
+@keyframes card-float-in-left {
     0% {
         opacity: 0;
-        transform: translateY(calc(-50% + 30px)) scale(0.92);
+        transform: translateY(-50%) translateX(-30px) scale(0.92);
         filter: blur(4px);
     }
 
     100% {
         opacity: 1;
-        transform: translateY(-50%) scale(1);
+        transform: translateY(-50%) translateX(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes card-float-in-right {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%) translateX(30px) scale(0.92);
+        filter: blur(4px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes card-float-in-bottom {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(30px) scale(0.92);
+        filter: blur(4px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
         filter: blur(0);
     }
 }
 
 /* === Subtle floating idle animation for cards === */
-.project-card {
-    animation: card-float-in 0.8s ease forwards, card-idle-float 6s ease-in-out infinite;
-    animation-delay: var(--card-delay, 0.3s), calc(var(--card-delay, 0.3s) + 0.8s);
+.card-pos-left {
+    animation: card-float-in-left 0.8s ease forwards, card-idle-float-left 6s ease-in-out 1.1s infinite;
 }
 
-.card-pos-tl {
-    --card-delay: 0.3s;
-    --float-offset: 0s;
+.card-pos-right {
+    animation: card-float-in-right 0.8s ease forwards, card-idle-float-right 6s ease-in-out 1.3s infinite;
 }
 
-.card-pos-tr {
-    --card-delay: 0.5s;
-    --float-offset: 1s;
+.card-pos-bottom {
+    animation: card-float-in-bottom 0.8s ease forwards, card-idle-float-bottom 6s ease-in-out 1.5s infinite;
 }
 
-.card-pos-ml {
-    --card-delay: 0.7s;
-    --float-offset: 2s;
-}
-
-.card-pos-mr {
-    --card-delay: 0.9s;
-    --float-offset: 3s;
-}
-
-.card-pos-bl {
-    --card-delay: 1.1s;
-    --float-offset: 4s;
-}
-
-.card-pos-br {
-    --card-delay: 1.3s;
-    --float-offset: 5s;
-}
-
-@keyframes card-idle-float {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-4px);
-    }
-}
-
-/* Mid-positioned cards get special float */
-.card-pos-ml,
-.card-pos-mr {
-    animation: card-float-in-mid 0.8s ease forwards, card-idle-float-mid 6s ease-in-out infinite;
-}
-
-@keyframes card-idle-float-mid {
+@keyframes card-idle-float-left {
 
     0%,
     100% {
@@ -706,11 +660,29 @@ body {
     }
 }
 
-/* ============================================================
-   ✨ AMBIENT SHIMMER — Moving gradient overlay
-   ============================================================ */
+@keyframes card-idle-float-right {
 
-/* Shimmer handled by Three.js nebula scene */
+    0%,
+    100% {
+        transform: translateY(-50%);
+    }
+
+    50% {
+        transform: translateY(calc(-50% - 4px));
+    }
+}
+
+@keyframes card-idle-float-bottom {
+
+    0%,
+    100% {
+        transform: translateX(-50%);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-4px);
+    }
+}
 
 /* ============================================================
    📱 RESPONSIVE
@@ -718,7 +690,7 @@ body {
 
 @media (max-width: 1200px) {
     .project-card {
-        width: 240px;
+        width: 260px;
         padding: 18px 16px;
     }
 
