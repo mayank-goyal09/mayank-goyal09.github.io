@@ -917,6 +917,7 @@
     function showProjectSpeech(title) {
         if (!bubble || !speechEl) return;
         var msgs = {
+            'LegalGuard': "Dual-engine contract scanner — 150+ legal patterns + Flan-T5 AI! ⚖️",
             'Discord': "Multi-modal AI bot — text, images, audio & vision, all locally with Ollama! 🎮",
             'News': "Fully autonomous pipeline — RSS → LLM → Voice → Email! 📰",
             'RedGlyph': "AI code reviewer — catches bugs like a senior engineer! 🔴"
