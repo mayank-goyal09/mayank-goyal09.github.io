@@ -467,6 +467,58 @@ body.nlp-body {
     display: flex; gap: 16px; align-items: center; justify-content: center;
 }
 
+.ethereal-card-bg {
+    position: absolute;
+    inset: 0;
+    /* Subtle gray-black inner container shading */
+    background: radial-gradient(circle at top left, rgba(200, 200, 200, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* -------------------------------------------
+   PROJECT 2 EXTERNAL GRAY/BLACK BACKGROUND
+------------------------------------------- */
+#project-2-bg {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 50%, rgba(30, 30, 30, 0.2) 0%, transparent 80%);
+}
+
+.ethereal-shape-wrap { position: absolute; }
+.ethereal-shape-float { animation: floatY 15s infinite ease-in-out; }
+.e-delay-1s { animation-delay: -3s; } .e-delay-2s { animation-delay: -7s; } .e-delay-3s { animation-delay: -11s; }
+
+.ethereal-shape {
+    position: relative;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+.ethereal-shape::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: radial-gradient(circle at 50% 50%, rgba(100, 100, 100, 0.05), transparent 70%);
+}
+
+.eshape-1-pos { left: 5%; top: 30%; transform: rotate(15deg); } 
+.efill-1 { width: 450px; height: 120px; background: linear-gradient(to right, rgba(60, 60, 60, 0.1), transparent); }
+
+.eshape-2-pos { right: 10%; top: 60%; transform: rotate(-20deg); } 
+.efill-2 { width: 350px; height: 90px; background: linear-gradient(to right, rgba(30, 30, 30, 0.2), transparent); }
+    
+.eshape-3-pos { left: 20%; bottom: 10%; transform: rotate(-5deg); } 
+.efill-3 { width: 250px; height: 60px; background: linear-gradient(to right, rgba(80, 80, 80, 0.08), transparent); }
+
 @media (max-width: 768px) {
     .e-title { font-size: 3.5rem; }
     .e-desc { font-size: 1rem; }
