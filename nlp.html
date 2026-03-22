@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP Projects | Mayank Goyal</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@400;600;700&family=Syne:wght@600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" /> <!-- Global styles -->
+    <link rel="stylesheet" href="nlp.css" />
+</head>
+<body class="nlp-body">
+    <!-- 🏠 HOME BUTTON -->
+    <a href="index.html" class="home-btn" id="homeBtn">
+        <span class="home-icon">←</span>
+        <span>Home</span>
+    </a>
+
+    <!-- SCROLL ANIMATION WRAPPER -->
+    <div class="scroll-wrapper" id="scrollWrapper">
+        <div class="sticky-container">
+            
+            <div class="header-content" id="headerContent">
+                <h1 class="main-title">
+                    Unleash the power of <br />
+                    <span class="highlight">Natural Language Processing</span>
+                </h1>
+                <p class="subtitle">Applying machine learning to unstructured text, sequence modeling, and conversational AI.</p>
+            </div>
+
+            <!-- The 3D transformed card -->
+            <div class="card-container" id="cardContainer">
+                <div class="card-inner">
+                    <!-- Project Image -->
+                    <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=3840&ixlib=rb-4.0.3" alt="NLP Hero" class="hero-image" draggable="false" />
+                    
+                    <!-- Content Overlay -->
+                    <div class="card-content-overlay">
+                        <div class="project-tags">
+                            <span class="nlp-tag">Transformers</span>
+                            <span class="nlp-tag">NER</span>
+                            <span class="nlp-tag">Semantic Search</span>
+                        </div>
+                        <h2 class="project-name">Advanced Corpus Analyzer</h2>
+                        <a href="https://github.com/mayank-goyal09" target="_blank" class="explore-btn">
+                            Explore Repository →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- More content to make scrolling obvious -->
+    <div class="bottom-content">
+        <h2>More Models & Research</h2>
+        <div class="other-projects">
+            <div class="glass-panel project-card">
+                <h3>🗣️ Speech-to-Text Pipeline</h3>
+                <p>Whisper AI integrated pipeline for real-time transcription and speaker diarization.</p>
+            </div>
+            <div class="glass-panel project-card">
+                <h3>📊 Sentiment Analyzer</h3>
+                <p>BERT-based fine-tuned sentiment analysis for financial news and market trends extraction.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="nlp.js"></script>
+</body>
+</html>
