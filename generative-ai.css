@@ -524,8 +524,8 @@ body {
 
 /* Top-left card — asymmetric placement */
 .card-pos-top-left {
-    top: 10%;
-    left: 2%;
+    top: 6%;
+    left: 4.5%;
     transform: translateY(0);
 }
 
@@ -533,10 +533,21 @@ body {
     transform: translateY(-6px) scale(1.04);
 }
 
+/* Top-right card — asymmetric placement */
+.card-pos-top-right {
+    top: 14%;
+    right: 2%;
+    transform: translateY(0);
+}
+
+.card-pos-top-right:hover {
+    transform: translateY(-6px) scale(1.04);
+}
+
 /* Left card — vertically centered */
 .card-pos-left {
-    top: 50%;
-    left: 2%;
+    top: 56%;
+    left: 1.5%;
     transform: translateY(-50%);
 }
 
@@ -546,8 +557,8 @@ body {
 
 /* Right card — vertically centered */
 .card-pos-right {
-    top: 50%;
-    right: 2%;
+    top: 47%;
+    right: 4.5%;
     transform: translateY(-50%);
 }
 
@@ -557,8 +568,8 @@ body {
 
 /* Bottom-center card */
 .card-pos-bottom {
-    bottom: 8%;
-    left: 50%;
+    bottom: 5%;
+    left: 47%;
     transform: translateX(-50%);
 }
 
@@ -578,6 +589,11 @@ body {
 .card-pos-top-left {
     animation-name: card-float-in-top-left;
     animation-delay: 0.2s;
+}
+
+.card-pos-top-right {
+    animation-name: card-float-in-top-right;
+    animation-delay: 0.3s;
 }
 
 .card-pos-left {
@@ -613,6 +629,20 @@ body {
     0% {
         opacity: 0;
         transform: translateY(-30px) translateX(-20px) scale(0.92);
+        filter: blur(4px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) translateX(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes card-float-in-top-right {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px) translateX(20px) scale(0.92);
         filter: blur(4px);
     }
 
@@ -668,6 +698,10 @@ body {
 /* === Subtle floating idle animation for cards === */
 .card-pos-top-left {
     animation: card-float-in-top-left 0.8s ease forwards, card-idle-float-top-left 6s ease-in-out 0.9s infinite;
+}
+
+.card-pos-top-right {
+    animation: card-float-in-top-right 0.8s ease forwards, card-idle-float-top-left 6s ease-in-out 1.0s infinite;
 }
 
 .card-pos-left {
