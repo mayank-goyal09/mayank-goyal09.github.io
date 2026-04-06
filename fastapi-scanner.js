@@ -323,79 +323,28 @@ class CardStreamController {
         {
             name: "MovieFlix AI",
             subtitle: "AI Movie Recommender",
-            description: "Netflix-style movie recommendation engine powered by TF-IDF NLP, serving real-time personalized picks from 45K+ movies.",
+            description: "Netflix-style movie recommendation engine powered by TF-IDF NLP",
             tech: ["FastAPI", "TF-IDF", "TMDB API", "Streamlit", "Python"],
             github: "https://github.com/mayank-goyal09/movieflix-rec",
             live: "https://movieflix-rec.onrender.com/docs",
             streamlit: "https://movieflix-rec.streamlit.app",
-            // Premium debit-card gradient: deep crimson ➜ dark maroon ➜ black cherry
-            gradientStops: [
-                { pos: 0.0, color: "#b80000" },
-                { pos: 0.35, color: "#8b0000" },
-                { pos: 0.7, color: "#4a0010" },
-                { pos: 1.0, color: "#1a0008" },
-            ],
-            accentColor: "#ff4d4d",   // glow / highlight tint
-            chipColor: "#ffd700",      // gold chip
+            gradient: ["#E50914", "#8b5cf6"], // Netflix red to purple
             icon: "🎬",
-            stats: "45K+ Movies  ·  NLP Engine  ·  Real-time Search",
-            cardNumber: "4539  ●●●●  ●●●●  8127",
+            stats: "45K+ Movies | NLP Engine | Real-time Search"
         },
         {
             name: "CureLoop MLOps",
             subtitle: "Automated Disease Prediction",
-            description: "Transforming static notebooks into a living, breathing AI system with full CI/CD MLOps pipeline & continuous training.",
+            description: "Transforming static notebooks into a living, breathing AI system with full MLOps pipeline.",
             tech: ["FastAPI", "Scikit", "Docker", "Pytest", "HF Spaces"],
             github: "https://github.com/mayank-goyal09/CureLoop-MLOps",
             live: "https://mayankg09-cureloop-mlops.hf.space/docs",
-            // Premium debit-card gradient: teal ➜ deep navy ➜ midnight
-            gradientStops: [
-                { pos: 0.0, color: "#0d9488" },
-                { pos: 0.3, color: "#065f5b" },
-                { pos: 0.65, color: "#0f2d4a" },
-                { pos: 1.0, color: "#0a1628" },
-            ],
-            accentColor: "#34d399",
-            chipColor: "#c0c0c0",      // silver chip
+            gradient: ["#10b981", "#3b82f6"], // Emerald to blue for healthcare
             icon: "🩺",
-            stats: "CI/CD Pipeline  ·  HF Deployed  ·  Continual Learning",
-            cardNumber: "5412  ●●●●  ●●●●  3901",
+            stats: "CI/CD Pipeline | Hugging Face Deployed | Continual Learning"
         },
         // Add more projects here as you build them!
     ];
-
-    // ── Helper: wrap text into multiple lines ──
-    wrapText(ctx, text, maxWidth) {
-        const words = text.split(' ');
-        const lines = [];
-        let currentLine = words[0];
-        for (let i = 1; i < words.length; i++) {
-            const testLine = currentLine + ' ' + words[i];
-            if (ctx.measureText(testLine).width <= maxWidth) {
-                currentLine = testLine;
-            } else {
-                lines.push(currentLine);
-                currentLine = words[i];
-            }
-        }
-        lines.push(currentLine);
-        return lines;
-    }
-
-    // ── Helper: draw rounded rectangle path ──
-    roundRectPath(ctx, x, y, w, h, r) {
-        ctx.beginPath();
-        ctx.moveTo(x + r, y);
-        ctx.lineTo(x + w - r, y);
-        ctx.quadraticCurveTo(x + w, y, x + w, y + r);
-        ctx.lineTo(x + w, y + h - r);
-        ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-        ctx.lineTo(x + r, y + h);
-        ctx.quadraticCurveTo(x, y + h, x, y + h - r);
-        ctx.lineTo(x, y + r);
-        ctx.quadraticCurveTo(x, y, x + r, y);
-        ctx.closePath();
-    }
 
     createCardWrapper(index) {
         const wrapper = document.createElement("div");
@@ -404,257 +353,110 @@ class CardStreamController {
         const normalCard = document.createElement("div");
         normalCard.className = "card card-normal";
 
+        // Get project data (cycle through projects array)
         const project = this.projects[index % this.projects.length];
 
-        // ── Canvas setup (2× DPR for sharp text) ──
+        // Create canvas-based card with project info
         const canvas = document.createElement("canvas");
-        const W = 480, H = 300;
-        const dpr = 2;
-        canvas.width = W * dpr;
-        canvas.height = H * dpr;
-        canvas.style.width = W + "px";
-        canvas.style.height = H + "px";
+        canvas.width = 480;
+        canvas.height = 300;
         const ctx = canvas.getContext("2d");
-        ctx.scale(dpr, dpr);
 
-        const pad = 30;
-        const contentW = W - pad * 2;
+        // Draw gradient background
+        const gradient = ctx.createLinearGradient(0, 0, 480, 300);
+        gradient.addColorStop(0, project.gradient[0]);
+        gradient.addColorStop(1, project.gradient[1]);
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, 480, 300);
 
-        // ═══════════════════════════════════════════
-        // 1. PREMIUM GRADIENT BACKGROUND (no grid!)
-        // ═══════════════════════════════════════════
-        const bg = ctx.createLinearGradient(0, 0, W * 0.7, H);
-        project.gradientStops.forEach(s => bg.addColorStop(s.pos, s.color));
-        ctx.fillStyle = bg;
-        ctx.fillRect(0, 0, W, H);
-
-        // 2. Subtle radial glow at top-left (3D depth)
-        const glow = ctx.createRadialGradient(80, 60, 0, 80, 60, 280);
-        glow.addColorStop(0, "rgba(255,255,255,0.12)");
-        glow.addColorStop(0.5, "rgba(255,255,255,0.03)");
-        glow.addColorStop(1, "transparent");
-        ctx.fillStyle = glow;
-        ctx.fillRect(0, 0, W, H);
-
-        // 3. Bottom-right dark vignette (3D depth)
-        const vignette = ctx.createRadialGradient(W, H, 0, W, H, 400);
-        vignette.addColorStop(0, "rgba(0,0,0,0.35)");
-        vignette.addColorStop(1, "transparent");
-        ctx.fillStyle = vignette;
-        ctx.fillRect(0, 0, W, H);
-
-        // 4. Holographic diagonal light sweep
-        ctx.save();
-        const sweepGrad = ctx.createLinearGradient(W * 0.3, 0, W * 0.7, H);
-        sweepGrad.addColorStop(0, "transparent");
-        sweepGrad.addColorStop(0.35, "transparent");
-        sweepGrad.addColorStop(0.48, "rgba(255,255,255,0.08)");
-        sweepGrad.addColorStop(0.52, "rgba(255,255,255,0.14)");
-        sweepGrad.addColorStop(0.56, "rgba(255,255,255,0.08)");
-        sweepGrad.addColorStop(0.65, "transparent");
-        sweepGrad.addColorStop(1, "transparent");
-        ctx.fillStyle = sweepGrad;
-        ctx.fillRect(0, 0, W, H);
-        ctx.restore();
-
-        // 5. Top-edge subtle highlight (card edge shine)
-        const edgeShine = ctx.createLinearGradient(0, 0, 0, 6);
-        edgeShine.addColorStop(0, "rgba(255,255,255,0.18)");
-        edgeShine.addColorStop(1, "transparent");
-        ctx.fillStyle = edgeShine;
-        ctx.fillRect(0, 0, W, 6);
-
-        // ═══════════════════════════════════════════
-        // 6. METALLIC CHIP (debit-card feel)
-        // ═══════════════════════════════════════════
-        const chipX = pad, chipY = 24, chipW = 44, chipH = 32, chipR = 5;
-        // Outer chip
-        const chipGrad = ctx.createLinearGradient(chipX, chipY, chipX + chipW, chipY + chipH);
-        chipGrad.addColorStop(0, project.chipColor);
-        chipGrad.addColorStop(0.5, project.chipColor === "#ffd700" ? "#fff4b0" : "#e8e8e8");
-        chipGrad.addColorStop(1, project.chipColor === "#ffd700" ? "#c9960c" : "#8a8a8a");
-        ctx.fillStyle = chipGrad;
-        this.roundRectPath(ctx, chipX, chipY, chipW, chipH, chipR);
-        ctx.fill();
-        // Chip inner lines
-        ctx.strokeStyle = "rgba(0,0,0,0.15)";
-        ctx.lineWidth = 0.8;
-        ctx.beginPath();
-        ctx.moveTo(chipX + chipW * 0.35, chipY + 3);
-        ctx.lineTo(chipX + chipW * 0.35, chipY + chipH - 3);
-        ctx.moveTo(chipX + chipW * 0.65, chipY + 3);
-        ctx.lineTo(chipX + chipW * 0.65, chipY + chipH - 3);
-        ctx.moveTo(chipX + 3, chipY + chipH * 0.5);
-        ctx.lineTo(chipX + chipW - 3, chipY + chipH * 0.5);
-        ctx.stroke();
-
-        // ═══════════════════════════════════════════
-        // 7. CONTACTLESS SYMBOL (top-right area)
-        // ═══════════════════════════════════════════
-        const clX = chipX + chipW + 14, clY = chipY + chipH / 2;
-        ctx.strokeStyle = "rgba(255,255,255,0.45)";
-        ctx.lineWidth = 1.5;
-        for (let r = 5; r <= 13; r += 4) {
-            ctx.beginPath();
-            ctx.arc(clX, clY, r, -Math.PI * 0.35, Math.PI * 0.35);
-            ctx.stroke();
+        // Add subtle pattern overlay
+        ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
+        for (let i = 0; i < 480; i += 20) {
+            ctx.fillRect(i, 0, 1, 300);
+        }
+        for (let i = 0; i < 300; i += 20) {
+            ctx.fillRect(0, i, 480, 1);
         }
 
-        // ═══════════════════════════════════════════
-        // 8. PROJECT NAME + SUBTITLE (right side, top)
-        // ═══════════════════════════════════════════
-        const titleX = 160;
+        // Draw project icon
+        ctx.font = "60px Arial";
+        ctx.textAlign = "left";
+        ctx.fillText(project.icon, 25, 80);
+
+        // Draw project name
         ctx.fillStyle = "#ffffff";
-        ctx.font = "bold 26px 'Segoe UI', Arial";
-        ctx.textAlign = "left";
-        ctx.shadowColor = "rgba(0,0,0,0.4)";
-        ctx.shadowBlur = 8;
-        ctx.fillText(project.name, titleX, 40);
-        ctx.shadowBlur = 0;
+        ctx.font = "bold 32px 'Segoe UI', Arial";
+        ctx.fillText(project.name, 100, 60);
 
-        ctx.font = "14px 'Segoe UI', Arial";
-        ctx.fillStyle = "rgba(255,255,255,0.75)";
-        ctx.fillText(project.subtitle, titleX, 58);
+        // Draw subtitle
+        ctx.font = "18px 'Segoe UI', Arial";
+        ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
+        ctx.fillText(project.subtitle, 100, 85);
 
-        // ═══════════════════════════════════════════
-        // 9. CARD NUMBER STRIPE (embossed feel)
-        // ═══════════════════════════════════════════
-        ctx.font = "500 15px 'Courier New', 'Roboto Mono', monospace";
-        ctx.fillStyle = "rgba(255,255,255,0.35)";
-        ctx.letterSpacing = "3px";
-        ctx.fillText(project.cardNumber || "4539  ●●●●  ●●●●  0000", pad, 78);
-
-        // ═══════════════════════════════════════════
-        // 10. SEPARATOR LINE (thin, elegant)
-        // ═══════════════════════════════════════════
-        const sepGrad = ctx.createLinearGradient(pad, 0, W - pad, 0);
-        sepGrad.addColorStop(0, "rgba(255,255,255,0.0)");
-        sepGrad.addColorStop(0.2, "rgba(255,255,255,0.25)");
-        sepGrad.addColorStop(0.8, "rgba(255,255,255,0.25)");
-        sepGrad.addColorStop(1, "rgba(255,255,255,0.0)");
-        ctx.strokeStyle = sepGrad;
-        ctx.lineWidth = 1;
+        // Draw horizontal line
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.3)";
+        ctx.lineWidth = 2;
         ctx.beginPath();
-        ctx.moveTo(pad, 92);
-        ctx.lineTo(W - pad, 92);
+        ctx.moveTo(25, 115);
+        ctx.lineTo(455, 115);
         ctx.stroke();
 
-        // ═══════════════════════════════════════════
-        // 11. DESCRIPTION – multi-line wrapped
-        // ═══════════════════════════════════════════
-        ctx.font = "13.5px 'Segoe UI', Arial";
-        ctx.fillStyle = "rgba(255,255,255,0.82)";
-        const descLines = this.wrapText(ctx, project.description, contentW);
-        const descLineH = 19;
-        let descY = 112;
-        descLines.forEach((line) => {
-            ctx.fillText(line, pad, descY);
-            descY += descLineH;
-        });
+        // Draw description
+        ctx.font = "15px 'Segoe UI', Arial";
+        ctx.fillStyle = "rgba(255, 255, 255, 0.85)";
+        const description = project.description;
+        ctx.fillText(description.length > 60 ? description.slice(0, 60) + "..." : description, 25, 145);
 
-        // ═══════════════════════════════════════════
-        // 12. TECH BADGES (frosted glass pills)
-        // ═══════════════════════════════════════════
-        let badgeY = descY + 6;
-        ctx.font = "bold 11px 'Courier New', monospace";
-        let badgeX = pad;
-        const badgeH = 22;
-        const badgeR = 11;
+        // Draw tech badges
+        ctx.font = "bold 12px 'Courier New', monospace";
+        let badgeX = 25;
+        project.tech.slice(0, 4).forEach((tech, i) => {
+            const badgeWidth = ctx.measureText(tech).width + 18;
 
-        project.tech.forEach((tech) => {
-            const tw = ctx.measureText(tech).width + 18;
-            if (badgeX + tw > W - pad) {
-                badgeX = pad;
-                badgeY += badgeH + 6;
-            }
-            // Frosted glass badge background
-            ctx.fillStyle = "rgba(255,255,255,0.12)";
+            // Badge background
+            ctx.fillStyle = "rgba(0, 0, 0, 0.4)";
             ctx.beginPath();
-            ctx.roundRect(badgeX, badgeY, tw, badgeH, badgeR);
+            ctx.roundRect(badgeX, 170, badgeWidth, 26, 5);
             ctx.fill();
-            // Thin bright border
-            ctx.strokeStyle = "rgba(255,255,255,0.25)";
-            ctx.lineWidth = 0.8;
-            ctx.stroke();
-            // Text
+
+            // Badge text
             ctx.fillStyle = "#ffffff";
-            ctx.fillText(tech, badgeX + 9, badgeY + 15);
-            badgeX += tw + 7;
+            ctx.fillText(tech, badgeX + 9, 188);
+
+            badgeX += badgeWidth + 10;
         });
 
-        // ═══════════════════════════════════════════
-        // 13. STATS LINE
-        // ═══════════════════════════════════════════
-        let statsY = badgeY + badgeH + 16;
-        ctx.font = "12px 'Segoe UI', Arial";
-        ctx.fillStyle = "rgba(255,255,255,0.55)";
-        ctx.fillText(project.stats, pad, statsY);
+        // Draw stats
+        ctx.font = "13px 'Segoe UI', Arial";
+        ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
+        ctx.fillText(project.stats, 25, 230);
 
-        // ═══════════════════════════════════════════
-        // 14. VIEW PROJECT — Real DOM Button (animated gradient)
-        //     Placed as HTML overlay for full CSS hover transitions
-        // ═══════════════════════════════════════════
-        let btnY = statsY + 10;
-        const btnW = 150, btnH = 32;
-
-        // ═══════════════════════════════════════════
-        // 15. PROJECT ICON (bottom-right, large & faded)
-        // ═══════════════════════════════════════════
-        ctx.globalAlpha = 0.08;
-        ctx.font = "120px Arial";
-        ctx.textAlign = "right";
-        ctx.fillText(project.icon, W - 15, H - 15);
-        ctx.globalAlpha = 1;
-        ctx.textAlign = "left";
-
-        // ═══════════════════════════════════════════
-        // 16. INNER BORDER GLOW (premium card edge)
-        // ═══════════════════════════════════════════
-        ctx.strokeStyle = "rgba(255,255,255,0.08)";
-        ctx.lineWidth = 1.5;
-        this.roundRectPath(ctx, 1, 1, W - 2, H - 2, 16);
+        // Draw "View Project" button
+        ctx.fillStyle = "rgba(255, 255, 255, 0.2)";
+        ctx.beginPath();
+        ctx.roundRect(25, 255, 140, 32, 8);
+        ctx.fill();
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.5)";
+        ctx.lineWidth = 1;
         ctx.stroke();
 
-        // ── Convert canvas to image ──
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "bold 13px 'Segoe UI', Arial";
+        ctx.fillText("View Project →", 45, 277);
+
+        // Convert canvas to image
         const cardImage = document.createElement("img");
         cardImage.className = "card-image";
         cardImage.src = canvas.toDataURL();
         cardImage.alt = project.name;
 
-        // ── Create real DOM gradient button overlay ──
-        const viewBtn = document.createElement("a");
-        viewBtn.className = "gradient-button";
-        viewBtn.href = project.github;
-        viewBtn.target = "_blank";
-        viewBtn.rel = "noopener noreferrer";
-        viewBtn.textContent = "View Project →";
-        // Position the button exactly where the canvas button would be
-        // Canvas coords: x=pad(30), y=btnY, w=150, h=32
-        // But canvas is displayed at half its pixel size (dpr=2),
-        // so CSS coords match the logical canvas coords directly.
-        viewBtn.style.cssText = `
-            position: absolute;
-            left: ${pad}px;
-            top: ${btnY}px;
-            width: ${btnW}px;
-            height: ${btnH}px;
-            z-index: 20;
-            pointer-events: auto;
-        `;
-        // Stop click from bubbling to card wrapper
-        viewBtn.addEventListener("click", (e) => {
-            e.stopPropagation();
-        });
-
-        // Make card clickable (whole card goes to github)
+        // Make card clickable
         wrapper.style.cursor = "pointer";
         wrapper.addEventListener("click", () => {
             window.open(project.github, "_blank");
         });
 
         normalCard.appendChild(cardImage);
-        // Add the gradient button INSIDE normalCard so it clips with the scanner
-        normalCard.appendChild(viewBtn);
 
         const asciiCard = document.createElement("div");
         asciiCard.className = "card card-ascii";
