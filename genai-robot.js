@@ -917,9 +917,12 @@
     function showProjectSpeech(title) {
         if (!bubble || !speechEl) return;
         var msgs = {
+            'LegalGuard': "Dual-engine contract scanner — 150+ legal patterns + Flan-T5 AI! ⚖️",
             'Discord': "Multi-modal AI bot — text, images, audio & vision, all locally with Ollama! 🎮",
+            'DocIntel': "Private RAG System utilizing FAISS & local LLMs for secure data querying! 🧠",
             'News': "Fully autonomous pipeline — RSS → LLM → Voice → Email! 📰",
-            'RedGlyph': "AI code reviewer — catches bugs like a senior engineer! 🔴"
+            'RedGlyph': "AI code reviewer — catches bugs like a senior engineer! 🔴",
+            'PatternPunk': "Seamless fabric texture generator using Neural Circular Padding & Real-ESRGAN! 👗"
         };
         var msg = "Check this out — one of my favorite builds! ✨";
         var keys = Object.keys(msgs);

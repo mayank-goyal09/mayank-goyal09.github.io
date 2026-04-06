@@ -519,13 +519,35 @@ body {
 }
 
 /* ============================================================
-   📐 CARD POSITIONS — 3 cards: left, right, bottom-center
+   📐 CARD POSITIONS — 4 cards: top-left, left, right, bottom-center
    ============================================================ */
+
+/* Top-left card — asymmetric placement */
+.card-pos-top-left {
+    top: 6%;
+    left: 4.5%;
+    transform: translateY(0);
+}
+
+.card-pos-top-left:hover {
+    transform: translateY(-6px) scale(1.04);
+}
+
+/* Top-right card — asymmetric placement */
+.card-pos-top-right {
+    top: 14%;
+    right: 2%;
+    transform: translateY(0);
+}
+
+.card-pos-top-right:hover {
+    transform: translateY(-6px) scale(1.04);
+}
 
 /* Left card — vertically centered */
 .card-pos-left {
-    top: 50%;
-    left: 2%;
+    top: 56%;
+    left: 1.5%;
     transform: translateY(-50%);
 }
 
@@ -535,8 +557,8 @@ body {
 
 /* Right card — vertically centered */
 .card-pos-right {
-    top: 50%;
-    right: 2%;
+    top: 47%;
+    right: 4.5%;
     transform: translateY(-50%);
 }
 
@@ -544,15 +566,26 @@ body {
     transform: translateY(calc(-50% - 6px)) scale(1.04);
 }
 
-/* Bottom-center card */
-.card-pos-bottom {
-    bottom: 8%;
-    left: 50%;
+/* Bottom-left card */
+.card-pos-bottom-left {
+    bottom: 5%;
+    left: 20%;
     transform: translateX(-50%);
 }
 
-.card-pos-bottom:hover {
+.card-pos-bottom-left:hover {
     transform: translateX(-50%) translateY(-8px) scale(1.04);
+}
+
+/* Bottom-right card */
+.card-pos-bottom-right {
+    bottom: 5%;
+    right: 20%;
+    transform: translateX(50%);
+}
+
+.card-pos-bottom-right:hover {
+    transform: translateX(50%) translateY(-8px) scale(1.04);
 }
 
 /* ============================================================
@@ -564,19 +597,34 @@ body {
     animation: card-float-in 0.8s ease forwards;
 }
 
+.card-pos-top-left {
+    animation-name: card-float-in-top-left;
+    animation-delay: 0.2s;
+}
+
+.card-pos-top-right {
+    animation-name: card-float-in-top-right;
+    animation-delay: 0.3s;
+}
+
 .card-pos-left {
     animation-name: card-float-in-left;
-    animation-delay: 0.3s;
+    animation-delay: 0.4s;
 }
 
 .card-pos-right {
     animation-name: card-float-in-right;
-    animation-delay: 0.5s;
+    animation-delay: 0.6s;
 }
 
-.card-pos-bottom {
-    animation-name: card-float-in-bottom;
-    animation-delay: 0.7s;
+.card-pos-bottom-left {
+    animation-name: card-float-in-bottom-left;
+    animation-delay: 0.8s;
+}
+
+.card-pos-bottom-right {
+    animation-name: card-float-in-bottom-right;
+    animation-delay: 0.9s;
 }
 
 @keyframes card-float-in {
@@ -589,6 +637,34 @@ body {
     100% {
         opacity: 1;
         transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes card-float-in-top-left {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px) translateX(-20px) scale(0.92);
+        filter: blur(4px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) translateX(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes card-float-in-top-right {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px) translateX(20px) scale(0.92);
+        filter: blur(4px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) translateX(0) scale(1);
         filter: blur(0);
     }
 }
@@ -621,7 +697,7 @@ body {
     }
 }
 
-@keyframes card-float-in-bottom {
+@keyframes card-float-in-bottom-left {
     0% {
         opacity: 0;
         transform: translateX(-50%) translateY(30px) scale(0.92);
@@ -635,7 +711,29 @@ body {
     }
 }
 
+@keyframes card-float-in-bottom-right {
+    0% {
+        opacity: 0;
+        transform: translateX(50%) translateY(30px) scale(0.92);
+        filter: blur(4px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(50%) translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
 /* === Subtle floating idle animation for cards === */
+.card-pos-top-left {
+    animation: card-float-in-top-left 0.8s ease forwards, card-idle-float-top-left 6s ease-in-out 0.9s infinite;
+}
+
+.card-pos-top-right {
+    animation: card-float-in-top-right 0.8s ease forwards, card-idle-float-top-left 6s ease-in-out 1.0s infinite;
+}
+
 .card-pos-left {
     animation: card-float-in-left 0.8s ease forwards, card-idle-float-left 6s ease-in-out 1.1s infinite;
 }
@@ -644,8 +742,24 @@ body {
     animation: card-float-in-right 0.8s ease forwards, card-idle-float-right 6s ease-in-out 1.3s infinite;
 }
 
-.card-pos-bottom {
-    animation: card-float-in-bottom 0.8s ease forwards, card-idle-float-bottom 6s ease-in-out 1.5s infinite;
+.card-pos-bottom-left {
+    animation: card-float-in-bottom-left 0.8s ease forwards, card-idle-float-bottom-left 6s ease-in-out 1.5s infinite;
+}
+
+.card-pos-bottom-right {
+    animation: card-float-in-bottom-right 0.8s ease forwards, card-idle-float-bottom-right 6s ease-in-out 1.7s infinite;
+}
+
+@keyframes card-idle-float-top-left {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
 }
 
 @keyframes card-idle-float-left {
@@ -672,7 +786,7 @@ body {
     }
 }
 
-@keyframes card-idle-float-bottom {
+@keyframes card-idle-float-bottom-left {
 
     0%,
     100% {
@@ -681,6 +795,18 @@ body {
 
     50% {
         transform: translateX(-50%) translateY(-4px);
+    }
+}
+
+@keyframes card-idle-float-bottom-right {
+
+    0%,
+    100% {
+        transform: translateX(50%);
+    }
+
+    50% {
+        transform: translateX(50%) translateY(-4px);
     }
 }
 
