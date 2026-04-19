@@ -1172,6 +1172,250 @@ body.nlp-body {
     }
 }
 
+/* -------------------------------------------
+   HEATMAP CARD (PROJECT 5 - Screendit)
+------------------------------------------- */
+.heatmap-card {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    /* Extremely dark glassmorphism */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+#project-5-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #000;
+}
+
+.heatmap-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(239, 68, 68, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 50%, rgba(34, 197, 94, 0.1) 0%, transparent 50%);
+    animation: heatPulse 8s infinite alternate ease-in-out;
+}
+
+@keyframes gridScroll {
+    0% {
+        transform: skewY(12deg) translateY(0);
+    }
+
+    100% {
+        transform: skewY(12deg) translateY(40px);
+    }
+}
+
+@keyframes squareGlow {
+
+    0%,
+    100% {
+        opacity: 0.1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.shadcn-grid-pattern {
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    fill: rgba(30, 58, 138, 0.1);
+    stroke: rgba(30, 58, 138, 0.1);
+    mask-image: radial-gradient(ellipse 120% 120% at 50% 50%, white 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 120% 120% at 50% 50%, white 40%, transparent 100%);
+    z-index: 0;
+}
+
+.shadcn-grid-pattern path {
+    stroke: rgba(30, 58, 138, 0.4);
+    stroke-width: 1;
+}
+
+.shadcn-grid-pattern .overflow-visible {
+    overflow: visible;
+}
+
+.glow-sq {
+    stroke-width: 0;
+    fill: rgba(59, 130, 246, 0.25);
+    animation: squareGlow 4s ease-in-out infinite;
+}
+
+.sq-d1 {
+    animation-delay: 0s;
+}
+
+.sq-d2 {
+    animation-delay: 0.7s;
+}
+
+.sq-d3 {
+    animation-delay: 1.4s;
+}
+
+.sq-d4 {
+    animation-delay: 2.1s;
+}
+
+.sq-d5 {
+    animation-delay: 2.8s;
+}
+
+.sq-d6 {
+    animation-delay: 3.5s;
+}
+
+.aurora-bg {
+    position: absolute;
+    inset: -10px;
+    opacity: 0.5;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(100deg, #000 0%, #000 7%, transparent 10%, transparent 12%, #000 16%),
+        repeating-linear-gradient(100deg, #3b82f6 10%, #a5b4fc 15%, #93c5fd 20%, #ddd6fe 25%, #60a5fa 30%);
+    background-size: 300% 200%;
+    background-position: 50% 50%, 50% 50%;
+    filter: blur(10px);
+    mask-image: radial-gradient(ellipse at 100% 0%, black 10%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at 100% 0%, black 10%, transparent 70%);
+    z-index: 1;
+}
+
+.aurora-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(100deg, #000 0%, #000 7%, transparent 10%, transparent 12%, #000 16%),
+        repeating-linear-gradient(100deg, #3b82f6 10%, #a5b4fc 15%, #93c5fd 20%, #ddd6fe 25%, #60a5fa 30%);
+    background-size: 200% 100%;
+    background-attachment: fixed;
+    mix-blend-mode: difference;
+    animation: aurora-anim 60s linear infinite;
+}
+
+@keyframes aurora-anim {
+    from {
+        background-position: 50% 50%, 50% 50%;
+    }
+
+    to {
+        background-position: 350% 50%, 350% 50%;
+    }
+}
+
+@keyframes heatPulse {
+    0% {
+        opacity: 0.6;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+.heatmap-card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+}
+
+.h-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.2), rgba(165, 180, 252, 0.2));
+    backdrop-filter: blur(5px);
+}
+
+.h-title {
+    font-size: 6rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    margin-bottom: 24px;
+    margin-top: 0;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    background: linear-gradient(90deg, #3b82f6, #a5b4fc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.h-desc {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
+}
+
+.h-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.heatmap-btn {
+    background: linear-gradient(135deg, #3b82f6, #a5b4fc) !important;
+    border: none !important;
+    color: #fff !important;
+}
+
+.heatmap-btn:hover {
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3) !important;
+}
+
+@media (max-width: 768px) {
+    .h-title {
+        font-size: 3.5rem;
+    }
+
+    .h-desc {
+        font-size: 1rem;
+    }
+}
+
 /* Bottom Content */
 .bottom-content {
     max-width: 1000px;
