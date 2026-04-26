@@ -1844,18 +1844,21 @@ body {
     line-height: 1.6;
 }
 
-/* ─── Three-Column Layout ─── */
+/* ─── Flexible Columns Layout ─── */
 .arch-columns {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3.5rem 2.5rem; /* More vertical gap, slightly less horizontal */
+    max-width: 1400px;
     margin: 0 auto;
-    align-items: start;
+    align-items: flex-start;
 }
 
 /* ─── Single Column ─── */
 .arch-col {
+    flex: 1 1 320px;
+    max-width: 380px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2151,6 +2154,89 @@ body {
 .arch-col[data-col="rnn"] .arch-btn:hover {
     border-color: #8b5cf6;
     box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25);
+}
+
+/* GNN column */
+.arch-col[data-col="gnn"] .arch-card-accent {
+    background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.5), transparent);
+}
+
+.arch-col[data-col="gnn"].is-active .arch-col-label::after {
+    background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.6), transparent);
+}
+
+.arch-col[data-col="gnn"] .arch-card:hover .arch-card-inner {
+    border-color: rgba(251, 191, 36, 0.35);
+    box-shadow:
+        0 8px 40px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(251, 191, 36, 0.08);
+}
+
+.arch-col[data-col="gnn"] .arch-meta-label {
+    color: #fbbf24;
+}
+
+.arch-col[data-col="gnn"] .arch-btn--primary {
+    border-color: rgba(251, 191, 36, 0.5);
+    background: rgba(251, 191, 36, 0.1);
+    color: #fde68a;
+}
+
+.arch-col[data-col="gnn"] .arch-btn:hover {
+    border-color: #fbbf24;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.25);
+}
+
+.arch-badge--gnn {
+    border-color: rgba(251, 191, 36, 0.5);
+    color: #fde68a;
+    background: rgba(251, 191, 36, 0.1);
+}
+
+/* Golden Glowing Border and Sprinklers */
+.gnn-glow-card {
+    border: 2px solid #fbbf24 !important; /* override the default border */
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.5), inset 0 0 15px rgba(251, 191, 36, 0.2) !important;
+    animation: goldPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes goldPulse {
+    0% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.4), inset 0 0 10px rgba(251, 191, 36, 0.1); border-color: rgba(251, 191, 36, 0.6); }
+    100% { box-shadow: 0 0 40px rgba(251, 191, 36, 0.8), inset 0 0 20px rgba(251, 191, 36, 0.3); border-color: #fbbf24; }
+}
+
+.gnn-glow-card .sprinklers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0; /* Behind card content but inside card */
+}
+
+.gnn-glow-card .sprinkler {
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: 12px;
+    background: linear-gradient(to bottom, #fbbf24, transparent);
+    border-radius: 999px;
+    opacity: 0;
+    animation: sprinkle-fall linear infinite;
+}
+
+.gnn-glow-card .sprinkler:nth-child(1) { left: 15%; animation-duration: 1.5s; animation-delay: 0.2s; }
+.gnn-glow-card .sprinkler:nth-child(2) { left: 35%; animation-duration: 2s; animation-delay: 0.5s; }
+.gnn-glow-card .sprinkler:nth-child(3) { left: 55%; animation-duration: 1.2s; animation-delay: 0s; }
+.gnn-glow-card .sprinkler:nth-child(4) { left: 75%; animation-duration: 1.8s; animation-delay: 0.8s; }
+.gnn-glow-card .sprinkler:nth-child(5) { left: 90%; animation-duration: 2.2s; animation-delay: 0.3s; }
+
+@keyframes sprinkle-fall {
+    0% { transform: translateY(0) scaleY(1); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(250px) scaleY(0.5); opacity: 0; }
 }
 
 /* ─── Responsive ─── */
