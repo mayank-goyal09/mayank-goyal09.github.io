@@ -2,14 +2,14 @@
 import { liquidMetalFragmentShader, ShaderMount } from "https://esm.sh/@paper-design/shaders@latest";
 
 const THEMES = {
-  analytics: { text: "#ffffff", bg: "#000000", border: "0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(0, 210, 255, 0.8), 0 0 20px rgba(0, 210, 255, 0.4)" },
-  python: { text: "#06b6d4", bg: "#000000", border: "0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(6, 182, 212, 0.8), 0 0 20px rgba(6, 182, 212, 0.4)" },
-  ml: { text: "#ffffff", bg: "#000000", border: "0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(79, 172, 254, 0.8), 0 0 20px rgba(79, 172, 254, 0.4)" },
-  dl: { text: "#ffffff", bg: "#000000", border: "0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(224, 86, 253, 0.8), 0 0 20px rgba(224, 86, 253, 0.4)" },
-  fastapi: { text: "#ffffff", bg: "#000000", border: "0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(5, 196, 107, 0.8), 0 0 20px rgba(5, 196, 107, 0.4)" },
-  genai: { text: "#ffffff", bg: "#000000", border: "0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(255, 113, 239, 0.8), 0 0 20px rgba(255, 113, 239, 0.4)" },
-  nlp: { text: "#cec216ff", bg: "#000000", border: "0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(243, 156, 18, 0.8), 0 0 20px rgba(243, 156, 18, 0.4)" },
-  default: { text: "#ffffff", bg: "#000000", border: "0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.2)" }
+  analytics: { text: "#4d7c5fff", bg: "#000000", border: "0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(255, 255, 255, 0.4), 0 0 20px rgba(0, 210, 255, 0.4)" },
+  python: { text: "#8552d2ff", bg: "#000000", border: "0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(255, 255, 255, 0.4), 0 0 20px rgba(6, 182, 212, 0.4)" },
+  ml: { text: "#36873bff", bg: "#000000", border: "0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(255, 255, 255, 0.4), 0 0 20px rgba(79, 172, 254, 0.4)" },
+  dl: { text: "#9f54b0ff", bg: "#000000", border: "0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.2)" },
+  fastapi: { text: "#599b5bff", bg: "#000000", border: "0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(255, 255, 255, 0.4), 0 0 20px rgba(5, 196, 107, 0.4)" },
+  genai: { text: "#c923c4ff", bg: "#000000", border: "0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 113, 239, 0.4)" },
+  nlp: { text: "#cec216ff", bg: "#000000", border: "0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(255, 255, 255, 0.4), 0 0 20px rgba(243, 156, 18, 0.4)" },
+  default: { text: "#6f6f9fff", bg: "#000000", border: "0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.2)" }
 };
 
 export class LiquidMetalButton {
