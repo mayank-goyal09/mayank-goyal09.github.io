@@ -180,6 +180,17 @@ export class LiquidMetalButton {
           window.location.href = href;
         }, 150); // slight delay for ripple
       }
+    } else if (this.element.tagName.toLowerCase() === 'button') {
+      setTimeout(() => {
+        if (this.element.getAttribute('type') === 'submit') {
+          const form = this.element.closest('form');
+          if (form) {
+            form.requestSubmit();
+          }
+        } else {
+          this.element.click();
+        }
+      }, 150);
     }
   }
 }
