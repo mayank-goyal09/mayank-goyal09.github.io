@@ -705,7 +705,19 @@
         }
     }
 
+    var defaultEyeColor = new THREE.Color(CFG.eyeColor);
+    var hoverEyeColor = new THREE.Color(0xff0044); // Red/pink color
+    var currentEyeColor = new THREE.Color(CFG.eyeColor);
+
     function animGlow(t) {
+        // Eye Color Transition (turns red when hovering over projects)
+        var targetColor = hoveredProject ? hoverEyeColor : defaultEyeColor;
+        currentEyeColor.lerp(targetColor, 0.15);
+        matEye.color.copy(currentEyeColor);
+        matSmile.color.copy(currentEyeColor);
+        leftEyeLight.color.copy(currentEyeColor);
+        rightEyeLight.color.copy(currentEyeColor);
+
         // Screen glow pulsing
         var p = (Math.sin(t * 2.0) + 1) / 2;
         var baseIntensity = excited ? 0.3 : 0.15;
@@ -922,7 +934,8 @@
             'DocIntel': "Private RAG System utilizing FAISS & local LLMs for secure data querying! 🧠",
             'News': "Fully autonomous pipeline — RSS → LLM → Voice → Email! 📰",
             'RedGlyph': "AI code reviewer — catches bugs like a senior engineer! 🔴",
-            'PatternPunk': "Seamless fabric texture generator using Neural Circular Padding & Real-ESRGAN! 👗"
+            'PatternPunk': "Seamless fabric texture generator using Neural Circular Padding & Real-ESRGAN! 👗",
+            'AutoDoc': "AI code documenter using AST parsing and CodeT5 to inject docstrings! 🚀"
         };
         var msg = "Check this out — one of my favorite builds! ✨";
         var keys = Object.keys(msgs);
