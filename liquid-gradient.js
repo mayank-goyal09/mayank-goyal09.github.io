@@ -133,7 +133,7 @@
                     uColor5: { value: new THREE.Vector3(0.059, 0.157, 0.220) },  // #0f2838 Darkest Blue
                     uColor6: { value: new THREE.Vector3(0.122, 0.102, 0.176) },  // #1f1a2d Dark Purple Black
                     uSpeed: { value: 0.8 },
-                    uIntensity: { value: 1.5 },
+                    uIntensity: { value: 1.0 },
                     uTouchTexture: { value: null },
                     uGrainIntensity: { value: 0.05 },
                     uDarkBase: { value: new THREE.Vector3(0.059, 0.157, 0.220) }  // #0f2838 Darkest Blue as base
@@ -228,8 +228,9 @@
                             // Add radial overlays
                             color += mix(uColor1, uColor3, radialInfluence1) * 0.3;
                             
-                            // Clamp and apply intensity
-                            color = clamp(color, vec3(0.0), vec3(1.0)) * uIntensity;
+                            // Apply intensity and tone map to prevent white wash
+                            color *= uIntensity;
+                            color /= max(1.0, max(color.r, max(color.g, color.b)));
                             
                             // Enhanced color saturation
                             float luminance = dot(color, vec3(0.299, 0.587, 0.114));
@@ -237,7 +238,7 @@
                             
                             // Ensure minimum brightness with dark base
                             float brightness = length(color);
-                            float mixFactor = max(brightness * 1.2, 0.25);
+                            float mixFactor = clamp(brightness * 1.2, 0.25, 1.0);
                             color = mix(uDarkBase, color, mixFactor);
                             
                             return color;
@@ -274,7 +275,7 @@
                             
                             // Ensure dark base shows through
                             float brightness = length(color);
-                            float mixFactor = max(brightness * 1.2, 0.2);
+                            float mixFactor = clamp(brightness * 1.2, 0.2, 1.0);
                             color = mix(uDarkBase, color, mixFactor);
                             
                             color = clamp(color, vec3(0.0), vec3(1.0));
