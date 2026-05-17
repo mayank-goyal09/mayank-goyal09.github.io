@@ -588,6 +588,17 @@ body {
     transform: translateY(-6px) scale(1.04);
 }
 
+/* Top-left-center card */
+.card-pos-top-left-center {
+    top: 8%;
+    left: 26%;
+    transform: translateY(0);
+}
+
+.card-pos-top-left-center:hover {
+    transform: translateY(-6px) scale(1.04);
+}
+
 /* Bottom-right card */
 .card-pos-bottom-right {
     bottom: 5%;
@@ -768,6 +779,10 @@ body {
 }
 
 .card-pos-top-center {
+    animation: card-float-in-top-center 0.8s ease forwards, card-idle-float-top-center 6s ease-in-out 1.05s infinite;
+}
+
+.card-pos-top-left-center {
     animation: card-float-in-top-center 0.8s ease forwards, card-idle-float-top-center 6s ease-in-out 1.05s infinite;
 }
 
