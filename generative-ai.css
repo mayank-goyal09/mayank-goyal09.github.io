@@ -28,7 +28,7 @@
     --glass-bg: rgba(18, 3, 33, 0.25);
     --glass-bg-hover: rgba(18, 3, 33, 0.35);
     --glass-blur: 20px;
-    --glass-border: linear-gradient(135deg, rgba(0, 255, 255, 0.4), rgba(123, 47, 247, 0.4));
+    --glass-border: linear-gradient(135deg, rgba(255, 215, 0, 0.4), rgba(123, 47, 247, 0.4));
 
     /* Neon Glow */
     --glow-cyan: rgba(0, 255, 255, 0.3);
@@ -333,7 +333,7 @@ body {
     inset: 0;
     border-radius: 16px;
     padding: 1.5px;
-    background: linear-gradient(135deg, rgba(0, 255, 255, 0.4), rgba(123, 47, 247, 0.4));
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.4), rgba(123, 47, 247, 0.4));
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
@@ -356,7 +356,7 @@ body {
 }
 
 .project-card:hover::before {
-    background: linear-gradient(135deg, rgba(0, 255, 255, 0.7), rgba(123, 47, 247, 0.7));
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.7), rgba(123, 47, 247, 0.7));
 }
 
 /* Accent variant cards */
@@ -519,6 +519,256 @@ body {
 }
 
 /* ============================================================
+   🎨 MULTI-THEME CARD ACCENTS (Cyberpunk Palette)
+   ============================================================ */
+
+/* 1. Cyber Cyan Theme */
+.theme-cyan::before {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.4), rgba(123, 47, 247, 0.4));
+}
+.theme-cyan:hover::before {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.8), rgba(123, 47, 247, 0.8));
+}
+.theme-cyan:hover {
+    box-shadow:
+        0 16px 48px rgba(0, 255, 255, 0.22),
+        0 0 30px rgba(0, 255, 255, 0.12),
+        0 0 60px rgba(123, 47, 247, 0.08);
+}
+.theme-cyan:hover .card-border-glow {
+    opacity: 1;
+    background: radial-gradient(circle at 50% 0%, rgba(0, 255, 255, 0.15), transparent 70%);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.35);
+}
+.theme-cyan .card-number {
+    color: rgba(0, 255, 255, 0.45);
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.25);
+}
+.theme-cyan .tag-primary {
+    background: rgba(0, 255, 255, 0.08);
+    border-color: rgba(0, 255, 255, 0.25);
+    color: #00ffff;
+    text-shadow: 0 0 6px rgba(0, 255, 255, 0.4);
+}
+.theme-cyan .card-link {
+    border-color: rgba(0, 255, 255, 0.3);
+    background: rgba(0, 255, 255, 0.06);
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
+}
+.theme-cyan .card-link:hover {
+    background: rgba(0, 255, 255, 0.12);
+    border-color: rgba(0, 255, 255, 0.6);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(0, 255, 255, 0.1);
+    color: #00ffff;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+/* 2. Warm Gold Theme */
+.theme-gold::before {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.45), rgba(123, 47, 247, 0.4));
+}
+.theme-gold:hover::before {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.8), rgba(123, 47, 247, 0.8));
+}
+.theme-gold:hover {
+    box-shadow:
+        0 16px 48px rgba(255, 215, 0, 0.22),
+        0 0 30px rgba(255, 215, 0, 0.12),
+        0 0 60px rgba(123, 47, 247, 0.08);
+}
+.theme-gold:hover .card-border-glow {
+    opacity: 1;
+    background: radial-gradient(circle at 50% 0%, rgba(255, 215, 0, 0.15), transparent 70%);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.35);
+}
+.theme-gold .card-number {
+    color: rgba(255, 215, 0, 0.45);
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.25);
+}
+.theme-gold .tag-primary {
+    background: rgba(255, 215, 0, 0.08);
+    border-color: rgba(255, 215, 0, 0.25);
+    color: #ffd700;
+    text-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
+}
+.theme-gold .card-link {
+    border-color: rgba(255, 215, 0, 0.3);
+    background: rgba(255, 215, 0, 0.06);
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.15);
+}
+.theme-gold .card-link:hover {
+    background: rgba(255, 215, 0, 0.12);
+    border-color: rgba(255, 215, 0, 0.6);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3), 0 0 40px rgba(255, 215, 0, 0.1);
+    color: #ffd700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
+
+/* 3. Emerald Green Theme */
+.theme-green::before {
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.45), rgba(123, 47, 247, 0.4));
+}
+.theme-green:hover::before {
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.8), rgba(123, 47, 247, 0.8));
+}
+.theme-green:hover {
+    box-shadow:
+        0 16px 48px rgba(0, 255, 136, 0.22),
+        0 0 30px rgba(0, 255, 136, 0.12),
+        0 0 60px rgba(123, 47, 247, 0.08);
+}
+.theme-green:hover .card-border-glow {
+    opacity: 1;
+    background: radial-gradient(circle at 50% 0%, rgba(0, 255, 136, 0.15), transparent 70%);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.35);
+}
+.theme-green .card-number {
+    color: rgba(0, 255, 136, 0.45);
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.25);
+}
+.theme-green .tag-primary {
+    background: rgba(0, 255, 136, 0.08);
+    border-color: rgba(0, 255, 136, 0.25);
+    color: #00ff88;
+    text-shadow: 0 0 6px rgba(0, 255, 136, 0.4);
+}
+.theme-green .card-link {
+    border-color: rgba(0, 255, 136, 0.3);
+    background: rgba(0, 255, 136, 0.06);
+    box-shadow: 0 0 12px rgba(0, 255, 136, 0.15);
+}
+.theme-green .card-link:hover {
+    background: rgba(0, 255, 136, 0.12);
+    border-color: rgba(0, 255, 136, 0.6);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3), 0 0 40px rgba(0, 255, 136, 0.1);
+    color: #00ff88;
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
+}
+
+/* 4. Cosmic Magenta Theme */
+.theme-magenta::before {
+    background: linear-gradient(135deg, rgba(224, 64, 160, 0.4), rgba(123, 47, 247, 0.4));
+}
+.theme-magenta:hover::before {
+    background: linear-gradient(135deg, rgba(224, 64, 160, 0.8), rgba(123, 47, 247, 0.8));
+}
+.theme-magenta:hover {
+    box-shadow:
+        0 16px 48px rgba(224, 64, 160, 0.22),
+        0 0 30px rgba(224, 64, 160, 0.12),
+        0 0 60px rgba(123, 47, 247, 0.08);
+}
+.theme-magenta:hover .card-border-glow {
+    opacity: 1;
+    background: radial-gradient(circle at 50% 0%, rgba(224, 64, 160, 0.15), transparent 70%);
+    box-shadow: 0 0 30px rgba(224, 64, 160, 0.35);
+}
+.theme-magenta .card-number {
+    color: rgba(224, 64, 160, 0.45);
+    text-shadow: 0 0 8px rgba(224, 64, 160, 0.25);
+}
+.theme-magenta .tag-primary {
+    background: rgba(224, 64, 160, 0.08);
+    border-color: rgba(224, 64, 160, 0.25);
+    color: #e040a0;
+    text-shadow: 0 0 6px rgba(224, 64, 160, 0.4);
+}
+.theme-magenta .card-link {
+    border-color: rgba(224, 64, 160, 0.3);
+    background: rgba(224, 64, 160, 0.06);
+    box-shadow: 0 0 12px rgba(224, 64, 160, 0.15);
+}
+.theme-magenta .card-link:hover {
+    background: rgba(224, 64, 160, 0.12);
+    border-color: rgba(224, 64, 160, 0.6);
+    box-shadow: 0 0 20px rgba(224, 64, 160, 0.3), 0 0 40px rgba(224, 64, 160, 0.1);
+    color: #e040a0;
+    text-shadow: 0 0 8px rgba(224, 64, 160, 0.3);
+}
+
+/* 5. Sunset Orange Theme */
+.theme-orange::before {
+    background: linear-gradient(135deg, rgba(255, 94, 58, 0.45), rgba(123, 47, 247, 0.4));
+}
+.theme-orange:hover::before {
+    background: linear-gradient(135deg, rgba(255, 94, 58, 0.8), rgba(123, 47, 247, 0.8));
+}
+.theme-orange:hover {
+    box-shadow:
+        0 16px 48px rgba(255, 94, 58, 0.22),
+        0 0 30px rgba(255, 94, 58, 0.12),
+        0 0 60px rgba(123, 47, 247, 0.08);
+}
+.theme-orange:hover .card-border-glow {
+    opacity: 1;
+    background: radial-gradient(circle at 50% 0%, rgba(255, 94, 58, 0.15), transparent 70%);
+    box-shadow: 0 0 30px rgba(255, 94, 58, 0.35);
+}
+.theme-orange .card-number {
+    color: rgba(255, 94, 58, 0.45);
+    text-shadow: 0 0 8px rgba(255, 94, 58, 0.25);
+}
+.theme-orange .tag-primary {
+    background: rgba(255, 94, 58, 0.08);
+    border-color: rgba(255, 94, 58, 0.25);
+    color: #ff5e3a;
+    text-shadow: 0 0 6px rgba(255, 94, 58, 0.4);
+}
+.theme-orange .card-link {
+    border-color: rgba(255, 94, 58, 0.3);
+    background: rgba(255, 94, 58, 0.06);
+    box-shadow: 0 0 12px rgba(255, 94, 58, 0.15);
+}
+.theme-orange .card-link:hover {
+    background: rgba(255, 94, 58, 0.12);
+    border-color: rgba(255, 94, 58, 0.6);
+    box-shadow: 0 0 20px rgba(255, 94, 58, 0.3), 0 0 40px rgba(255, 94, 58, 0.1);
+    color: #ff5e3a;
+    text-shadow: 0 0 8px rgba(255, 94, 58, 0.3);
+}
+
+/* 6. Royal Blue Theme */
+.theme-blue::before {
+    background: linear-gradient(135deg, rgba(41, 121, 255, 0.45), rgba(123, 47, 247, 0.4));
+}
+.theme-blue:hover::before {
+    background: linear-gradient(135deg, rgba(41, 121, 255, 0.8), rgba(123, 47, 247, 0.8));
+}
+.theme-blue:hover {
+    box-shadow:
+        0 16px 48px rgba(41, 121, 255, 0.22),
+        0 0 30px rgba(41, 121, 255, 0.12),
+        0 0 60px rgba(123, 47, 247, 0.08);
+}
+.theme-blue:hover .card-border-glow {
+    opacity: 1;
+    background: radial-gradient(circle at 50% 0%, rgba(41, 121, 255, 0.15), transparent 70%);
+    box-shadow: 0 0 30px rgba(41, 121, 255, 0.35);
+}
+.theme-blue .card-number {
+    color: rgba(41, 121, 255, 0.45);
+    text-shadow: 0 0 8px rgba(41, 121, 255, 0.25);
+}
+.theme-blue .tag-primary {
+    background: rgba(41, 121, 255, 0.08);
+    border-color: rgba(41, 121, 255, 0.25);
+    color: #2979ff;
+    text-shadow: 0 0 6px rgba(41, 121, 255, 0.4);
+}
+.theme-blue .card-link {
+    border-color: rgba(41, 121, 255, 0.3);
+    background: rgba(41, 121, 255, 0.06);
+    box-shadow: 0 0 12px rgba(41, 121, 255, 0.15);
+}
+.theme-blue .card-link:hover {
+    background: rgba(41, 121, 255, 0.12);
+    border-color: rgba(41, 121, 255, 0.6);
+    box-shadow: 0 0 20px rgba(41, 121, 255, 0.3), 0 0 40px rgba(41, 121, 255, 0.1);
+    color: #2979ff;
+    text-shadow: 0 0 8px rgba(41, 121, 255, 0.3);
+}
+
+/* ============================================================
    📐 CARD POSITIONS — 4 cards: top-left, left, right, bottom-center
    ============================================================ */
 
@@ -608,6 +858,17 @@ body {
 
 .card-pos-bottom-right:hover {
     transform: translateX(50%) translateY(-8px) scale(1.04);
+}
+
+/* Bottom-center card */
+.card-pos-bottom-center {
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.card-pos-bottom-center:hover {
+    transform: translateX(-50%) translateY(-8px) scale(1.04);
 }
 
 /* ============================================================
@@ -796,6 +1057,10 @@ body {
 
 .card-pos-bottom-right {
     animation: card-float-in-bottom-right 0.8s ease forwards, card-idle-float-bottom-right 6s ease-in-out 1.7s infinite;
+}
+
+.card-pos-bottom-center {
+    animation: card-float-in-bottom-left 0.8s ease forwards, card-idle-float-bottom-left 6s ease-in-out 1.6s infinite;
 }
 
 @keyframes card-idle-float-top-left {
