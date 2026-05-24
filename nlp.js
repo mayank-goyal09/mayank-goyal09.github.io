@@ -78,6 +78,47 @@ document.addEventListener('DOMContentLoaded', () => {
             // Apply smoothly interpolated transforms
             p.header.style.transform = `translateY(${currentTranslateY}px)`;
             p.card.style.transform = `scale(${currentScale}) rotateX(${currentRotate}deg)`;
+
+            // Dynamically drive the Lamp animation using the exact same scroll progress
+            const lampContainer = p.card.querySelector('.lamp-container');
+            if (lampContainer) {
+                const beamLeft = lampContainer.querySelector('.lamp-beam-left');
+                const beamRight = lampContainer.querySelector('.lamp-beam-right');
+                const glowPill = lampContainer.querySelector('.lamp-glow-pill');
+                const glowLine = lampContainer.querySelector('.lamp-glow-line');
+                const graphicWrap = lampContainer.querySelector('.lamp-graphic-wrap');
+                const content = lampContainer.querySelector('.lamp-content');
+
+                // Compute dynamic widths and opacities based on lerped scroll progress
+                const currentWidthBeam = 15 + (30 - 15) * p.currentProgress;
+                const currentWidthPill = 8 + (16 - 8) * p.currentProgress;
+
+                if (beamLeft) {
+                    beamLeft.style.width = `${currentWidthBeam}rem`;
+                    beamLeft.style.opacity = (0.1 + p.currentProgress * 0.4).toFixed(3);
+                }
+                if (beamRight) {
+                    beamRight.style.width = `${currentWidthBeam}rem`;
+                    beamRight.style.opacity = (0.1 + p.currentProgress * 0.4).toFixed(3);
+                }
+                if (glowLine) {
+                    glowLine.style.width = `${currentWidthBeam}rem`;
+                }
+                if (glowPill) {
+                    glowPill.style.width = `${currentWidthPill}rem`;
+                }
+                if (graphicWrap) {
+                    graphicWrap.style.opacity = p.currentProgress.toFixed(3);
+                }
+                if (content) {
+                    content.style.opacity = p.currentProgress.toFixed(3);
+                    content.style.transform = `translateY(${(30 - p.currentProgress * 30).toFixed(1)}px)`;
+                }
+                
+                if (p.card.id === 'nuance-card') {
+                    p.card.style.setProperty('--lamp-progress', p.currentProgress.toFixed(4));
+                }
+            }
         });
 
         // Loop forever
