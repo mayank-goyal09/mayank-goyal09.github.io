@@ -937,7 +937,8 @@
             'RedGlyph': "AI code reviewer — catches bugs like a senior engineer! 🔴",
             'PatternPunk': "Seamless fabric texture generator using Neural Circular Padding & Real-ESRGAN! 👗",
             'AutoDoc': "AI code documenter using AST parsing and CodeT5 to inject docstrings! 🚀",
-            'LoreWeaver': "Multimodal AI story engine — dynamic scripts via Gemini 3.0 & neural vocal acting via Edge TTS! 🎭"
+            'LoreWeaver': "Multimodal AI story engine — dynamic scripts via Gemini 3.0 & neural vocal acting via Edge TTS! 🎭",
+            'ArchitectAI': "Virtual staging engine using Hugging Face backend & Qwen-Image-Edit-2511! 🛋️"
         };
         var msg = "Check this out — one of my favorite builds! ✨";
         var keys = Object.keys(msgs);
