@@ -438,16 +438,13 @@
                                     <span class="arch-badge">Fraud Detection</span>
                                     <span class="arch-badge">Forensics SPA</span>
                                 </div>
-                                <h3 class="arch-card-title">🛡️ AegisGNN — Financial Fraud Analytics</h3>
-                                <p class="arch-card-desc">Deep learning financial fraud detection platform leveraging Graph Convolutional Networks (GCN) to scan transaction streams, flag high-risk multi-hop loops (smurfing/money laundering), and render interactive compliance graphs.</p>
+                                <h3 class="arch-card-title">🛡️ AegisGNN</h3>
+                                <p class="arch-card-desc">Deep learning financial fraud detection system leveraging Graph Convolutional Networks (GCN) to scan transaction logs and identify high-risk networks.</p>
                                 <div class="arch-card-meta">
-                                    <span class="arch-meta-label">Architecture:</span> Heterogeneous Graph Formulation (User ➔ Transaction ➔ User) modeled in PyTorch Geometric, preserving edge attributes (transaction amounts) and structural features.
+                                    <span class="arch-meta-label">Architecture:</span> Heterogeneous user-transaction networks modeled as spatial graphs, preserving transaction amount attributes.
                                 </div>
                                 <div class="arch-card-meta">
-                                    <span class="arch-meta-label">Optimization:</span> 2-layer Graph Convolutional Network (GCNConv) optimized with Weighted Negative Log-Likelihood (10x fraud weight) to combat severe transaction class imbalance.
-                                </div>
-                                <div class="arch-card-meta">
-                                    <span class="arch-meta-label">Interface:</span> Drag-and-drop N-hop interactive network explorer (Vis.js), real-time Chart.js epoch training loss curves, and sandbox simulator (Flask/Python).
+                                    <span class="arch-meta-label">Optimization:</span> 2-layer GCNConv optimized via Weighted NLL Loss (10x fraud weight) to solve severe class imbalance.
                                 </div>
                                 <div class="arch-card-meta">
                                     <span class="arch-meta-label">Stack:</span> PyTorch Geometric · Flask · Vis.js · Chart.js · Python
