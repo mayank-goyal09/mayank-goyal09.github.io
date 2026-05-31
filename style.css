@@ -1481,9 +1481,47 @@ body {
 }
 
 .ai-msg-assistant .ai-msg-bubble {
-    background: rgba(8, 16, 28, 0.96);
-    border: 1px solid rgba(0, 234, 255, 0.42);
-    box-shadow: 0 0 18px rgba(0, 234, 255, 0.3);
+    background: rgba(10, 15, 25, 0.95);
+    border-top: 1px solid rgba(0, 234, 255, 0.2);
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   🚀 SPACEX CUSTOM CURSOR
+   ============================================ */
+* {
+    cursor: none !important;
+}
+
+#spacex-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+    z-index: 9999;
+    transform-origin: center center;
+    transition: transform 0.1s ease-out; /* Smooth rotation */
+}
+
+#spacex-cursor svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(45deg); /* Base rotation if needed, depends on SVG orientation */
+    filter: drop-shadow(0 0 5px rgba(0, 234, 255, 0.5));
+}
+
+/* Add a pulsing effect to the engine flame */
+@keyframes flame-flicker {
+    0% { transform: scaleY(1); opacity: 0.9; }
+    50% { transform: scaleY(1.2); opacity: 1; }
+    100% { transform: scaleY(1); opacity: 0.9; }
+}
+
+.rocket-flame, .rocket-flame-inner {
+    transform-origin: 50% 80%;
+    animation: flame-flicker 0.1s infinite alternate;
 }
 
 /* Quick actions */

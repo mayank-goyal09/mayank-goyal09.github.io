@@ -250,3 +250,45 @@ if (audio && soundBtn) {
   });
 })();
 
+// 7. SpaceX Custom Cursor
+(() => {
+  const cursor = document.getElementById("spacex-cursor");
+  if (!cursor) return;
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let cursorX = mouseX;
+  let cursorY = mouseY;
+  let angle = 0;
+
+  window.addEventListener("mousemove", (e) => {
+    const dx = e.clientX - mouseX;
+    const dy = e.clientY - mouseY;
+    
+    // Update angle if moved significantly to avoid jitter
+    if (Math.abs(dx) > 1 || Math.abs(dy) > 1) {
+      // Math.atan2 returns angle in radians, convert to degrees.
+      // 0 degrees is right. The rocket SVG points UP.
+      // We add 90 degrees so the rocket faces the direction of movement.
+      angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90; 
+    }
+
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  // Animation loop for smooth trailing and rotation
+  function animate() {
+    // Interpolate for smooth trailing
+    cursorX += (mouseX - cursorX) * 0.3;
+    cursorY += (mouseY - cursorY) * 0.3;
+    
+    // Offset by 16px to center the 32x32 cursor on the mouse pointer
+    cursor.style.transform = `translate3d(${cursorX - 16}px, ${cursorY - 16}px, 0) rotate(${angle}deg)`;
+    
+    requestAnimationFrame(animate);
+  }
+  
+  animate();
+})();
+
