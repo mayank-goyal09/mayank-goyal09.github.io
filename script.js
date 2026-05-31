@@ -250,7 +250,7 @@ if (audio && soundBtn) {
   });
 })();
 
-// 7. SpaceX Custom Cursor
+// 7. SpaceX Custom Cursor (Ultra-smooth & Latency Optimized)
 (() => {
   const cursor = document.getElementById("spacex-cursor");
   if (!cursor) return;
@@ -259,36 +259,83 @@ if (audio && soundBtn) {
   let mouseY = window.innerHeight / 2;
   let cursorX = mouseX;
   let cursorY = mouseY;
+  
   let angle = 0;
+  let currentScale = 1;
+  let targetScale = 1;
 
+  // Track mouse coordinates
   window.addEventListener("mousemove", (e) => {
-    const dx = e.clientX - mouseX;
-    const dy = e.clientY - mouseY;
-    
-    // Update angle if moved significantly to avoid jitter
-    if (Math.abs(dx) > 1 || Math.abs(dy) > 1) {
-      // Math.atan2 returns angle in radians, convert to degrees.
-      // 0 degrees is right. The rocket SVG points UP.
-      // We add 90 degrees so the rocket faces the direction of movement.
-      angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90; 
-    }
-
     mouseX = e.clientX;
     mouseY = e.clientY;
   });
 
-  // Animation loop for smooth trailing and rotation
+  // Track hover states globally (Event Delegation for best performance)
+  document.addEventListener("mouseover", (e) => {
+    const target = e.target;
+    if (target && (
+      target.closest("a") || 
+      target.closest("button") || 
+      target.closest("[data-liquid-button]") ||
+      target.closest(".skill-tile") ||
+      target.closest(".ai-orb")
+    )) {
+      targetScale = 1.35;
+      cursor.classList.add("hovering");
+    }
+  });
+
+  document.addEventListener("mouseout", (e) => {
+    const target = e.target;
+    if (target && (
+      target.closest("a") || 
+      target.closest("button") || 
+      target.closest("[data-liquid-button]") ||
+      target.closest(".skill-tile") ||
+      target.closest(".ai-orb")
+    )) {
+      targetScale = 1.0;
+      cursor.classList.remove("hovering");
+    }
+  });
+
+  // Main animation loop using RequestAnimationFrame
   function animate() {
-    // Interpolate for smooth trailing
-    cursorX += (mouseX - cursorX) * 0.3;
-    cursorY += (mouseY - cursorY) * 0.3;
-    
-    // Offset by 16px to center the 32x32 cursor on the mouse pointer
-    cursor.style.transform = `translate3d(${cursorX - 16}px, ${cursorY - 16}px, 0) rotate(${angle}deg)`;
-    
+    // Smooth translation (Interpolation / Lerp)
+    const lerpFactor = 0.16; // Perfectly balanced for smoothness and responsiveness
+    cursorX += (mouseX - cursorX) * lerpFactor;
+    cursorY += (mouseY - cursorY) * lerpFactor;
+
+    // Calculate dynamic rotation based on the movement vector (cursor to mouse)
+    // This entirely prevents flipping when static since dx and dy approach 0 smoothly
+    const dx = mouseX - cursorX;
+    const dy = mouseY - cursorY;
+    const distance = Math.hypot(dx, dy);
+
+    // Only update the angle if the movement is significant to prevent idle jitter
+    if (distance > 1.5) {
+      // 0 rad is pointing right. Rocket SVG points UP, so we offset by 90 deg.
+      const targetAngle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
+      
+      // Interpolate angle to avoid sudden 360 degree snap flips
+      let angleDiff = targetAngle - angle;
+      
+      // Normalize angle difference to (-180, 180) to take the shortest rotation path
+      while (angleDiff < -180) angleDiff += 360;
+      while (angleDiff > 180) angleDiff -= 360;
+      
+      angle += angleDiff * 0.25; // Smooth angle transitions
+    }
+
+    // Smooth scaling transition
+    currentScale += (targetScale - currentScale) * 0.2;
+
+    // Apply the transforms: Center cursor (16px offset), rotate and scale smoothly
+    cursor.style.transform = `translate3d(${cursorX - 16}px, ${cursorY - 16}px, 0) rotate(${angle}deg) scale(${currentScale})`;
+
     requestAnimationFrame(animate);
   }
-  
+
   animate();
 })();
 
