@@ -14,8 +14,12 @@
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
 
-  <!-- Three.js Library for Liquid Gradient -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Preload Critical Styles -->
+  <link rel="preload" href="style.css?v=20260208-LIQUID" as="style" />
+  <link rel="preload" href="components/ui/liquid-metal-button.css" as="style" />
+
+  <!-- Three.js Library for Liquid Gradient (Deferred) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 
   <!-- Styles (cache-busted to force fresh load) -->
   <link rel="stylesheet" href="style.css?v=20260208-LIQUID" />
@@ -33,7 +37,7 @@
 
   <!-- 🎵 Space Ambience Audio Source -->
   <!-- This is the deep space drone engine sound -->
-  <audio id="space-audio" loop>
+  <audio id="space-audio" loop preload="none">
     <source src="1221.MP3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
@@ -67,9 +71,9 @@
 
         <!-- Avatar Video Container -->
         <div class="avatar-container">
-          <!-- Update src to your actual video path if needed -->
-          <video class="avatar-video" autoplay loop muted playsinline>
-            <source src="avatar.mp4.mp4" type="video/mp4" />
+          <video class="avatar-video" autoplay loop muted playsinline poster="avatar-poster.jpg">
+            <source src="avatar-optimized.webm" type="video/webm" />
+            <source src="avatar-optimized.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -125,8 +129,8 @@
 
       <!-- Navigation Buttons -->
       <div class="hero-cta">
-        <a href="#skills" data-liquid-button data-theme="analytics" data-width="200" data-height="46" style="width: auto; display: inline-flex;">View Skills</a>
-        <a href="#contact" data-liquid-button data-theme="default" data-width="200" data-height="46" style="width: auto; display: inline-flex;">Open Channel</a>
+        <a href="#skills" data-liquid-button data-theme="analytics" data-width="200" data-height="46" style="width: 200px; height: 46px; display: inline-flex;">View Skills</a>
+        <a href="#contact" data-liquid-button data-theme="default" data-width="200" data-height="46" style="width: 200px; height: 46px; display: inline-flex;">Open Channel</a>
       </div>
     </section>
 
@@ -354,7 +358,7 @@
               ">
               Customer analysis, market segmentation, predictive modeling & dashboards
             </p>
-            <a href="data-analytics-projects.html" data-liquid-button data-theme="analytics" data-width="240" data-height="50" style="margin-top: auto;">
+            <a href="data-analytics-projects.html" data-liquid-button data-theme="analytics" data-width="240" data-height="50" style="margin-top: auto; width: 240px; height: 50px;">
               Explore Analytics →
             </a>
           </div>
@@ -380,7 +384,7 @@
               ">
               Enterprise apps, banking systems, inventory management & OOP architecture
             </p>
-            <a href="python-projects.html" data-liquid-button data-theme="python" data-width="240" data-height="50" style="margin-top: auto;">
+            <a href="python-projects.html" data-liquid-button data-theme="python" data-width="240" data-height="50" style="margin-top: auto; width: 240px; height: 50px;">
               Explore Python →
             </a>
           </div>
@@ -406,7 +410,7 @@
               ">
               Supervised & unsupervised models, pipelines, and deployable ML apps
             </p>
-            <a href="machine-learning.html" data-liquid-button data-theme="ml" data-width="240" data-height="50" style="margin-top: auto;">
+            <a href="machine-learning.html" data-liquid-button data-theme="ml" data-width="240" data-height="50" style="margin-top: auto; width: 240px; height: 50px;">
               Explore ML →
             </a>
           </div>
@@ -434,7 +438,7 @@
               ">
               Neural networks, CNNs, ANNs, and AI architectures beyond the event horizon
             </p>
-            <a href="deep-learning.html" data-liquid-button data-theme="dl" data-width="240" data-height="50" style="margin-top: auto;">
+            <a href="deep-learning.html" data-liquid-button data-theme="dl" data-width="240" data-height="50" style="margin-top: auto; width: 240px; height: 50px;">
               Explore DL →
             </a>
           </div>
@@ -462,7 +466,7 @@
               ">
               High-performance async APIs, ML deployment, and real-time data pipelines
             </p>
-            <a href="fastapi.html" data-liquid-button data-theme="fastapi" data-width="240" data-height="50" style="margin-top: auto;">
+            <a href="fastapi.html" data-liquid-button data-theme="fastapi" data-width="240" data-height="50" style="margin-top: auto; width: 240px; height: 50px;">
               Explore FastAPI →
             </a>
           </div>
@@ -490,7 +494,7 @@
               ">
               LLMs, RAG, multi-modal bots, and autonomous AI systems
             </p>
-            <a href="generative-ai.html" data-liquid-button data-theme="genai" data-width="240" data-height="50" style="margin-top: auto;">
+            <a href="generative-ai.html" data-liquid-button data-theme="genai" data-width="240" data-height="50" style="margin-top: auto; width: 240px; height: 50px;">
               Explore GenAI →
             </a>
           </div>
@@ -518,7 +522,7 @@
               ">
               Text processing, sequence models, NER, embeddings, and semantic analysis
             </p>
-            <a href="nlp.html" data-liquid-button data-theme="nlp" data-width="240" data-height="50" style="margin-top: auto;">
+            <a href="nlp.html" data-liquid-button data-theme="nlp" data-width="240" data-height="50" style="margin-top: auto; width: 240px; height: 50px;">
               Explore NLP →
             </a>
           </div>
@@ -534,10 +538,10 @@
             margin-top: 20px;
           ">
           <a href="https://github.com/mayank-goyal09" target="_blank" data-liquid-button data-theme="default" data-width="240" data-height="50"
-            style="text-decoration: none; width: auto; display: inline-flex;">
+            style="text-decoration: none; width: 240px; height: 50px; display: inline-flex;">
             🔗 View GitHub Profile
           </a>
-          <a href="#contact" data-liquid-button data-theme="default" data-width="240" data-height="50" style="text-decoration: none; width: auto; display: inline-flex;">
+          <a href="#contact" data-liquid-button data-theme="default" data-width="240" data-height="50" style="text-decoration: none; width: 240px; height: 50px; display: inline-flex;">
             💬 Get in Touch
           </a>
         </div>
@@ -572,7 +576,7 @@
             <span class="input-border"></span>
           </div>
 
-          <button type="submit" data-liquid-button data-theme="analytics" data-width="240" data-height="50" style="width: auto; display: inline-flex; padding: 0; border: none; background: transparent; color: inherit;">
+          <button type="submit" data-liquid-button data-theme="analytics" data-width="240" data-height="50" style="width: 240px; height: 50px; display: inline-flex; padding: 0; border: none; background: transparent; color: inherit;">
             Send Transmission
           </button>
         </form>
@@ -1055,13 +1059,13 @@
   </style>
 
   <!-- SpaceX Custom Cursor -->
-  <script src="spacex-cursor.js"></script>
+  <script src="spacex-cursor.js" defer></script>
   <!-- Scripts (cache-busted to force fresh load) -->
-  <script src="script.js?v=20251215-FINAL"></script>
+  <script src="script.js?v=20251215-FINAL" defer></script>
   <!-- 🌊 Liquid Gradient Background -->
-  <script src="liquid-gradient.js"></script>
+  <script src="liquid-gradient.js" defer></script>
   <!-- AI Chatbot Script -->
-  <script src="chatbot.js?v=20260206"></script>
+  <script src="chatbot.js?v=20260206" defer></script>
 </body>
 
 </html>

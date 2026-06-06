@@ -22,6 +22,7 @@
   transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.4s ease, height 0.4s ease;
   transform: none;
   max-width: 100%;
+  will-change: transform, opacity;
 }
 
 .liquid-metal-label-layer {
@@ -36,6 +37,7 @@
   transform: translateZ(20px);
   z-index: 30;
   pointer-events: none;
+  will-change: transform, opacity;
 }
 
 .liquid-metal-label {
@@ -57,6 +59,7 @@
   transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.4s ease, height 0.4s ease;
   transform: translateZ(10px) translateY(0) scale(1);
   z-index: 20;
+  will-change: transform, opacity;
 }
 
 .liquid-metal-inner-bg {
@@ -74,6 +77,7 @@
   transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.4s ease, height 0.4s ease;
   transform: translateZ(0px) translateY(0) scale(1);
   z-index: 10;
+  will-change: transform, opacity;
 }
 
 .liquid-metal-canvas-container {
@@ -153,4 +157,68 @@
 @keyframes liquid-ripple-animation {
   0% { transform: translate(-50%, -50%) scale(0); opacity: 0.6; }
   100% { transform: translate(-50%, -50%) scale(4); opacity: 0; }
+}
+
+/* ============================================================
+   Fallback styles for data-liquid-button before JS executes
+   ============================================================ */
+[data-liquid-button]:not(.liquid-metal-btn-wrapper) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  text-decoration: none;
+  background-color: #000000;
+  border-radius: 100px;
+  font-family: 'Inter', 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  /* Default Dimensions if not inline overridden */
+  width: 200px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #6f6f9f;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3), 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+[data-liquid-button]:not(.liquid-metal-btn-wrapper)[data-theme="analytics"] {
+  color: #4d7c5f;
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.3), 0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(255, 255, 255, 0.4);
+  border: none;
+}
+[data-liquid-button]:not(.liquid-metal-btn-wrapper)[data-theme="python"] {
+  color: #8552d2;
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3), 0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(255, 255, 255, 0.4);
+  border: none;
+}
+[data-liquid-button]:not(.liquid-metal-btn-wrapper)[data-theme="ml"] {
+  color: #36873b;
+  box-shadow: 0 0 20px rgba(79, 172, 254, 0.3), 0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(255, 255, 255, 0.4);
+  border: none;
+}
+[data-liquid-button]:not(.liquid-metal-btn-wrapper)[data-theme="dl"] {
+  color: #9f54b0;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15), 0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(255, 255, 255, 0.4);
+  border: none;
+}
+[data-liquid-button]:not(.liquid-metal-btn-wrapper)[data-theme="fastapi"] {
+  color: #599b5b;
+  box-shadow: 0 0 20px rgba(5, 196, 107, 0.3), 0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(255, 255, 255, 0.4);
+  border: none;
+}
+[data-liquid-button]:not(.liquid-metal-btn-wrapper)[data-theme="genai"] {
+  color: #c923c4;
+  box-shadow: 0 0 20px rgba(255, 113, 239, 0.3), 0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(255, 255, 255, 0.4);
+  border: none;
+}
+[data-liquid-button]:not(.liquid-metal-btn-wrapper)[data-theme="nlp"] {
+  color: #cec216;
+  box-shadow: 0 0 20px rgba(243, 156, 18, 0.3), 0px 0px 0px 2px rgba(10, 15, 25, 0.9), 0px 0px 0px 3px rgba(255, 255, 255, 0.4);
+  border: none;
 }

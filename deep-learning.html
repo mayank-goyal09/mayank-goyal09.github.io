@@ -21,11 +21,15 @@
     <!-- AI Chatbot Styles -->
     <link rel="stylesheet" href="chatbot.css?v=20260206" />
 
-    <!-- Three.js Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <!-- GSAP + ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Preload Critical Styles -->
+    <link rel="preload" href="style.css" as="style" />
+    <link rel="preload" href="deep-learning.css" as="style" />
+
+    <!-- Three.js Library (Deferred) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <!-- GSAP + ScrollTrigger (Deferred) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 </head>
 
 <body>
@@ -199,6 +203,31 @@
                                         href="https://pulse-nova-1d-project.streamlit.app/" target="_blank"
                                         rel="noopener">Live App</a>
                                     <a class="arch-btn" href="https://github.com/mayank-goyal09/Pulse-Nova-1D"
+                                        target="_blank" rel="noopener">View Code</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="arch-card" data-index="4">
+                            <div class="arch-card-inner">
+                                <div class="arch-card-accent"></div>
+                                <div class="arch-card-badges">
+                                    <span class="arch-badge arch-badge--cnn">CNN</span>
+                                    <span class="arch-badge">Object Detection</span>
+                                    <span class="arch-badge">Wildlife Tracking</span>
+                                </div>
+                                <h3 class="arch-card-title">🦌 FaunaFind — Autonomous Biodiversity Monitor</h3>
+                                <p class="arch-card-desc">Production-grade, local-first ML pipeline designed to automate wildlife population tracking. Employs YOLOv8-Nano on normalized bounding boxes with a custom Streamlit analytics dashboard.</p>
+                                <div class="arch-card-meta">
+                                    <span class="arch-meta-label">Stack:</span> Python · YOLOv8 · OpenCV · Pandas · Streamlit
+                                </div>
+                                <div class="arch-card-meta">
+                                    <span class="arch-meta-label">Highlights:</span> YOLOv8 Edge Inference | Automated Quality-Control Filter | Asynchronous Data Logging
+                                </div>
+                                <div class="arch-card-actions">
+                                    <a class="arch-btn arch-btn--primary"
+                                        href="https://github.com/mayank-goyal09/faunafind"
                                         target="_blank" rel="noopener">View Code</a>
                                 </div>
                             </div>
@@ -544,15 +573,15 @@
     </main>
 
     <!-- 🔮 Plasma Background Script -->
-    <script src="deep-learning-plasma.js"></script>
+    <script src="deep-learning-plasma.js" defer></script>
 
     <!-- 🏛️ Architectural Card Stack Engine -->
-    <script src="dl-arch-stack.js"></script>
+    <script src="dl-arch-stack.js" defer></script>
 
     <!-- AI Chatbot Script -->
-    <script src="chatbot.js?v=20260206"></script>
+    <script src="chatbot.js?v=20260206" defer></script>
     <!-- SpaceX Custom Cursor -->
-    <script src="spacex-cursor.js"></script>
+    <script src="spacex-cursor.js" defer></script>
 </body>
 
 </html>

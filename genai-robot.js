@@ -37,6 +37,7 @@
         "LoreWeaver-AI generates rich stories with Edge Neural voices in under 2 seconds! 🎭",
         "I can see your cursor... following it with my eyes! 👀",
         "Click me again — I love the attention! ✨",
+        "Summon historical figures in Echoes of History, grounded strictly in their eras! 🎩",
         "These projects showcase the power of Generative AI 🧠"
     ];
 
@@ -938,7 +939,8 @@
             'PatternPunk': "Seamless fabric texture generator using Neural Circular Padding & Real-ESRGAN! 👗",
             'AutoDoc': "AI code documenter using AST parsing and CodeT5 to inject docstrings! 🚀",
             'LoreWeaver': "Multimodal AI story engine — dynamic scripts via Gemini 3.0 & neural vocal acting via Edge TTS! 🎭",
-            'ArchitectAI': "Virtual staging engine using Hugging Face backend & Qwen-Image-Edit-2511! 🛋️"
+            'ArchitectAI': "Virtual staging engine using Hugging Face backend & Qwen-Image-Edit-2511! 🛋️",
+            'Echoes': "Vintage roleplay museum summoning historical figures via FAISS vector database! 🏛️"
         };
         var msg = "Check this out — one of my favorite builds! ✨";
         var keys = Object.keys(msgs);

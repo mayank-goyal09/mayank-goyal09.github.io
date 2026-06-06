@@ -9,6 +9,10 @@
     <meta name="description"
         content="FastAPI projects by Mayank Goyal - High-performance APIs, ML Deployment, Microservices, and Backend Systems with stunning card scanner visualization" />
 
+    <!-- Preload Critical Styles -->
+    <link rel="preload" href="style.css" as="style" />
+    <link rel="preload" href="fastapi.css" as="style" />
+
     <!-- Global site styles -->
     <link rel="stylesheet" href="style.css" />
     <!-- Page-specific styles -->
@@ -52,19 +56,19 @@
     </section>
 
 
-    <!-- Three.js Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Three.js Library (Deferred) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 
     <!-- 💎 Prism Background -->
-    <script src="fastapi-prism.js"></script>
+    <script src="fastapi-prism.js" defer></script>
 
     <!-- FastAPI Scanner Engine -->
-    <script src="fastapi-scanner.js"></script>
+    <script src="fastapi-scanner.js" defer></script>
 
     <!-- AI Chatbot Script -->
-    <script src="chatbot.js?v=20260206"></script>
+    <script src="chatbot.js?v=20260206" defer></script>
     <!-- SpaceX Custom Cursor -->
-    <script src="spacex-cursor.js"></script>
+    <script src="spacex-cursor.js" defer></script>
 </body>
 
 </html>

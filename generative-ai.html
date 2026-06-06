@@ -16,11 +16,14 @@
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet" />
 
+    <!-- Preload Critical Styles -->
+    <link rel="preload" href="generative-ai.css" as="style" />
+
     <!-- Page Styles -->
     <link rel="stylesheet" href="generative-ai.css" />
 
-    <!-- Three.js Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Three.js Library (Deferred) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 </head>
 
 <body>
@@ -112,8 +115,8 @@
         <a class="card-link" href="https://github.com/mayank-goyal09/ScriptToSpeech-AI.git" target="_blank" rel="noopener">View Code →</a>
     </div>
 
-    <!-- BOTTOM-CENTER: Card 9 — ArchitectAI-Virtual-Staging -->
-    <div class="project-card theme-gold card-pos-bottom-center" data-project="architectai" id="card9">
+    <!-- BOTTOM-LEFT-CENTER: Card 9 — ArchitectAI-Virtual-Staging -->
+    <div class="project-card theme-gold card-pos-bottom-left-center" data-project="architectai" id="card9">
         <div class="card-border-glow"></div>
         <div class="card-number">09</div>
         <h3 class="card-title">🛋️ ArchitectAI — Virtual Staging</h3>
@@ -125,6 +128,21 @@
         </div>
         <div class="card-stack">Python · Gradio · Pydantic · HF Inference Client</div>
         <a class="card-link" href="https://github.com/mayank-goyal09/ArchitectAI-Virtual-Staging" target="_blank" rel="noopener">View Code →</a>
+    </div>
+
+    <!-- BOTTOM-RIGHT-CENTER: Card 10 — Echoes of History -->
+    <div class="project-card theme-blue card-pos-bottom-right-center" data-project="echoes-of-history" id="card10">
+        <div class="card-border-glow"></div>
+        <div class="card-number">10</div>
+        <h3 class="card-title">🏛️ Echoes of History — Historical Museum</h3>
+        <p class="card-desc">Vintage roleplay museum summoning historical figures from FAISS vector stores. Enforces era-specific boundaries via Llama-3, memory windows, and a custom Streamlit parchment UI.</p>
+        <div class="card-tags">
+            <span class="tag tag-primary">RAG</span>
+            <span class="tag">FAISS</span>
+            <span class="tag">Llama-3</span>
+        </div>
+        <div class="card-stack">Python · LangChain · FAISS · ChatGroq · Streamlit</div>
+        <a class="card-link" href="https://github.com/mayank-goyal09/echoes-of-history" target="_blank" rel="noopener">View Code →</a>
     </div>
 
     <!-- LEFT: Card 2 — AI Discord Assistant -->
@@ -200,9 +218,9 @@
     </div>
 
     <!-- 🤖 3D Robot Engine -->
-    <script src="genai-robot.js"></script>
+    <script src="genai-robot.js" defer></script>
     <!-- SpaceX Custom Cursor -->
-    <script src="spacex-cursor.js"></script>
+    <script src="spacex-cursor.js" defer></script>
 </body>
 
 </html>

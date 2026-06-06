@@ -324,6 +324,7 @@ body {
         z-index 0s;
     cursor: pointer;
     overflow: visible;
+    will-change: transform;
 }
 
 /* Gradient border via pseudo-element (works with border-radius) */
@@ -819,11 +820,22 @@ body {
 /* Bottom-left card */
 .card-pos-bottom-left {
     bottom: 5%;
-    left: 20%;
+    left: 14%;
     transform: translateX(-50%);
 }
 
 .card-pos-bottom-left:hover {
+    transform: translateX(-50%) translateY(-8px) scale(1.04);
+}
+
+/* Bottom-left-center card */
+.card-pos-bottom-left-center {
+    bottom: 5%;
+    left: 38%;
+    transform: translateX(-50%);
+}
+
+.card-pos-bottom-left-center:hover {
     transform: translateX(-50%) translateY(-8px) scale(1.04);
 }
 
@@ -849,10 +861,21 @@ body {
     transform: translateY(-6px) scale(1.04);
 }
 
+/* Bottom-right-center card */
+.card-pos-bottom-right-center {
+    bottom: 5%;
+    right: 38%;
+    transform: translateX(50%);
+}
+
+.card-pos-bottom-right-center:hover {
+    transform: translateX(50%) translateY(-8px) scale(1.04);
+}
+
 /* Bottom-right card */
 .card-pos-bottom-right {
     bottom: 5%;
-    right: 20%;
+    right: 14%;
     transform: translateX(50%);
 }
 
@@ -1053,6 +1076,14 @@ body {
 
 .card-pos-bottom-left {
     animation: card-float-in-bottom-left 0.8s ease forwards, card-idle-float-bottom-left 6s ease-in-out 1.5s infinite;
+}
+
+.card-pos-bottom-left-center {
+    animation: card-float-in-bottom-left 0.8s ease forwards, card-idle-float-bottom-left 6s ease-in-out 1.55s infinite;
+}
+
+.card-pos-bottom-right-center {
+    animation: card-float-in-bottom-right 0.8s ease forwards, card-idle-float-bottom-right 6s ease-in-out 1.65s infinite;
 }
 
 .card-pos-bottom-right {

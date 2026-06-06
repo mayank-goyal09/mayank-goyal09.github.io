@@ -410,8 +410,8 @@ body.nlp-body {
     width: 100%;
     height: 100%;
     background-color: rgba(128, 128, 128, 1);
-    -webkit-mask-image: url('https://framerusercontent.com/images/ceBGguIpUU8luwByxuQz79t7To.png');
-    mask-image: url('https://framerusercontent.com/images/ceBGguIpUU8luwByxuQz79t7To.png');
+    -webkit-mask-image: url('assets/ceBGguIpUU8luwByxuQz79t7To.png');
+    mask-image: url('assets/ceBGguIpUU8luwByxuQz79t7To.png');
     -webkit-mask-size: cover;
     mask-size: cover;
     -webkit-mask-repeat: no-repeat;
@@ -423,7 +423,7 @@ body.nlp-body {
 .ethereal-noise {
     position: absolute;
     inset: 0;
-    background-image: url('https://framerusercontent.com/images/g0QcWrxr87K0ufOxIUFBakwYA8.png');
+    background-image: url('assets/g0QcWrxr87K0ufOxIUFBakwYA8.png');
     background-size: 240px;
     background-repeat: repeat;
     opacity: 0.5;
