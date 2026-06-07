@@ -195,12 +195,10 @@ if (audio && soundBtn) {
     if (audio.paused) {
       audio.play();
       soundBtn.classList.add("sound-active");
-      soundIcon.innerText = "🔊";
       soundBtn.style.borderColor = "#8c6eff";
     } else {
       audio.pause();
       soundBtn.classList.remove("sound-active");
-      soundIcon.innerText = "🔇";
       soundBtn.style.borderColor = "rgba(0, 234, 255, 0.3)";
     }
   });
