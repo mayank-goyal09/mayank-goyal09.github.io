@@ -37,16 +37,9 @@ A portfolio shouldn't be an exercise in creative writing. Every project featured
 
     // ===== SKILLS =====
     skills: [
-        { name: "Data Analytics", desc: "Exploratory analysis, cleaning, transformation, and insight extraction using Python, SQL, Excel, and Power BI" },
-        { name: "Machine Learning", desc: "Supervised & unsupervised models, pipelines, and deployable ML apps with Scikit-learn" },
-        { name: "Deep Learning", desc: "Neural networks, CNNs, ANNs, LSTM/RNNs using TensorFlow/Keras" },
-        { name: "Python & OOP", desc: "Backend systems, OOP architecture, and enterprise applications with SQLite" },
-        { name: "SQL & Databases", desc: "Designing schemas, writing efficient queries, and managing data flows" },
-        { name: "Dashboards & Reporting", desc: "Building clear, narrative-driven reports and interactive views with Power BI and Streamlit" },
-        { name: "AI & Exploration", desc: "Experimenting with NLP, deep learning, and reinforcement learning ideas" },
-        { name: "Data Science", desc: "End-to-end modeling, feature engineering, and experiment-driven insights" },
-        { name: "Prompt Engineering", desc: "Designing effective prompts and workflows for LLM-powered systems" },
-        { name: "Market Research", desc: "Analyzing consumer behavior, trends, and competitive landscapes" }
+        { name: "Local Intelligence & Language Models", desc: "Local RAG engine deployment, Mistral via Ollama pipelines, PyTorch, TensorFlow, MediaPipe, LSTM sequence modeling" },
+        { name: "Data Architecture & Automation", desc: "Automated document ingestion, fuzzy matching, relational schemas, Spatio-Temporal Graph Neural Networks, 1D-CNN signal models, Pandas, Scikit-learn, Supabase, Advanced SQL" },
+        { name: "Backends & Deployment Interfaces", desc: "High-performance asynchronous backends, real-time inference APIs, strict OOP patterns, modular structures, FastAPI, Streamlit, Git Architecture" }
     ],
 
     // ===== DATA ANALYTICS PROJECTS =====
@@ -999,8 +992,7 @@ class CosmicAssistant {
 
         // ===== SKILLS =====
         if (this.matches(t, ['skill', 'tech', 'stack', 'what can', 'capabilities', 'expertise'])) {
-            const skillsList = k.skills.slice(0, 8).map(s => `• **${s.name}**: ${s.desc}`).join('\n');
-            return `💼 **Mayank's Core Skills**\n\n${skillsList}\n\n...and more including Market Research & Prompt Engineering!\n\nWant to see projects using these skills? Just ask!`;
+            return `🛠️ **Mayank's Developer Workbench (Core Applied Skills)**\n\n🧠 **Local Intelligence & Language Models:**\n• *Applied Mechanics:* Local RAG engine deployment, custom Ollama/Mistral pipeline integration\n• *Core Toolkit:* PyTorch, TensorFlow, MediaPipe, Sequence Modeling (LSTM)\n\n📊 **Data Architecture & Automation:**\n• *Applied Mechanics:* Automated ingestion pipelines with fuzzy matching, Spatio-Temporal Graph Neural Networks, 1D-CNN signal processing\n• *Core Toolkit:* Python, Pandas, Scikit-learn, Supabase, Advanced SQL\n\n⚡ **Backends & Deployment Interfaces:**\n• *Applied Mechanics:* Asynchronous high-performance backends for inference, strict OOP & modular system design\n• *Core Toolkit:* FastAPI, Streamlit, Git Architecture\n\nWould you like to explore projects under any of these domains?`;
         }
 
         // ===== CONTACT =====
