@@ -94,6 +94,13 @@ Binary is boring. I'm here to find the ghost in the machine, the raw intent that
             github: "https://github.com/mayank-goyal09/pizza-sales-sql-analysis"
         },
         {
+            name: "Query Optimization & Data Manipulation",
+            desc: "Comprehensive notebook demonstrating advanced SQL optimization, indexing, and Python data manipulation techniques.",
+            tech: ["Python", "SQL", "Query Optimization"],
+            stats: "50+ code examples, 10+ topics covered",
+            github: "https://github.com/mayank-goyal09/python-SQL-notebook"
+        },
+        {
             name: "Titanic Survival Analytics",
             desc: "Interactive Excel dashboard analyzing 891 Titanic passengers to predict survival outcomes with 8+ predictive factors.",
             tech: ["Excel", "Predictive Analytics"],
@@ -163,13 +170,58 @@ Binary is boring. I'm here to find the ghost in the machine, the raw intent that
             github: "https://github.com/mayank-goyal09/CardioPredict-SVM"
         },
         {
-            name: "VociPark – Parkinson's Disease Detection",
+            name: "Mobile Market Segmenter",
             type: "Supervised - Classification",
-            desc: "End-to-end Parkinson's detection from voice data using SVM classifier optimized via GridSearchCV with ~82% test accuracy.",
-            tech: ["Python", "Scikit-learn", "SVM", "Streamlit"],
-            stats: "~82% test accuracy, ~0.80 balanced accuracy",
-            liveApp: "https://vocipark-parkinson-s-detection-from-voice-project.streamlit.app/",
-            github: "https://github.com/mayank-goyal09/VociPark-Parkinson-s-Detection-from-Voice"
+            desc: "KNN classification model grouping mobile users into market segments based on usage behavior and demographic patterns.",
+            tech: ["Python", "Scikit-learn", "KNN", "Streamlit"],
+            stats: "Simple, interpretable classification segmentation",
+            liveApp: "https://mobile-market-segmenter-project.streamlit.app",
+            github: "https://github.com/mayank-goyal09/mobile-market-segmenter"
+        },
+        {
+            name: "Personality Type Predictor",
+            type: "Supervised - Classification",
+            desc: "Logistic Regression model mapping behavioral traits to personality categories with clean feature pipeline for survey-style inputs.",
+            tech: ["Python", "Scikit-learn", "Pandas", "Streamlit"],
+            stats: "Clean survey feature pipeline, real-time predictions",
+            liveApp: "https://personality-type-predictor-project.streamlit.app",
+            github: "https://github.com/mayank-goyal09/personality-type-predictor"
+        },
+        {
+            name: "Ride Price Predictor",
+            type: "Supervised - Regression",
+            desc: "Linear Regression estimator predicting ride fares based on distance, duration, time of day, and ride type.",
+            tech: ["Python", "Scikit-learn", "Pandas", "Streamlit"],
+            stats: "Baseline pricing model for ride-hailing apps",
+            liveApp: "https://ride-price-predictor-project.streamlit.app",
+            github: "https://github.com/mayank-goyal09/ride-price-predictor"
+        },
+        {
+            name: "Experience to Earnings",
+            type: "Supervised - Regression",
+            desc: "KNN regression model predicting salary from years of experience, capturing non-linear salary curves.",
+            tech: ["Python", "Scikit-learn", "Streamlit"],
+            stats: "Non-linear salary curve capturing, neighbor-based regression",
+            liveApp: "https://experience-to-earnings-project.streamlit.app",
+            github: "https://github.com/mayank-goyal09/experience-to-earnings"
+        },
+        {
+            name: "Student Performance Analyzer",
+            type: "Supervised - Regression",
+            desc: "End-to-end ML regression model predicting student exam scores with hyperparameter tuning, feature engineering, and feature importance analysis.",
+            tech: ["Python", "Scikit-learn", "Streamlit", "Pandas"],
+            stats: "MAE: 6.89, RMSE%: ~17.44%, feature importance analysis",
+            liveApp: "https://student-performance-analyzer-project.streamlit.app",
+            github: "https://github.com/mayank-goyal09/student-performance-analyzer"
+        },
+        {
+            name: "PERSONA PULSE – MBTI Personality Classification",
+            type: "Supervised - Classification",
+            desc: "End-to-end ML pipeline for MBTI personality type classification using questionnaire data with leakage-safe pipeline and full model interpretability.",
+            tech: ["Python", "Scikit-learn", "Pandas", "Streamlit"],
+            stats: "Logistic Regression (~0.92 F1), real-time predictions",
+            liveApp: "https://persona-pulse-project.streamlit.app",
+            github: "https://github.com/mayank-goyal09/PERSONA-PULSE"
         },
         {
             name: "Used Car Price Predictor",
@@ -179,6 +231,15 @@ Binary is boring. I'm here to find the ghost in the machine, the raw intent that
             stats: "R² ≈ 0.92, 45K+ listings analyzed",
             liveApp: "https://used-car-price-modeling-project.streamlit.app",
             github: "https://github.com/mayank-goyal09/used-car-price-modeling"
+        },
+        {
+            name: "Cardiovascular Health Risk Assessment",
+            type: "Supervised - Classification",
+            desc: "Interpretable ML system using a Decision Tree Classifier on 70K+ patient records to predict cardiovascular disease risk from vitals, lab values, and lifestyle factors.",
+            tech: ["Python", "Scikit-learn", "Streamlit", "Pandas", "Plotly", "Joblib"],
+            stats: "Analyzed 70K+ records, BMI & age feature engineering",
+            liveApp: "https://healthrisk-decision-tree-project.streamlit.app",
+            github: "https://github.com/mayank-goyal09/healthrisk-decision-tree"
         },
         {
             name: "Delivery Oracle – E-commerce Intelligence",
@@ -208,6 +269,15 @@ Binary is boring. I'm here to find the ghost in the machine, the raw intent that
             github: "https://github.com/mayank-goyal09/ATP-Tennis-Match-Outcome-Classifier"
         },
         {
+            name: "OHLCV Next-Day Close Predictor",
+            type: "Supervised - Regression",
+            desc: "Time-series ML mini product predicting next-day stock closing prices using OHLCV features, Decision Tree Regression, and a naive tomorrow ≈ today baseline comparison.",
+            tech: ["Python", "Scikit-learn", "Streamlit", "Pandas", "Plotly", "yfinance", "Joblib"],
+            stats: "GridSearchCV with TimeSeriesSplit, real-time yfinance fetch",
+            liveApp: "https://ohlcv-nextday-close-predictor-project.streamlit.app",
+            github: "https://github.com/mayank-goyal09/ohlcv-nextday-close-predictor"
+        },
+        {
             name: "PJM Energy Demand Forecaster",
             type: "Supervised - Regression",
             desc: "End-to-end ML system predicting hourly electricity demand using 10+ years of PJM load data with Random Forest (R² ≈ 0.95).",
@@ -216,7 +286,32 @@ Binary is boring. I'm here to find the ghost in the machine, the raw intent that
             liveApp: "https://pjm-energy-demand-forecaster-project.streamlit.app",
             github: "https://github.com/mayank-goyal09/PJM-Energy-Demand-Forecaster"
         },
+        {
+            name: "VociPark – Parkinson's Disease Detection",
+            type: "Supervised - Classification",
+            desc: "End-to-end Parkinson's detection from voice data using SVM classifier optimized via GridSearchCV with ~82% test accuracy.",
+            tech: ["Python", "Scikit-learn", "SVM", "Streamlit"],
+            stats: "~82% test accuracy, ~0.80 balanced accuracy",
+            liveApp: "https://vocipark-parkinson-s-detection-from-voice-project.streamlit.app/",
+            github: "https://github.com/mayank-goyal09/VociPark-Parkinson-s-Detection-from-Voice"
+        },
         // UNSUPERVISED LEARNING
+        {
+            name: "Vineyard Voyager – Wine Classification",
+            type: "Unsupervised - Clustering",
+            desc: "K-Means clustering identifying wine quality tiers from chemical properties without labels, optimized via silhouette scores.",
+            tech: ["Python", "Scikit-learn", "Pandas"],
+            stats: "3 distinct clusters, silhouette optimization",
+            github: "https://github.com/mayank-goyal09/vineyard-voyager"
+        },
+        {
+            name: "Retail Radar – Customer Segmentation",
+            type: "Unsupervised - Clustering",
+            desc: "Hierarchical clustering grouping customers into natural purchase behavior segments with dendrogram-based optimal cluster detection.",
+            tech: ["Python", "Scikit-learn", "Dendrogram"],
+            stats: "Dendrogram-based optimal cluster detection",
+            github: "https://github.com/mayank-goyal09/retail-radar-engine"
+        },
         {
             name: "Geo-Pulse – Smart City Traffic Intelligence",
             type: "Unsupervised - Clustering",
@@ -286,6 +381,20 @@ Binary is boring. I'm here to find the ghost in the machine, the raw intent that
             github: "https://github.com/mayank-goyal09/the-file-forge"
         },
         {
+            name: "Bank Management System",
+            desc: "User-friendly bank account system with Streamlit frontend, transaction history, balance inquiry, and simple data persistence.",
+            tech: ["Streamlit", "Python OOP", "Data Persistence"],
+            features: ["Account Creation", "Deposits/Withdrawals", "Balance Inquiry", "Transaction Log"],
+            github: "https://github.com/mayank-goyal09/bank-management-system"
+        },
+        {
+            name: "RPS R.A.N.D.O.M",
+            desc: "Intelligent CLI-based Rock-Paper-Scissors game featuring best-of-N series, score tracking, move validation, and match history.",
+            tech: ["Python Game", "AI Logic", "CLI"],
+            features: ["Best-of-N Series", "Score Tracking", "Move Validation", "Match History"],
+            github: "https://github.com/mayank-goyal09/rps-random"
+        },
+        {
             name: "Gridlock Game",
             desc: "NumPy-powered Tic-Tac-Toe with web interface demonstrating array manipulation and Python game logic.",
             tech: ["NumPy", "Streamlit", "Game Logic"],
@@ -325,6 +434,41 @@ Binary is boring. I'm here to find the ghost in the machine, the raw intent that
             github: "https://github.com/mayank-goyal09/asl-digit-recognition-cnn-opencv"
         },
         {
+            name: "Brand Spotter — Logo Detection",
+            type: "CNN",
+            desc: "Advanced CNN-based logo detection and brand recognition system powered by transfer learning to identify and classify company logos in images.",
+            tech: ["Python", "TensorFlow/Keras", "OpenCV", "Deep Learning"],
+            stats: "Multi-brand detection, real-time recognition, transfer learning",
+            liveApp: "https://brand-spotter-projecttt.streamlit.app/",
+            github: "https://github.com/mayank-goyal09/Brand-Spotter.git"
+        },
+        {
+            name: "NoiseNinja — Acoustic Anomaly Detector",
+            type: "CNN",
+            desc: "Unsupervised CNN Autoencoder trained on healthy machine sounds to detect acoustic anomalies in real-time streams via MSE reconstruction loss.",
+            tech: ["Python", "TensorFlow/Keras", "Flask", "Librosa", "Chart.js"],
+            stats: "Unsupervised Autoencoder, Mel-spectrogram dashboard, mic streaming",
+            liveApp: "https://mayank-goyal09.github.io/NoiseNinja/templates/index.html",
+            github: "https://github.com/mayank-goyal09/NoiseNinja"
+        },
+        {
+            name: "Pulse Nova 1D",
+            type: "1D-CNN",
+            desc: "AI-powered detection of life-threatening heart rhythm abnormalities from raw ECG signals using a deep 1D Convolutional Neural Network.",
+            tech: ["Python", "TensorFlow/Keras", "Streamlit", "Docker"],
+            stats: "MIT-BIH Arrhythmia Dataset, 96.48% accuracy, Z-score normalization",
+            liveApp: "https://pulse-nova-1d-project.streamlit.app/",
+            github: "https://github.com/mayank-goyal09/Pulse-Nova-1D"
+        },
+        {
+            name: "FaunaFind — Autonomous Biodiversity Monitor",
+            type: "CNN/YOLO",
+            desc: "Production-grade, local-first ML pipeline designed to automate wildlife population tracking using YOLOv8 edge inference.",
+            tech: ["Python", "YOLOv8", "OpenCV", "Pandas", "Streamlit"],
+            stats: "YOLOv8 edge inference, quality-control filters, async data logging",
+            github: "https://github.com/mayank-goyal09/faunafind"
+        },
+        {
             name: "WeatherLens AI — Multi-City LSTM Forecasting",
             type: "RNN/LSTM",
             desc: "End-to-end deep learning weather forecasting system using LSTM networks to predict 7-day (168 hours) temperature across 4 major global cities.",
@@ -332,6 +476,197 @@ Binary is boring. I'm here to find the ghost in the machine, the raw intent that
             stats: "Multi-step LSTM, 4-city coverage, Beats baseline",
             liveApp: "https://multi-city-lstm-weather-forecast-project.streamlit.app/",
             github: "https://github.com/mayank-goyal09/multi-city-lstm-weather-forecast"
+        },
+        {
+            name: "Gold Price Oracle — AI Prediction",
+            type: "RNN/LSTM",
+            desc: "Self-updating LSTM prediction engine forecasting gold prices with live market data and autonomous retraining pipelines.",
+            tech: ["Python", "TensorFlow/Keras", "Streamlit", "GitHub Actions"],
+            stats: "Autonomous self-retraining via GitHub Actions, live market feed",
+            liveApp: "https://timeseries-au-project.streamlit.app/",
+            github: "https://github.com/mayank-goyal09/TimeSeries-Au"
+        },
+        {
+            name: "Deep Crop Yield Forecaster",
+            type: "RNN/LSTM",
+            desc: "Advanced Stacked LSTM deep learning forecaster predicting agricultural crop yields using historical time series and environmental variables.",
+            tech: ["Python", "TensorFlow/Keras", "Pandas", "Geopandas"],
+            stats: "Stacked LSTM architecture, time-series forecasting, NDVI integration",
+            liveApp: "https://deep-crop-yield-forecaster-project.streamlit.app/",
+            github: "https://github.com/mayank-goyal09/Deep-Crop-Yield-Forecaster.git"
+        },
+        {
+            name: "SignSense-LSTM",
+            type: "RNN/LSTM",
+            desc: "Real-time sign language translation system analyzing 30 consecutive frames of hand motion using MediaPipe 3D Landmarks and LSTM.",
+            tech: ["Python", "TensorFlow/Keras", "OpenCV", "MediaPipe", "Streamlit"],
+            stats: "Temporal sequence buffer, live confidence indicators",
+            liveApp: "https://signsense-lstm-project.streamlit.app/",
+            github: "https://github.com/mayank-goyal09/SignSense-LSTM"
+        },
+        {
+            name: "AegisGNN",
+            type: "GNN/GCN",
+            desc: "Deep learning financial fraud detection system leveraging Graph Convolutional Networks (GCN) to scan transaction logs and identify high-risk networks.",
+            tech: ["PyTorch Geometric", "Flask", "Vis.js", "Chart.js", "Python"],
+            stats: "Heterogeneous transactions modeled as graphs, 2-layer GCNConv",
+            github: "https://github.com/mayank-goyal09/financial-fraud-gnn"
+        },
+        {
+            name: "CityPulse AI",
+            type: "GNN/ST-GCN",
+            desc: "Sophisticated real-time traffic forecasting system leveraging Spatio-Temporal Graph Neural Networks (ST-GCN) to predict city-wide congestion.",
+            tech: ["PyTorch", "FastAPI", "Streamlit", "Python"],
+            stats: "ST-GCN road graphs, spatial ripples + temporal convolutions",
+            github: "https://github.com/mayank-goyal09/GraphTraffic-Net.git"
+        },
+        {
+            name: "Emotion Pro Analytics",
+            type: "Transformer",
+            desc: "High-accuracy sentiment engine fine-tuning pre-trained DistilBERT on Google's GoEmotions dataset with operational safety gates.",
+            tech: ["Python", "PyTorch", "Hugging Face", "Streamlit", "Plotly"],
+            stats: "DistilBERT classifier, GoEmotions dataset, 60% confidence gate",
+            github: "https://github.com/mayank-goyal09/nuance-flow"
+        }
+    ],
+
+    // ===== FASTAPI PROJECTS =====
+    fastapiProjects: [
+        {
+            name: "MovieFlix AI",
+            desc: "Netflix-style movie recommendation engine powered by TF-IDF Natural Language Processing, serving real-time personalized picks from 45K+ movies.",
+            tech: ["FastAPI", "TF-IDF", "TMDB API", "Streamlit", "Python"],
+            stats: "45K+ movies, TF-IDF NLP model, real-time cosine similarity search",
+            liveApp: "https://movieflix-rec.streamlit.app",
+            github: "https://github.com/mayank-goyal09/movieflix-rec"
+        },
+        {
+            name: "CureLoop MLOps",
+            desc: "Automated disease prediction system transforming static notebooks into a production-ready API with full CI/CD MLOps pipeline and continuous training.",
+            tech: ["FastAPI", "Scikit-learn", "Docker", "Pytest", "HF Spaces"],
+            stats: "GitHub Actions CI/CD, Dockerized deployment on HF Spaces, continual training trigger",
+            liveApp: "https://mayankg09-cureloop-mlops.hf.space/docs",
+            github: "https://github.com/mayank-goyal09/CureLoop-MLOps"
+        }
+    ],
+
+    // ===== GENERATIVE AI PROJECTS =====
+    generativeAiProjects: [
+        {
+            name: "DocIntel — Private RAG Base",
+            desc: "Private-First RAG system bridging static local documentation with Mistral-7B/Llama-3 LLMs. Uses FAISS-powered vector DB for zero-leak, secure local data querying.",
+            tech: ["HTML/CSS/JS", "Python", "FAISS", "Groq API"],
+            stats: "Private RAG, FAISS Vector DB, Mistral/Llama local processing",
+            github: "https://github.com/mayank-goyal09/DocIntel.git"
+        },
+        {
+            name: "LegalGuard AI — Risk Analyzer",
+            desc: "NDA risk analyzer integrating 150+ regex patterns across 12 legal categories with Google Flan-T5 AI summarization. Red-team tested.",
+            tech: ["Python", "Streamlit", "HuggingFace", "Flan-T5", "Regex Engine"],
+            stats: "Dual-engine (regex + Flan-T5), red-team tested",
+            github: "https://github.com/mayank-goyal09/LegalGuard-AI"
+        },
+        {
+            name: "AutoDoc-Generator",
+            desc: "High-impact developer tool that programmatically identifies, summarizes, and injects docstrings into your Python code using CodeGPT/CodeT5 AI models and AST parsing.",
+            tech: ["Python", "AST Parsing", "GitHub Actions", "AI Transformers"],
+            stats: "AST parser, CodeT5 docstring generator, CI/CD automated flow",
+            github: "https://github.com/mayank-goyal09/Autodoc-generator"
+        },
+        {
+            name: "LoreWeaver-AI — Voice Story Engine",
+            desc: "Multimodal AI story generator synthesizing rich prose instantly. Decouples local computations using Qwen-72B & Gemini-3.0 cloud fallbacks for low-compute real-time scripts and Edge Neural vocal acting.",
+            tech: ["Python", "Gemini 3.0", "Edge TTS", "Gradio", "Pydub"],
+            stats: "Qwen-72B & Gemini 3.0 cloud fallbacks, Edge TTS vocal acting",
+            github: "https://github.com/mayank-goyal09/ScriptToSpeech-AI.git"
+        },
+        {
+            name: "ArchitectAI — Virtual Staging",
+            desc: "Advanced image-to-image virtual staging app using Hugging Face's serverless backend and Qwen-Image-Edit-2511. Automatically refurnishes empty spaces with smart scaling.",
+            tech: ["Python", "Gradio", "Pydantic", "HF Inference Client"],
+            stats: "Image-to-image virtual staging, Qwen-Image-Edit-2511 model",
+            github: "https://github.com/mayank-goyal09/ArchitectAI-Virtual-Staging"
+        },
+        {
+            name: "Echoes of History — Historical Museum",
+            desc: "Vintage roleplay museum summoning historical figures from FAISS vector stores. Enforces era-specific boundaries via Llama-3, memory windows, and a custom Streamlit parchment UI.",
+            tech: ["Python", "LangChain", "FAISS", "ChatGroq", "Streamlit"],
+            stats: "Roleplay historical chat, FAISS semantic search, Llama-3 boundaries",
+            github: "https://github.com/mayank-goyal09/echoes-of-history"
+        },
+        {
+            name: "AI Discord Assistant",
+            desc: "Multi-modal Discord bot — text chat, image generation, audio transcription & vision AI. Powered by Ollama with Mistral, Stable Diffusion & Faster-Whisper running 100% locally.",
+            tech: ["Python", "FastAPI", "Ollama", "Stable Diffusion", "Whisper"],
+            stats: "100% local processing, multi-modal features, stable diffusion image generation",
+            github: "https://github.com/mayank-goyal09/ai-discord-assistant"
+        },
+        {
+            name: "AI News Curator",
+            desc: "Autonomous pipeline: RSS ingestion → LLM curation via Ollama → voice digest with TTS → formatted HTML email briefings. 5 categories, zero human input.",
+            tech: ["Python", "Ollama", "RSS", "pyttsx3", "SMTP"],
+            stats: "RSS feed auto-ingestion, Ollama content curation, email/TTS dispatch",
+            github: "https://github.com/mayank-goyal09/news-curator"
+        },
+        {
+            name: "RedGlyph — AI Code Reviewer",
+            desc: "AI-powered code reviewer using Google Gemini 2.5 Flash via LangGraph. Quality scores, severity-based issues, fix suggestions & session email reports.",
+            tech: ["Python", "FastAPI", "Gemini", "LangGraph", "Docker"],
+            stats: "Gemini 2.5 Flash, LangGraph multi-agent flow, Dockerized CI/CD",
+            github: "https://github.com/mayank-goyal09/RedGlyph"
+        },
+        {
+            name: "PatternPunk-AI",
+            desc: "Seamless fabric texture generator using Neural Circular Padding to eliminate seams, combined with Real-ESRGAN for 4K manufacturing-ready upscaling.",
+            tech: ["Python", "Stable Diffusion", "Real-ESRGAN", "AI Graphics"],
+            stats: "Neural Circular Padding (seamless), Real-ESRGAN 4K upscaling",
+            github: "https://github.com/mayank-goyal09/fashion-pattern-ai-generator"
+        }
+    ],
+
+    // ===== NLP PROJECTS =====
+    nlpProjects: [
+        {
+            name: "Why Summarizer",
+            desc: "An AI-driven engine that connects your Git history to Jira context, ensuring institutional knowledge never fades. The missing link between what your code does and why it was written.",
+            tech: ["Python", "LangChain", "Git", "Jira"],
+            stats: "Git-to-Jira traceability parser, developer documentation automation",
+            github: "https://github.com/mayank-goyal09/Why-Summarizer.git"
+        },
+        {
+            name: "Risk Intel Extension",
+            desc: "Extracting risk indicators and threat intelligence in real-time from visited pages.",
+            tech: ["JavaScript", "Chrome Extension", "NLP"],
+            stats: "Real-time DOM analysis, threat intelligence parsing",
+            github: "https://github.com/mayank-goyal09/risk-intel-extension"
+        },
+        {
+            name: "Address ResolveR",
+            desc: "High-speed CRF model resolving messy addresses under 10ms. Trained on 100K messy addresses to parse house numbers, streets, sectors, cities, and postcodes.",
+            tech: ["Python", "CRFSuite", "NLP"],
+            stats: "100K training address records, < 10ms inference speed",
+            github: "https://github.com/mayank-goyal09/Logistics-Address-ResolveR"
+        },
+        {
+            name: "Beep-for-Abuse",
+            desc: "A low-latency audio processing engine utilizing a Rolling Audio Buffer paired with Faster-Whisper and a 1D-CNN classifier to detect and mask abusive language in real-time streams.",
+            tech: ["Python", "Faster-Whisper", "1D-CNN", "PyTorch"],
+            stats: "Rolling audio buffer, faster-whisper real-time stream masking",
+            github: "https://github.com/mayank-goyal09/beep-for-abuse"
+        },
+        {
+            name: "Screendit",
+            desc: "Media analysis tool turning hours of subjective media coverage into seconds of objective data by automatically aligning identical facts and mapping news bias.",
+            tech: ["Python", "Transformers", "Semantic Similarity"],
+            stats: "Side-by-side semantic alignment, media bias/spin heatmap visualization",
+            github: "https://github.com/mayank-goyal09/Screendit"
+        },
+        {
+            name: "nuance-flow",
+            desc: "A Deep Learning NLP pipeline that upgrades flat 'positive/negative' sentiment into 27 actionable emotion triggers, helping small businesses resolve critical customer complaints.",
+            tech: ["Python", "Transformers", "DistilBERT", "PyTorch"],
+            stats: "GoEmotions dataset fine-tuned, 27 granular emotion outputs",
+            github: "https://github.com/mayank-goyal09/nuance-flow"
         }
     ],
 
@@ -365,12 +700,74 @@ class CosmicAssistant {
         if (path.includes('machine-learning')) return 'machine-learning';
         if (path.includes('python-projects')) return 'python-projects';
         if (path.includes('deep-learning')) return 'deep-learning';
+        if (path.includes('fastapi')) return 'fastapi';
+        if (path.includes('generative-ai')) return 'generative-ai';
+        if (path.includes('nlp')) return 'nlp';
         return 'home';
     }
 
     init() {
         this.createChatbotUI();
         this.bindEvents();
+    }
+
+    getQuickActionsHTML() {
+        const commonButtons = `
+            <button data-action="greeting">👋 Hi</button>
+            <button data-action="skills">💼 Skills</button>
+            <button data-action="contact">📧 Contact</button>
+        `;
+        
+        switch (this.currentPage) {
+            case 'data-analytics':
+                return `
+                    ${commonButtons}
+                    <button data-action="da-projects">📊 Analytics</button>
+                    <button data-action="tip">💡 Tip</button>
+                `;
+            case 'machine-learning':
+                return `
+                    ${commonButtons}
+                    <button data-action="ml-projects">🤖 ML</button>
+                    <button data-action="tip">💡 Tip</button>
+                `;
+            case 'python-projects':
+                return `
+                    ${commonButtons}
+                    <button data-action="py-projects">🐍 Python</button>
+                    <button data-action="tip">💡 Tip</button>
+                `;
+            case 'deep-learning':
+                return `
+                    ${commonButtons}
+                    <button data-action="dl-projects">🧠 Deep Learning</button>
+                    <button data-action="tip">💡 Tip</button>
+                `;
+            case 'fastapi':
+                return `
+                    ${commonButtons}
+                    <button data-action="fastapi-projects">⚡ FastAPI</button>
+                    <button data-action="tip">💡 Tip</button>
+                `;
+            case 'generative-ai':
+                return `
+                    ${commonButtons}
+                    <button data-action="genai-projects">🎨 GenAI</button>
+                    <button data-action="tip">💡 Tip</button>
+                `;
+            case 'nlp':
+                return `
+                    ${commonButtons}
+                    <button data-action="nlp-projects">💬 NLP</button>
+                    <button data-action="tip">💡 Tip</button>
+                `;
+            default:
+                return `
+                    ${commonButtons}
+                    <button data-action="projects">🚀 All Projects</button>
+                    <button data-action="tip">💡 Tip</button>
+                `;
+        }
     }
 
     createChatbotUI() {
@@ -401,13 +798,7 @@ class CosmicAssistant {
                 </div>
 
                 <div class="chat-quick-actions" id="quickActions">
-                    <button data-action="greeting">👋 Hi</button>
-                    <button data-action="skills">💼 Skills</button>
-                    <button data-action="projects">🚀 Projects</button>
-                    <button data-action="ml-projects">🤖 ML</button>
-                    <button data-action="dl-projects">🧠 Deep Learning</button>
-                    <button data-action="contact">📧 Contact</button>
-                    <button data-action="tip">💡 Tip</button>
+                    ${this.getQuickActionsHTML()}
                 </div>
 
                 <form class="chat-input-form" id="chatInputForm">
@@ -500,10 +891,19 @@ class CosmicAssistant {
                 welcomeText += `🐍 You're in the **Python & OOP** section! These are enterprise-grade applications built with Python.\n\nAsk about the "YouTube Studio Automation" flagship project or any backend system!`;
                 break;
             case 'deep-learning':
-                welcomeText += `🧠 Welcome to the **Deep Learning Lab**! Here you'll find ANNs, CNNs, and LSTM projects.\n\nAsk about "ASL Digits Recognizer" or "WeatherLens AI"!`;
+                welcomeText += `🧠 Welcome to the **Deep Learning Lab**! Here you'll find ANNs, CNNs, LSTMs, and GNNs.\n\nAsk about "ASL Digits Recognizer", "AegisGNN", or "CityPulse AI"!`;
+                break;
+            case 'fastapi':
+                welcomeText += `⚡ You're exploring the **FastAPI Lab**! I can tell you about high-performance async APIs, ML deployments, and backend microservices here.\n\nTry asking about "MovieFlix AI" or "CureLoop MLOps"!`;
+                break;
+            case 'generative-ai':
+                welcomeText += `🎨 Welcome to the **Generative AI Lab**! Here you'll find Private RAG bases, NDA risk analyzers, multi-modal bots, and image generators.\n\nAsk about "DocIntel", "RedGlyph", or "ArchitectAI"!`;
+                break;
+            case 'nlp':
+                welcomeText += `💬 Welcome to the **Natural Language Processing Lab**! Explore sequence models, address resolvers, and real-time audio interception engines.\n\nAsk about "Why Summarizer", "Address ResolveR", or "Beep-for-Abuse"!`;
                 break;
             default:
-                welcomeText += `I can help you explore:\n• 📊 **Data Analytics** - Dashboards & SQL analyses\n• 🤖 **Machine Learning** - 18+ ML projects\n• 🧠 **Deep Learning** - ANNs, CNNs, LSTMs\n• 🐍 **Python/OOP** - Enterprise applications\n• 💼 **Experience & Skills**\n• 📧 **Contact Information**\n\nJust ask or use the quick buttons below!`;
+                welcomeText += `I can help you explore:\n• 📊 **Data Analytics** - Dashboards & SQL analyses\n• 🤖 **Machine Learning** - 23+ ML projects\n• 🧠 **Deep Learning** - ANNs, CNNs, LSTMs, GNNs\n• 🐍 **Python/OOP** - Enterprise applications\n• ⚡ **FastAPI** - Async APIs & MLOps\n• 🎨 **Generative AI** - RAG bases & agents\n• 💬 **NLP** - Text/speech parsing & classification\n• 💼 **Experience & Skills**\n• 📧 **Contact Information**\n\nJust ask or use the quick buttons below!`;
         }
 
         this.addMessage('assistant', welcomeText);
@@ -529,10 +929,12 @@ class CosmicAssistant {
     formatMessage(text) {
         // Convert **bold** to <strong>
         text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        // Convert markdown links [text](url) to <a> tags
+        text = text.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+        // Convert raw URLs (not inside a tag or bracket) to links
+        text = text.replace(/(?<!href=")(?<!">)(https?:\/\/[^\s<()[\]]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
         // Convert newlines to <br>
         text = text.replace(/\n/g, '<br>');
-        // Convert URLs to links
-        text = text.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
         return text;
     }
 
@@ -553,6 +955,11 @@ class CosmicAssistant {
             'projects': 'Tell me about all of Mayank\'s projects',
             'ml-projects': 'Show me Machine Learning projects',
             'dl-projects': 'Tell me about Deep Learning projects',
+            'da-projects': 'Tell me about Data Analytics projects',
+            'py-projects': 'Show me Python projects',
+            'fastapi-projects': 'Tell me about FastAPI projects',
+            'genai-projects': 'Tell me about Generative AI projects',
+            'nlp-projects': 'Show me NLP projects',
             'contact': 'How can I contact Mayank?',
             'experience': 'What is Mayank\'s work experience?',
             'tip': 'Give me a learning tip for data science'
@@ -568,12 +975,12 @@ class CosmicAssistant {
 
         // ===== GREETINGS =====
         if (this.matches(t, ['hello', 'hi', 'hey', 'greet', 'howdy', 'what\'s up'])) {
-            return `👋 **Hey there!** I'm the Cosmic AI Assistant on Mayank Goyal's portfolio.\n\nI know everything about:\n• 📊 **11+ Data Analytics** projects\n• 🤖 **18+ Machine Learning** projects  \n• 🧠 **4 Deep Learning** projects\n• 🐍 **9 Python/OOP** applications\n\nWhat would you like to explore?`;
+            return `👋 **Hey there!** I'm the Cosmic AI Assistant on Mayank Goyal's portfolio.\n\nI can help you explore my work across **65+ projects** in these areas:\n• 📊 **Data Analytics** (12 projects)\n• 🤖 **Machine Learning** (23 projects)  \n• 🧠 **Deep Learning** (14 projects)\n• 🐍 **Python/OOP** (8 projects)\n• ⚡ **FastAPI** (2 projects)\n• 🎨 **Generative AI** (10 projects)\n• 💬 **NLP** (6 projects)\n\nWhat would you like to explore?`;
         }
 
         // ===== ABOUT MAYANK =====
         if (this.matches(t, ['who is mayank', 'about mayank', 'tell me about mayank', 'who are you', 'mayank goyal'])) {
-            return `👨‍💻 **About Mayank Goyal**\n\n${k.owner.about}\n\n**Current Focus:**\n• Data Analytics & Visualization\n• Machine Learning Engineering\n• Deep Learning Research\n• Enterprise Python Development\n\n🔗 **Links:**\n• GitHub: ${k.owner.github}\n• LinkedIn: ${k.owner.linkedin}`;
+            return `👨‍💻 **About Mayank Goyal**\n\n${k.owner.about}\n\n**Current Focus:**\n• High-performance APIs & MLOps\n• Graph Neural Networks & Time-Series forecasting\n• Generative AI, RAG & Multi-Agent systems\n• Data Analytics & Enterprise Python Development\n\n🔗 **Links:**\n• GitHub: ${k.owner.github}\n• LinkedIn: ${k.owner.linkedin}`;
         }
 
         // ===== EXPERIENCE =====
@@ -584,7 +991,7 @@ class CosmicAssistant {
 
         // ===== SKILLS =====
         if (this.matches(t, ['skill', 'tech', 'stack', 'what can', 'capabilities', 'expertise'])) {
-            const skillsList = k.skills.slice(0, 6).map(s => `• **${s.name}**: ${s.desc}`).join('\n');
+            const skillsList = k.skills.slice(0, 8).map(s => `• **${s.name}**: ${s.desc}`).join('\n');
             return `💼 **Mayank's Core Skills**\n\n${skillsList}\n\n...and more including Market Research & Prompt Engineering!\n\nWant to see projects using these skills? Just ask!`;
         }
 
@@ -595,56 +1002,88 @@ class CosmicAssistant {
 
         // ===== ALL PROJECTS OVERVIEW =====
         if (this.matches(t, ['all projects', 'all project', 'how many project', 'project count', 'portfolio overview', 'tell me about projects'])) {
-            return `🚀 **Mayank's Complete Portfolio**\n\n📊 **Data Analytics (11 projects)**\nDashboards, SQL analyses, visualization\n\n🤖 **Machine Learning (18+ projects)**\nSupervised & Unsupervised learning\n\n🧠 **Deep Learning (4 projects)**\nANNs, CNNs, LSTM/RNNs\n\n🐍 **Python/OOP (9 projects)**\nEnterprise applications & games\n\n**Featured Spotlight Projects:**\n• 📺 YouTube Studio Automation (Python)\n• ⚠️ Real-Time Safety Intelligence (Analytics)\n• 🌍 Geo-Pulse Traffic Intelligence (ML)\n• 🤟 ASL Digits Recognizer (DL)\n\nWhich category interests you?`;
+            return `🚀 **Mayank's Complete Portfolio**\n\n📊 [Data Analytics](data-analytics-projects.html) (12 projects)\n🤖 [Machine Learning](machine-learning.html) (23 projects)  \n🧠 [Deep Learning](deep-learning.html) (14 projects)\n🐍 [Python/OOP](python-projects.html) (8 projects)\n⚡ [FastAPI Lab](fastapi.html) (2 projects)\n🎨 [Generative AI Lab](generative-ai.html) (10 projects)\n💬 [NLP Lab](nlp.html) (6 projects)\n\n**Featured Spotlight Projects:**\n• 📺 [YouTube Studio Automation](https://github.com/mayank-goyal09/YouTube-Studio)\n• 🧠 [DocIntel — Private RAG Base](https://github.com/mayank-goyal09/DocIntel.git)\n• ⚡ [MovieFlix AI — Movie Recommender](https://github.com/mayank-goyal09/movieflix-rec)\n• 🛡️ [AegisGNN — Financial Fraud Detection](https://github.com/mayank-goyal09/financial-fraud-gnn)\n\nWhich category interests you?`;
         }
 
         // ===== DATA ANALYTICS PROJECTS =====
         if (this.matches(t, ['data analyt', 'dashboard', 'visualization', 'power bi', 'excel', 'analytics project'])) {
             const projects = k.dataAnalyticsProjects.slice(0, 5);
-            let response = `📊 **Data Analytics Projects**\n\n`;
+            let response = `📊 **Data Analytics Projects** (12 total)\n\n`;
             projects.forEach(p => {
-                response += `**${p.name}**\n${p.desc.substring(0, 100)}...\n🛠️ ${p.tech.join(', ')}\n\n`;
+                response += `• **${p.name}**\n${p.desc.substring(0, 100)}...\n🛠️ ${p.tech.join(', ')}\n🔗 [GitHub Code](${p.github})\n\n`;
             });
-            response += `...and 6 more projects! Ask about any specific one for details.`;
+            response += `Explore more on the [Data Analytics Projects page](data-analytics-projects.html)!`;
             return response;
         }
 
         // ===== MACHINE LEARNING PROJECTS =====
         if (this.matches(t, ['machine learning', 'ml project', 'supervised', 'unsupervised', 'scikit', 'sklearn'])) {
-            let response = `🤖 **Machine Learning Projects**\n\n**Supervised Learning (14+ projects):**\n`;
-            const supervised = k.machineLearningProjects.filter(p => p.type.includes('Supervised')).slice(0, 4);
+            let response = `🤖 **Machine Learning Projects** (23 total)\n\n**Supervised Learning:**\n`;
+            const supervised = k.machineLearningProjects.filter(p => p.type.includes('Supervised')).slice(0, 3);
             supervised.forEach(p => {
-                response += `• **${p.name}** - ${p.stats}\n`;
+                response += `• **${p.name}** - ${p.stats}\n  🔗 [GitHub Code](${p.github})\n`;
             });
             response += `\n**Unsupervised Learning:**\n`;
-            const unsupervised = k.machineLearningProjects.filter(p => p.type.includes('Unsupervised')).slice(0, 3);
+            const unsupervised = k.machineLearningProjects.filter(p => p.type.includes('Unsupervised')).slice(0, 2);
             unsupervised.forEach(p => {
-                response += `• **${p.name}** - ${p.type.split(' - ')[1]}\n`;
+                response += `• **${p.name}** - ${p.stats}\n  🔗 [GitHub Code](${p.github})\n`;
             });
-            response += `\nAsk about any specific project for more details!`;
+            response += `\nExplore the full interactive grid on the [Machine Learning page](machine-learning.html)!`;
             return response;
         }
 
         // ===== DEEP LEARNING PROJECTS =====
-        if (this.matches(t, ['deep learning', 'neural network', 'cnn', 'ann', 'lstm', 'rnn', 'tensorflow', 'keras'])) {
-            let response = `🧠 **Deep Learning Projects**\n\n`;
-            k.deepLearningProjects.forEach(p => {
-                response += `**${p.name}** (${p.type})\n${p.desc.substring(0, 120)}...\n📊 ${p.stats}\n🔗 [Live App](${p.liveApp})\n\n`;
+        if (this.matches(t, ['deep learning', 'neural network', 'cnn', 'ann', 'lstm', 'rnn', 'gnn', 'gcn', 'transformer', 'tensorflow', 'keras'])) {
+            let response = `🧠 **Deep Learning Projects** (14 total)\n\n`;
+            k.deepLearningProjects.slice(0, 4).forEach(p => {
+                response += `• **${p.name}** (${p.type})\n${p.desc.substring(0, 120)}...\n📊 ${p.stats}\n🔗 [GitHub Code](${p.github})\n\n`;
             });
+            response += `Explore the full neural stack on the [Deep Learning page](deep-learning.html)!`;
             return response;
         }
 
         // ===== PYTHON/OOP PROJECTS =====
         if (this.matches(t, ['python project', 'oop', 'backend', 'sqlite', 'streamlit app'])) {
-            let response = `🐍 **Python & OOP Projects**\n\n`;
+            let response = `🐍 **Python & OOP Projects** (8 total)\n\n`;
             const flagship = k.pythonProjects.find(p => p.flagship);
             if (flagship) {
-                response += `⭐ **FLAGSHIP: ${flagship.name}**\n${flagship.desc}\n🔗 [Live Demo](${flagship.liveApp})\n\n`;
+                response += `⭐ **FLAGSHIP: ${flagship.name}**\n${flagship.desc}\n🔗 [Live Demo](${flagship.liveApp}) • [GitHub](${flagship.github})\n\n`;
             }
             response += `**Other Projects:**\n`;
-            k.pythonProjects.filter(p => !p.flagship).slice(0, 4).forEach(p => {
-                response += `• **${p.name}** - ${p.desc.substring(0, 60)}...\n`;
+            k.pythonProjects.filter(p => !p.flagship).slice(0, 3).forEach(p => {
+                response += `• **${p.name}** - ${p.desc.substring(0, 80)}...\n  🔗 [GitHub](${p.github})\n`;
             });
+            response += `\nSee all details on the [Python Projects page](python-projects.html)!`;
+            return response;
+        }
+
+        // ===== FASTAPI PROJECTS =====
+        if (this.matches(t, ['fastapi', 'fast api', 'mlops', 'async api'])) {
+            let response = `⚡ **FastAPI Projects**\n\n`;
+            k.fastapiProjects.forEach(p => {
+                response += `**${p.name}**\n${p.desc}\n🛠️ Tech: ${p.tech.join(' • ')}\n📊 Stats: ${p.stats}\n🔗 [Live App](${p.liveApp}) • [GitHub](${p.github})\n\n`;
+            });
+            response += `Explore the live Evervault scanner visual on the [FastAPI Lab page](fastapi.html)!`;
+            return response;
+        }
+
+        // ===== GENERATIVE AI PROJECTS =====
+        if (this.matches(t, ['generative ai', 'genai', 'gen ai', 'rag', 'agent'])) {
+            let response = `🎨 **Generative AI & LLM Projects** (10 total)\n\n`;
+            k.generativeAiProjects.slice(0, 4).forEach(p => {
+                response += `**${p.name}**\n${p.desc}\n🛠️ Tech: ${p.tech.join(' • ')}\n🔗 [GitHub Code](${p.github})\n\n`;
+            });
+            response += `Check out the interactive 3D presenter robot on the [Generative AI page](generative-ai.html)!`;
+            return response;
+        }
+
+        // ===== NLP PROJECTS =====
+        if (this.matches(t, ['nlp', 'natural language', 'text analysis', 'sentiment'])) {
+            let response = `💬 **Natural Language Processing Projects** (6 total)\n\n`;
+            k.nlpProjects.forEach(p => {
+                response += `**${p.name}**\n${p.desc}\n🛠️ Tech: ${p.tech.join(' • ')}\n🔗 [GitHub Code](${p.github})\n\n`;
+            });
+            response += `See elegant animations for all NLP pipelines on the [NLP page](nlp.html)!`;
             return response;
         }
 
@@ -679,6 +1118,96 @@ class CosmicAssistant {
             return `🌦️ **${p.name}**\n\n${p.desc}\n\n**Stats:** ${p.stats}\n**Tech:** ${p.tech.join(' • ')}\n\n🔗 [Try It Live](${p.liveApp})\n💻 [GitHub](${p.github})`;
         }
 
+        // DocIntel
+        if (this.matches(t, ['docintel', 'private rag', 'vector db'])) {
+            const p = k.generativeAiProjects.find(x => x.name.includes('DocIntel'));
+            return `🧠 **${p.name}**\n\n${p.desc}\n\n**Stats:** ${p.stats}\n**Tech:** ${p.tech.join(' • ')}\n\n💻 [GitHub Code](${p.github})`;
+        }
+
+        // LegalGuard
+        if (this.matches(t, ['legalguard', 'risk analyzer', 'nda'])) {
+            const p = k.generativeAiProjects.find(x => x.name.includes('LegalGuard'));
+            return `⚖️ **${p.name}**\n\n${p.desc}\n\n**Stats:** ${p.stats}\n**Tech:** ${p.tech.join(' • ')}\n\n💻 [GitHub Code](${p.github})`;
+        }
+
+        // AutoDoc
+        if (this.matches(t, ['autodoc', 'docstring', 'ast'])) {
+            const p = k.generativeAiProjects.find(x => x.name.includes('AutoDoc'));
+            return `🚀 **${p.name}**\n\n${p.desc}\n\n**Stats:** ${p.stats}\n**Tech:** ${p.tech.join(' • ')}\n\n💻 [GitHub Code](${p.github})`;
+        }
+
+        // LoreWeaver
+        if (this.matches(t, ['loreweaver', 'voice story'])) {
+            const p = k.generativeAiProjects.find(x => x.name.includes('LoreWeaver'));
+            return `🎭 **${p.name}**\n\n${p.desc}\n\n**Stats:** ${p.stats}\n**Tech:** ${p.tech.join(' • ')}\n\n💻 [GitHub Code](${p.github})`;
+        }
+
+        // ArchitectAI
+        if (this.matches(t, ['architectai', 'virtual staging'])) {
+            const p = k.generativeAiProjects.find(x => x.name.includes('ArchitectAI'));
+            return `🛋️ **${p.name}**\n\n${p.desc}\n\n**Stats:** ${p.stats}\n**Tech:** ${p.tech.join(' • ')}\n\n💻 [GitHub Code](${p.github})`;
+        }
+
+        // Echoes of History
+        if (this.matches(t, ['echoes of history', 'museum', 'parchment'])) {
+            const p = k.generativeAiProjects.find(x => x.name.includes('Echoes'));
+            return `🏛️ **${p.name}**\n\n${p.desc}\n\n**Stats:** ${p.stats}\n**Tech:** ${p.tech.join(' • ')}\n\n💻 [GitHub Code](${p.github})`;
+        }
+
+        // MovieFlix AI
+        if (this.matches(t, ['movieflix', 'movie recommender'])) {
+            const p = k.fastapiProjects.find(x => x.name.includes('MovieFlix'));
+            return `🎬 **${p.name}**\n\n${p.desc}\n\n**Stats:** ${p.stats}\n**Tech:** ${p.tech.join(' • ')}\n\n🔗 [Try It Live](${p.liveApp})\n💻 [GitHub Code](${p.github})`;
+        }
+
+        // CureLoop
+        if (this.matches(t, ['cureloop', 'disease prediction api', 'mlops api'])) {
+            const p = k.fastapiProjects.find(x => x.name.includes('CureLoop'));
+            return `🩺 **${p.name}**\n\n${p.desc}\n\n**Stats:** ${p.stats}\n**Tech:** ${p.tech.join(' • ')}\n\n🔗 [Live docs](${p.liveApp})\n💻 [GitHub Code](${p.github})`;
+        }
+
+        // Why Summarizer
+        if (this.matches(t, ['why summarizer', 'git', 'jira'])) {
+            const p = k.nlpProjects.find(x => x.name.includes('Why'));
+            return `📝 **${p.name}**\n\n${p.desc}\n\n**Stats:** ${p.stats}\n**Tech:** ${p.tech.join(' • ')}\n\n💻 [GitHub Code](${p.github})`;
+        }
+
+        // Address ResolveR
+        if (this.matches(t, ['address resolver', 'address resolver'])) {
+            const p = k.nlpProjects.find(x => x.name.includes('Address'));
+            return `📮 **${p.name}**\n\n${p.desc}\n\n**Stats:** ${p.stats}\n**Tech:** ${p.tech.join(' • ')}\n\n💻 [GitHub Code](${p.github})`;
+        }
+
+        // Beep-for-Abuse
+        if (this.matches(t, ['beep-for-abuse', 'toxic', 'audio buffer'])) {
+            const p = k.nlpProjects.find(x => x.name.includes('Beep'));
+            return `🔴 **${p.name}**\n\n${p.desc}\n\n**Stats:** ${p.stats}\n**Tech:** ${p.tech.join(' • ')}\n\n💻 [GitHub Code](${p.github})`;
+        }
+
+        // Screendit
+        if (this.matches(t, ['screendit', 'spin', 'news bias'])) {
+            const p = k.nlpProjects.find(x => x.name.includes('Screendit'));
+            return `📰 **${p.name}**\n\n${p.desc}\n\n**Stats:** ${p.stats}\n**Tech:** ${p.tech.join(' • ')}\n\n💻 [GitHub Code](${p.github})`;
+        }
+
+        // nuance-flow
+        if (this.matches(t, ['nuance-flow', 'nuance flow', 'emotion pro'])) {
+            const p = k.nlpProjects.find(x => x.name.includes('nuance'));
+            return `💬 **${p.name}**\n\n${p.desc}\n\n**Stats:** ${p.stats}\n**Tech:** ${p.tech.join(' • ')}\n\n💻 [GitHub Code](${p.github})`;
+        }
+
+        // AegisGNN
+        if (this.matches(t, ['aegisgnn', 'aegis gnn', 'fraud detection'])) {
+            const p = k.deepLearningProjects.find(x => x.name.includes('Aegis'));
+            return `🛡️ **${p.name}**\n\n${p.desc}\n\n**Stats:** ${p.stats}\n**Tech:** ${p.tech.join(' • ')}\n\n💻 [GitHub Code](${p.github})`;
+        }
+
+        // CityPulse AI
+        if (this.matches(t, ['citypulse', 'city pulse', 'traffic congestion'])) {
+            const p = k.deepLearningProjects.find(x => x.name.includes('CityPulse'));
+            return `🏙️ **${p.name}**\n\n${p.desc}\n\n**Stats:** ${p.stats}\n**Tech:** ${p.tech.join(' • ')}\n\n💻 [GitHub Code](${p.github})`;
+        }
+
         // Heart Disease / Cardio
         if (this.matches(t, ['heart', 'cardio', 'disease prediction', 'health risk'])) {
             const projects = k.machineLearningProjects.filter(p =>
@@ -687,7 +1216,7 @@ class CosmicAssistant {
             );
             let response = `❤️ **Healthcare/Heart Disease Projects**\n\n`;
             projects.forEach(p => {
-                response += `**${p.name}**\n${p.desc.substring(0, 100)}...\n🔗 [Live App](${p.liveApp})\n\n`;
+                response += `• **${p.name}**\n  ${p.desc.substring(0, 100)}...\n  🔗 [Live App](${p.liveApp})\n\n`;
             });
             return response;
         }
@@ -700,7 +1229,7 @@ class CosmicAssistant {
 
         // ===== HELP =====
         if (this.matches(t, ['help', 'what can you do', 'how to use', 'commands'])) {
-            return `🆘 **How I Can Help**\n\nI'm your guide to Mayank Goyal's portfolio! Try asking:\n\n**About Projects:**\n• "Show me ML projects"\n• "Tell me about YouTube Studio"\n• "What Deep Learning projects are there?"\n\n**About Mayank:**\n• "What are his skills?"\n• "Tell me about his experience"\n• "How can I contact him?"\n\n**Other:**\n• "Give me a learning tip"\n• "Show me all projects"\n\nOr just use the quick buttons below! 👇`;
+            return `🆘 **How I Can Help**\n\nI'm your guide to Mayank Goyal's portfolio! Try asking:\n\n**About Projects:**\n• "Show me FastAPI projects"\n• "Tell me about DocIntel"\n• "Show me ML projects"\n• "What NLP projects are there?"\n\n**About Mayank:**\n• "What are his skills?"\n• "Tell me about his experience"\n• "How can I contact him?"\n\n**Other:**\n• "Give me a learning tip"\n• "Show me all projects"\n\nOr just use the quick buttons below! 👇`;
         }
 
         // ===== THANKS =====
@@ -709,7 +1238,7 @@ class CosmicAssistant {
         }
 
         // ===== FALLBACK =====
-        return `🤔 I'm not sure I understood that fully, but I'm here to help!\n\n**Try asking about:**\n• "Show me Machine Learning projects"\n• "What are Mayank's skills?"\n• "Tell me about the YouTube Studio project"\n• "How can I contact Mayank?"\n\nOr use the quick action buttons below! 👇`;
+        return `🤔 I'm not sure I understood that fully, but I'm here to help!\n\n**Try asking about:**\n• "Show me Generative AI projects"\n• "What are Mayank's skills?"\n• "Tell me about the CureLoop project"\n• "How can I contact Mayank?"\n\nOr use the quick action buttons below! 👇`;
     }
 
     matches(text, keywords) {
