@@ -561,7 +561,7 @@ const THEMES = {
 export class LiquidMetalButton {
   constructor(element) {
     this.element = element;
-    this.label = element.innerText || "Explore →";
+    this.label = element.innerHTML || "Explore →";
     this.themeName = element.getAttribute("data-theme") || "default";
     this.theme = THEMES[this.themeName] || THEMES.default;
     this.width = parseInt(element.getAttribute("data-width")) || 200;
@@ -588,7 +588,7 @@ export class LiquidMetalButton {
     labelLayer.className = "liquid-metal-label-layer";
     const labelSpan = document.createElement("span");
     labelSpan.className = "liquid-metal-label";
-    labelSpan.innerText = this.label;
+    labelSpan.innerHTML = this.label;
     labelSpan.style.color = this.theme.text;
     labelLayer.appendChild(labelSpan);
 
