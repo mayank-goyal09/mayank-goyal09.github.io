@@ -197,7 +197,10 @@
         <!-- Column 1: Local Intelligence & Language Models -->
         <div class="manifest-card glass-panel theme-purple">
           <div class="manifest-header">
-            <span class="manifest-icon">🧠</span>
+            <svg class="manifest-header-icon" viewBox="0 0 24 24" width="24" height="24" style="fill: none; stroke: #c084fc; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 3px #c084fc); margin-right: 8px;">
+              <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1 0-3.12 3 3 0 0 1 0-3.88 2.5 2.5 0 0 1 0-3.12A2.5 2.5 0 0 1 9.5 2z"/>
+              <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 0-3.12 3 3 0 0 0 0-3.88 2.5 2.5 0 0 0 0-3.12A2.5 2.5 0 0 0 14.5 2z"/>
+            </svg>
             <h3>Local Intelligence & Language Models</h3>
           </div>
           <div class="manifest-body">
@@ -220,12 +223,18 @@
             </div>
             <div class="manifest-item" style="margin-top: auto; padding-top: 15px; border-top: 1px dashed rgba(255, 255, 255, 0.08);">
               <span class="item-label" style="margin-bottom: 8px; display: block;">Explore Research Labs</span>
-              <div style="display: flex; gap: 10px; flex-wrap: wrap; font-size: 0.8rem;">
-                <a href="generative-ai.html" style="color: #f0abfc; text-decoration: none; font-weight: 500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">🌌 Generative AI</a>
-                <span style="color: rgba(255,255,255,0.3)">|</span>
-                <a href="nlp.html" style="color: #eab308; text-decoration: none; font-weight: 500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">🗣️ NLP</a>
-                <span style="color: rgba(255,255,255,0.3)">|</span>
-                <a href="deep-learning.html" style="color: #c084fc; text-decoration: none; font-weight: 500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">🧠 Deep Learning</a>
+              <div style="display: flex; gap: 12px; flex-wrap: wrap; font-size: 0.8rem; align-items: center;">
+                <a href="generative-ai.html" style="color: #f0abfc; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                  <span class="lab-link-dot" style="background-color: #f0abfc; box-shadow: 0 0 6px #f0abfc;"></span>Generative AI
+                </a>
+                <span style="color: rgba(255,255,255,0.15)">|</span>
+                <a href="nlp.html" style="color: #eab308; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                  <span class="lab-link-dot" style="background-color: #eab308; box-shadow: 0 0 6px #eab308;"></span>NLP
+                </a>
+                <span style="color: rgba(255,255,255,0.15)">|</span>
+                <a href="deep-learning.html" style="color: #c084fc; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                  <span class="lab-link-dot" style="background-color: #c084fc; box-shadow: 0 0 6px #c084fc;"></span>Deep Learning
+                </a>
               </div>
             </div>
           </div>
@@ -234,7 +243,11 @@
         <!-- Column 2: Data Architecture & Automation -->
         <div class="manifest-card glass-panel theme-cyan">
           <div class="manifest-header">
-            <span class="manifest-icon">📊</span>
+            <svg class="manifest-header-icon" viewBox="0 0 24 24" width="24" height="24" style="fill: none; stroke: var(--accent-cyan); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 3px var(--accent-cyan)); margin-right: 8px;">
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+            </svg>
             <h3>Data Architecture & Automation</h3>
           </div>
           <div class="manifest-body">
@@ -258,10 +271,14 @@
             </div>
             <div class="manifest-item" style="margin-top: auto; padding-top: 15px; border-top: 1px dashed rgba(255, 255, 255, 0.08);">
               <span class="item-label" style="margin-bottom: 8px; display: block;">Explore Research Labs</span>
-              <div style="display: flex; gap: 10px; flex-wrap: wrap; font-size: 0.8rem;">
-                <a href="data-analytics-projects.html" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">📊 Data Analytics</a>
-                <span style="color: rgba(255,255,255,0.3)">|</span>
-                <a href="machine-learning.html" style="color: #22c55e; text-decoration: none; font-weight: 500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">🤖 Machine Learning</a>
+              <div style="display: flex; gap: 12px; flex-wrap: wrap; font-size: 0.8rem; align-items: center;">
+                <a href="data-analytics-projects.html" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                  <span class="lab-link-dot" style="background-color: var(--accent-cyan); box-shadow: 0 0 6px var(--accent-cyan);"></span>Data Analytics
+                </a>
+                <span style="color: rgba(255,255,255,0.15)">|</span>
+                <a href="machine-learning.html" style="color: #22c55e; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                  <span class="lab-link-dot" style="background-color: #22c55e; box-shadow: 0 0 6px #22c55e;"></span>Machine Learning
+                </a>
               </div>
             </div>
           </div>
@@ -270,7 +287,9 @@
         <!-- Column 3: Backends & Deployment Interfaces -->
         <div class="manifest-card glass-panel theme-green">
           <div class="manifest-header">
-            <span class="manifest-icon">⚡</span>
+            <svg class="manifest-header-icon" viewBox="0 0 24 24" width="24" height="24" style="fill: none; stroke: #10b981; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 3px #10b981); margin-right: 8px;">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
             <h3>Backends & Deployment Interfaces</h3>
           </div>
           <div class="manifest-body">
@@ -292,10 +311,14 @@
             </div>
             <div class="manifest-item" style="margin-top: auto; padding-top: 15px; border-top: 1px dashed rgba(255, 255, 255, 0.08);">
               <span class="item-label" style="margin-bottom: 8px; display: block;">Explore Research Labs</span>
-              <div style="display: flex; gap: 10px; flex-wrap: wrap; font-size: 0.8rem;">
-                <a href="fastapi.html" style="color: #10b981; text-decoration: none; font-weight: 500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">⚡ FastAPI</a>
-                <span style="color: rgba(255,255,255,0.3)">|</span>
-                <a href="python-projects.html" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">🐍 Python & OOP</a>
+              <div style="display: flex; gap: 12px; flex-wrap: wrap; font-size: 0.8rem; align-items: center;">
+                <a href="fastapi.html" style="color: #10b981; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                  <span class="lab-link-dot" style="background-color: #10b981; box-shadow: 0 0 6px #10b981;"></span>FastAPI
+                </a>
+                <span style="color: rgba(255,255,255,0.15)">|</span>
+                <a href="python-projects.html" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                  <span class="lab-link-dot" style="background-color: var(--accent-cyan); box-shadow: 0 0 6px var(--accent-cyan);"></span>Python & OOP
+                </a>
               </div>
             </div>
           </div>
@@ -304,7 +327,7 @@
 
       <!-- Zero-Text Tech Stack Inventory Table -->
       <div class="tech-inventory-section animate-on-scroll">
-        <h3 class="inventory-title">⚙️ Core Applied Tech Stack Matrix</h3>
+        <h3 class="inventory-title">&gt; CORE APPLIED TECH STACK MATRIX</h3>
         <div class="inventory-table-wrapper glass-panel">
           <table class="inventory-table">
             <thead>
@@ -370,16 +393,26 @@
               flex-direction: column;
             " onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='rgba(0, 234, 255, 0.8)'"
             onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 234, 255, 0.3)'">
-            <div style="font-size: 3rem; margin-bottom: 15px;">📊</div>
-            <h3 style="color: var(--accent-cyan); margin-bottom: 10px;">
-              Data Analyst
+            <div style="height: 50px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; width: 100%;">
+              <svg class="visual-hint-svg" viewBox="0 0 100 40" width="100%" height="40">
+                <path d="M 0 35 L 20 25 L 40 30 L 60 15 L 80 20 L 100 5" fill="none" stroke="var(--accent-cyan)" stroke-width="2" style="filter: drop-shadow(0 0 4px var(--accent-cyan))" />
+                <line x1="0" y1="35" x2="100" y2="35" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+                <line x1="20" y1="0" x2="20" y2="40" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="2" />
+                <line x1="40" y1="0" x2="40" y2="40" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="2" />
+                <line x1="60" y1="0" x2="60" y2="40" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="2" />
+                <line x1="80" y1="0" x2="80" y2="40" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="2" />
+              </svg>
+            </div>
+            <h3 style="color: var(--accent-cyan); margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 1.15rem; font-weight: 700;">
+              01. Data & Analytics
             </h3>
             <p style="
                 color: var(--text-muted);
                 margin-bottom: 20px;
                 font-size: 0.9rem;
+                line-height: 1.6;
               ">
-              Customer analysis, market segmentation, predictive modeling & dashboards
+              Custom ingestion processing, relational schemas, and handling fuzzy-matching pipelines.
             </p>
             <a href="data-analytics-projects.html" data-liquid-button data-theme="analytics" data-width="240" data-height="50" style="margin-top: auto; width: 240px; height: 50px;">
               Explore Analytics →
@@ -396,16 +429,29 @@
               flex-direction: column;
             " onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='rgba(139, 71, 255, 0.8)'"
             onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 234, 255, 0.3)'">
-            <div style="font-size: 3rem; margin-bottom: 15px;">🐍</div>
-            <h3 style="color: var(--accent-purple); margin-bottom: 10px;">
-              Python & Backend
+            <div style="height: 50px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; width: 100%;">
+              <svg class="visual-hint-svg" viewBox="0 0 100 40" width="100%" height="40" style="stroke: rgba(255, 255, 255, 0.4); stroke-width: 1.5; fill: none;">
+                <rect x="5" y="2" width="12" height="8" rx="1" stroke="var(--accent-purple)" style="filter: drop-shadow(0 0 3px var(--accent-purple))" />
+                <line x1="11" y1="10" x2="11" y2="35" />
+                <line x1="11" y1="20" x2="25" y2="20" />
+                <rect x="27" y="16" width="12" height="8" rx="1" />
+                <line x1="33" y1="24" x2="33" y2="35" />
+                <line x1="33" y1="30" x2="45" y2="30" />
+                <path d="M 47 27 L 55 27 L 59 31 L 59 35 L 47 35 Z" stroke="var(--accent-cyan)" />
+                <line x1="11" y1="35" x2="25" y2="35" />
+                <path d="M 27 32 L 35 32 L 39 36 L 39 40 L 27 40 Z" />
+              </svg>
+            </div>
+            <h3 style="color: var(--accent-purple); margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 1.15rem; font-weight: 700;">
+              02. Python Backends
             </h3>
             <p style="
                 color: var(--text-muted);
                 margin-bottom: 20px;
                 font-size: 0.9rem;
+                line-height: 1.6;
               ">
-              Enterprise apps, banking systems, inventory management & OOP architecture
+              Modular script architecture, strict object-oriented structures, and clean codebase layouts.
             </p>
             <a href="python-projects.html" data-liquid-button data-theme="python" data-width="240" data-height="50" style="margin-top: auto; width: 240px; height: 50px;">
               Explore Python →
@@ -422,16 +468,29 @@
               flex-direction: column;
             " onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='rgba(34, 197, 94, 0.8)'"
             onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 234, 255, 0.3)'">
-            <div style="font-size: 3rem; margin-bottom: 15px;">🤖</div>
-            <h3 style="color: var(--accent-secondary); margin-bottom: 10px;">
-              Machine Learning
+            <div style="height: 50px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; width: 100%;">
+              <svg class="visual-hint-svg" viewBox="0 0 100 40" width="100%" height="40">
+                <circle cx="20" cy="20" r="4" fill="none" stroke="#22c55e" stroke-width="2" style="filter: drop-shadow(0 0 4px #22c55e)" />
+                <circle cx="50" cy="10" r="4" fill="none" stroke="#22c55e" stroke-width="2" style="filter: drop-shadow(0 0 4px #22c55e)" />
+                <circle cx="50" cy="30" r="4" fill="none" stroke="#22c55e" stroke-width="2" style="filter: drop-shadow(0 0 4px #22c55e)" />
+                <circle cx="80" cy="20" r="4" fill="none" stroke="#22c55e" stroke-width="2" style="filter: drop-shadow(0 0 4px #22c55e)" />
+                <line x1="24" y1="19" x2="46" y2="11" stroke="rgba(34, 197, 94, 0.4)" stroke-width="1.5" />
+                <line x1="24" y1="21" x2="46" y2="29" stroke="rgba(34, 197, 94, 0.4)" stroke-width="1.5" />
+                <line x1="54" y1="11" x2="76" y2="19" stroke="rgba(34, 197, 94, 0.4)" stroke-width="1.5" />
+                <line x1="54" y1="29" x2="76" y2="21" stroke="rgba(34, 197, 94, 0.4)" stroke-width="1.5" />
+                <line x1="50" y1="14" x2="50" y2="26" stroke="rgba(34, 197, 94, 0.2)" stroke-width="1" stroke-dasharray="2" />
+              </svg>
+            </div>
+            <h3 style="color: var(--accent-secondary); margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 1.15rem; font-weight: 700;">
+              03. Machine Learning
             </h3>
             <p style="
                 color: var(--text-muted);
                 margin-bottom: 20px;
                 font-size: 0.9rem;
+                line-height: 1.6;
               ">
-              Supervised & unsupervised models, pipelines, and deployable ML apps
+              Practical, deployable pipelines engineered for direct model execution and testing.
             </p>
             <a href="machine-learning.html" data-liquid-button data-theme="ml" data-width="240" data-height="50" style="margin-top: auto; width: 240px; height: 50px;">
               Explore ML →
@@ -450,16 +509,22 @@
             "
             onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='rgba(168, 85, 247, 0.8)'; this.style.boxShadow='0 0 30px rgba(168, 85, 247, 0.3)'"
             onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 234, 255, 0.3)'; this.style.boxShadow='none'">
-            <div style="font-size: 3rem; margin-bottom: 15px;">🧬</div>
-            <h3 style="color: #c084fc; margin-bottom: 10px;">
-              Deep Learning
+            <div style="height: 50px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; width: 100%;">
+              <svg class="visual-hint-svg" viewBox="0 0 100 40" width="100%" height="40">
+                <path d="M 0 20 Q 12 5, 25 20 T 50 20 T 75 20 T 100 20" fill="none" stroke="#c084fc" stroke-width="2" style="filter: drop-shadow(0 0 4px #c084fc)" />
+                <path d="M 0 20 L 5 15 L 10 25 L 15 10 L 20 30 L 25 12 L 30 28 L 35 15 L 40 25 L 45 18 L 50 22 L 55 10 L 60 30 L 65 15 L 70 25 L 75 20 L 80 22 L 85 10 L 90 30 L 95 15 L 100 20" fill="none" stroke="rgba(192, 132, 252, 0.25)" stroke-width="1" />
+              </svg>
+            </div>
+            <h3 style="color: #c084fc; margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 1.15rem; font-weight: 700;">
+              04. Deep Learning & Signals
             </h3>
             <p style="
                 color: var(--text-muted);
                 margin-bottom: 20px;
                 font-size: 0.9rem;
+                line-height: 1.6;
               ">
-              Neural networks, CNNs, ANNs, and AI architectures beyond the event horizon
+              Spatio-temporal network routing and 1D-CNN implementations for complex signal arrays.
             </p>
             <a href="deep-learning.html" data-liquid-button data-theme="dl" data-width="240" data-height="50" style="margin-top: auto; width: 240px; height: 50px;">
               Explore DL →
@@ -478,16 +543,29 @@
             "
             onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='rgba(16, 185, 129, 0.8)'; this.style.boxShadow='0 0 30px rgba(16, 185, 129, 0.3)'"
             onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 234, 255, 0.3)'; this.style.boxShadow='none'">
-            <div style="font-size: 3rem; margin-bottom: 15px;">⚡</div>
-            <h3 style="color: #10b981; margin-bottom: 10px;">
-              FastAPI Lab
+            <div style="height: 50px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; width: 100%;">
+              <style>
+                @keyframes terminal-cursor {
+                  0%, 100% { opacity: 1; }
+                  50% { opacity: 0; }
+                }
+              </style>
+              <svg class="visual-hint-svg" viewBox="0 0 100 40" width="100%" height="40">
+                <rect x="5" y="5" width="90" height="30" rx="3" fill="rgba(0,0,0,0.4)" stroke="#10b981" stroke-width="1" style="filter: drop-shadow(0 0 3px rgba(16,185,129,0.3))" />
+                <text x="12" y="24" fill="#10b981" font-family="monospace" font-size="9" font-weight="bold">> curl -s api/</text>
+                <rect x="83" y="15" width="5" height="10" fill="#10b981" style="animation: terminal-cursor 1s steps(2, start) infinite;" />
+              </svg>
+            </div>
+            <h3 style="color: #10b981; margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 1.15rem; font-weight: 700;">
+              05. FastAPI Engines
             </h3>
             <p style="
                 color: var(--text-muted);
                 margin-bottom: 20px;
                 font-size: 0.9rem;
+                line-height: 1.6;
               ">
-              High-performance async APIs, ML deployment, and real-time data pipelines
+              Asynchronous service architecture designed for fast execution and real-time backend delivery.
             </p>
             <a href="fastapi.html" data-liquid-button data-theme="fastapi" data-width="240" data-height="50" style="margin-top: auto; width: 240px; height: 50px;">
               Explore FastAPI →
@@ -506,16 +584,28 @@
             "
             onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='rgba(240, 171, 252, 0.8)'; this.style.boxShadow='0 0 30px rgba(240, 171, 252, 0.3)'"
             onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 234, 255, 0.3)'; this.style.boxShadow='none'">
-            <div style="font-size: 3rem; margin-bottom: 15px;">🌌</div>
-            <h3 style="color: #f0abfc; margin-bottom: 10px;">
-              Generative AI
+            <div style="height: 50px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; width: 100%;">
+              <svg class="visual-hint-svg" viewBox="0 0 100 40" width="100%" height="40">
+                <rect x="35" y="8" width="30" height="24" rx="4" fill="none" stroke="#f0abfc" stroke-width="2" style="filter: drop-shadow(0 0 4px #f0abfc)" />
+                <circle cx="43" cy="18" r="2" fill="#f0abfc" />
+                <circle cx="57" cy="18" r="2" fill="#f0abfc" />
+                <line x1="45" y1="25" x2="55" y2="25" stroke="#f0abfc" stroke-width="1.5" stroke-linecap="round" />
+                <line x1="50" y1="8" x2="50" y2="3" stroke="#f0abfc" stroke-width="2" />
+                <circle cx="50" cy="2" r="1.5" fill="#f0abfc" />
+                <line x1="20" y1="20" x2="35" y2="20" stroke="rgba(240, 171, 252, 0.4)" stroke-width="1.5" />
+                <line x1="65" y1="20" x2="80" y2="20" stroke="rgba(240, 171, 252, 0.4)" stroke-width="1.5" />
+              </svg>
+            </div>
+            <h3 style="color: #f0abfc; margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 1.15rem; font-weight: 700;">
+              06. Generative AI
             </h3>
             <p style="
                 color: var(--text-muted);
                 margin-bottom: 20px;
                 font-size: 0.9rem;
+                line-height: 1.6;
               ">
-              LLMs, RAG, multi-modal bots, and autonomous AI systems
+              Local LLM pipeline orchestration and custom RAG engines focused on strict data privacy.
             </p>
             <a href="generative-ai.html" data-liquid-button data-theme="genai" data-width="240" data-height="50" style="margin-top: auto; width: 240px; height: 50px;">
               Explore GenAI →
@@ -534,16 +624,23 @@
             "
             onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='rgba(234, 179, 8, 0.8)'; this.style.boxShadow='0 0 30px rgba(234, 179, 8, 0.3)'"
             onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 234, 255, 0.3)'; this.style.boxShadow='none'">
-            <div style="font-size: 3rem; margin-bottom: 15px;">🗣️</div>
-            <h3 style="color: #eab308; margin-bottom: 10px;">
-              Natural Language Processing
+            <div style="height: 50px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; width: 100%;">
+              <svg class="visual-hint-svg" viewBox="0 0 100 40" width="100%" height="40">
+                <rect x="25" y="15" width="50" height="20" rx="2" fill="rgba(10, 15, 25, 0.8)" stroke="#eab308" stroke-width="1" style="filter: drop-shadow(0 0 3px rgba(234,179,8,0.3))" />
+                <rect x="20" y="10" width="50" height="20" rx="2" fill="rgba(10, 15, 25, 0.6)" stroke="rgba(234, 179, 8, 0.5)" stroke-width="1" />
+                <rect x="15" y="5" width="50" height="20" rx="2" fill="rgba(10, 15, 25, 0.4)" stroke="rgba(234, 179, 8, 0.25)" stroke-width="1" />
+              </svg>
+            </div>
+            <h3 style="color: #eab308; margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 1.15rem; font-weight: 700;">
+              07. Natural Language Processing
             </h3>
             <p style="
                 color: var(--text-muted);
                 margin-bottom: 20px;
                 font-size: 0.9rem;
+                line-height: 1.6;
               ">
-              Text processing, sequence models, NER, embeddings, and semantic analysis
+              Complex sequence modeling, token tracking, and semantic translation setups.
             </p>
             <a href="nlp.html" data-liquid-button data-theme="nlp" data-width="240" data-height="50" style="margin-top: auto; width: 240px; height: 50px;">
               Explore NLP →
@@ -562,10 +659,10 @@
           ">
           <a href="https://github.com/mayank-goyal09" target="_blank" data-liquid-button data-theme="default" data-width="240" data-height="50"
             style="text-decoration: none; width: 240px; height: 50px; display: inline-flex;">
-            🔗 View GitHub Profile
+            <svg class="cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>View GitHub Profile
           </a>
           <a href="#contact" data-liquid-button data-theme="default" data-width="240" data-height="50" style="text-decoration: none; width: 240px; height: 50px; display: inline-flex;">
-            💬 Get in Touch
+            <svg class="cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>Get in Touch
           </a>
         </div>
       </div>
@@ -638,9 +735,17 @@
     </section>
   </main>
 
-  <!-- 🎛️ Sound Control Deck (Floating Button) -->
+  <!-- Sound Control Deck (Floating Button) -->
   <button id="sound-btn" class="sound-control-deck">
-    <span id="sound-icon">🔇</span>
+    <span id="sound-icon">
+      <svg id="sound-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; display: inline-block; vertical-align: middle;">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <line class="mute-line" x1="23" y1="9" x2="17" y2="15"></line>
+        <line class="mute-line" x1="17" y1="9" x2="23" y2="15"></line>
+        <path class="sound-wave sound-wave-1" d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        <path class="sound-wave sound-wave-2" d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+      </svg>
+    </span>
     <span class="sound-text">SYSTEM AUDIO</span>
   </button>
 
@@ -1063,6 +1168,19 @@
     /* =================================================================
        🛠️ REDESIGNED SKILLS SECTION - PRACTITIONER'S WORKBENCH
        ================================================================= */
+    .manifest-header-icon {
+      flex-shrink: 0;
+    }
+    
+    .lab-link-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+
     .skills-manifest-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
