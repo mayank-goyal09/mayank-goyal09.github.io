@@ -2200,8 +2200,31 @@ body {
     box-shadow: 0 0 30px rgba(140, 110, 255, 0.3);
 }
 
-.sound-active #sound-icon {
+.sound-active #sound-icon-svg {
     animation: pulse-beat 1.5s infinite;
+}
+
+#sound-icon-svg {
+    transition: transform 0.2s ease;
+    vertical-align: middle;
+}
+
+#sound-icon-svg .sound-wave {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+#sound-icon-svg .mute-line {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.sound-active #sound-icon-svg .sound-wave {
+    opacity: 1;
+}
+
+.sound-active #sound-icon-svg .mute-line {
+    opacity: 0;
 }
 
 @keyframes pulse-beat {
