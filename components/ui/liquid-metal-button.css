@@ -41,6 +41,10 @@
 }
 
 .liquid-metal-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.05em;
