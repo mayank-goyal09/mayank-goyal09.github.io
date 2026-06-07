@@ -11,11 +11,19 @@ const portfolioKnowledge = {
         linkedin: "https://www.linkedin.com/in/mayank-goyal-4b8756363",
         github: "https://github.com/mayank-goyal09",
         twitter: "https://x.com/mem0ews",
-        about: `I'm Mayank — a "student" by title, but in practice a data analyst, AI explorer, and builder of things that actually get used. I learn by shipping real projects and listening to real feedback. I'm shaping myself into someone who can think like a scientist, execute like an engineer, and communicate like a storyteller.
+        about: `I build software to solve specific, practical problems. No fluff, no corporate buzzwords—just clean layouts and tools designed to do exactly what they were built to do.
 
-I look beyond the raw numbers to understand the intent behind them. It's about building tools that don't just function, but fit naturally into how people actually work.
+I don't care about surface-level professional titles. I prefer to let the work speak for itself, focusing my energy on functional categories like client-side architecture and building tangible systems from the ground up. If you want to know what I am capable of, look at the codebase, not a label.
 
-Binary is boring. I'm here to find the ghost in the machine, the raw intent that turns cold data into a move.`
+I have a strong preference for local development and data privacy. Whenever possible, I choose to spin up lightweight local setups—like running Mistral via Ollama—to avoid unnecessary subscription costs and keep data completely secure and self-contained.
+
+Clean folder structures and tight, modular layouts aren't an afterthought for me; they are foundational to a stable project. I spend the extra time making sure a repository is organized logically so it can be maintained, scaled, and understood immediately by other developers.
+
+I build things that address real, day-to-day operational friction—whether that means connecting git commits to tracking tickets or automating messy proof-of-delivery paperwork for logistics. If a tool doesn't make a concrete process more efficient, it's just noise.
+
+My approach is straightforward: clear goals, direct communication, and spending less time debating theories and more time handling edge cases. I don't treat system constraints or bugs like a crisis; they are just puzzles to be systematically broken down and cleared.
+
+A portfolio shouldn't be an exercise in creative writing. Every project featured here was built to work reliably in the real world. If you appreciate straightforward engineering without the corporate theater, you'll navigate through my work just fine.`
     },
 
     // ===== EXPERIENCE =====
