@@ -467,6 +467,7 @@ A portfolio shouldn't be an exercise in creative writing. Every project featured
             desc: "Production-grade, local-first ML pipeline designed to automate wildlife population tracking using YOLOv8 edge inference.",
             tech: ["Python", "YOLOv8", "OpenCV", "Pandas", "Streamlit"],
             stats: "YOLOv8 edge inference, quality-control filters, async data logging",
+            liveApp: "https://faunafind-project.streamlit.app/",
             github: "https://github.com/mayank-goyal09/faunafind"
         },
         {
