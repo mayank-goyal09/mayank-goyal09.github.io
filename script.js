@@ -109,7 +109,7 @@ parallaxCards.forEach((card) => {
   });
 });
 
-// 4. Cosmic AI Assistant (Powered by JSON Config)
+// 4. Cosmic Assistant (Powered by JSON Config)
 const aiOrb = document.getElementById("aiOrb");
 const aiChatWindow = document.getElementById("aiChatWindow");
 const aiCloseBtn = document.getElementById("aiCloseBtn");

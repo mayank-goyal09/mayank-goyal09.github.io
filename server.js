@@ -22,20 +22,20 @@ app.post("/api/chat", async (req, res) => {
         {
           role: "system",
           content:
-            "You are the Cosmic AI Assistant on Mayank Goyal's portfolio. " +
+            "You are the Cosmic Assistant on Mayank Goyal's portfolio. " +
             "Answer clearly, briefly, and professionally. You can talk about his skills, projects, and how to contact him."
         },
         { role: "user", content: userMessage }
       ]
     });
-
+ 
     const aiText =
       response.output[0].content[0].text || "I could not generate a reply.";
-
+ 
     res.json({ reply: aiText });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: "AI backend error" });
+    res.status(500).json({ error: "Backend assistant error" });
   }
 });
 

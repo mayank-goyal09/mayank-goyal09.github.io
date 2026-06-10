@@ -1,5 +1,6 @@
 /* =================================================================
-   🤖 COSMIC AI ASSISTANT - ENHANCED CHATBOT FOR MAYANK GOYAL PORTFOLIO
+   🚀 COSMIC ASSISTANT - ENHANCED CHATBOT FOR MAYANK GOYAL PORTFOLIO
+   Features advanced glassmorphism, responsive curves, and custom logic.
    ================================================================= */
 
 const portfolioKnowledge = {
@@ -778,7 +779,7 @@ class CosmicAssistant {
         wrapper.className = 'cosmic-chat-wrapper';
         wrapper.innerHTML = `
             <!-- Floating Orb Button (Original Design) -->
-            <button class="cosmic-orb" id="cosmicOrb" aria-label="Open AI assistant"></button>
+            <button class="cosmic-orb" id="cosmicOrb" aria-label="Open Cosmic Assistant"></button>
 
             <!-- Chat Window -->
             <div class="cosmic-chat-window" id="cosmicChatWindow" aria-hidden="true">
@@ -788,7 +789,7 @@ class CosmicAssistant {
                             <span class="status-dot"></span>
                         </div>
                         <div class="header-text">
-                            <h3>Cosmic AI</h3>
+                            <h3>Cosmic Assistant</h3>
                             <p>Ask me about Mayank's projects!</p>
                         </div>
                     </div>
@@ -880,7 +881,7 @@ class CosmicAssistant {
     }
 
     showWelcomeMessage() {
-        let welcomeText = `👋 **Hey there! I'm the Cosmic AI Assistant** for Mayank Goyal's portfolio.\n\n`;
+        let welcomeText = `👋 **Hey there! I'm the Cosmic Assistant** for Mayank Goyal's portfolio.\n\n`;
 
         switch (this.currentPage) {
             case 'data-analytics':
@@ -977,7 +978,7 @@ class CosmicAssistant {
 
         // ===== GREETINGS =====
         if (this.matches(t, ['hello', 'hi', 'hey', 'greet', 'howdy', 'what\'s up'])) {
-            return `👋 **Hey there!** I'm the Cosmic AI Assistant on Mayank Goyal's portfolio.\n\nI can help you explore my work across **65+ projects** in these areas:\n• 📊 **Data Analytics** (12 projects)\n• 🤖 **Machine Learning** (23 projects)  \n• 🧠 **Deep Learning** (14 projects)\n• 🐍 **Python/OOP** (8 projects)\n• ⚡ **FastAPI** (2 projects)\n• 🎨 **Generative AI** (10 projects)\n• 💬 **NLP** (6 projects)\n\nWhat would you like to explore?`;
+            return `👋 **Hey there!** I'm the Cosmic Assistant on Mayank Goyal's portfolio.\n\nI can help you explore my work across **65+ projects** in these areas:\n• 📊 **Data Analytics** (12 projects)\n• 🤖 **Machine Learning** (23 projects)  \n• 🧠 **Deep Learning** (14 projects)\n• 🐍 **Python/OOP** (8 projects)\n• ⚡ **FastAPI** (2 projects)\n• 🎨 **Generative AI** (10 projects)\n• 💬 **NLP** (6 projects)\n\nWhat would you like to explore?`;
         }
 
         // ===== ABOUT MAYANK =====
