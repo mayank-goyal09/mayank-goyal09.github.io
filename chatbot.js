@@ -550,6 +550,54 @@ A portfolio shouldn't be an exercise in creative writing. Every project featured
             stats: "GitHub Actions CI/CD, Dockerized deployment on HF Spaces, continual training trigger",
             liveApp: "https://mayankg09-cureloop-mlops.hf.space/docs",
             github: "https://github.com/mayank-goyal09/CureLoop-MLOps"
+        },
+        {
+            name: "RedGlyph AI",
+            desc: "AI-powered code reviewer using Google Gemini 2.5 Flash via LangGraph. Quality scores, severity-based issues, fix suggestions & session email reports.",
+            tech: ["FastAPI", "Gemini", "LangGraph", "Docker"],
+            stats: "Gemini 2.5 Flash, LangGraph multi-agent flow, Dockerized CI/CD",
+            liveApp: "https://mayankg09-redglyph.hf.space/app",
+            github: "https://github.com/mayank-goyal09/RedGlyph"
+        },
+        {
+            name: "DocIntel RAG",
+            desc: "Private RAG system bridging static local documentation with Mistral-7B/Llama-3 LLMs. Uses FAISS-powered vector DB for zero-leak, secure local data querying.",
+            tech: ["FastAPI", "FAISS", "LangChain", "Mistral-7B"],
+            stats: "Private RAG, FAISS Vector DB, Mistral/Llama local processing",
+            liveApp: "https://mayankg09-docintel.hf.space/",
+            github: "https://github.com/mayank-goyal09/DocIntel"
+        },
+        {
+            name: "CityPulse AI",
+            desc: "Sophisticated real-time traffic forecasting system leveraging Spatio-Temporal Graph Neural Networks (ST-GCN) to predict city-wide congestion ripples.",
+            tech: ["FastAPI", "PyTorch", "ST-GCN", "Python"],
+            stats: "ST-GCN road graphs, spatial ripples + temporal convolutions",
+            liveApp: "https://mayankg09-gnn-traffic-forcaster.hf.space/",
+            github: "https://github.com/mayank-goyal09/GraphTraffic-Net"
+        },
+        {
+            name: "LoreWeaver AI",
+            desc: "Multimodal AI story generator synthesizing rich prose instantly. Decouples local computations using Qwen-72B & Gemini-3.0 cloud fallbacks for low-compute real-time scripts and Edge Neural vocal acting.",
+            tech: ["Gradio", "Gemini", "Edge TTS", "Pydub"],
+            stats: "Qwen-72B & Gemini fallbacks, Edge TTS vocal acting",
+            liveApp: "https://mayankg09-voice-story-engine.hf.space/",
+            github: "https://github.com/mayank-goyal09/ScriptToSpeech-AI"
+        },
+        {
+            name: "ArchitectAI",
+            desc: "Advanced image-to-image virtual staging app using Hugging Face's serverless backend and Qwen-Image-Edit-2511. Automatically refurnishes empty spaces with smart scaling.",
+            tech: ["Gradio", "Pydantic", "HF Inference Client"],
+            stats: "Image-to-image virtual staging, Qwen-Image-Edit-2511 model",
+            liveApp: "https://mayankg09-architectai-virtual-staging.hf.space/",
+            github: "https://github.com/mayank-goyal09/ArchitectAI-Virtual-Staging"
+        },
+        {
+            name: "AegisGNN",
+            desc: "Deep learning financial fraud detection system leveraging Graph Convolutional Networks (GCN) to scan transaction logs and identify high-risk networks.",
+            tech: ["Flask", "PyTorch Geometric", "Vis.js", "Chart.js"],
+            stats: "Heterogeneous transactions modeled as graphs, 2-layer GCNConv",
+            liveApp: "https://mayankg09-aegis-gnn-fraud.hf.space/",
+            github: "https://github.com/mayank-goyal09/financial-fraud-gnn"
         }
     ],
 
@@ -978,7 +1026,7 @@ class CosmicAssistant {
 
         // ===== GREETINGS =====
         if (this.matches(t, ['hello', 'hi', 'hey', 'greet', 'howdy', 'what\'s up'])) {
-            return `👋 **Hey there!** I'm the Cosmic Assistant on Mayank Goyal's portfolio.\n\nI can help you explore my work across **65+ projects** in these areas:\n• 📊 **Data Analytics** (12 projects)\n• 🤖 **Machine Learning** (23 projects)  \n• 🧠 **Deep Learning** (14 projects)\n• 🐍 **Python/OOP** (8 projects)\n• ⚡ **FastAPI** (2 projects)\n• 🎨 **Generative AI** (10 projects)\n• 💬 **NLP** (6 projects)\n\nWhat would you like to explore?`;
+            return `👋 **Hey there!** I'm the Cosmic Assistant on Mayank Goyal's portfolio.\n\nI can help you explore my work across **65+ projects** in these areas:\n• 📊 **Data Analytics** (12 projects)\n• 🤖 **Machine Learning** (23 projects)  \n• 🧠 **Deep Learning** (14 projects)\n• 🐍 **Python/OOP** (8 projects)\n• ⚡ **FastAPI** (8 projects)\n• 🎨 **Generative AI** (10 projects)\n• 💬 **NLP** (6 projects)\n\nWhat would you like to explore?`;
         }
 
         // ===== ABOUT MAYANK =====
@@ -1004,7 +1052,7 @@ class CosmicAssistant {
 
         // ===== ALL PROJECTS OVERVIEW =====
         if (this.matches(t, ['all projects', 'all project', 'how many project', 'project count', 'portfolio overview', 'tell me about projects'])) {
-            return `🚀 **Mayank's Complete Portfolio**\n\n📊 [Data Analytics](data-analytics-projects.html) (12 projects)\n🤖 [Machine Learning](machine-learning.html) (23 projects)  \n🧠 [Deep Learning](deep-learning.html) (14 projects)\n🐍 [Python/OOP](python-projects.html) (8 projects)\n⚡ [FastAPI Lab](fastapi.html) (2 projects)\n🎨 [Generative AI Lab](generative-ai.html) (10 projects)\n💬 [NLP Lab](nlp.html) (6 projects)\n\n**Featured Spotlight Projects:**\n• 📺 [YouTube Studio Automation](https://github.com/mayank-goyal09/YouTube-Studio)\n• 🧠 [DocIntel — Private RAG Base](https://github.com/mayank-goyal09/DocIntel.git)\n• ⚡ [MovieFlix AI — Movie Recommender](https://github.com/mayank-goyal09/movieflix-rec)\n• 🛡️ [AegisGNN — Financial Fraud Detection](https://github.com/mayank-goyal09/financial-fraud-gnn)\n\nWhich category interests you?`;
+            return `🚀 **Mayank's Complete Portfolio**\n\n📊 [Data Analytics](data-analytics-projects.html) (12 projects)\n🤖 [Machine Learning](machine-learning.html) (23 projects)  \n🧠 [Deep Learning](deep-learning.html) (14 projects)\n🐍 [Python/OOP](python-projects.html) (8 projects)\n⚡ [FastAPI Lab](fastapi.html) (8 projects)\n🎨 [Generative AI Lab](generative-ai.html) (10 projects)\n💬 [NLP Lab](nlp.html) (6 projects)\n\n**Featured Spotlight Projects:**\n• 📺 [YouTube Studio Automation](https://github.com/mayank-goyal09/YouTube-Studio)\n• 🧠 [DocIntel — Private RAG Base](https://github.com/mayank-goyal09/DocIntel.git)\n• ⚡ [MovieFlix AI — Movie Recommender](https://github.com/mayank-goyal09/movieflix-rec)\n• 🛡️ [AegisGNN — Financial Fraud Detection](https://github.com/mayank-goyal09/financial-fraud-gnn)\n\nWhich category interests you?`;
         }
 
         // ===== DATA ANALYTICS PROJECTS =====
