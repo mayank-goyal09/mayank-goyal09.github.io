@@ -43,18 +43,20 @@ class CardStreamController {
 
     calculateDimensions() {
         this.containerWidth = this.container.offsetWidth;
-        const cardWidth = 400;
+        const cardWidth = 480;
         const cardGap = 60;
         const cardCount = this.cardLine.children.length;
         this.cardLineWidth = (cardWidth + cardGap) * cardCount;
+        this.repeatWidth = (cardWidth + cardGap) * this.projects.length;
     }
 
     setupEventListeners() {
-        this.cardLine.addEventListener("mousedown", (e) => this.startDrag(e));
+        // Bind events to the container so user can scroll/drag anywhere in the section
+        this.container.addEventListener("mousedown", (e) => this.startDrag(e));
         document.addEventListener("mousemove", (e) => this.onDrag(e));
         document.addEventListener("mouseup", () => this.endDrag());
 
-        this.cardLine.addEventListener(
+        this.container.addEventListener(
             "touchstart",
             (e) => this.startDrag(e.touches[0]),
             { passive: false }
@@ -64,14 +66,21 @@ class CardStreamController {
         });
         document.addEventListener("touchend", () => this.endDrag());
 
-        this.cardLine.addEventListener("wheel", (e) => this.onWheel(e));
-        this.cardLine.addEventListener("selectstart", (e) => e.preventDefault());
-        this.cardLine.addEventListener("dragstart", (e) => e.preventDefault());
+        this.container.addEventListener("wheel", (e) => this.onWheel(e));
+        this.container.addEventListener("selectstart", (e) => e.preventDefault());
+        this.container.addEventListener("dragstart", (e) => e.preventDefault());
 
-        window.addEventListener("resize", () => this.calculateDimensions());
+        window.addEventListener("resize", () => {
+            this.calculateDimensions();
+            this.updateCardPosition();
+        });
     }
 
     startDrag(e) {
+        // Ignore drag start if target is a button or link
+        if (e.target.closest("a") || e.target.closest("button") || e.target.closest(".gradient-button")) {
+            return;
+        }
         e.preventDefault();
 
         this.isDragging = true;
@@ -101,8 +110,7 @@ class CardStreamController {
         this.mouseVelocity = deltaX * 60;
         this.lastMouseX = e.clientX;
 
-        this.cardLine.style.transform = `translateX(${this.position}px)`;
-        this.updateCardClipping();
+        this.updateCardPosition();
     }
 
     endDrag() {
@@ -146,13 +154,15 @@ class CardStreamController {
     }
 
     updateCardPosition() {
-        const containerWidth = this.containerWidth;
-        const cardLineWidth = this.cardLineWidth;
+        const repeatWidth = this.repeatWidth;
+        if (!repeatWidth) return;
 
-        if (this.position < -cardLineWidth) {
-            this.position = containerWidth;
-        } else if (this.position > containerWidth) {
-            this.position = -cardLineWidth;
+        // Keep position within [-repeatWidth, 0] to wrap seamlessly
+        while (this.position <= -repeatWidth) {
+            this.position += repeatWidth;
+        }
+        while (this.position > 0) {
+            this.position -= repeatWidth;
         }
 
         this.cardLine.style.transform = `translateX(${this.position}px)`;
@@ -178,7 +188,7 @@ class CardStreamController {
     }
 
     resetPosition() {
-        this.position = this.containerWidth;
+        this.position = 0;
         this.velocity = 120;
         this.direction = -1;
         this.isAnimating = true;
@@ -209,7 +219,6 @@ class CardStreamController {
 
         this.position += delta;
         this.updateCardPosition();
-        this.updateCardClipping();
     }
 
     generateCode(width, height) {
@@ -323,8 +332,8 @@ class CardStreamController {
         {
             name: "MovieFlix AI",
             subtitle: "AI Movie Recommender",
-            description: "Netflix-style movie recommendation engine powered by TF-IDF NLP, serving real-time personalized picks from 45K+ movies.",
-            tech: ["FastAPI", "TF-IDF", "TMDB API", "Streamlit", "Python"],
+            description: "Netflix-style movie recommendation engine powered by TF-IDF NLP, serving personalized picks.",
+            tech: ["FastAPI", "TF-IDF", "TMDB API", "Python"],
             github: "https://github.com/mayank-goyal09/movieflix-rec",
             live: "https://movieflix-rec.onrender.com/docs",
             streamlit: "https://movieflix-rec.streamlit.app",
@@ -338,14 +347,14 @@ class CardStreamController {
             accentColor: "#ff4d4d",   // glow / highlight tint
             chipColor: "#ffd700",      // gold chip
             icon: "🎬",
-            stats: "45K+ Movies  ·  NLP Engine  ·  Real-time Search",
+            stats: "45K+ Movies  ·  NLP  ·  Cosine Search",
             cardNumber: "4539  ●●●●  ●●●●  8127",
         },
         {
             name: "CureLoop MLOps",
             subtitle: "Automated Disease Prediction",
-            description: "Transforming static notebooks into a living, breathing AI system with full CI/CD MLOps pipeline & continuous training.",
-            tech: ["FastAPI", "Scikit", "Docker", "Pytest", "HF Spaces"],
+            description: "CI/CD MLOps pipeline and continuous training system for automated disease prediction.",
+            tech: ["FastAPI", "Scikit", "Docker", "Pytest"],
             github: "https://github.com/mayank-goyal09/CureLoop-MLOps",
             live: "https://mayankg09-cureloop-mlops.hf.space/docs",
             // Premium debit-card gradient: teal ➜ deep navy ➜ midnight
@@ -358,10 +367,129 @@ class CardStreamController {
             accentColor: "#34d399",
             chipColor: "#c0c0c0",      // silver chip
             icon: "🩺",
-            stats: "CI/CD Pipeline  ·  HF Deployed  ·  Continual Learning",
+            stats: "CI/CD Pipeline  ·  Continuous Training",
             cardNumber: "5412  ●●●●  ●●●●  3901",
         },
-        // Add more projects here as you build them!
+        {
+            name: "RedGlyph AI",
+            subtitle: "AI Code Reviewer",
+            description: "Multi-agent code reviewer leveraging Gemini 2.5 and LangGraph for automated quality reports.",
+            tech: ["FastAPI", "Gemini", "LangGraph", "Docker"],
+            github: "https://github.com/mayank-goyal09/RedGlyph",
+            live: "https://mayankg09-redglyph.hf.space/app",
+            // Premium debit-card gradient: deep ruby ➜ dark mahogany ➜ black cherry
+            gradientStops: [
+                { pos: 0.0, color: "#9a0000" },
+                { pos: 0.35, color: "#660000" },
+                { pos: 0.7, color: "#400000" },
+                { pos: 1.0, color: "#1f0000" },
+            ],
+            accentColor: "#ff3333",
+            chipColor: "#ffd700",
+            icon: "🔍",
+            stats: "Gemini 2.5 Flash  ·  LangGraph  ·  Reports",
+            cardNumber: "699e  ●●●●  ●●●●  18e6",
+        },
+        {
+            name: "DocIntel RAG",
+            subtitle: "Private Document RAG",
+            description: "Secure, local-first RAG engine bridging static PDFs with Mistral/Llama LLMs via FAISS.",
+            tech: ["FastAPI", "FAISS", "LangChain", "Llama-3"],
+            github: "https://github.com/mayank-goyal09/DocIntel",
+            live: "https://mayankg09-docintel.hf.space/",
+            // Premium debit-card gradient: royal purple ➜ deep indigo ➜ midnight violet
+            gradientStops: [
+                { pos: 0.0, color: "#4f46e5" },
+                { pos: 0.35, color: "#3730a3" },
+                { pos: 0.7, color: "#1e1b4b" },
+                { pos: 1.0, color: "#0f072c" },
+            ],
+            accentColor: "#818cf8",
+            chipColor: "#c0c0c0",
+            icon: "📚",
+            stats: "FAISS Vector DB  ·  Mistral  ·  Local RAG",
+            cardNumber: "69cb  ●●●●  ●●●●  b370",
+        },
+        {
+            name: "CityPulse AI",
+            subtitle: "Spatio-Temporal Traffic Predictor",
+            description: "Spatio-Temporal GNN forecasting engine predicting city-wide speed congestion ripples.",
+            tech: ["FastAPI", "PyTorch", "ST-GCN", "Docker"],
+            github: "https://github.com/mayank-goyal09/GraphTraffic-Net",
+            live: "https://mayankg09-gnn-traffic-forcaster.hf.space/",
+            // Premium debit-card gradient: vivid emerald ➜ dark teal ➜ deep forest green
+            gradientStops: [
+                { pos: 0.0, color: "#059669" },
+                { pos: 0.35, color: "#047857" },
+                { pos: 0.7, color: "#064e3b" },
+                { pos: 1.0, color: "#022c22" },
+            ],
+            accentColor: "#34d399",
+            chipColor: "#ffd700",
+            icon: "🚦",
+            stats: "207 Sensors  ·  ST-GCN Architecture  ·  Real-time Graph",
+            cardNumber: "69f3  ●●●●  ●●●●  224e",
+        },
+        {
+            name: "LoreWeaver AI",
+            subtitle: "Multimodal AI Storyteller",
+            description: "Interactive story generator pairing Gemini with vocal synthesis for custom audio narrations.",
+            tech: ["Gradio", "Gemini", "Edge-TTS", "Pydub"],
+            github: "https://github.com/mayank-goyal09/ScriptToSpeech-AI",
+            live: "https://mayankg09-voice-story-engine.hf.space/",
+            // Premium debit-card gradient: burning orange ➜ dark copper ➜ charcoal brown
+            gradientStops: [
+                { pos: 0.0, color: "#ea580c" },
+                { pos: 0.35, color: "#c2410c" },
+                { pos: 0.7, color: "#7c2d12" },
+                { pos: 1.0, color: "#451a03" },
+            ],
+            accentColor: "#fb923c",
+            chipColor: "#c0c0c0",
+            icon: "🎭",
+            stats: "Gemini 2.0  ·  Edge TTS  ·  Audio Stories",
+            cardNumber: "6a08  ●●●●  ●●●●  a040",
+        },
+        {
+            name: "ArchitectAI",
+            subtitle: "AI Room Interior Designer",
+            description: "Virtual staging application using Stable Diffusion ControlNet and Qwen-Image-Edit.",
+            tech: ["Gradio", "ControlNet", "Qwen-Image", "Diffusers"],
+            github: "https://github.com/mayank-goyal09/ArchitectAI-Virtual-Staging",
+            live: "https://mayankg09-architectai-virtual-staging.hf.space/",
+            // Premium debit-card gradient: electric violet ➜ deep purple ➜ plum velvet
+            gradientStops: [
+                { pos: 0.0, color: "#7c3aed" },
+                { pos: 0.35, color: "#6d28d9" },
+                { pos: 0.7, color: "#4c1d95" },
+                { pos: 1.0, color: "#2e1065" },
+            ],
+            accentColor: "#a78bfa",
+            chipColor: "#ffd700",
+            icon: "🏡",
+            stats: "ControlNet Staging  ·  Qwen Image Edit  ·  HF Serverless",
+            cardNumber: "6a11  ●●●●  ●●●●  9926",
+        },
+        {
+            name: "AegisGNN",
+            subtitle: "Financial Fraud GCN Dashboard",
+            description: "Interactive GNN anomaly detector mapping transactions into node networks for fraud classification.",
+            tech: ["Flask", "PyTorch", "GCNConv", "Vis.js"],
+            github: "https://github.com/mayank-goyal09/financial-fraud-gnn",
+            live: "https://mayankg09-aegis-gnn-fraud.hf.space/",
+            // Premium debit-card gradient: slate gray ➜ dark gunmetal ➜ deep charcoal
+            gradientStops: [
+                { pos: 0.0, color: "#374151" },
+                { pos: 0.35, color: "#1f2937" },
+                { pos: 0.7, color: "#111827" },
+                { pos: 1.0, color: "#030712" },
+            ],
+            accentColor: "#9ca3af",
+            chipColor: "#ffd700",
+            icon: "🛡️",
+            stats: "Graph Convolutions  ·  Heterogeneous Network  ·  Vis.js",
+            cardNumber: "6a1f  ●●●●  ●●●●  c850",
+        },
     ];
 
     // ── Helper: wrap text into multiple lines ──
@@ -546,7 +674,7 @@ class CardStreamController {
         ctx.fillStyle = "rgba(255,255,255,0.82)";
         const descLines = this.wrapText(ctx, project.description, contentW);
         const descLineH = 19;
-        let descY = 112;
+        let descY = 106;
         descLines.forEach((line) => {
             ctx.fillText(line, pad, descY);
             descY += descLineH;
@@ -555,7 +683,7 @@ class CardStreamController {
         // ═══════════════════════════════════════════
         // 12. TECH BADGES (frosted glass pills)
         // ═══════════════════════════════════════════
-        let badgeY = descY + 6;
+        let badgeY = descY + 4;
         ctx.font = "bold 11px 'Courier New', monospace";
         let badgeX = pad;
         const badgeH = 22;
@@ -585,8 +713,8 @@ class CardStreamController {
         // ═══════════════════════════════════════════
         // 13. STATS LINE
         // ═══════════════════════════════════════════
-        let statsY = badgeY + badgeH + 16;
-        ctx.font = "12px 'Segoe UI', Arial";
+        const statsY = 224;
+        ctx.font = "11px 'Segoe UI', Arial";
         ctx.fillStyle = "rgba(255,255,255,0.55)";
         ctx.fillText(project.stats, pad, statsY);
 
@@ -594,7 +722,7 @@ class CardStreamController {
         // 14. VIEW PROJECT — Real DOM Button (animated gradient)
         //     Placed as HTML overlay for full CSS hover transitions
         // ═══════════════════════════════════════════
-        let btnY = statsY + 10;
+        const btnY = 238;
         const btnW = 150, btnH = 32;
 
         // ═══════════════════════════════════════════
@@ -759,6 +887,99 @@ class CardStreamController {
                 "# CI/CD: GitHub Actions -> Pytest -> Docker -> HF Spaces",
                 "# Automated Continuous Training Pipeline Trigger",
                 "def retrain_model(): pass # Executes via workflow",
+            ],
+            "RedGlyph AI": [
+                "# 🔍 RedGlyph AI - Code Reviewer Backend",
+                "from fastapi import FastAPI, Request, HTTPException",
+                "from pydantic import BaseModel",
+                "from agents.reviewer_graph import get_default_graph, create_graph",
+                "",
+                "app = FastAPI(title='RedGlyph', version='2.0.0')",
+                "",
+                "class CodeRequest(BaseModel):",
+                "    code: str",
+                "",
+                "@app.post('/review')",
+                "async def review_code(request: CodeRequest, raw_req: Request):",
+                "    custom_key = raw_req.headers.get('X-Custom-API-Key')",
+                "    if custom_key:",
+                "        graph = create_graph(api_key=custom_key)",
+                "    else:",
+                "        graph = get_default_graph()",
+                "    ",
+                "    result = graph.invoke({'code_snippet': request.code})",
+                "    return result['report']",
+            ],
+            "DocIntel RAG": [
+                "# 📚 DocIntel - Document RAG API",
+                "from fastapi import FastAPI, UploadFile, File, Form",
+                "from engine import final_result, process_uploaded_pdf",
+                "",
+                "app = FastAPI(title='DocIntel')",
+                "",
+                "@app.post('/api/upload')",
+                "async def upload_document(file: UploadFile = File(...)):",
+                "    contents = await file.read()",
+                "    return process_uploaded_pdf(contents, file.filename)",
+                "",
+                "@app.post('/api/query')",
+                "async def query_documents(query: str = Form(...)):",
+                "    return final_result(query.strip())",
+            ],
+            "CityPulse AI": [
+                "# 🚦 CityPulse AI - ST-GCN Traffic Forecasting",
+                "import torch, numpy as np",
+                "from fastapi import FastAPI",
+                "from pydantic import BaseModel",
+                "from models.st_gcn import TrafficForecaster",
+                "",
+                "app = FastAPI(title='Traffic Prediction API')",
+                "",
+                "@app.post('/ingest')",
+                "async def ingest_data(payload: TrafficData):",
+                "    history_buffer.append(payload.data)",
+                "    if len(history_buffer) == 12:",
+                "        x = torch.FloatTensor(history_buffer).unsqueeze(0).unsqueeze(-1)",
+                "        pred = model(x, edge_index, edge_weight)",
+                "        return (pred * std + mean).tolist()",
+            ],
+            "LoreWeaver AI": [
+                "# 🎭 LoreWeaver AI - Voice Story Engine",
+                "import gradio as gr",
+                "from engine.storyteller import StoryTeller",
+                "from engine.narrator import Narrator",
+                "",
+                "story_engine = StoryTeller()",
+                "narrator_engine = Narrator()",
+                "",
+                "def process_story(keywords, genre, voice):",
+                "    story = story_engine.generate_story(keywords, genre)",
+                "    audio_path = narrator_engine.generate_audio_file(story, voice)",
+                "    return story, audio_path",
+            ],
+            "ArchitectAI": [
+                "# 🏡 ArchitectAI - Virtual Staging Engine",
+                "import gradio as gr",
+                "from src.processor import process_room_image",
+                "from src.generator import generate_staging",
+                "",
+                "def run_staging(image, prompt):",
+                "    processed = process_room_image(image)",
+                "    staged = generate_staging(processed, prompt)",
+                "    return staged",
+            ],
+            "AegisGNN": [
+                "# 🛡️ AegisGNN - Anomaly Fraud Detection GCN",
+                "from flask import Flask, jsonify, request",
+                "from src.model import FraudGCN",
+                "from src.trainer import get_fraud_scores",
+                "",
+                "app = Flask(__name__)",
+                "",
+                "@app.route('/api/suspects', methods=['GET'])",
+                "def api_suspects():",
+                "    scores = get_fraud_scores(model, graph)",
+                "    return jsonify({'suspects': format_suspects(scores)})",
             ],
         };
 
