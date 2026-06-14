@@ -38,30 +38,75 @@ body {
     line-height: 1.6;
 }
 
-/* Custom Futuristic Scrollbar */
+/* Custom Modern Scrollbar (Gemini/Claude Style + Arrow Steppers) */
 ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 14px; /* Width of vertical scrollbar */
+    height: 14px; /* Height of horizontal scrollbar */
 }
 
 ::-webkit-scrollbar-track {
-    background: #061521;
+    background: transparent; /* Seamless blend with page background */
 }
 
+/* Scrollbar Floating Thumb (Gemini/Claude floating capsule) */
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple));
-    border-radius: 10px;
-    border: 2px solid #061521;
+    background-color: rgba(255, 255, 255, 0.16);
+    background-clip: padding-box;
+    border: 3px solid transparent; /* Creates the padding around the floating thumb */
+    border-radius: 999px; /* Rounded pill shape */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, var(--accent-cyan-soft), #a38cff);
+    background-color: rgba(255, 255, 255, 0.3); /* Brightens on hover */
 }
 
-/* For Firefox */
+/* Scrollbar Arrow Buttons (Steppers for accessibility & precision) */
+::-webkit-scrollbar-button:single-button {
+    display: block;
+    height: 16px;
+    width: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 8px;
+    background-color: transparent;
+}
+
+/* Up Arrow (Vertical Decrement) */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='rgba(255, 255, 255, 0.35)'><path d='M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z'/></svg>");
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='rgba(0, 234, 255, 0.85)'><path d='M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z'/></svg>");
+}
+
+/* Down Arrow (Vertical Increment) */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='rgba(255, 255, 255, 0.35)'><path d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z'/></svg>");
+}
+::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='rgba(0, 234, 255, 0.85)'><path d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z'/></svg>");
+}
+
+/* Left Arrow (Horizontal Decrement) */
+::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='rgba(255, 255, 255, 0.35)'><path d='M15.41 16.58L10.83 12l4.58-4.59L14 6l-6 6 6 6z'/></svg>");
+}
+::-webkit-scrollbar-button:single-button:horizontal:decrement:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='rgba(0, 234, 255, 0.85)'><path d='M15.41 16.58L10.83 12l4.58-4.59L14 6l-6 6 6 6z'/></svg>");
+}
+
+/* Right Arrow (Horizontal Increment) */
+::-webkit-scrollbar-button:single-button:horizontal:increment {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='rgba(255, 255, 255, 0.35)'><path d='M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6z'/></svg>");
+}
+::-webkit-scrollbar-button:single-button:horizontal:increment:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='rgba(0, 234, 255, 0.85)'><path d='M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6z'/></svg>");
+}
+
+/* For Firefox Standard support (limited custom design) */
 * {
     scrollbar-width: thin;
-    scrollbar-color: var(--accent-cyan) #061521;
+    scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
 }
 
 /* Container for centered content */
