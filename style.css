@@ -38,6 +38,32 @@ body {
     line-height: 1.6;
 }
 
+/* Custom Futuristic Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #061521;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple));
+    border-radius: 10px;
+    border: 2px solid #061521;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--accent-cyan-soft), #a38cff);
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-cyan) #061521;
+}
+
 /* Container for centered content */
 .container {
     max-width: 1200px;
@@ -1182,10 +1208,58 @@ body {
     opacity: 0.9;
 }
 
+/* LinkedIn Platform Icon */
+.channel-icon.linkedin {
+    border-color: rgba(0, 119, 181, 0.35);
+    box-shadow: 0 0 18px rgba(0, 119, 181, 0.25);
+}
+
+.channel-icon.linkedin:hover {
+    box-shadow: 0 0 22px rgba(0, 119, 181, 0.45);
+    border-color: rgba(0, 119, 181, 0.8);
+}
+
+/* GitHub Platform Icon */
+.channel-icon.github {
+    border-color: rgba(240, 246, 252, 0.3);
+    box-shadow: 0 0 18px rgba(240, 246, 252, 0.2);
+}
+
+.channel-icon.github:hover {
+    box-shadow: 0 0 22px rgba(240, 246, 252, 0.45);
+    border-color: rgba(240, 246, 252, 0.8);
+}
+
 /* X (Twitter) Platform Icon */
+.channel-icon.x-platform {
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.15);
+}
+
+.channel-icon.x-platform:hover {
+    box-shadow: 0 0 22px rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
 .channel-icon.x-platform .icon-badge {
     background: radial-gradient(circle at 20% 0%, #333333, #000000);
     color: #ffffff;
+}
+
+/* Hugging Face Platform Icon */
+.channel-icon.huggingface {
+    border-color: rgba(255, 210, 30, 0.35);
+    box-shadow: 0 0 18px rgba(255, 210, 30, 0.25);
+}
+
+.channel-icon.huggingface:hover {
+    box-shadow: 0 0 22px rgba(255, 220, 50, 0.45);
+    border-color: rgba(255, 220, 50, 0.8);
+}
+
+.channel-icon.huggingface .icon-badge {
+    background: radial-gradient(circle at 20% 0%, #fff6d6, #ffbd2e);
+    color: #000000;
 }
 
 /* ============================================
