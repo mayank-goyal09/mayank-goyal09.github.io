@@ -19,6 +19,7 @@
                 { x: -8, y: 195, rotate: -0.5 },
                 { x: 15, y: 285, rotate: 1.0 },
                 { x: -5, y: 370, rotate: -0.3 },
+                { x: 10, y: 450, rotate: 0.7 },
             ]
         },
         // Expanded (active) card positions
