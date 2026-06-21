@@ -30,7 +30,13 @@
 <body>
 
     <!-- 🤖 3D ROBOT SCENE (Full Viewport) -->
-    <div id="robotScene" class="robot-scene"></div>
+    <div id="robotScene" class="robot-scene">
+        <!-- ⚙️ CONTROLS -->
+        <div class="controls-bar">
+            <button class="ctrl-btn" id="pokeBtn" title="Poke the Robot">👋 Poke</button>
+            <button class="ctrl-btn" id="resetBtn" title="Reset View">🔄 Reset</button>
+        </div>
+    </div>
 
     <!-- 🔤 LARGE BACKGROUND TEXT -->
     <div class="bg-brand-text" aria-hidden="true">GENAI</div>
@@ -227,11 +233,7 @@
         <h1 class="page-heading">Generative AI Lab</h1>
     </div>
 
-    <!-- ⚙️ CONTROLS -->
-    <div class="controls-bar">
-        <button class="ctrl-btn" id="pokeBtn" title="Poke the Robot">👋 Poke</button>
-        <button class="ctrl-btn" id="resetBtn" title="Reset View">🔄 Reset</button>
-    </div>
+
 
     <!-- 🤖 3D Robot Engine -->
     <script src="genai-robot.js" defer></script>
