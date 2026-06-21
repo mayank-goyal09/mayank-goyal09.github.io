@@ -199,7 +199,10 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">MG_AI</a>
-            <div class="nav-menu">
+            <button class="nav-toggle" id="subNavToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-menu" id="subNavMenu">
                 <a href="index.html#home" class="nav-link">Home</a>
                 <!-- ✨ NEW: Added Experience Link ✨ -->
                 <a href="#experience" class="nav-link">Experience</a>
@@ -1226,6 +1229,34 @@
                     }
                 });
             });
+
+            // Mobile sub-page navigation toggle
+            const subNavToggle = document.getElementById("subNavToggle");
+            const subNavMenu = document.getElementById("subNavMenu");
+
+            if (subNavToggle && subNavMenu) {
+                subNavToggle.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    subNavToggle.classList.toggle("open");
+                    subNavMenu.classList.toggle("open");
+                });
+
+                // Close menu when clicking nav links
+                subNavMenu.querySelectorAll("a").forEach(link => {
+                    link.addEventListener("click", () => {
+                        subNavToggle.classList.remove("open");
+                        subNavMenu.classList.remove("open");
+                    });
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener("click", (e) => {
+                    if (!subNavMenu.contains(e.target) && !subNavToggle.contains(e.target)) {
+                        subNavToggle.classList.remove("open");
+                        subNavMenu.classList.remove("open");
+                    }
+                });
+            }
         });
     </script>
 
