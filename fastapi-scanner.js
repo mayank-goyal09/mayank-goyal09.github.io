@@ -490,6 +490,25 @@ class CardStreamController {
             stats: "Graph Convolutions  ·  Heterogeneous Network  ·  Vis.js",
             cardNumber: "6a1f  ●●●●  ●●●●  c850",
         },
+        {
+            name: "Cortex-AI",
+            subtitle: "Brain MRI Segmentation",
+            description: "Production-grade PACS-style workstation for semantic brain tumor MRI segmentation. Features containerized FastAPI backend with single-slice tensor execution.",
+            tech: ["FastAPI", "TensorFlow", "U-Net", "Docker", "Python"],
+            github: "https://huggingface.co/spaces/mayankg09/brain-tumor-segmentation",
+            live: "https://huggingface.co/spaces/mayankg09/brain-tumor-segmentation",
+            gradientStops: [
+                { pos: 0.0, color: "#1e3a8a" },
+                { pos: 0.35, color: "#1e40af" },
+                { pos: 0.7, color: "#1e3a8a" },
+                { pos: 1.0, color: "#0f172a" },
+            ],
+            accentColor: "#3b82f6",
+            chipColor: "#ffd700",
+            icon: "🧠",
+            stats: "0.835 Dice Coefficient  ·  Tensor execution <10ms",
+            cardNumber: "4539  ●●●●  ●●●●  2209",
+        },
     ];
 
     // ── Helper: wrap text into multiple lines ──
@@ -980,6 +999,21 @@ class CardStreamController {
                 "def api_suspects():",
                 "    scores = get_fraud_scores(model, graph)",
                 "    return jsonify({'suspects': format_suspects(scores)})",
+            ],
+            "Cortex-AI": [
+                "# 🧠 Cortex-AI - Brain MRI Segmentation API",
+                "from fastapi import FastAPI, File, UploadFile",
+                "from src.inference import Segmenter",
+                "import numpy as np",
+                "",
+                "app = FastAPI(title='Cortex-AI', version='1.0')",
+                "segmenter = Segmenter(model_path='models/unet.h5')",
+                "",
+                "@app.post('/api/segment')",
+                "async def segment_mri(file: UploadFile = File(...)):",
+                "    slice_data = np.frombuffer(await file.read(), dtype=np.float32)",
+                "    mask = segmenter.predict_slice(slice_data)",
+                "    return {'segmentation_mask': mask.tolist()}",
             ],
         };
 
