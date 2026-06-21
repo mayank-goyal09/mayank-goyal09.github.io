@@ -493,8 +493,8 @@ class CardStreamController {
         {
             name: "Cortex-AI",
             subtitle: "Brain MRI Segmentation",
-            description: "Production-grade PACS-style workstation for semantic brain tumor MRI segmentation. Features containerized FastAPI backend with single-slice tensor execution.",
-            tech: ["FastAPI", "TensorFlow", "U-Net", "Docker", "Python"],
+            description: "PACS workstation for brain tumor MRI segmentation using U-Net and a containerized FastAPI backend.",
+            tech: ["FastAPI", "TensorFlow", "U-Net", "Docker"],
             github: "https://huggingface.co/spaces/mayankg09/brain-tumor-segmentation",
             live: "https://huggingface.co/spaces/mayankg09/brain-tumor-segmentation",
             gradientStops: [
