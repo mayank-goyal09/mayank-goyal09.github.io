@@ -861,6 +861,17 @@ body {
     transform: translateY(-6px) scale(1.04);
 }
 
+/* Top-right-center card — positioned below and slightly to the right of autodoc */
+.card-pos-top-right-center {
+    top: 32%;
+    right: 23%;
+    transform: translateY(0);
+}
+
+.card-pos-top-right-center:hover {
+    transform: translateY(-6px) scale(1.04);
+}
+
 /* Bottom-right-center card */
 .card-pos-bottom-right-center {
     bottom: 5%;
@@ -1068,6 +1079,10 @@ body {
 
 .card-pos-top-left-center {
     animation: card-float-in-top-center 0.8s ease forwards, card-idle-float-top-center 6s ease-in-out 1.05s infinite;
+}
+
+.card-pos-top-right-center {
+    animation: card-float-in-top-center 0.8s ease forwards, card-idle-float-top-center 6s ease-in-out 1.1s infinite;
 }
 
 .card-pos-right {
