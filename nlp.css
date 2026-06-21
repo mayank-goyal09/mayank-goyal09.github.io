@@ -15,8 +15,10 @@ body.nlp-body {
     z-index: 100;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    padding: 10px 20px;
+    min-height: 44px;
+    padding: 6px 20px;
     background: rgba(20, 20, 20, 0.6);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(158, 153, 33, 0.3);
@@ -1457,7 +1459,7 @@ body.nlp-body {
 
 .other-projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 30px;
     margin-top: 40px;
 }

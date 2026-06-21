@@ -474,7 +474,7 @@ body {
 /* PROJECT GRID & CARDS */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
   gap: 1.5rem;
 }
 
@@ -680,7 +680,7 @@ body {
 /* Unsupervised Grid (Larger cards) */
 .unsupervised-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   /* Bigger cards */
   gap: 2rem;
   /* More space between cards */
