@@ -601,8 +601,8 @@ A portfolio shouldn't be an exercise in creative writing. Every project featured
         },
         {
             name: "Cortex-AI",
-            desc: "Production-grade PACS-style workstation for semantic brain tumor MRI segmentation using a custom U-Net CNN. Features a containerized FastAPI backend with single-slice tensor execution, dropping inference latency to under 10ms.",
-            tech: ["FastAPI", "TensorFlow/Keras", "Docker", "Python"],
+            desc: "PACS workstation for brain tumor MRI segmentation using U-Net and a containerized FastAPI backend.",
+            tech: ["FastAPI", "TensorFlow", "U-Net", "Docker"],
             stats: "0.835 Dice Coefficient, <10ms inference latency, containerized FastAPI backend",
             liveApp: "https://huggingface.co/spaces/mayankg09/brain-tumor-segmentation"
         }
