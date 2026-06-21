@@ -598,6 +598,13 @@ A portfolio shouldn't be an exercise in creative writing. Every project featured
             stats: "Heterogeneous transactions modeled as graphs, 2-layer GCNConv",
             liveApp: "https://mayankg09-aegis-gnn-fraud.hf.space/",
             github: "https://github.com/mayank-goyal09/financial-fraud-gnn"
+        },
+        {
+            name: "Cortex-AI",
+            desc: "Production-grade PACS-style workstation for semantic brain tumor MRI segmentation using a custom U-Net CNN. Features a containerized FastAPI backend with single-slice tensor execution, dropping inference latency to under 10ms.",
+            tech: ["FastAPI", "TensorFlow/Keras", "Docker", "Python"],
+            stats: "0.835 Dice Coefficient, <10ms inference latency, containerized FastAPI backend",
+            liveApp: "https://huggingface.co/spaces/mayankg09/brain-tumor-segmentation"
         }
     ],
 
@@ -1111,7 +1118,7 @@ class CosmicAssistant {
         if (this.matches(t, ['fastapi', 'fast api', 'mlops', 'async api'])) {
             let response = `⚡ **FastAPI Projects**\n\n`;
             k.fastapiProjects.forEach(p => {
-                response += `**${p.name}**\n${p.desc}\n🛠️ Tech: ${p.tech.join(' • ')}\n📊 Stats: ${p.stats}\n🔗 [Live App](${p.liveApp}) • [GitHub](${p.github})\n\n`;
+                response += `**${p.name}**\n${p.desc}\n🛠️ Tech: ${p.tech.join(' • ')}\n📊 Stats: ${p.stats}\n🔗 [Live App](${p.liveApp})` + (p.github ? ` • [GitHub](${p.github})` : '') + `\n\n`;
             });
             response += `Explore the live Evervault scanner visual on the [FastAPI Lab page](fastapi.html)!`;
             return response;
