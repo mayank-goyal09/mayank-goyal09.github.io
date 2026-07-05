@@ -907,6 +907,17 @@ body {
     transform: translateX(-50%) translateY(-8px) scale(1.04);
 }
 
+/* Left-center card */
+.card-pos-left-center {
+    top: 31%;
+    left: 3%;
+    transform: translateY(0);
+}
+
+.card-pos-left-center:hover {
+    transform: translateY(-6px) scale(1.04);
+}
+
 /* ============================================================
    🎥 ENTRANCE ANIMATIONS
    ============================================================ */
@@ -1109,6 +1120,10 @@ body {
 
 .card-pos-bottom-center {
     animation: card-float-in-bottom-left 0.8s ease forwards, card-idle-float-bottom-left 6s ease-in-out 1.6s infinite;
+}
+
+.card-pos-left-center {
+    animation: card-float-in-top-left 0.8s ease forwards, card-idle-float-top-left 6s ease-in-out 1.2s infinite;
 }
 
 @keyframes card-idle-float-top-left {
