@@ -530,6 +530,15 @@ A portfolio shouldn't be an exercise in creative writing. Every project featured
             tech: ["Python", "PyTorch", "Hugging Face", "Streamlit", "Plotly"],
             stats: "DistilBERT classifier, GoEmotions dataset, 60% confidence gate",
             github: "https://github.com/mayank-goyal09/nuance-flow"
+        },
+        {
+            name: "Turbine Anomaly Autoencoder",
+            type: "Autoencoder",
+            desc: "Deep Autoencoder neural network model trained on Wind Speed vs. Active Power cycles to establish baseline reconstruction thresholds and detect mechanical underperformance in real-time.",
+            tech: ["Python", "TensorFlow/Keras", "Streamlit"],
+            stats: "Reconstruction Error Threshold: 0.0806, Real-time Telemetry Dials, Glassmorphic HUD Dashboard",
+            liveApp: "https://turbine-anomaly-autoencoder-project.streamlit.app/",
+            github: "https://github.com/mayank-goyal09/turbine-anomaly-autoencoder"
         }
     ],
 
@@ -679,6 +688,14 @@ A portfolio shouldn't be an exercise in creative writing. Every project featured
             tech: ["Python", "Stable Diffusion", "Real-ESRGAN", "AI Graphics"],
             stats: "Neural Circular Padding (seamless), Real-ESRGAN 4K upscaling",
             github: "https://github.com/mayank-goyal09/fashion-pattern-ai-generator"
+        },
+        {
+            name: "DigitalChef AI — Food Photo Studio",
+            desc: "AI-powered menu plating engine transforming dish concepts into styled photography. Curates compositions, professional lighting presets, and surface textures via Hugging Face and FLUX.1-schnell.",
+            tech: ["Python", "Streamlit", "Hugging Face API", "FLUX.1-schnell"],
+            stats: "Prompt-to-plating synthesis, FLUX.1-schnell culinary engine, 5 photography styles",
+            liveApp: "https://vibe-cooking-project.streamlit.app/",
+            github: "https://github.com/mayank-goyal09/vibe-cooking"
         }
     ],
 
