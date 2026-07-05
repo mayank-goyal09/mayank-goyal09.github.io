@@ -941,7 +941,8 @@
             'LoreWeaver': "Multimodal AI story engine — dynamic scripts via Gemini 3.0 & neural vocal acting via Edge TTS! 🎭",
             'ArchitectAI': "Virtual staging engine using Hugging Face backend & Qwen-Image-Edit-2511! 🛋️",
             'Echoes': "Vintage roleplay museum summoning historical figures via FAISS vector database! 🏛️",
-            'OmniMatch': "Universal semantic alignment RAG engine utilizing FAISS and Llama 3.3 for deep gap analysis! 🤖"
+            'OmniMatch': "Universal semantic alignment RAG engine utilizing FAISS and Llama 3.3 for deep gap analysis! 🤖",
+            'DigitalChef': "Plates hyper-realistic food photography in seconds using FLUX.1-schnell culinary engine! 👨‍🍳"
         };
         var msg = "Check this out — one of my favorite builds! ✨";
         var keys = Object.keys(msgs);
