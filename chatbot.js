@@ -508,6 +508,15 @@ A portfolio shouldn't be an exercise in creative writing. Every project featured
             github: "https://github.com/mayank-goyal09/SignSense-LSTM"
         },
         {
+            name: "AlphaGuard — Portfolio Risk Cockpit",
+            type: "RNN/LSTM",
+            desc: "Production-grade risk cockpit integrating Deep Learning LSTM networks and statistical GARCH(1,1) to forecast tomorrow's asset volatility and compute multi-methodology portfolio VaR/ES.",
+            tech: ["Python", "TensorFlow/Keras", "Streamlit", "yfinance", "arch (GARCH)", "Plotly"],
+            stats: "LSTM & GARCH Vol forecasts, 5K paths Monte Carlo simulation, Vol Targeting backtester",
+            liveApp: "https://alphaguard-lstm-project.streamlit.app/",
+            github: "https://github.com/mayank-goyal09/AlphaGuard-LSTM"
+        },
+        {
             name: "AegisGNN",
             type: "GNN/GCN",
             desc: "Deep learning financial fraud detection system leveraging Graph Convolutional Networks (GCN) to scan transaction logs and identify high-risk networks.",
