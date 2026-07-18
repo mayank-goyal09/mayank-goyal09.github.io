@@ -751,6 +751,13 @@ A portfolio shouldn't be an exercise in creative writing. Every project featured
             tech: ["Python", "Transformers", "DistilBERT", "PyTorch"],
             stats: "GoEmotions dataset fine-tuned, 27 granular emotion outputs",
             github: "https://github.com/mayank-goyal09/nuance-flow"
+        },
+        {
+            name: "Agri-SMS Sentinel",
+            desc: "A hybrid AI router designed to filter out spam and route regional Hinglish query SMS messages to agricultural desks in real-time.",
+            tech: ["Python", "Logistic Regression", "Gemini 2.5 Flash"],
+            stats: "Dual-engine architecture, Hinglish query routing, real-time desk dispatch",
+            github: "https://github.com/mayank-goyal09/agri-sms-sentinel"
         }
     ],
 
