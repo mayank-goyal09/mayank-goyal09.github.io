@@ -1736,6 +1736,274 @@ body.nlp-body {
     }
 }
 
+/* ==========================================================================
+   PROJECT 7: AGRI-SMS SENTINEL
+   ========================================================================== */
+
+#project-7-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #020617; /* Slate 950 */
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.08) 0%, transparent 60%),
+        linear-gradient(rgba(16, 185, 129, 0.03) 1px, transparent 1px), 
+        linear-gradient(90deg, rgba(16, 185, 129, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 30px 30px, 30px 30px;
+}
+
+.sentinel-radar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 1px double rgba(16, 185, 129, 0.12);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.sentinel-radar::before {
+    content: '';
+    position: absolute;
+    inset: 80px;
+    border-radius: 50%;
+    border: 1px dashed rgba(16, 185, 129, 0.08);
+}
+
+.sentinel-radar::after {
+    content: '';
+    position: absolute;
+    inset: 180px;
+    border-radius: 50%;
+    border: 1px solid rgba(16, 185, 129, 0.04);
+}
+
+.sentinel-scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.4), transparent);
+    box-shadow: 0 0 12px rgba(52, 211, 153, 0.6);
+    animation: scanSweep 6s infinite linear;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes scanSweep {
+    0% {
+        top: 0%;
+    }
+    50% {
+        top: 100%;
+    }
+    100% {
+        top: 0%;
+    }
+}
+
+.sentinel-container {
+    width: 100%;
+    height: 100%;
+    background: #021e17; /* bg-emerald-950/900 */
+    background-image: radial-gradient(circle at center, #022c22, #041f13);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.9);
+}
+
+.sentinel-content {
+    position: relative;
+    z-index: 20;
+    text-align: center;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sentinel-title {
+    font-size: 3.2rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    color: #fff;
+    margin-top: 0;
+}
+
+.sentinel-desc {
+    font-size: 1.05rem;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 650px;
+    margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sentinel-hud {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: 30px;
+    padding: 8px 18px;
+    margin-bottom: 20px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.1);
+}
+
+.hud-term {
+    color: #a7f3d0;
+}
+
+.hud-sep {
+    color: #10b981;
+    font-weight: bold;
+}
+
+.hud-dest {
+    color: #34d399;
+    font-weight: bold;
+    background: rgba(16, 185, 129, 0.15);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+#sentinel-card {
+    border: none !important;
+    padding: 2.5px !important;
+    position: relative;
+    background: linear-gradient(
+        90deg, 
+        #022c22 0%, 
+        #10b981 25%, 
+        #022c22 50%, 
+        #34d399 75%, 
+        #022c22 100%
+    ) !important;
+    background-size: 400% 100% !important;
+    animation: liquidGoldBorder 8s linear infinite !important;
+    box-shadow: 
+        0 0 calc(15px + var(--sentinel-progress, 0) * 35px) rgba(16, 185, 129, calc(0.1 + var(--sentinel-progress, 0) * 0.35)), 
+        inset 0 0 calc(10px + var(--sentinel-progress, 0) * 20px) rgba(16, 185, 129, calc(0.02 + var(--sentinel-progress, 0) * 0.12)) !important;
+    transition: box-shadow 0.1s linear !important;
+}
+
+#sentinel-card:hover {
+    box-shadow: 
+        0 0 65px rgba(16, 185, 129, 0.55), 
+        inset 0 0 35px rgba(16, 185, 129, 0.2) !important;
+}
+
+/* Celestial Loom Animation Styles */
+.warp-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(16, 185, 129, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 185, 129, 0.04) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: grid-pulse 4s infinite ease-in-out;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.shuttle-run {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    animation: run-lifecycle linear infinite;
+    z-index: 2;
+}
+
+.shuttle {
+    position: absolute;
+    top: var(--position);
+    left: -5%;
+    width: 24px;
+    height: 2px;
+    background: var(--color);
+    box-shadow: 0 0 8px var(--color), 0 0 16px var(--color);
+    animation: shuttle-travel linear infinite;
+}
+
+.weft-thread {
+    position: absolute;
+    top: var(--position);
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--color);
+    opacity: 0.25;
+    transform-origin: left center;
+    animation: weft-appear linear infinite;
+}
+
+@keyframes grid-pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes run-lifecycle {
+  0% {
+    opacity: 0;
+  }
+  10%, 80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes shuttle-travel {
+  from {
+    left: -5%;
+  }
+  to {
+    left: 105%;
+  }
+}
+
+@keyframes weft-appear {
+  0% {
+    transform: scaleX(0);
+  }
+  10% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+
 /* Unified mobile responsiveness overrides to prevent text cut-off and ensure Explore buttons are fully visible */
 @media (max-width: 768px) {
     .card-container {
@@ -1751,14 +2019,16 @@ body.nlp-body {
     .terminal-content,
     .pulse-card-content,
     .heatmap-card-content,
-    .lamp-content {
+    .lamp-content,
+    .sentinel-content {
         padding: 24px 16px !important;
         box-sizing: border-box !important;
         justify-content: center !important;
         height: 100% !important;
     }
 
-    .lamp-content {
+    .lamp-content,
+    .sentinel-content {
         padding-top: 55px !important;
     }
 
@@ -1775,7 +2045,8 @@ body.nlp-body {
     .t-title,
     .p-title,
     .h-title,
-    .lamp-title {
+    .lamp-title,
+    .sentinel-title {
         font-size: 1.8rem !important;
         line-height: 1.2 !important;
         margin-bottom: 10px !important;
@@ -1787,12 +2058,19 @@ body.nlp-body {
     .t-desc,
     .p-desc,
     .h-desc,
-    .lamp-desc {
+    .lamp-desc,
+    .sentinel-desc {
         font-size: 0.9rem !important;
         line-height: 1.4 !important;
         margin-bottom: 16px !important;
         color: rgba(255, 255, 255, 0.75) !important;
         max-width: 100% !important;
+    }
+
+    .sentinel-hud {
+        padding: 8px 12px !important;
+        font-size: 0.7rem !important;
+        margin-bottom: 12px !important;
     }
 
     .explore-btn {
@@ -1825,4 +2103,42 @@ body.nlp-body {
         font-size: 0.75rem !important;
         line-height: 1.3 !important;
     }
+}
+
+/* Background Lasers with White Particle Heads for Project 07 (Father Background) */
+.bg-shuttle-run {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    animation: run-lifecycle linear infinite;
+    z-index: 1;
+}
+
+.bg-shuttle {
+    position: absolute;
+    top: var(--position);
+    left: -5%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 
+        0 0 6px #ffffff,
+        0 0 12px #ffffff,
+        0 0 20px var(--color),
+        0 0 30px var(--color);
+    animation: shuttle-travel linear infinite;
+    transform: translateY(-3px);
+}
+
+.bg-weft-thread {
+    position: absolute;
+    top: var(--position);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color) 0%, rgba(255, 255, 255, 0.1) 60%, transparent 100%);
+    opacity: 0.35;
+    transform-origin: left center;
+    animation: weft-appear linear infinite;
 }
