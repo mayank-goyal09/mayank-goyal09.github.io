@@ -118,6 +118,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (p.card.id === 'nuance-card') {
                     p.card.style.setProperty('--lamp-progress', p.currentProgress.toFixed(4));
                 }
+                if (p.card.id === 'sentinel-card') {
+                    p.card.style.setProperty('--sentinel-progress', p.currentProgress.toFixed(4));
+                }
             }
         });
 
