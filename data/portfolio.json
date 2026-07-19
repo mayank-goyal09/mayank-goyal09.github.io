@@ -1,0 +1,788 @@
+{
+  "name": "Mayank Goyal",
+  "role": "Data Analyst | ML Engineer | AI Enthusiast",
+  "summary": "I build software to solve specific, practical problems. No fluff, no corporate buzzwords—just clean layouts and tools designed to do exactly what they were built to do.",
+  "about": "I build software to solve specific, practical problems. No fluff, no corporate buzzwords—just clean layouts and tools designed to do exactly what they were built to do. I don't care about surface-level professional titles. I prefer to let the work speak for itself, focusing my energy on functional categories like client-side architecture and building tangible systems from the ground up. If you want to know what I am capable of, look at the codebase, not a label. I have a strong preference for local development and data privacy. Whenever possible, I choose to spin up lightweight local setups—like running Mistral via Ollama—to avoid unnecessary subscription costs and keep data completely secure and self-contained. Clean folder structures and tight, modular layouts aren't an afterthought for me; they are foundational to a stable project. I spend the extra time making sure a repository is organized logically so it can be maintained, scaled, and understood immediately by other developers. My approach is straightforward: clear goals, direct communication, and spending less time debating theories and more time handling edge cases. I don't treat system constraints or bugs like a crisis; they are just puzzles to be systematically broken down and cleared. A portfolio shouldn't be an exercise in creative writing. Every project featured here was built to work reliably in the real world. If you appreciate straightforward engineering without the corporate theater, you'll navigate through my work just fine.",
+  "skills": [
+    {
+      "name": "Local Intelligence & Language Models",
+      "desc": "Local RAG engine deployment, Mistral via Ollama pipelines, PyTorch, TensorFlow, MediaPipe, LSTM sequence modeling"
+    },
+    {
+      "name": "Data Architecture & Automation",
+      "desc": "Automated document ingestion, fuzzy matching, relational schemas, Spatio-Temporal Graph Neural Networks, 1D-CNN signal models, Pandas, Scikit-learn, Supabase, Advanced SQL"
+    },
+    {
+      "name": "Backends & Deployment Interfaces",
+      "desc": "High-performance asynchronous backends, real-time inference APIs, strict OOP patterns, modular structures, FastAPI, Streamlit, Git Architecture"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Freelance",
+      "role": "Data Visualization Expert",
+      "duration": "March 2025 - Present",
+      "details": "Turn complex and messy data into clean, interactive dashboards that make sense and look great. Specialized in Power BI, Excel, and Tableau visualizations."
+    },
+    {
+      "company": "Kwerky Media",
+      "role": "Content & Market Researcher",
+      "duration": "August 2025 - February 2026",
+      "details": "Contributed to content development, digital media support, and campaign execution while maintaining high professional standards and adaptability within a fast-paced team environment."
+    },
+    {
+      "company": "SpacECE India Foundation",
+      "role": "Data Analyst Intern",
+      "duration": "July 2025 - October 2025",
+      "details": "Worked as a Data Analyst Intern at spacECE Foundation under the intQ - 124 BusAna program. Gained practical experience in Excel, Power BI, Google Looker Studio, and Python (Pandas & NumPy) for data cleaning, visualization, and business insights. Developed key dashboards including Umang & Udaan Dashboard, Intern Exit Analysis, Education & Test Analysis, and worked on process optimization."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Data Analytics & Programming (in progress)",
+      "institute": "Self-taught",
+      "year": "2025 - 2032"
+    }
+  ],
+  "contact": {
+    "email": "itsmaygal09@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/mayank-goyal-4b8756363",
+    "github": "https://github.com/mayank-goyal09",
+    "twitter": "https://x.com/mem0ews"
+  },
+  "projects": [
+    {
+      "category": "Data Analytics",
+      "name": "Real-Time Safety Intelligence",
+      "description": "An advanced environmental defense system that ingests live weather API streams to calculate instantaneous safety risks. Transforms chaotic atmospheric data into actionable 'Go/No-Go' safety protocols for field operations.",
+      "tech": ["OpenWeather API", "Python", "Real-time Dashboard"],
+      "stats": "Live monitoring, ~25ms latency, 6 risk types analyzed",
+      "github": "https://github.com/mayank-goyal09/environmental-safety-dashboard"
+    },
+    {
+      "category": "Data Analytics",
+      "name": "Marketing Analytics Dashboard",
+      "description": "Comprehensive Power BI marketing performance dashboard tracking campaign ROI and customer engagement with real-time data refresh.",
+      "tech": ["Power BI", "Marketing KPIs"],
+      "stats": "10+ KPIs tracked, Real-time data refresh",
+      "github": "https://github.com/mayank-goyal09/Marketing-PowerBI-Dashboard"
+    },
+    {
+      "category": "Data Analytics",
+      "name": "E-commerce Revenue Intelligence",
+      "description": "Deep-dive analysis on Target's e-commerce sales patterns and customer behavior using Python and SQL.",
+      "tech": ["Python", "SQL", "Pandas"],
+      "stats": "100K+ records analyzed, 15+ key insights extracted",
+      "github": "https://github.com/mayank-goyal09/target-ecommerce-sales-analysis"
+    },
+    {
+      "category": "Data Analytics",
+      "name": "Aviation Operations Analytics",
+      "description": "Interactive Excel dashboard analyzing 1,701 flight records for delay patterns and trends spanning 5 years of historical data.",
+      "tech": ["Excel", "Data Visualization"],
+      "stats": "1.7K flights analyzed, 5 years of historical data",
+      "github": "https://github.com/mayank-goyal09/flight-delay-analysis-dashboard"
+    },
+    {
+      "category": "Data Analytics",
+      "name": "Workforce Intelligence Dashboard",
+      "description": "Strategic HR dashboard monitoring 2,458+ employees across demographics and performance with 8+ department coverage.",
+      "tech": ["Excel", "HR Analytics"],
+      "stats": "2.5K+ employees tracked, 8+ departments",
+      "github": "https://github.com/mayank-goyal09/hr-analytics-dashboard"
+    },
+    {
+      "category": "Data Analytics",
+      "name": "Olympic Performance Analytics",
+      "description": "Analyzed 32 years of Olympic data (200+ countries) to reveal athletic dominance patterns using Python and Pandas.",
+      "tech": ["Python", "Pandas", "Data Visualization"],
+      "stats": "32 years data coverage, 200+ countries",
+      "github": "https://github.com/mayank-goyal09/olympic-legacy-1976-2008"
+    },
+    {
+      "category": "Data Analytics",
+      "name": "Pizza Sales SQL Analysis",
+      "description": "SQL analysis extracting revenue trends and customer ordering patterns with 20+ complex SQL queries.",
+      "tech": ["SQL", "Revenue Analysis"],
+      "stats": "1000+ transactions, 20+ SQL queries",
+      "github": "https://github.com/mayank-goyal09/pizza-sales-sql-analysis"
+    },
+    {
+      "category": "Data Analytics",
+      "name": "Query Optimization & Data Manipulation",
+      "description": "Comprehensive notebook demonstrating advanced SQL optimization, indexing, and Python data manipulation techniques.",
+      "tech": ["Python", "SQL", "Query Optimization"],
+      "stats": "50+ code examples, 10+ topics covered",
+      "github": "https://github.com/mayank-goyal09/python-SQL-notebook"
+    },
+    {
+      "category": "Data Analytics",
+      "name": "Titanic Survival Analytics",
+      "description": "Interactive Excel dashboard analyzing 891 Titanic passengers to predict survival outcomes with 8+ predictive factors.",
+      "tech": ["Excel", "Predictive Analytics"],
+      "stats": "891 passengers analyzed, 8+ predictive factors",
+      "github": "https://github.com/mayank-goyal09/titanic-survival-dashboard"
+    },
+    {
+      "category": "Data Analytics",
+      "name": "IPL Cricket Analytics",
+      "description": "Power BI dashboard tracking team performance and cricket statistics across 15+ IPL seasons with 50+ metrics.",
+      "tech": ["Power BI", "Sports Analytics"],
+      "stats": "15+ seasons covered, 50+ metrics tracked",
+      "github": "https://github.com/mayank-goyal09/IPL-PowerBI-Dashboard"
+    },
+    {
+      "category": "Data Analytics",
+      "name": "AI-ML-Job-Pulse",
+      "description": "Data Analysis project exploring AI/ML job trends, skill demand, salary patterns, and market insights.",
+      "tech": ["Python", "Pandas", "Data Analysis"],
+      "stats": "100+ job listings, 15+ skills analyzed",
+      "github": "https://github.com/mayank-goyal09/AI-ML-Job-Pulse"
+    },
+    {
+      "category": "Data Analytics",
+      "name": "Performance Predictors EDA",
+      "description": "Exploratory Data Analysis on Student Performance Dataset uncovering key factors influencing academic outcomes.",
+      "tech": ["Python", "EDA", "Pandas", "NumPy"],
+      "stats": "17 Q&A analysis, 10+ insights found",
+      "github": "https://github.com/mayank-goyal09/performance-predictors-eda"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "SmartHarvest – Crop Recommendation Engine",
+      "description": "End-to-end ML system recommending the most suitable crop using soil nutrients (NPK), climate, and soil properties. Achieves ~95% accuracy with Random Forest.",
+      "tech": ["Python", "Scikit-learn", "Streamlit", "Random Forest"],
+      "stats": "~95% accuracy with feature-engineered agronomic variables",
+      "link": "https://smartharvest-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/SmartHarvest"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "Mr. Cardio Disease Astrologer",
+      "description": "KNN-based heart disease prediction using indicators like cholesterol, blood pressure and heart rate with interactive risk estimation UI.",
+      "tech": ["Python", "Scikit-learn", "KNN", "Streamlit"],
+      "stats": "Interactive healthcare UI for risk estimation",
+      "link": "https://mr-cardio-disease-astrologer-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/Mr.-cardio-disease-astrologer"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "Lending Logic – Loan Approval System",
+      "description": "Gaussian Naïve Bayes model predicting loan approval probability using engineered financial features with ~92% accuracy.",
+      "tech": ["Python", "Scikit-learn", "Naïve Bayes", "Streamlit"],
+      "stats": "~92% accuracy with focus on reducing false positives",
+      "link": "https://lending-logic-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/lending-logic"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "CardioPredict – SVM Heart Risk Model",
+      "description": "Support Vector Machine model predicting heart disease risk from clinical features, tuned for medical risk prediction.",
+      "tech": ["Python", "Scikit-learn", "SVM", "Streamlit"],
+      "stats": "Margin-based classifier optimized for healthcare",
+      "link": "https://cardiopredict-svm-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/CardioPredict-SVM"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "Mobile Market Segmenter",
+      "description": "KNN classification model grouping mobile users into market segments based on usage behavior and demographic patterns.",
+      "tech": ["Python", "Scikit-learn", "KNN", "Streamlit"],
+      "stats": "Simple, interpretable classification segmentation",
+      "link": "https://mobile-market-segmenter-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/mobile-market-segmenter"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "Personality Type Predictor",
+      "description": "Logistic Regression model mapping behavioral traits to personality categories with clean feature pipeline for survey-style inputs.",
+      "tech": ["Python", "Scikit-learn", "Pandas", "Streamlit"],
+      "stats": "Clean survey feature pipeline, real-time predictions",
+      "link": "https://personality-type-predictor-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/personality-type-predictor"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "Ride Price Predictor",
+      "description": "Linear Regression estimator predicting ride fares based on distance, duration, time of day, and ride type.",
+      "tech": ["Python", "Scikit-learn", "Pandas", "Streamlit"],
+      "stats": "Baseline pricing model for ride-hailing apps",
+      "link": "https://ride-price-predictor-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/ride-price-predictor"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "Experience to Earnings",
+      "description": "KNN regression model predicting salary from years of experience, capturing non-linear salary curves.",
+      "tech": ["Python", "Scikit-learn", "Streamlit"],
+      "stats": "Non-linear salary curve capturing, neighbor-based regression",
+      "link": "https://experience-to-earnings-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/experience-to-earnings"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "Student Performance Analyzer",
+      "description": "End-to-end ML regression model predicting student exam scores with hyperparameter tuning, feature engineering, and feature importance analysis.",
+      "tech": ["Python", "Scikit-learn", "Streamlit", "Pandas"],
+      "stats": "MAE: 6.89, RMSE%: ~17.44%, feature importance analysis",
+      "link": "https://student-performance-analyzer-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/student-performance-analyzer"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "PERSONA PULSE – MBTI Personality Classification",
+      "description": "End-to-end ML pipeline for MBTI personality type classification using questionnaire data with leakage-safe pipeline and full model interpretability.",
+      "tech": ["Python", "Scikit-learn", "Pandas", "Streamlit"],
+      "stats": "Logistic Regression (~0.92 F1), real-time predictions",
+      "link": "https://persona-pulse-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/PERSONA-PULSE"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "Used Car Price Predictor",
+      "description": "Random Forest Regressor predicting fair selling prices of used cars from 45K+ CarDekho listings with R² ≈ 0.92.",
+      "tech": ["Python", "Scikit-learn", "Random Forest", "Streamlit"],
+      "stats": "R² ≈ 0.92, 45K+ listings analyzed",
+      "link": "https://used-car-price-modeling-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/used-car-price-modeling"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "Cardiovascular Health Risk Assessment",
+      "description": "Interpretable ML system using a Decision Tree Classifier on 70K+ patient records to predict cardiovascular disease risk from vitals, lab values, and lifestyle factors.",
+      "tech": ["Python", "Scikit-learn", "Streamlit", "Pandas", "Plotly", "Joblib"],
+      "stats": "Analyzed 70K+ records, BMI & age feature engineering",
+      "link": "https://healthrisk-decision-tree-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/healthrisk-decision-tree"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "Delivery Oracle – E-commerce Intelligence",
+      "description": "End-to-end delivery intelligence system using Olist dataset with Ridge regression for ETA and Logistic Regression for late-delivery risk.",
+      "tech": ["Python", "Scikit-learn", "Ridge", "Streamlit"],
+      "stats": "Multi-model delivery prediction system",
+      "link": "https://delivery-oracle-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/delivery-oracle"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "Medicine Recommendation System",
+      "description": "AI-powered diagnostic tool using Decision Tree to predict diseases from symptoms and provide personalized recommendations.",
+      "tech": ["Python", "Scikit-learn", "Decision Tree", "Streamlit"],
+      "stats": "Symptom-based disease prediction with medication recommendations",
+      "link": "https://medicine-recommendation-system-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/medicine-recommendation-system"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "ATP Tennis Match Outcome Classifier",
+      "description": "ML-powered sports analytics using Random Forest to predict ATP tennis match winners across 59K+ matches with 99.5% accuracy.",
+      "tech": ["Python", "Scikit-learn", "Random Forest", "Streamlit"],
+      "stats": "99.5% accuracy, 20 years of ATP history (2000-2019)",
+      "link": "https://atp-tennis-match-outcome-classifier-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/ATP-Tennis-Match-Outcome-Classifier"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "OHLCV Next-Day Close Predictor",
+      "description": "Time-series ML mini product predicting next-day stock closing prices using OHLCV features, Decision Tree Regression, and a naive tomorrow ≈ today baseline comparison.",
+      "tech": ["Python", "Scikit-learn", "Streamlit", "Pandas", "Plotly", "yfinance", "Joblib"],
+      "stats": "GridSearchCV with TimeSeriesSplit, real-time yfinance fetch",
+      "link": "https://ohlcv-nextday-close-predictor-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/ohlcv-nextday-close-predictor"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "PJM Energy Demand Forecaster",
+      "description": "End-to-end ML system predicting hourly electricity demand using 10+ years of PJM load data with Random Forest (R² ≈ 0.95).",
+      "tech": ["Python", "Scikit-learn", "Random Forest", "Streamlit"],
+      "stats": "MAE ≈ 500 MW, RMSE ≈ 700 MW, R² ≈ 0.95",
+      "link": "https://pjm-energy-demand-forecaster-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/PJM-Energy-Demand-Forecaster"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "VociPark – Parkinson's Disease Detection",
+      "description": "End-to-end Parkinson's detection from voice data using SVM classifier optimized via GridSearchCV with ~82% test accuracy.",
+      "tech": ["Python", "Scikit-learn", "SVM", "Streamlit"],
+      "stats": "~82% test accuracy, ~0.80 balanced accuracy",
+      "link": "https://vocipark-parkinson-s-detection-from-voice-project.streamlit.app/",
+      "github": "https://github.com/mayank-goyal09/VociPark-Parkinson-s-Detection-from-Voice"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "Vineyard Voyager – Wine Classification",
+      "description": "K-Means clustering identifying wine quality tiers from chemical properties without labels, optimized via silhouette scores.",
+      "tech": ["Python", "Scikit-learn", "Pandas"],
+      "stats": "3 distinct clusters, silhouette optimization",
+      "github": "https://github.com/mayank-goyal09/vineyard-voyager"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "Retail Radar – Customer Segmentation",
+      "description": "Hierarchical clustering grouping customers into natural purchase behavior segments with dendrogram-based optimal cluster detection.",
+      "tech": ["Python", "Scikit-learn", "Dendrogram"],
+      "stats": "Dendrogram-based optimal cluster detection",
+      "github": "https://github.com/mayank-goyal09/retail-radar-engine"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "Geo-Pulse – Smart City Traffic Intelligence",
+      "description": "Production-ready geospatial ML system identifying traffic accident hotspots using DBSCAN clustering on 3M+ US accident records.",
+      "tech": ["Python", "Scikit-learn", "DBSCAN", "Pydeck", "Streamlit"],
+      "stats": "3M+ records, 87 hotspot clusters in LA, 3km optimal radius",
+      "link": "https://geo-pulse-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/Geo-Pulse"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "Developer Persona Segmentation",
+      "description": "ML-powered developer persona segmentation using MiniBatch K-Means on Stack Overflow 2025 survey (~42K developers).",
+      "tech": ["Python", "Scikit-learn", "K-Means", "Streamlit"],
+      "stats": "3 personas: Modern Web Builders (45%), Generalists (35%), Veterans (20%)",
+      "link": "https://developer-persona-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/Developer-persona"
+    },
+    {
+      "category": "Machine Learning",
+      "name": "PCA Sommelier – Wine Intelligence Studio",
+      "description": "Portfolio-ready PCA wine analysis lab that reduces high-dimensional wine chemistry into 2-3 principal components.",
+      "tech": ["Python", "Scikit-learn", "PCA", "Streamlit"],
+      "stats": "Interactive PCA pipeline with explained variance analysis",
+      "link": "https://pca-sommelier-project.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/pca-prism"
+    },
+    {
+      "category": "Python/OOP",
+      "name": "YouTube Studio Automation",
+      "description": "An enterprise-grade data pipeline that interfaces with the YouTube Data API to mirror raw metrics into a local SQLite Data Warehouse, enabling granular SQL-driven insights.",
+      "tech": ["Python Automation", "YouTube Data API", "SQLite", "ETL Pipeline", "Streamlit"],
+      "stats": "Automated data ingestion loops, SQL-driven local warehousing",
+      "link": "https://youtube-dashboard-appql-w6tacoledpx4fgpmkdtth4.streamlit.app/",
+      "github": "https://github.com/mayank-goyal09/YouTube-Studio"
+    },
+    {
+      "category": "Python/OOP",
+      "name": "LedgerAPI",
+      "description": "Enterprise Bank Management System with production-ready backend architecture featuring account management, transaction processing, and audit trails.",
+      "tech": ["Python OOP", "SQLite", "Backend"],
+      "stats": "Account management, transactions and audits",
+      "github": "https://github.com/mayank-goyal09/LedgerAPI"
+    },
+    {
+      "category": "Python/OOP",
+      "name": "Smart Inventory Billing System",
+      "description": "Complete inventory and billing solution for retail management with stock management and multi-payment support.",
+      "tech": ["Streamlit", "SQLite", "OOP"],
+      "stats": "Stock management and billing visualization dashboard",
+      "github": "https://github.com/mayank-goyal09/smart-inventory-billing-system"
+    },
+    {
+      "category": "Python/OOP",
+      "name": "Maygal Book Vault",
+      "description": "Digital library management system with advanced book tracking, member management, and fine calculation.",
+      "tech": ["Streamlit", "Python OOP", "SQLite"],
+      "stats": "Book cataloging, issues/returns and fine calculator",
+      "github": "https://github.com/mayank-goyal09/Maygal-book-vault"
+    },
+    {
+      "category": "Python/OOP",
+      "name": "The File Forge",
+      "description": "Advanced file management system with batch processing capabilities and auto organization.",
+      "tech": ["Streamlit", "File Handling", "Python"],
+      "stats": "Batch operations and automatic organization",
+      "github": "https://github.com/mayank-goyal09/the-file-forge"
+    },
+    {
+      "category": "Python/OOP",
+      "name": "Bank Management System",
+      "description": "User-friendly bank account system with Streamlit frontend, transaction history, balance inquiry, and simple data persistence.",
+      "tech": ["Streamlit", "Python OOP", "Data Persistence"],
+      "stats": "Deposits, withdrawals, balance checks, transactions",
+      "github": "https://github.com/mayank-goyal09/bank-management-system"
+    },
+    {
+      "category": "Python/OOP",
+      "name": "RPS R.A.N.D.O.M",
+      "description": "Intelligent CLI-based Rock-Paper-Scissors game featuring best-of-N series, score tracking, move validation, and match history.",
+      "tech": ["Python Game", "AI Logic", "CLI"],
+      "stats": "Move validation, score logs, CLI UI",
+      "github": "https://github.com/mayank-goyal09/rps-random"
+    },
+    {
+      "category": "Python/OOP",
+      "name": "Gridlock Game",
+      "description": "NumPy-powered Tic-Tac-Toe with web interface demonstrating array manipulation and Python game logic.",
+      "tech": ["NumPy", "Streamlit", "Game Logic"],
+      "stats": "Win detection, interactive canvas",
+      "link": "https://gridlock-game-bdoqnt2uavckvypewafl8g.streamlit.app/",
+      "github": "https://github.com/mayank-goyal09/Gridlock-Game"
+    },
+    {
+      "category": "Deep Learning",
+      "name": "Smart Price Predictor – Smartphone Pricing",
+      "description": "AI-powered Multi-Layer Perceptron classifying smartphones into 4 price categories based on 20+ hardware specs with premium dark glassmorphism UI.",
+      "tech": ["Python", "TensorFlow/Keras", "Streamlit"],
+      "stats": "4-Class Classification, 20+ hardware features, Real-time confidence scores",
+      "link": "https://ram-project.streamlit.app/",
+      "github": "https://github.com/mayank-goyal09/ram-battery-camera-to--"
+    },
+    {
+      "category": "Deep Learning",
+      "name": "Student Performance Predictor (ANN)",
+      "description": "Robust ANN regression system predicting student final grades using UCI dataset, analyzing demographic, social & study factors.",
+      "tech": ["Python", "TensorFlow/Keras", "Scikit-learn", "Streamlit"],
+      "stats": "End-to-end pipeline with Dropout & Early Stopping",
+      "link": "https://student-performance-ann-regreappr-project.streamlit.app/",
+      "github": "https://github.com/mayank-goyal09/student-performance-ann-regressor"
+    },
+    {
+      "category": "Deep Learning",
+      "name": "ASL Digits Recognizer",
+      "description": "Custom 3-layer CNN achieving ~96% accuracy on ASL digits (0-9) with dual deployment — Streamlit web app + OpenCV real-time webcam inference.",
+      "tech": ["Python", "TensorFlow/Keras", "OpenCV", "Streamlit"],
+      "stats": "~96% accuracy, 3 Conv2D-MaxPool blocks, Webcam ROI Cropping",
+      "link": "https://asl-digit-recognition-cnn-opencv-project.streamlit.app/",
+      "github": "https://github.com/mayank-goyal09/asl-digit-recognition-cnn-opencv"
+    },
+    {
+      "category": "Deep Learning",
+      "name": "Brand Spotter — Logo Detection",
+      "description": "Advanced CNN-based logo detection and brand recognition system powered by transfer learning to identify and classify company logos in images.",
+      "tech": ["Python", "TensorFlow/Keras", "OpenCV", "Deep Learning"],
+      "stats": "Multi-brand detection, real-time recognition, transfer learning",
+      "link": "https://brand-spotter-projecttt.streamlit.app/",
+      "github": "https://github.com/mayank-goyal09/Brand-Spotter.git"
+    },
+    {
+      "category": "Deep Learning",
+      "name": "NoiseNinja — Acoustic Anomaly Detector",
+      "description": "Unsupervised CNN Autoencoder trained on healthy machine sounds to detect acoustic anomalies in real-time streams via MSE reconstruction loss.",
+      "tech": ["Python", "TensorFlow/Keras", "Flask", "Librosa", "Chart.js"],
+      "stats": "Unsupervised Autoencoder, Mel-spectrogram dashboard, mic streaming",
+      "link": "https://mayank-goyal09.github.io/NoiseNinja/templates/index.html",
+      "github": "https://github.com/mayank-goyal09/NoiseNinja"
+    },
+    {
+      "category": "Deep Learning",
+      "name": "Pulse Nova 1D",
+      "description": "AI-powered detection of life-threatening heart rhythm abnormalities from raw ECG signals using a deep 1D Convolutional Neural Network.",
+      "tech": ["Python", "TensorFlow/Keras", "Streamlit", "Docker"],
+      "stats": "MIT-BIH Arrhythmia Dataset, 96.48% accuracy, Z-score normalization",
+      "link": "https://pulse-nova-1d-project.streamlit.app/",
+      "github": "https://github.com/mayank-goyal09/Pulse-Nova-1D"
+    },
+    {
+      "category": "Deep Learning",
+      "name": "FaunaFind — Autonomous Biodiversity Monitor",
+      "description": "Production-grade, local-first ML pipeline designed to automate wildlife population tracking using YOLOv8 edge inference.",
+      "tech": ["Python", "YOLOv8", "OpenCV", "Pandas", "Streamlit"],
+      "stats": "YOLOv8 edge inference, quality-control filters, async data logging",
+      "link": "https://faunafind-project.streamlit.app/",
+      "github": "https://github.com/mayank-goyal09/faunafind"
+    },
+    {
+      "category": "Deep Learning",
+      "name": "WeatherLens AI — Multi-City LSTM Forecasting",
+      "description": "End-to-end deep learning weather forecasting system using LSTM networks to predict 7-day (168 hours) temperature across 4 major global cities.",
+      "tech": ["Python", "TensorFlow/Keras", "Open-Meteo API", "Streamlit"],
+      "stats": "Multi-step LSTM, 4-city coverage, Beats baseline",
+      "link": "https://multi-city-lstm-weather-forecast-project.streamlit.app/",
+      "github": "https://github.com/mayank-goyal09/multi-city-lstm-weather-forecast"
+    },
+    {
+      "category": "Deep Learning",
+      "name": "Gold Price Oracle — AI Prediction",
+      "description": "Self-updating LSTM prediction engine forecasting gold prices with live market data and autonomous retraining pipelines.",
+      "tech": ["Python", "TensorFlow/Keras", "Streamlit", "GitHub Actions"],
+      "stats": "Autonomous self-retraining via GitHub Actions, live market feed",
+      "link": "https://timeseries-au-project.streamlit.app/",
+      "github": "https://github.com/mayank-goyal09/TimeSeries-Au"
+    },
+    {
+      "category": "Deep Learning",
+      "name": "Deep Crop Yield Forecaster",
+      "description": "Advanced Stacked LSTM deep learning forecaster predicting agricultural crop yields using historical time series and environmental variables.",
+      "tech": ["Python", "TensorFlow/Keras", "Pandas", "Geopandas"],
+      "stats": "Stacked LSTM architecture, time-series forecasting, NDVI integration",
+      "link": "https://deep-crop-yield-forecaster-project.streamlit.app/",
+      "github": "https://github.com/mayank-goyal09/Deep-Crop-Yield-Forecaster.git"
+    },
+    {
+      "category": "Deep Learning",
+      "name": "SignSense-LSTM",
+      "description": "Real-time sign language translation system analyzing 30 consecutive frames of hand motion using MediaPipe 3D Landmarks and LSTM.",
+      "tech": ["Python", "TensorFlow/Keras", "OpenCV", "MediaPipe", "Streamlit"],
+      "stats": "Temporal sequence buffer, live confidence indicators",
+      "link": "https://signsense-lstm-project.streamlit.app/",
+      "github": "https://github.com/mayank-goyal09/SignSense-LSTM"
+    },
+    {
+      "category": "Deep Learning",
+      "name": "AlphaGuard — Portfolio Risk Cockpit",
+      "description": "Production-grade risk cockpit integrating Deep Learning LSTM networks and statistical GARCH(1,1) to forecast tomorrow's asset volatility and compute multi-methodology portfolio VaR/ES.",
+      "tech": ["Python", "TensorFlow/Keras", "Streamlit", "yfinance", "arch (GARCH)", "Plotly"],
+      "stats": "LSTM & GARCH Vol forecasts, 5K paths Monte Carlo simulation, Vol Targeting backtester",
+      "link": "https://alphaguard-lstm-project.streamlit.app/",
+      "github": "https://github.com/mayank-goyal09/AlphaGuard-LSTM"
+    },
+    {
+      "category": "Deep Learning",
+      "name": "AegisGNN",
+      "description": "Deep learning financial fraud detection system leveraging Graph Convolutional Networks (GCN) to scan transaction logs and identify high-risk networks.",
+      "tech": ["PyTorch Geometric", "Flask", "Vis.js", "Chart.js", "Python"],
+      "stats": "Heterogeneous transactions modeled as graphs, 2-layer GCNConv",
+      "github": "https://github.com/mayank-goyal09/financial-fraud-gnn"
+    },
+    {
+      "category": "Deep Learning",
+      "name": "CityPulse AI",
+      "description": "Sophisticated real-time traffic forecasting system leveraging Spatio-Temporal Graph Neural Networks (ST-GCN) to predict city-wide congestion.",
+      "tech": ["PyTorch", "FastAPI", "Streamlit", "Python"],
+      "stats": "ST-GCN road graphs, spatial ripples + temporal convolutions",
+      "github": "https://github.com/mayank-goyal09/GraphTraffic-Net.git"
+    },
+    {
+      "category": "Deep Learning",
+      "name": "Emotion Pro Analytics",
+      "description": "High-accuracy sentiment engine fine-tuning pre-trained DistilBERT on Google's GoEmotions dataset with operational safety gates.",
+      "tech": ["Python", "PyTorch", "Hugging Face", "Streamlit", "Plotly"],
+      "stats": "DistilBERT classifier, GoEmotions dataset, 60% confidence gate",
+      "github": "https://github.com/mayank-goyal09/nuance-flow"
+    },
+    {
+      "category": "Deep Learning",
+      "name": "Turbine Anomaly Autoencoder",
+      "description": "Deep Autoencoder neural network model trained on Wind Speed vs. Active Power cycles to establish baseline reconstruction thresholds and detect mechanical underperformance in real-time.",
+      "tech": ["Python", "TensorFlow/Keras", "Streamlit"],
+      "stats": "Reconstruction Error Threshold: 0.0806, Real-time Telemetry Dials, Glassmorphic HUD Dashboard",
+      "link": "https://turbine-anomaly-autoencoder-project.streamlit.app/",
+      "github": "https://github.com/mayank-goyal09/turbine-anomaly-autoencoder"
+    },
+    {
+      "category": "FastAPI",
+      "name": "MovieFlix AI",
+      "description": "Netflix-style movie recommendation engine powered by TF-IDF Natural Language Processing, serving real-time personalized picks from 45K+ movies.",
+      "tech": ["FastAPI", "TF-IDF", "TMDB API", "Streamlit", "Python"],
+      "stats": "45K+ movies, TF-IDF NLP model, real-time cosine similarity search",
+      "link": "https://movieflix-rec.streamlit.app",
+      "github": "https://github.com/mayank-goyal09/movieflix-rec"
+    },
+    {
+      "category": "FastAPI",
+      "name": "CureLoop MLOps",
+      "description": "Automated disease prediction system transforming static notebooks into a production-ready API with full CI/CD MLOps pipeline and continuous training.",
+      "tech": ["FastAPI", "Scikit-learn", "Docker", "Pytest", "HF Spaces"],
+      "stats": "GitHub Actions CI/CD, Dockerized deployment on HF Spaces, continual training trigger",
+      "link": "https://mayankg09-cureloop-mlops.hf.space/docs",
+      "github": "https://github.com/mayank-goyal09/CureLoop-MLOps"
+    },
+    {
+      "category": "FastAPI",
+      "name": "RedGlyph AI",
+      "description": "AI-powered code reviewer using Google Gemini 2.5 Flash via LangGraph. Quality scores, severity-based issues, fix suggestions & session email reports.",
+      "tech": ["FastAPI", "Gemini", "LangGraph", "Docker"],
+      "stats": "Gemini 2.5 Flash, LangGraph multi-agent flow, Dockerized CI/CD",
+      "link": "https://mayankg09-redglyph.hf.space/app",
+      "github": "https://github.com/mayank-goyal09/RedGlyph"
+    },
+    {
+      "category": "FastAPI",
+      "name": "DocIntel RAG",
+      "description": "Private RAG system bridging static local documentation with Mistral-7B/Llama-3 LLMs. Uses FAISS-powered vector DB for zero-leak, secure local data querying.",
+      "tech": ["FastAPI", "FAISS", "LangChain", "Mistral-7B"],
+      "stats": "Private RAG, FAISS Vector DB, Mistral/Llama local processing",
+      "link": "https://mayankg09-docintel.hf.space/",
+      "github": "https://github.com/mayank-goyal09/DocIntel"
+    },
+    {
+      "category": "FastAPI",
+      "name": "CityPulse AI (FastAPI)",
+      "description": "Sophisticated real-time traffic forecasting system leveraging Spatio-Temporal Graph Neural Networks (ST-GCN) to predict city-wide congestion ripples.",
+      "tech": ["FastAPI", "PyTorch", "ST-GCN", "Python"],
+      "stats": "ST-GCN road graphs, spatial ripples + temporal convolutions",
+      "link": "https://mayankg09-gnn-traffic-forcaster.hf.space/",
+      "github": "https://github.com/mayank-goyal09/GraphTraffic-Net"
+    },
+    {
+      "category": "FastAPI",
+      "name": "LoreWeaver AI",
+      "description": "Multimodal AI story generator synthesizing rich prose instantly. Decouples local computations using Qwen-72B & Gemini-3.0 cloud fallbacks for low-compute real-time scripts and Edge Neural vocal acting.",
+      "tech": ["Gradio", "Gemini", "Edge TTS", "Pydub"],
+      "stats": "Qwen-72B & Gemini fallbacks, Edge TTS vocal acting",
+      "link": "https://mayankg09-voice-story-engine.hf.space/",
+      "github": "https://github.com/mayank-goyal09/ScriptToSpeech-AI"
+    },
+    {
+      "category": "FastAPI",
+      "name": "ArchitectAI (FastAPI)",
+      "description": "Advanced image-to-image virtual staging app using Hugging Face's serverless backend and Qwen-Image-Edit-2511. Automatically refurnishes empty spaces with smart scaling.",
+      "tech": ["Gradio", "Pydantic", "HF Inference Client"],
+      "stats": "Image-to-image virtual staging, Qwen-Image-Edit-2511 model",
+      "link": "https://mayankg09-architectai-virtual-staging.hf.space/",
+      "github": "https://github.com/mayank-goyal09/ArchitectAI-Virtual-Staging"
+    },
+    {
+      "category": "FastAPI",
+      "name": "AegisGNN (FastAPI)",
+      "description": "Deep learning financial fraud detection system leveraging Graph Convolutional Networks (GCN) to scan transaction logs and identify high-risk networks.",
+      "tech": ["Flask", "PyTorch Geometric", "Vis.js", "Chart.js"],
+      "stats": "Heterogeneous transactions modeled as graphs, 2-layer GCNConv",
+      "link": "https://mayankg09-aegis-gnn-fraud.hf.space/",
+      "github": "https://github.com/mayank-goyal09/financial-fraud-gnn"
+    },
+    {
+      "category": "FastAPI",
+      "name": "Cortex-AI",
+      "description": "PACS workstation for brain tumor MRI segmentation using U-Net and a containerized FastAPI backend.",
+      "tech": ["FastAPI", "TensorFlow", "U-Net", "Docker"],
+      "stats": "0.835 Dice Coefficient, <10ms inference latency, containerized FastAPI backend",
+      "link": "https://huggingface.co/spaces/mayankg09/brain-tumor-segmentation"
+    },
+    {
+      "category": "Generative AI",
+      "name": "DocIntel — Private RAG Base",
+      "description": "Private-First RAG system bridging static local documentation with Mistral-7B/Llama-3 LLMs. Uses FAISS-powered vector DB for zero-leak, secure local data querying.",
+      "tech": ["HTML/CSS/JS", "Python", "FAISS", "Groq API"],
+      "stats": "Private RAG, FAISS Vector DB, Mistral/Llama local processing",
+      "github": "https://github.com/mayank-goyal09/DocIntel.git"
+    },
+    {
+      "category": "Generative AI",
+      "name": "LegalGuard AI — Risk Analyzer",
+      "description": "NDA risk analyzer integrating 150+ regex patterns across 12 legal categories with Google Flan-T5 AI summarization. Red-team tested.",
+      "tech": ["Python", "Streamlit", "HuggingFace", "Flan-T5", "Regex Engine"],
+      "stats": "Dual-engine (regex + Flan-T5), red-team tested",
+      "github": "https://github.com/mayank-goyal09/LegalGuard-AI"
+    },
+    {
+      "category": "Generative AI",
+      "name": "AutoDoc-Generator",
+      "description": "High-impact developer tool that programmatically identifies, summarizes, and injects docstrings into your Python code using CodeGPT/CodeT5 AI models and AST parsing.",
+      "tech": ["Python", "AST Parsing", "GitHub Actions", "AI Transformers"],
+      "stats": "AST parser, CodeT5 docstring generator, CI/CD automated flow",
+      "github": "https://github.com/mayank-goyal09/Autodoc-generator"
+    },
+    {
+      "category": "Generative AI",
+      "name": "LoreWeaver-AI — Voice Story Engine",
+      "description": "Multimodal AI story generator synthesizing rich prose instantly. Decouples local computations using Qwen-72B & Gemini-3.0 cloud fallbacks for low-compute real-time scripts and Edge Neural vocal acting.",
+      "tech": ["Python", "Gemini 3.0", "Edge TTS", "Gradio", "Pydub"],
+      "stats": "Qwen-72B & Gemini 3.0 cloud fallbacks, Edge TTS vocal acting",
+      "github": "https://github.com/mayank-goyal09/ScriptToSpeech-AI.git"
+    },
+    {
+      "category": "Generative AI",
+      "name": "ArchitectAI — Virtual Staging",
+      "description": "Advanced image-to-image virtual staging app using Hugging Face's serverless backend and Qwen-Image-Edit-2511. Automatically refurnishes empty spaces with smart scaling.",
+      "tech": ["Python", "Gradio", "Pydantic", "HF Inference Client"],
+      "stats": "Image-to-image virtual staging, Qwen-Image-Edit-2511 model",
+      "github": "https://github.com/mayank-goyal09/ArchitectAI-Virtual-Staging"
+    },
+    {
+      "category": "Generative AI",
+      "name": "Echoes of History — Historical Museum",
+      "description": "Vintage roleplay museum summoning historical figures from FAISS vector stores. Enforces era-specific boundaries via Llama-3, memory windows, and a custom Streamlit parchment UI.",
+      "tech": ["Python", "LangChain", "FAISS", "ChatGroq", "Streamlit"],
+      "stats": "Roleplay historical chat, FAISS semantic search, Llama-3 boundaries",
+      "github": "https://github.com/mayank-goyal09/echoes-of-history"
+    },
+    {
+      "category": "Generative AI",
+      "name": "AI Discord Assistant",
+      "description": "Multi-modal Discord bot — text chat, image generation, audio transcription & vision AI. Powered by Ollama with text-to-image generation and multi-modal features.",
+      "tech": ["Python", "FastAPI", "Ollama", "Stable Diffusion", "Whisper"],
+      "stats": "100% local processing, multi-modal features, stable diffusion image generation",
+      "github": "https://github.com/mayank-goyal09/ai-discord-assistant"
+    },
+    {
+      "category": "Generative AI",
+      "name": "AI News Curator",
+      "description": "Autonomous pipeline: RSS ingestion → LLM curation via Ollama → voice digest with TTS → formatted HTML email briefings. 5 categories, zero human input.",
+      "tech": ["Python", "Ollama", "RSS", "pyttsx3", "SMTP"],
+      "stats": "RSS feed auto-ingestion, Ollama content curation, email/TTS dispatch",
+      "github": "https://github.com/mayank-goyal09/news-curator"
+    },
+    {
+      "category": "Generative AI",
+      "name": "RedGlyph — AI Code Reviewer",
+      "description": "AI-powered code reviewer using Google Gemini 2.5 Flash via LangGraph. Quality scores, severity-based issues, fix suggestions & session email reports.",
+      "tech": ["Python", "FastAPI", "Gemini", "LangGraph", "Docker"],
+      "stats": "Gemini 2.5 Flash, LangGraph multi-agent flow, Dockerized CI/CD",
+      "github": "https://github.com/mayank-goyal09/RedGlyph"
+    },
+    {
+      "category": "Generative AI",
+      "name": "PatternPunk-AI",
+      "description": "Seamless fabric texture generator using Neural Circular Padding to eliminate seams, combined with Real-ESRGAN for 4K manufacturing-ready upscaling.",
+      "tech": ["Python", "Stable Diffusion", "Real-ESRGAN", "AI Graphics"],
+      "stats": "Neural Circular Padding (seamless), Real-ESRGAN 4K upscaling",
+      "github": "https://github.com/mayank-goyal09/fashion-pattern-ai-generator"
+    },
+    {
+      "category": "Generative AI",
+      "name": "DigitalChef AI — Food Photo Studio",
+      "description": "AI-powered menu plating engine transforming dish concepts into styled photography. Curates compositions, professional lighting presets, and surface textures via Hugging Face and FLUX.1-schnell.",
+      "tech": ["Python", "Streamlit", "Hugging Face API", "FLUX.1-schnell"],
+      "stats": "Prompt-to-plating synthesis, FLUX.1-schnell culinary engine, 5 photography styles",
+      "link": "https://vibe-cooking-project.streamlit.app/",
+      "github": "https://github.com/mayank-goyal09/vibe-cooking"
+    },
+    {
+      "category": "NLP",
+      "name": "Why Summarizer",
+      "description": "An AI-driven engine that connects your Git history to Jira context, ensuring institutional knowledge never fades. The missing link between what your code does and why it was written.",
+      "tech": ["Python", "LangChain", "Git", "Jira"],
+      "stats": "Git-to-Jira traceability parser, developer documentation automation",
+      "github": "https://github.com/mayank-goyal09/Why-Summarizer.git"
+    },
+    {
+      "category": "NLP",
+      "name": "Risk Intel Extension",
+      "description": "Extracting risk indicators and threat intelligence in real-time from visited pages.",
+      "tech": ["JavaScript", "Chrome Extension", "NLP"],
+      "stats": "Real-time DOM analysis, threat intelligence parsing",
+      "github": "https://github.com/mayank-goyal09/risk-intel-extension"
+    },
+    {
+      "category": "NLP",
+      "name": "Address ResolveR",
+      "description": "High-speed CRF model resolving messy addresses under 10ms. Trained on 100K messy addresses to parse house numbers, streets, sectors, cities, and postcodes.",
+      "tech": ["Python", "CRFSuite", "NLP"],
+      "stats": "100K training address records, < 10ms inference speed",
+      "github": "https://github.com/mayank-goyal09/Logistics-Address-ResolveR"
+    },
+    {
+      "category": "NLP",
+      "name": "Beep-for-Abuse",
+      "description": "A low-latency audio processing engine utilizing a Rolling Audio Buffer paired with Faster-Whisper and a 1D-CNN classifier to detect and mask abusive language in real-time streams.",
+      "tech": ["Python", "Faster-Whisper", "1D-CNN", "PyTorch"],
+      "stats": "Rolling audio buffer, faster-whisper real-time stream masking",
+      "github": "https://github.com/mayank-goyal09/beep-for-abuse"
+    },
+    {
+      "category": "NLP",
+      "name": "Screendit",
+      "description": "Media analysis tool turning hours of subjective media coverage into seconds of objective data by automatically aligning identical facts and mapping news bias.",
+      "tech": ["Python", "Transformers", "Semantic Similarity"],
+      "stats": "Side-by-side semantic alignment, media bias/spin heatmap visualization",
+      "github": "https://github.com/mayank-goyal09/Screendit"
+    },
+    {
+      "category": "NLP",
+      "name": "nuance-flow",
+      "description": "A Deep Learning NLP pipeline that upgrades flat 'positive/negative' sentiment into 27 actionable emotion triggers, helping small businesses resolve critical customer complaints.",
+      "tech": ["Python", "Transformers", "DistilBERT", "PyTorch"],
+      "stats": "GoEmotions dataset fine-tuned, 27 granular emotion outputs",
+      "github": "https://github.com/mayank-goyal09/nuance-flow"
+    },
+    {
+      "category": "NLP",
+      "name": "Agri-SMS Sentinel",
+      "description": "A hybrid AI router designed to filter out spam and route regional Hinglish query SMS messages to agricultural desks in real-time.",
+      "tech": ["Python", "Logistic Regression", "Gemini 2.5 Flash"],
+      "stats": "Dual-engine architecture, Hinglish query routing, real-time desk dispatch",
+      "github": "https://github.com/mayank-goyal09/agri-sms-sentinel"
+    }
+  ]
+}
