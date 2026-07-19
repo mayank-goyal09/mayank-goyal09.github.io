@@ -16,12 +16,12 @@ const INTENT_KEYWORDS = {
     projects: ["projects", "project", "built", "app", "apps", "dashboard", "dashboards", "system", "systems", "github", "portfolio"],
     experience: ["experience", "work", "job", "internship", "intern", "freelance", "spaceece", "kwerky", "media", "role", "position", "career", "professional", "company"],
     education: ["education", "degree", "qualification", "university", "college", "self-taught", "study", "studies", "btech", "b.tech", "school", "learn"],
-    contact: ["contact", "email", "linkedin", "github", "twitter", "reach", "hire", "connect", "mail", "phone", "social", "socials", "message"],
+    contact: ["contact", "email", "linkedin", "github", "twitter", "huggingface", "hugging face", "hf", "reach", "hire", "connect", "mail", "phone", "social", "socials", "message"],
     tips: ["tip", "tips", "advice", "learn", "study", "career advice", "how to"]
 };
 
 // Words that have higher weight in matching
-const STRONG_KEYWORDS = ["skills", "experience", "education", "contact", "projects", "project", "email", "linkedin", "github"];
+const STRONG_KEYWORDS = ["skills", "experience", "education", "contact", "projects", "project", "email", "linkedin", "github", "huggingface", "hugging face"];
 
 // Project category keywords for routing queries directly to specific categories
 const CATEGORY_KEYWORDS = {
@@ -292,7 +292,7 @@ class CosmicAssistant {
                 welcomeText += `💬 Welcome to the **Natural Language Processing Lab**! Explore sequence models, address resolvers, and real-time audio interception engines.\n\nAsk about "Why Summarizer", "Address ResolveR", or "Beep-for-Abuse"!`;
                 break;
             default:
-                welcomeText += `I can answer questions based **only** on Mayank's official portfolio data. Try asking about:\n• 💼 **Experience** - Work history & roles\n• 🛠️ **Skills** - Applied developer workbench\n• 🚀 **Projects** - Over 60+ projects\n• 📧 **Contact** - Email & social profiles\n• 🎓 **Education** - Certs & study background\n\nJust ask or use the quick buttons below!`;
+                welcomeText += `I can answer questions based **only** on Mayank's official portfolio data. Try asking about:\n• 💼 **Experience** - Work history & roles\n• 🛠️ **Skills** - Applied developer workbench\n• 🚀 **Projects** - Over 60+ projects\n• 📧 **Contact** - Email, [Hugging Face](https://huggingface.co/mayankg09) & social profiles\n• 🎓 **Education** - Certs & study background\n\nJust ask or use the quick buttons below!`;
         }
 
         this.addMessage('assistant', welcomeText);
@@ -487,7 +487,7 @@ class CosmicAssistant {
                 
                 case 'contact': {
                     const c = k.contact;
-                    return `📬 **Contact Mayank**\n\n📧 **Email:** ${c.email}\n\n🔗 **Social Links:**\n• [LinkedIn](${c.linkedin})\n• [GitHub](${c.github})\n• [Twitter/X](${c.twitter})\n\nYou can also use the contact form on the main page. Mayank typically responds within 24 hours!`;
+                    return `📬 **Contact Mayank**\n\n📧 **Email:** ${c.email}\n\n🔗 **Social Links:**\n• [LinkedIn](${c.linkedin})\n• [GitHub](${c.github})\n• [Twitter/X](${c.twitter})\n• [Hugging Face](${c.huggingface || 'https://huggingface.co/mayankg09'})\n\nYou can also use the contact form on the main page. Mayank typically responds within 24 hours!`;
                 }
                 
                 case 'tips': {
