@@ -509,6 +509,26 @@ class CardStreamController {
             stats: "0.835 Dice Coefficient  ·  Tensor execution <10ms",
             cardNumber: "4539  ●●●●  ●●●●  2209",
         },
+        {
+            name: "Mindful AI",
+            subtitle: "Cognitive Distortion & CBT Engine",
+            description: "Real-time cognitive distortion classifier and CBT reframing engine using DistilBERT, ONNX Runtime, and FastAPI.",
+            tech: ["FastAPI", "DistilBERT", "ONNX", "Streamlit"],
+            github: "https://github.com/mayank-goyal09/mindful-thought-checker",
+            live: "https://mayankg09-mindful-thought-checker.hf.space",
+            streamlit: "https://mindful-thought-checker-project.streamlit.app",
+            gradientStops: [
+                { pos: 0.0, color: "#0284c7" },
+                { pos: 0.35, color: "#0369a1" },
+                { pos: 0.7, color: "#075985" },
+                { pos: 1.0, color: "#0c4a6e" },
+            ],
+            accentColor: "#38bdf8",
+            chipColor: "#ffd700",
+            icon: "🧠",
+            stats: "DistilBERT  ·  ONNX Runtime  ·  CBT Reframing",
+            cardNumber: "7401  ●●●●  ●●●●  2026",
+        },
     ];
 
     // ── Helper: wrap text into multiple lines ──
@@ -771,7 +791,7 @@ class CardStreamController {
         // ── Create real DOM gradient button overlay ──
         const viewBtn = document.createElement("a");
         viewBtn.className = "gradient-button";
-        viewBtn.href = project.github;
+        viewBtn.href = project.live || project.github;
         viewBtn.target = "_blank";
         viewBtn.rel = "noopener noreferrer";
         viewBtn.textContent = "View Project →";
@@ -1014,6 +1034,29 @@ class CardStreamController {
                 "    slice_data = np.frombuffer(await file.read(), dtype=np.float32)",
                 "    mask = segmenter.predict_slice(slice_data)",
                 "    return {'segmentation_mask': mask.tolist()}",
+                ],
+            "Mindful AI": [
+                "# 🧠 Mindful Thought Checker - Cognitive Distortion & CBT API",
+                "from fastapi import FastAPI, HTTPException",
+                "from pydantic import BaseModel",
+                "from app.predictor import CognitiveDistortionPredictor",
+                "",
+                "app = FastAPI(title='Mindful Cognitive AI', version='1.0.0')",
+                "predictor = CognitiveDistortionPredictor(model_path='MentalHealth_AI_Model')",
+                "",
+                "class ThoughtPayload(BaseModel):",
+                "    thought: str",
+                "",
+                "@app.post('/predict')",
+                "async def predict_distortion(payload: ThoughtPayload):",
+                "    if not payload.thought.strip():",
+                "        raise HTTPException(400, 'Thought text cannot be empty')",
+                "    result = predictor.predict(payload.thought)",
+                "    return {",
+                "        'distortion': result['label'],",
+                "        'confidence': f\"{result['confidence'] * 100:.1f}%\"," ,
+                "        'cbt_reframe': result['reframe_questions']",
+                "    }",
             ],
         };
 
