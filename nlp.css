@@ -1521,7 +1521,8 @@ body.nlp-body {
 .lamp-container {
     width: 100%;
     height: 100%;
-    background: #020617; /* bg-slate-950 */
+    background: #020617;
+    /* bg-slate-950 */
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -1644,7 +1645,8 @@ body.nlp-body {
     position: relative;
     z-index: 20;
     text-align: center;
-    padding: 100px 40px 40px; /* Pushes content down, so it sits beautifully in the cone */
+    padding: 100px 40px 40px;
+    /* Pushes content down, so it sits beautifully in the cone */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1678,20 +1680,25 @@ body.nlp-body {
     .lamp-beam {
         height: 10rem;
     }
+
     .lamp-glow-line {
         transform: translate(-50%, -1px);
     }
+
     .lamp-glow-pill {
         transform: translate(-50%, -3rem);
         height: 6rem;
     }
+
     .lamp-title {
         font-size: 2.2rem;
     }
+
     .lamp-desc {
         font-size: 0.95rem;
         margin-bottom: 20px;
     }
+
     .lamp-content {
         padding: 50px 20px 20px;
     }
@@ -1705,25 +1712,23 @@ body.nlp-body {
     border: none !important;
     padding: 2.5px !important;
     position: relative;
-    background: linear-gradient(
-        90deg, 
-        #020617 0%, 
-        #eab308 25%, 
-        #020617 50%, 
-        #facc15 75%, 
-        #020617 100%
-    ) !important;
+    background: linear-gradient(90deg,
+            #020617 0%,
+            #eab308 25%,
+            #020617 50%,
+            #facc15 75%,
+            #020617 100%) !important;
     background-size: 400% 100% !important;
     animation: liquidGoldBorder 8s linear infinite !important;
-    box-shadow: 
-        0 0 calc(15px + var(--lamp-progress, 0) * 35px) rgba(234, 179, 8, calc(0.1 + var(--lamp-progress, 0) * 0.35)), 
+    box-shadow:
+        0 0 calc(15px + var(--lamp-progress, 0) * 35px) rgba(234, 179, 8, calc(0.1 + var(--lamp-progress, 0) * 0.35)),
         inset 0 0 calc(10px + var(--lamp-progress, 0) * 20px) rgba(234, 179, 8, calc(0.02 + var(--lamp-progress, 0) * 0.12)) !important;
     transition: box-shadow 0.1s linear !important;
 }
 
 #nuance-card:hover {
-    box-shadow: 
-        0 0 65px rgba(234, 179, 8, 0.55), 
+    box-shadow:
+        0 0 65px rgba(234, 179, 8, 0.55),
         inset 0 0 35px rgba(234, 179, 8, 0.2) !important;
 }
 
@@ -1731,6 +1736,7 @@ body.nlp-body {
     0% {
         background-position: 0% 0%;
     }
+
     100% {
         background-position: 400% 0%;
     }
@@ -1746,10 +1752,11 @@ body.nlp-body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: #020617; /* Slate 950 */
-    background-image: 
+    background: #020617;
+    /* Slate 950 */
+    background-image:
         radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.08) 0%, transparent 60%),
-        linear-gradient(rgba(16, 185, 129, 0.03) 1px, transparent 1px), 
+        linear-gradient(rgba(16, 185, 129, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(16, 185, 129, 0.03) 1px, transparent 1px);
     background-size: 100% 100%, 30px 30px, 30px 30px;
 }
@@ -1800,9 +1807,11 @@ body.nlp-body {
     0% {
         top: 0%;
     }
+
     50% {
         top: 100%;
     }
+
     100% {
         top: 0%;
     }
@@ -1811,7 +1820,8 @@ body.nlp-body {
 .sentinel-container {
     width: 100%;
     height: 100%;
-    background: #021e17; /* bg-emerald-950/900 */
+    background: #021e17;
+    /* bg-emerald-950/900 */
     background-image: radial-gradient(circle at center, #022c22, #041f13);
     border-radius: 20px;
     display: flex;
@@ -1895,25 +1905,23 @@ body.nlp-body {
     border: none !important;
     padding: 2.5px !important;
     position: relative;
-    background: linear-gradient(
-        90deg, 
-        #022c22 0%, 
-        #10b981 25%, 
-        #022c22 50%, 
-        #34d399 75%, 
-        #022c22 100%
-    ) !important;
+    background: linear-gradient(90deg,
+            #022c22 0%,
+            #10b981 25%,
+            #022c22 50%,
+            #34d399 75%,
+            #022c22 100%) !important;
     background-size: 400% 100% !important;
     animation: liquidGoldBorder 8s linear infinite !important;
-    box-shadow: 
-        0 0 calc(15px + var(--sentinel-progress, 0) * 35px) rgba(16, 185, 129, calc(0.1 + var(--sentinel-progress, 0) * 0.35)), 
+    box-shadow:
+        0 0 calc(15px + var(--sentinel-progress, 0) * 35px) rgba(16, 185, 129, calc(0.1 + var(--sentinel-progress, 0) * 0.35)),
         inset 0 0 calc(10px + var(--sentinel-progress, 0) * 20px) rgba(16, 185, 129, calc(0.02 + var(--sentinel-progress, 0) * 0.12)) !important;
     transition: box-shadow 0.1s linear !important;
 }
 
 #sentinel-card:hover {
-    box-shadow: 
-        0 0 65px rgba(16, 185, 129, 0.55), 
+    box-shadow:
+        0 0 65px rgba(16, 185, 129, 0.55),
         inset 0 0 35px rgba(16, 185, 129, 0.2) !important;
 }
 
@@ -1921,7 +1929,7 @@ body.nlp-body {
 .warp-grid {
     position: absolute;
     inset: 0;
-    background-image: 
+    background-image:
         linear-gradient(rgba(16, 185, 129, 0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(16, 185, 129, 0.04) 1px, transparent 1px);
     background-size: 20px 20px;
@@ -1962,45 +1970,54 @@ body.nlp-body {
 }
 
 @keyframes grid-pulse {
-  0%, 100% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0.7;
-  }
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
 }
 
 @keyframes run-lifecycle {
-  0% {
-    opacity: 0;
-  }
-  10%, 80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+    0% {
+        opacity: 0;
+    }
+
+    10%,
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes shuttle-travel {
-  from {
-    left: -5%;
-  }
-  to {
-    left: 105%;
-  }
+    from {
+        left: -5%;
+    }
+
+    to {
+        left: 105%;
+    }
 }
 
 @keyframes weft-appear {
-  0% {
-    transform: scaleX(0);
-  }
-  10% {
-    transform: scaleX(1);
-  }
-  100% {
-    transform: scaleX(1);
-  }
+    0% {
+        transform: scaleX(0);
+    }
+
+    10% {
+        transform: scaleX(1);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
 }
 
 
@@ -2122,7 +2139,7 @@ body.nlp-body {
     height: 8px;
     border-radius: 50%;
     background: #ffffff;
-    box-shadow: 
+    box-shadow:
         0 0 6px #ffffff,
         0 0 12px #ffffff,
         0 0 20px var(--color),
@@ -2233,6 +2250,7 @@ body.nlp-body {
     from {
         transform: translateY(0px);
     }
+
     to {
         transform: translateY(-800px);
     }
@@ -2245,7 +2263,7 @@ body.nlp-body {
     align-items: center !important;
     height: 68% !important;
     box-sizing: border-box !important;
-    position: relative !important;
+    position: static !important;
 }
 
 .cosmic-child-card .k-badge {
@@ -2282,9 +2300,9 @@ body.nlp-body {
 
 .cosmic-child-card .k-actions {
     position: absolute !important;
-    bottom: 25px !important;
+    top: 84% !important;
     left: 50% !important;
-    transform: translateX(-50%) !important;
+    transform: translate(-50%, -50%) !important;
     z-index: 3 !important;
     margin-top: 0 !important;
 }
@@ -2303,17 +2321,24 @@ body.nlp-body {
 }
 
 @media (max-width: 768px) {
-    #horizon_p8, #earth_p8 {
+
+    #horizon_p8,
+    #earth_p8 {
         top: 68% !important;
     }
+
     .cosmic-child-card .k-title {
         font-size: 2.4rem !important;
         margin-bottom: 10px !important;
     }
+
     .cosmic-child-card .k-desc {
         font-size: 0.92rem !important;
     }
+
     .cosmic-child-card .k-actions {
-        bottom: 18px !important;
+        top: 84% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
     }
 }
