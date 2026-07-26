@@ -641,6 +641,15 @@
       "link": "https://huggingface.co/spaces/mayankg09/brain-tumor-segmentation"
     },
     {
+      "category": "FastAPI",
+      "name": "Mindful Thought Checker",
+      "description": "Real-time cognitive distortion detection and CBT reframing engine using DistilBERT & ONNX Runtime with a FastAPI backend deployed on Hugging Face Spaces.",
+      "tech": ["FastAPI", "DistilBERT", "ONNX Runtime", "Streamlit"],
+      "stats": "Sub-20ms ONNX inference, 5 distortion categories, clinical CBT reframing matrix",
+      "link": "https://mayankg09-mindful-thought-checker.hf.space",
+      "github": "https://github.com/mayank-goyal09/mindful-thought-checker"
+    },
+    {
       "category": "Generative AI",
       "name": "DocIntel — Private RAG Base",
       "description": "Private-First RAG system bridging static local documentation with Mistral-7B/Llama-3 LLMs. Uses FAISS-powered vector DB for zero-leak, secure local data querying.",
@@ -784,6 +793,14 @@
       "tech": ["Python", "Logistic Regression", "Gemini 2.5 Flash"],
       "stats": "Dual-engine architecture, Hinglish query routing, real-time desk dispatch",
       "github": "https://github.com/mayank-goyal09/agri-sms-sentinel"
+    },
+    {
+      "category": "NLP",
+      "name": "Mindful Thought Checker",
+      "description": "Real-time cognitive distortion classifier and CBT reframing engine powered by fine-tuned DistilBERT and ONNX Runtime.",
+      "tech": ["Python", "DistilBERT", "ONNX Runtime", "Streamlit", "FastAPI"],
+      "stats": "Real-time CBT reframing engine, 5 distortion classifications, sub-20ms ONNX speed",
+      "github": "https://github.com/mayank-goyal09/mindful-thought-checker"
     }
   ]
 }
