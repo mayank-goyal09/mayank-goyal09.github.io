@@ -129,6 +129,20 @@ class ParticleManager {
 
         this.mouse = { x: 0, y: 0, isPressed: false, isRightClick: false };
 
+        this.isVisible = true;
+        this.animationFrameId = null;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                this.isVisible = entry.isIntersecting;
+                if (this.isVisible && !this.animationFrameId) {
+                    this.animationFrameId = requestAnimationFrame(() => this.animate());
+                }
+            });
+        }, { threshold: 0.05 });
+
+        observer.observe(this.canvas);
+
         this.init();
     }
 
@@ -142,7 +156,6 @@ class ParticleManager {
         });
         this.canvas.addEventListener('mouseup', () => {
             this.mouse.isPressed = false;
-            this.mouse.isRightClick = false;
         });
         this.canvas.addEventListener('mousemove', (e) => {
             const rect = this.canvas.getBoundingClientRect();
@@ -152,7 +165,7 @@ class ParticleManager {
         this.canvas.addEventListener('contextmenu', (e) => e.preventDefault());
 
         this.nextWord(this.words[0]);
-        this.animate();
+        this.animationFrameId = requestAnimationFrame(() => this.animate());
     }
 
     resize() {
@@ -233,6 +246,11 @@ class ParticleManager {
     }
 
     animate() {
+        if (!this.isVisible) {
+            this.animationFrameId = null;
+            return;
+        }
+
         this.ctx.fillStyle = "rgba(0, 0, 0, 0.15)";
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
@@ -262,7 +280,7 @@ class ParticleManager {
             this.nextWord(this.words[this.wordIndex]);
         }
 
-        requestAnimationFrame(() => this.animate());
+        this.animationFrameId = requestAnimationFrame(() => this.animate());
     }
 }
 

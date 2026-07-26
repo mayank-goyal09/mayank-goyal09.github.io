@@ -92,16 +92,32 @@ const initBeamsBackground = () => {
         );
     }
 
+    let isVisible = true;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            isVisible = entry.isIntersecting;
+            if (isVisible && !animationFrameId) {
+                animationFrameId = requestAnimationFrame(animate);
+            }
+        });
+    }, { threshold: 0.05 });
+
+    observer.observe(canvas);
+    canvas.style.filter = 'blur(35px)';
+
     function animate() {
-        const rect = container.getBoundingClientRect();
-        ctx.clearRect(0, 0, rect.width, rect.height);
-        ctx.filter = 'blur(35px)';
+        if (!isVisible) {
+            animationFrameId = null;
+            return;
+        }
+
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
         beams.forEach((beam, index) => {
             beam.y -= beam.speed;
             beam.pulse += beam.pulseSpeed;
 
-            // Reset beam when it goes off screen
             if (beam.y + beam.length < -100) {
                 resetBeam(beam, index);
             }
@@ -112,12 +128,24 @@ const initBeamsBackground = () => {
         animationFrameId = requestAnimationFrame(animate);
     }
 
+    let canvasWidth = 0;
+    let canvasHeight = 0;
+
+    function updateCanvasSize() {
+        const rect = container.getBoundingClientRect();
+        canvasWidth = rect.width;
+        canvasHeight = rect.height;
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+        ctx.scale(dpr, dpr);
+    }
+
     updateCanvasSize();
     window.addEventListener('resize', updateCanvasSize);
-    animate();
+    animationFrameId = requestAnimationFrame(animate);
 };
 
-// Initialize when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initBeamsBackground);
 } else {

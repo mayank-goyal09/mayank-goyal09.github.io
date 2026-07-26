@@ -102,13 +102,30 @@ const initFallingPattern = () => {
     const mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
 
+    let isVisible = true;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isVisible = entry.isIntersecting;
+        if (isVisible && !frameId) {
+          frameId = requestAnimationFrame(animate);
+        }
+      });
+    }, { threshold: 0.05 });
+
+    observer.observe(container);
+
     let frameId;
     const animate = () => {
+      if (!isVisible) {
+        frameId = null;
+        return;
+      }
       material.uniforms.iTime.value += 0.016;
       renderer.render(scene, camera);
       frameId = requestAnimationFrame(animate);
     };
-    animate();
+    frameId = requestAnimationFrame(animate);
 
     const handleResize = () => {
       width = container.clientWidth || window.innerWidth;

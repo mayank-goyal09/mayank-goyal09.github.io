@@ -184,9 +184,26 @@
         resizeCanvas();
 
         const startTime = Date.now();
+        let isVisible = true;
+        let animationFrameId = null;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isVisible = entry.isIntersecting;
+                if (isVisible && !animationFrameId) {
+                    animationFrameId = requestAnimationFrame(render);
+                }
+            });
+        }, { threshold: 0.05 });
+
+        observer.observe(canvas);
 
         function render() {
-            resizeCanvas();
+            if (!isVisible) {
+                animationFrameId = null;
+                return;
+            }
+
             const currentTime = (Date.now() - startTime) / 1000;
 
             gl.clearColor(0.0, 0.0, 0.0, 1.0);
@@ -210,10 +227,10 @@
 
             gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 
-            requestAnimationFrame(render);
+            animationFrameId = requestAnimationFrame(render);
         }
 
-        requestAnimationFrame(render);
+        animationFrameId = requestAnimationFrame(render);
     }
 
     function generateStarBoxShadow(count, width, height) {
