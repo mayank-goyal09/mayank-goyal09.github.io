@@ -2238,43 +2238,43 @@ body.nlp-body {
     }
 }
 
-/* Project 08 Typography & Layout Overrides for Bottom Button inside Earth Curve */
+/* Project 08 Typography & Layout Overrides for Perfect Alignment & Grand Title */
 .cosmic-child-card .kokonut-card-content {
-    padding: 25px 40px 15px 40px !important;
-    justify-content: flex-start !important;
+    padding: 20px 40px 0 40px !important;
+    justify-content: center !important;
     align-items: center !important;
-    height: 100% !important;
+    height: 68% !important;
     box-sizing: border-box !important;
     position: relative !important;
 }
 
 .cosmic-child-card .k-badge {
     margin-top: 0 !important;
-    margin-bottom: 10px !important;
-    padding: 5px 14px !important;
+    margin-bottom: 14px !important;
+    padding: 6px 16px !important;
 }
 
 .cosmic-child-card .k-title {
-    font-size: 3.2rem !important;
+    font-size: 4.5rem !important;
     font-family: 'Inter', sans-serif !important;
     font-weight: 800 !important;
-    line-height: 1.08 !important;
-    margin-bottom: 12px !important;
+    line-height: 1.05 !important;
+    margin-bottom: 16px !important;
     margin-top: 0 !important;
     letter-spacing: -0.02em !important;
     text-align: center !important;
 }
 
 .cosmic-child-card .k-desc {
-    font-size: 1.05rem !important;
+    font-size: 1.18rem !important;
     font-family: 'Inter', sans-serif !important;
     font-weight: 300 !important;
     text-transform: none !important;
-    max-width: 650px !important;
-    line-height: 1.55 !important;
-    margin-bottom: 15px !important;
+    max-width: 680px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 0 !important;
     margin-top: 0 !important;
-    color: rgba(255, 255, 255, 0.8) !important;
+    color: rgba(255, 255, 255, 0.78) !important;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9) !important;
     letter-spacing: normal !important;
     text-align: center !important;
@@ -2307,11 +2307,11 @@ body.nlp-body {
         top: 68% !important;
     }
     .cosmic-child-card .k-title {
-        font-size: 2.2rem !important;
+        font-size: 2.4rem !important;
         margin-bottom: 10px !important;
     }
     .cosmic-child-card .k-desc {
-        font-size: 0.88rem !important;
+        font-size: 0.92rem !important;
     }
     .cosmic-child-card .k-actions {
         bottom: 18px !important;
