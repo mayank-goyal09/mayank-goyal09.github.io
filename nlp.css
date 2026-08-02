@@ -2367,10 +2367,10 @@ body.nlp-body {
 }
 
 .crystal-trail-container .radar-content {
-    padding: 20px 40px 0 40px !important;
+    padding: 20px 40px 20px 40px !important;
     justify-content: center !important;
     align-items: center !important;
-    height: 68% !important;
+    height: 100% !important;
     box-sizing: border-box !important;
     position: relative !important;
     display: flex;
@@ -2447,12 +2447,10 @@ body.nlp-body {
 }
 
 #radar-card .k-actions {
-    position: absolute !important;
-    top: 84% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
+    position: static !important;
+    transform: none !important;
     z-index: 3 !important;
-    margin-top: 0 !important;
+    margin-top: 30px !important;
 }
 
 /* Scroll micro-interaction: Translate card on scroll */
@@ -2492,9 +2490,4 @@ body.nlp-body {
         line-height: 1.4 !important;
     }
 
-    #radar-card .k-actions {
-        top: 84% !important;
-        left: 50% !important;
-        transform: translate(-50%, -50%) !important;
-    }
 }
