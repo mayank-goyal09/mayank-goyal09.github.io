@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 
 const CrystalTrailBackground = ({
   children,
-  crystalColor = "rgba(180, 120, 255, 0.8)",
+  crystalColor = "rgba(255, 107, 0, 0.8)",
   maxCrystals = 500,
   className = "",
 }: {
@@ -67,10 +67,10 @@ const CrystalTrailBackground = ({
           ctx.lineTo(this.vertices[i].x, this.vertices[i].y);
         }
         ctx.closePath();
-        ctx.strokeStyle = `rgba(180, 120, 255, ${this.life * 0.8})`;
+        ctx.strokeStyle = `rgba(255, 107, 0, ${this.life * 0.8})`;
         ctx.lineWidth = 1;
         ctx.stroke();
-        ctx.fillStyle = `rgba(180, 120, 255, ${this.life * 0.1})`;
+        ctx.fillStyle = `rgba(255, 107, 0, ${this.life * 0.1})`;
         ctx.fill();
         ctx.restore();
       }
