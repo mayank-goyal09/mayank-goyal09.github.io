@@ -2405,6 +2405,15 @@ body.nlp-body {
     animation: blink 1s infinite alternate;
 }
 
+#neuralCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+    pointer-events: none;
+}
+
 #crystalCanvas {
     position: absolute;
     inset: 0;
