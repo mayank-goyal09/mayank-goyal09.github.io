@@ -2344,142 +2344,16 @@ body.nlp-body {
 }
 
 /* ===========================================
-   RADAR VIEWPORT BACKGROUND & SCANNING (PROJECT 09)
+   CRYSTAL TRAIL CARD BACKGROUND (PROJECT 09)
    =========================================== */
-.radar-bg-container {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    overflow: hidden;
-    background: #020617; /* Deep slate cyber navy */
-}
-
-.radar-sweep-effect {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 150vmax;
-    height: 150vmax;
-    transform: translate(-50%, -50%);
-    background: conic-gradient(from 0deg, rgba(16, 185, 129, 0.16) 0deg, transparent 120deg, transparent 360deg);
-    animation: radar-rotate 5s linear infinite;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.radar-grid-lines {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 700px;
-    height: 700px;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 1;
-    background: 
-        radial-gradient(circle, transparent 20%, rgba(16, 185, 129, 0.05) 20%, transparent 21%, transparent 40%, rgba(16, 185, 129, 0.05) 40%, transparent 41%, transparent 60%, rgba(16, 185, 129, 0.05) 60%, transparent 61%, transparent 80%, rgba(16, 185, 129, 0.05) 80%, transparent 81%),
-        linear-gradient(to right, rgba(16, 185, 129, 0.04) 1px, transparent 1px) 50% 50% / 100% 100% no-repeat,
-        linear-gradient(to bottom, rgba(16, 185, 129, 0.04) 1px, transparent 1px) 50% 50% / 100% 100% no-repeat;
-    border: 1px dashed rgba(16, 185, 129, 0.12);
-}
-
-.radar-grid-lines::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 50%; width: 1px; height: 100%;
-    background: rgba(16, 185, 129, 0.08);
-}
-
-.radar-grid-lines::after {
-    content: '';
-    position: absolute;
-    top: 50%; left: 0; height: 1px; width: 100%;
-    background: rgba(16, 185, 129, 0.08);
-}
-
-.radar-blip {
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    background: #10b981;
-    border-radius: 50%;
-    z-index: 2;
-    transform: translate(-50%, -50%);
-    box-shadow: 
-        0 0 10px #10b981,
-        0 0 25px #10b981,
-        0 0 45px #10b981;
-    opacity: 0;
-}
-
-.radar-blip.blip-1 {
-    top: 35%;
-    left: 28%;
-    animation: radar-blip-pulse 4s infinite ease-out;
-}
-
-.radar-blip.blip-2 {
-    top: 65%;
-    left: 78%;
-    animation: radar-blip-pulse 4s infinite ease-out 1.5s;
-}
-
-.radar-blip.blip-3 {
-    top: 25%;
-    left: 68%;
-    animation: radar-blip-pulse 4s infinite ease-out 2.8s;
-}
-
-@keyframes radar-rotate {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-@keyframes radar-blip-pulse {
-    0% {
-        transform: translate(-50%, -50%) scale(0.6);
-        opacity: 0.1;
-    }
-    10% {
-        transform: translate(-50%, -50%) scale(1.1);
-        opacity: 1;
-    }
-    40% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.8;
-    }
-    80% {
-        transform: translate(-50%, -50%) scale(0.8);
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes blink {
-    0% { opacity: 0.25; }
-    100% { opacity: 1; }
-}
-
-/* ===========================================
-   RADAR CARD & HUD DETAILS (PROJECT 09)
-   =========================================== */
-.radar-container {
+.crystal-trail-container {
     position: relative;
     overflow: hidden;
-    background: radial-gradient(ellipse at bottom, rgba(5, 25, 20, 0.95) 0%, rgba(2, 6, 8, 0.98) 100%);
-    border: 1px solid rgba(16, 185, 129, 0.45);
+    background: radial-gradient(ellipse at bottom, rgba(40, 20, 5, 0.95) 0%, rgba(10, 5, 2, 0.98) 100%);
+    border: 1px solid rgba(255, 107, 0, 0.45);
     box-shadow: 
         0 20px 50px rgba(0, 0, 0, 0.85), 
-        0 0 35px rgba(16, 185, 129, 0.25);
+        0 0 35px rgba(255, 107, 0, 0.25);
     border-radius: 24px;
 }
 
@@ -2492,7 +2366,7 @@ body.nlp-body {
     pointer-events: none;
 }
 
-.radar-container .radar-content {
+.crystal-trail-container .radar-content {
     padding: 20px 40px 0 40px !important;
     justify-content: center !important;
     align-items: center !important;
@@ -2505,9 +2379,9 @@ body.nlp-body {
 }
 
 .radar-hud-bar {
-    background: rgba(16, 185, 129, 0.05);
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    color: #10b981;
+    background: rgba(255, 107, 0, 0.05);
+    border: 1px solid rgba(255, 107, 0, 0.2);
+    color: #ff9d00;
     padding: 10px 18px;
     border-radius: 8px;
     font-family: 'Fira Code', monospace;
@@ -2517,13 +2391,13 @@ body.nlp-body {
     gap: 12px;
     align-items: center;
     letter-spacing: 0.5px;
-    text-shadow: 0 0 4px rgba(16, 185, 129, 0.35);
+    text-shadow: 0 0 4px rgba(255, 107, 0, 0.35);
     max-width: 90%;
 }
 
 .radar-hud-bar .hud-tag {
     font-weight: 700;
-    color: #34d399;
+    color: #ff9d00;
 }
 
 .radar-hud-bar .hud-alert {
@@ -2531,7 +2405,7 @@ body.nlp-body {
     animation: blink 1s infinite alternate;
 }
 
-.radar-container .radar-title {
+.crystal-trail-container .radar-title {
     font-size: 4.5rem !important;
     font-family: 'Inter', sans-serif !important;
     font-weight: 800 !important;
@@ -2542,7 +2416,7 @@ body.nlp-body {
     text-align: center !important;
 }
 
-.radar-container .radar-desc {
+.crystal-trail-container .radar-desc {
     font-size: 1.18rem !important;
     font-family: 'Inter', sans-serif !important;
     font-weight: 300 !important;
@@ -2566,14 +2440,19 @@ body.nlp-body {
     margin-top: 0 !important;
 }
 
-/* Scroll micro-interaction: Rotate radar sweep faster on scroll */
+/* Scroll micro-interaction: Translate card on scroll */
 #radar-card {
     --radar-scale: calc(1.05 - var(--radar-progress, 0) * 0.05);
 }
 
+@keyframes blink {
+    0% { opacity: 0.25; }
+    100% { opacity: 1; }
+}
+
 /* Responsive Overrides for Project 09 */
 @media (max-width: 768px) {
-    .radar-container .radar-content {
+    .crystal-trail-container .radar-content {
         padding: 24px 16px !important;
         justify-content: center !important;
         height: 100% !important;
@@ -2588,12 +2467,12 @@ body.nlp-body {
         text-align: center;
     }
 
-    .radar-container .radar-title {
+    .crystal-trail-container .radar-title {
         font-size: 2.4rem !important;
         margin-bottom: 10px !important;
     }
 
-    .radar-container .radar-desc {
+    .crystal-trail-container .radar-desc {
         font-size: 0.92rem !important;
         line-height: 1.4 !important;
     }
