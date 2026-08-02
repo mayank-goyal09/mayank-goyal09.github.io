@@ -920,22 +920,17 @@
                 <p class="subtitle fade-up-text delay-2">Flagging emerging failure modes in unstructured repair logs in real-time.</p>
             </div>
 
-            <!-- Radar Scanning Sweep Viewport Background -->
-            <div id="project-9-bg" class="radar-bg-container">
-                <div class="radar-sweep-effect"></div>
-                <div class="radar-grid-lines"></div>
-                <div class="radar-blip blip-1"></div>
-                <div class="radar-blip blip-2"></div>
-                <div class="radar-blip blip-3"></div>
-            </div>
+            <!-- Radar Scanning Sweep Viewport Background (Clean dark background) -->
+            <div id="project-9-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; background: #02040a;"></div>
 
             <div class="card-container" id="radar-card">
-                <div class="card-inner radar-container">
+                <div class="card-inner crystal-trail-container">
+                    <canvas id="crystalCanvas" class="absolute inset-0 block h-full w-full z-0"></canvas>
                     <div class="radar-card-overlay"></div>
                     <div class="radar-content">
-                        <div class="k-badge fade-up-text delay-1" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.35);">
-                            <div class="dot" style="background: #10b981;"></div>
-                            <span style="color: #34d399;">HDBSCAN & YAKE ML Pipeline</span>
+                        <div class="k-badge fade-up-text delay-1" style="background: rgba(255, 107, 0, 0.15); border-color: rgba(255, 107, 0, 0.35);">
+                            <div class="dot" style="background: #ff6b00;"></div>
+                            <span style="color: #ff9d00;">HDBSCAN & YAKE ML Pipeline</span>
                         </div>
                         
                         <!-- Radar Terminal Console Simulation HUD -->
@@ -946,7 +941,7 @@
                         </div>
 
                         <h1 class="radar-title fade-up-text delay-3">
-                            <span>Drift </span><span style="color: #10b981; text-shadow: 0 0 20px rgba(16, 185, 129, 0.6);">Radar</span>
+                            <span>Drift </span><span style="color: #ff6b00; text-shadow: 0 0 20px rgba(255, 107, 0, 0.6);">Radar</span>
                         </h1>
                         
                         <p class="radar-desc fade-up-text delay-4">
@@ -955,7 +950,7 @@
 
                         <div class="k-actions fade-up-text delay-5">
                             <a href="https://github.com/mayank-goyal09/mechanic-notes-drift-radar" target="_blank"
-                                class="explore-btn" style="margin-top: 0; background: linear-gradient(135deg, #047857, #10b981); color: #fff; border-color: #10b981; box-shadow: 0 0 25px rgba(16, 185, 129, 0.45);">Explore Drift Radar →</a>
+                                class="explore-btn" style="margin-top: 0; background: linear-gradient(135deg, #b45309, #ff6b00); color: #fff; border-color: #ff6b00; box-shadow: 0 0 25px rgba(255, 107, 0, 0.45);">Explore Drift Radar →</a>
                         </div>
                     </div>
                 </div>
@@ -971,6 +966,7 @@
     <script src="nlp.js" defer></script>
     <script src="project8-shader.js" defer></script>
     <script src="components/ui/lamp.js" defer></script>
+    <script src="components/ui/crystal-trail.js" defer></script>
     <!-- SpaceX Custom Cursor -->
     <script src="spacex-cursor.js" defer></script>
     <script src="chatbot.js?v=20260206" defer></script>
