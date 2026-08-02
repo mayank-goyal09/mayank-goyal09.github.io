@@ -121,6 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (p.card.id === 'sentinel-card') {
                     p.card.style.setProperty('--sentinel-progress', p.currentProgress.toFixed(4));
                 }
+                if (p.card.id === 'radar-card') {
+                    p.card.style.setProperty('--radar-progress', p.currentProgress.toFixed(4));
+                }
             }
         });
 
