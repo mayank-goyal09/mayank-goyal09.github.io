@@ -2372,7 +2372,7 @@ body.nlp-body {
     align-items: center !important;
     height: 68% !important;
     box-sizing: border-box !important;
-    position: static !important;
+    position: relative !important;
     display: flex;
     flex-direction: column;
     z-index: 2;
