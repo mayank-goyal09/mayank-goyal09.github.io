@@ -920,12 +920,13 @@
                 <p class="subtitle fade-up-text delay-2">Flagging emerging failure modes in unstructured repair logs in real-time.</p>
             </div>
 
-            <!-- Radar Scanning Sweep Viewport Background (Clean dark background) -->
-            <div id="project-9-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; background: #02040a;"></div>
+            <!-- Section WebGL Neural Noise Background -->
+            <div id="project-9-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden;">
+                <canvas id="neuralCanvas" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
+            </div>
 
             <div class="card-container" id="radar-card">
                 <div class="card-inner crystal-trail-container">
-                    <canvas id="neuralCanvas" class="absolute inset-0 block h-full w-full pointer-events-none z-0"></canvas>
                     <canvas id="crystalCanvas" class="absolute inset-0 block h-full w-full"></canvas>
                     <div class="radar-card-overlay"></div>
                     <div class="radar-content" style="position: relative; z-index: 10;">
