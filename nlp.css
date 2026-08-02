@@ -2405,6 +2405,20 @@ body.nlp-body {
     animation: blink 1s infinite alternate;
 }
 
+#crystalCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1 !important;
+    pointer-events: none;
+}
+
+.crystal-trail-container .fade-up-text {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
 .crystal-trail-container .radar-title {
     font-size: 4.5rem !important;
     font-family: 'Inter', sans-serif !important;
@@ -2414,6 +2428,7 @@ body.nlp-body {
     margin-top: 0 !important;
     letter-spacing: -0.02em !important;
     text-align: center !important;
+    color: #ffffff !important;
 }
 
 .crystal-trail-container .radar-desc {
