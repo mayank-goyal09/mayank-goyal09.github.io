@@ -248,3 +248,109 @@ if (audio && soundBtn) {
   });
 })();
 
+/* =================================================================
+   🌌 EXPERIENCE CHRONOLOGY SCRIPT MODULE
+   ================================================================= */
+const timelineNodes = document.querySelectorAll('.timeline-node');
+const timelineProgress = document.getElementById('timelineProgress');
+const timelineComet = document.getElementById('timelineComet');
+const verticalTimeline = document.getElementById('verticalTimeline');
+
+function handleTimelineScroll() {
+  if (!verticalTimeline || !verticalTimeline.offsetParent) return;
+
+  const timelineRect = verticalTimeline.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  const triggerStart = windowHeight / 2;
+  let progressPercent = 0;
+
+  const relativeTop = timelineRect.top - triggerStart;
+  const totalHeight = timelineRect.height;
+
+  if (relativeTop < 0) {
+    progressPercent = Math.min(100, Math.max(0, (-relativeTop / totalHeight) * 100));
+  }
+
+  if (timelineProgress) {
+    timelineProgress.style.height = `${progressPercent}%`;
+  }
+
+  if (timelineComet) {
+    if (progressPercent > 0 && progressPercent < 100) {
+      timelineComet.style.opacity = '1';
+      timelineComet.style.top = `calc(${progressPercent}% + 10px)`;
+    } else {
+      timelineComet.style.opacity = '0';
+    }
+  }
+
+  timelineNodes.forEach((node) => {
+    const nodeRect = node.getBoundingClientRect();
+    const nodeCenter = nodeRect.top + nodeRect.height / 3;
+
+    if (nodeCenter < windowHeight * 0.8) {
+      node.classList.add('active-node');
+    } else {
+      node.classList.remove('active-node');
+    }
+  });
+}
+
+window.addEventListener('scroll', handleTimelineScroll);
+window.addEventListener('resize', handleTimelineScroll);
+window.addEventListener('load', () => setTimeout(handleTimelineScroll, 200));
+
+// Decryption effect script
+function decryptText(element, finalString) {
+  const chars = "XYZ_@#$%&*{}[]<>?/\\|0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let iterations = 0;
+  const speed = 25;
+  element.innerHTML = "";
+  
+  const interval = setInterval(() => {
+    element.innerHTML = finalString
+      .split("")
+      .map((char, index) => {
+        if (index < iterations) {
+          return finalString[index];
+        }
+        return `<span style="color: var(--accent-cyan); font-weight: bold; opacity: 0.7;">${chars[Math.floor(Math.random() * chars.length)]}</span>`;
+      })
+      .join("");
+    
+    if (iterations >= finalString.length) {
+      clearInterval(interval);
+      element.innerHTML = finalString;
+    }
+    iterations += 1;
+  }, speed);
+}
+
+function toggleTelemetry(button) {
+  const details = button.nextElementSibling;
+  const arrow = button.querySelector('.arrow');
+  const isClosing = details.classList.contains('open');
+
+  if (isClosing) {
+    details.classList.remove('open');
+    arrow.textContent = '▼';
+  } else {
+    // Close other drawers
+    document.querySelectorAll('.timeline-details').forEach(el => el.classList.remove('open'));
+    document.querySelectorAll('.timeline-telemetry-btn .arrow').forEach(el => el.textContent = '▼');
+    
+    details.classList.add('open');
+    arrow.textContent = '▲';
+
+    const cyberItems = details.querySelectorAll('.cyber-list li');
+    cyberItems.forEach((li, idx) => {
+      const originalText = li.getAttribute('data-text');
+      li.innerHTML = "";
+      setTimeout(() => {
+        decryptText(li, originalText);
+      }, idx * 150);
+    });
+  }
+}
+
