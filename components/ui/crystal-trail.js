@@ -22,12 +22,21 @@
 
     class Crystal {
       constructor(x, y) {
-        this.x = x;
-        this.y = y;
+        // Scatter spawn position slightly around the cursor
+        const scatterAngle = Math.random() * Math.PI * 2;
+        const scatterRadius = Math.random() * 12;
+        this.x = x + Math.cos(scatterAngle) * scatterRadius;
+        this.y = y + Math.sin(scatterAngle) * scatterRadius;
+
         this.life = 1;
-        this.size = Math.random() * 8 + 4;
+        this.size = Math.random() * 10 + 4;
         this.angle = Math.random() * Math.PI * 2;
-        this.spin = (Math.random() - 0.5) * 0.1;
+        this.spin = (Math.random() - 0.5) * 0.12;
+
+        // Dynamic velocities for organic spreading motion
+        this.vx = (Math.random() - 0.5) * 3;
+        this.vy = (Math.random() - 0.5) * 3;
+
         this.vertices = [];
         const numVertices = Math.floor(Math.random() * 3) + 3;
         for (let i = 0; i < numVertices; i++) {
@@ -40,8 +49,21 @@
         }
       }
       update() {
-        this.life -= 0.01;
+        this.life -= 0.015; // Snappy decay for performance
         this.angle += this.spin;
+        this.x += this.vx;
+        this.y += this.vy;
+        
+        // Gentle air resistance slowing the drift down over time
+        this.vx *= 0.96;
+        this.vy *= 0.96;
+
+        // Shrink the crystal as it decays
+        this.size *= 0.97;
+        for (let i = 0; i < this.vertices.length; i++) {
+          this.vertices[i].x *= 0.97;
+          this.vertices[i].y *= 0.97;
+        }
       }
       draw() {
         ctx.save();
@@ -81,7 +103,7 @@
           currentMousePos.x - lastMousePos.x,
           currentMousePos.y - lastMousePos.y
         );
-        const crystalsToSpawn = Math.min(Math.floor(speed / 5), 5);
+        const crystalsToSpawn = Math.max(1, Math.min(Math.floor(speed / 3), 6));
 
         for (let i = 0; i < crystalsToSpawn; i++) {
           if (crystals.length < 500) {
