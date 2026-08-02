@@ -1035,6 +1035,92 @@
 
             <div class="card-container" id="radar-card">
                 <div class="card-inner crystal-trail-container">
+                    <!-- Orange Sky Background with Clouds, Stars & High-Tech Data Elements -->
+                    <div class="orange-sky-background">
+                        <div class="sky-base-gradient"></div>
+                        <div class="sky-sunset-glow"></div>
+
+                        <!-- Twinkling Stars & Constellation Data Network -->
+                        <div class="sky-stars-container">
+                            <div class="sky-star star-1"></div>
+                            <div class="sky-star star-2"></div>
+                            <div class="sky-star star-3"></div>
+                            <div class="sky-star star-4"></div>
+                            <div class="sky-star star-5"></div>
+                            <div class="sky-star star-6"></div>
+                            <div class="sky-star star-7"></div>
+                            <div class="sky-star star-8"></div>
+                            <div class="sky-star star-9"></div>
+                            <div class="sky-star star-10"></div>
+                            <div class="sky-star star-11"></div>
+                            <div class="sky-star star-12"></div>
+
+                            <!-- 3D Perspective Tech Constellation Curves & Data Nodes -->
+                            <svg class="constellation-svg" viewBox="0 0 800 400" preserveAspectRatio="none">
+                                <defs>
+                                    <linearGradient id="constellationGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="rgba(255, 107, 0, 0.45)" />
+                                        <stop offset="50%" stop-color="rgba(255, 190, 80, 0.75)" />
+                                        <stop offset="100%" stop-color="rgba(234, 88, 12, 0.45)" />
+                                    </linearGradient>
+                                    <linearGradient id="gridCurveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="rgba(255, 160, 50, 0.18)" />
+                                        <stop offset="50%" stop-color="rgba(255, 100, 0, 0.08)" />
+                                        <stop offset="100%" stop-color="rgba(255, 160, 50, 0.18)" />
+                                    </linearGradient>
+                                </defs>
+
+                                <!-- 3D Perspective Grid Arcs -->
+                                <path d="M 0 65 Q 400 105 800 65" class="data-grid-curve" />
+                                <path d="M 0 335 Q 400 295 800 335" class="data-grid-curve" />
+                                <path d="M 140 0 Q 170 200 140 400" class="data-grid-curve" />
+                                <path d="M 660 0 Q 630 200 660 400" class="data-grid-curve" />
+
+                                <!-- 3D Curved Constellation Connections -->
+                                <path d="M 70 50 C 220 20, 580 20, 720 50" class="constellation-line" />
+                                <path d="M 70 50 C 30 180, 30 250, 70 320" class="constellation-line" />
+                                <path d="M 720 50 C 770 180, 770 250, 730 320" class="constellation-line" />
+                                <path d="M 70 320 Q 400 360 730 320" class="constellation-line" />
+
+                                <g class="data-node" transform="translate(70, 50)">
+                                    <circle r="3.5" class="node-dot" />
+                                    <circle r="7" class="node-ring" />
+                                    <text x="12" y="-4" class="node-label">0x8F :: 99.4%</text>
+                                </g>
+                                <g class="data-node" transform="translate(720, 50)">
+                                    <circle r="3.5" class="node-dot" />
+                                    <circle r="7" class="node-ring" />
+                                    <text x="-75" y="-4" class="node-label">CLUSTER_01</text>
+                                </g>
+                                <g class="data-node" transform="translate(730, 320)">
+                                    <circle r="3.5" class="node-dot" />
+                                    <circle r="7" class="node-ring" />
+                                    <text x="-85" y="14" class="node-label">DRIFT_VECTOR</text>
+                                </g>
+                                <g class="data-node" transform="translate(70, 320)">
+                                    <circle r="3.5" class="node-dot" />
+                                    <circle r="7" class="node-ring" />
+                                    <text x="12" y="14" class="node-label">HDBSCAN_CORE</text>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <!-- Atmospheric Volumetric Clouds -->
+                        <div class="sky-clouds-container">
+                            <div class="cloud-layer cloud-layer-1"></div>
+                            <div class="cloud-layer cloud-layer-2"></div>
+                            <div class="cloud-layer cloud-layer-3"></div>
+                        </div>
+
+                        <!-- 3D Curved Horizon Surface Structure -->
+                        <div class="sky-curved-horizon">
+                            <div class="horizon-glow-line"></div>
+                        </div>
+
+                        <!-- Telemetry Scan Line Sweep -->
+                        <div class="sky-scan-line"></div>
+                    </div>
+
                     <canvas id="crystalCanvas" class="absolute inset-0 block h-full w-full"></canvas>
                     <div class="radar-card-overlay"></div>
                     <div class="radar-content" style="position: relative; z-index: 10;">
