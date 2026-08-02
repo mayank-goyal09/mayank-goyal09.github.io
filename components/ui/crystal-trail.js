@@ -115,7 +115,7 @@
     });
 
     const animate = () => {
-      ctx.fillStyle = "rgba(10, 5, 20, 0.15)";
+      ctx.fillStyle = "rgba(25, 8, 4, 0.14)";
       ctx.fillRect(0, 0, width, height);
 
       crystals = crystals.filter((c) => c.life > 0);
