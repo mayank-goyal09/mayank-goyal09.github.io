@@ -3068,7 +3068,6 @@ body.nlp-body {
     right: 12%;
     width: 85px;
     height: 85px;
-    border-radius: 50%;
     z-index: 1;
     pointer-events: none;
     animation: moonFloat 8s ease-in-out infinite alternate;
@@ -3078,18 +3077,18 @@ body.nlp-body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
     mix-blend-mode: screen;
-    filter: brightness(1.2) contrast(1.1);
-    box-shadow: 0 0 35px rgba(226, 232, 240, 0.45);
+    transform: scale(1.26);
+    filter: brightness(1.25) contrast(1.15);
 }
 
 .moon-glow-ring {
     position: absolute;
-    inset: -15px;
+    inset: -10px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(226, 232, 240, 0.18) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(226, 232, 240, 0.22) 0%, transparent 70%);
     animation: moonPulse 4s ease-in-out infinite alternate;
+    pointer-events: none;
 }
 
 @keyframes moonFloat {
