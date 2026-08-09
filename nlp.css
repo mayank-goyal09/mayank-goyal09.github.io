@@ -2795,7 +2795,399 @@ body.nlp-body {
     }
 }
 
-/* Responsive Overrides for Project 09 */
+/* =========================================================
+   PROJECT 10: DR. SCRIBBLE SCANNER (OCR HUD CARD)
+   ========================================================= */
+#scribble-card {
+    position: relative;
+    z-index: 2;
+    --scribble-scale: calc(1.05 - var(--scribble-progress, 0) * 0.05);
+}
+
+#scribble-card::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    bottom: -40px;
+    left: -220px;
+    right: -220px;
+    background: radial-gradient(ellipse 100% 70% at center, 
+        rgba(6, 182, 212, 0.4) 0%, 
+        rgba(8, 145, 178, 0.22) 45%, 
+        rgba(21, 94, 117, 0.1) 72%, 
+        transparent 88%);
+    filter: blur(60px);
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 60px;
+    animation: ambientCardGlow 6s ease-in-out infinite alternate;
+}
+
+.ocr-hud-card {
+    width: 100%;
+    height: 100%;
+    background: #060b0d;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.ocr-hud-content {
+    padding: 20px 40px 20px 40px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.medical-hud-console {
+    background: rgba(6, 182, 212, 0.03);
+    border: 1px solid rgba(6, 182, 212, 0.18);
+    color: #67e8f9;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 85%;
+    max-width: 600px;
+    text-shadow: 0 0 4px rgba(6, 182, 212, 0.25);
+    box-shadow: inset 0 0 15px rgba(6, 182, 212, 0.05);
+}
+
+.medical-hud-console .console-tag {
+    color: #06b6d4;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.prediction-line {
+    border-top: 1px dashed rgba(6, 182, 212, 0.2);
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.prediction-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icd-code {
+    background: rgba(6, 182, 212, 0.15);
+    color: #22d3ee;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+    min-width: 50px;
+    text-align: center;
+}
+
+.icd-desc {
+    color: rgba(255, 255, 255, 0.8);
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.icd-bar-container {
+    width: 120px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.icd-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #0891b2, #22d3ee);
+    box-shadow: 0 0 8px rgba(6, 182, 212, 0.5);
+    border-radius: 3px;
+}
+
+.icd-pct {
+    color: #22d3ee;
+    font-weight: bold;
+    min-width: 45px;
+    text-align: right;
+}
+
+.ocr-title {
+    font-size: 4.5rem !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 800 !important;
+    line-height: 1.05 !important;
+    margin-bottom: 16px !important;
+    margin-top: 0 !important;
+    letter-spacing: -0.02em !important;
+    text-align: center !important;
+    color: #ffffff !important;
+}
+
+.ocr-desc {
+    font-size: 1.18rem !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 300 !important;
+    text-transform: none !important;
+    max-width: 680px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    color: rgba(255, 255, 255, 0.78) !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9) !important;
+    letter-spacing: normal !important;
+    text-align: center;
+}
+
+#project-10-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    background: radial-gradient(ellipse 140% 65% at center, 
+        rgba(8, 145, 178, 0.32) 0%, 
+        rgba(21, 94, 117, 0.2) 40%, 
+        rgba(6, 30, 38, 0.1) 72%, 
+        #02080a 98%) !important;
+}
+
+.medical-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.scanner-sweep-line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(6, 182, 212, 0.2) 20%, 
+        rgba(34, 211, 238, 0.7) 50%, 
+        rgba(6, 182, 212, 0.2) 80%, 
+        transparent 100%);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+    z-index: 4;
+    opacity: 0.4;
+    animation: scanSweepOcr 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes scanSweepOcr {
+    0% { top: -2%; opacity: 0; }
+    15% { opacity: 0.85; }
+    85% { opacity: 0.85; }
+    100% { top: 102%; opacity: 0; }
+}
+
+
+/* =========================================================
+   PROJECT 11: KYNEX AI (GRAPH RAG CARD)
+   ========================================================= */
+#kynex-card {
+    position: relative;
+    z-index: 2;
+    --kynex-scale: calc(1.05 - var(--kynex-progress, 0) * 0.05);
+}
+
+#kynex-card::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    bottom: -40px;
+    left: -220px;
+    right: -220px;
+    background: radial-gradient(ellipse 100% 70% at center, 
+        rgba(139, 92, 246, 0.4) 0%, 
+        rgba(124, 58, 237, 0.22) 45%, 
+        rgba(91, 33, 182, 0.1) 72%, 
+        transparent 88%);
+    filter: blur(60px);
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 60px;
+    animation: ambientCardGlow 6s ease-in-out infinite alternate;
+}
+
+.graph-rag-card {
+    width: 100%;
+    height: 100%;
+    background: #080510;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.graph-rag-content {
+    padding: 20px 40px 20px 40px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.kynex-hud-console {
+    background: rgba(139, 92, 246, 0.03);
+    border: 1px solid rgba(139, 92, 246, 0.18);
+    color: #c084fc;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.78rem;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 85%;
+    max-width: 600px;
+    text-shadow: 0 0 4px rgba(139, 92, 246, 0.25);
+    box-shadow: inset 0 0 15px rgba(139, 92, 246, 0.05);
+}
+
+.kynex-hud-console .hud-prompt {
+    color: #8b5cf6;
+    font-weight: bold;
+}
+
+.kynex-hud-console .hud-io {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.kynex-hud-console .hud-graph {
+    color: #c084fc;
+    font-size: 0.72rem;
+    opacity: 0.85;
+}
+
+.kynex-title {
+    font-size: 4.5rem !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 800 !important;
+    line-height: 1.05 !important;
+    margin-bottom: 16px !important;
+    margin-top: 0 !important;
+    letter-spacing: -0.02em !important;
+    text-align: center !important;
+    color: #ffffff !important;
+}
+
+.kynex-desc {
+    font-size: 1.18rem !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 300 !important;
+    text-transform: none !important;
+    max-width: 680px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    color: rgba(255, 255, 255, 0.78) !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9) !important;
+    letter-spacing: normal !important;
+    text-align: center;
+}
+
+#project-11-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    background: radial-gradient(ellipse 140% 65% at center, 
+        rgba(109, 40, 217, 0.32) 0%, 
+        rgba(76, 29, 149, 0.2) 40%, 
+        rgba(26, 15, 46, 0.1) 72%, 
+        #030206 98%) !important;
+}
+
+.nebula-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 30%, rgba(139, 92, 246, 0.15), transparent 60%),
+                radial-gradient(circle at 20% 80%, rgba(217, 70, 239, 0.12), transparent 50%);
+    z-index: 1;
+}
+
+.graph-nodes-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.graph-network-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.graph-edge-line {
+    stroke: rgba(139, 92, 246, 0.2);
+    stroke-width: 1.5;
+    fill: none;
+    animation: pulseEdge 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulseEdge {
+    0% { stroke: rgba(139, 92, 246, 0.15); stroke-width: 1; }
+    100% { stroke: rgba(168, 85, 247, 0.35); stroke-width: 2.2; }
+}
+
+.node-dot-p {
+    fill: #a855f7;
+}
+
+.node-ring-p {
+    fill: none;
+    stroke: rgba(168, 85, 247, 0.4);
+    stroke-width: 1;
+    transform-origin: center;
+    animation: pingRingP 4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes pingRingP {
+    0% { r: 4px; opacity: 0.85; }
+    100% { r: 12px; opacity: 0; }
+}
+
+.node-text-label {
+    fill: rgba(192, 132, 252, 0.8);
+    font-family: 'Fira Code', monospace;
+    font-size: 8px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.9);
+}
+
+
+/* Responsive Overrides */
 @media (max-width: 768px) {
     .crystal-trail-container .radar-content {
         padding: 24px 16px !important;
@@ -2822,4 +3214,59 @@ body.nlp-body {
         line-height: 1.4 !important;
     }
 
+    /* Project 10 mobile overrides */
+    .ocr-hud-content {
+        padding: 24px 16px !important;
+        justify-content: center !important;
+        height: 100% !important;
+    }
+    
+    .medical-hud-console {
+        font-size: 0.65rem !important;
+        padding: 10px 14px !important;
+        margin-bottom: 15px !important;
+        width: 95% !important;
+    }
+    
+    .prediction-item {
+        gap: 6px !important;
+    }
+    
+    .icd-bar-container {
+        width: 70px !important;
+    }
+
+    .ocr-title {
+        font-size: 2.4rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    .ocr-desc {
+        font-size: 0.92rem !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Project 11 mobile overrides */
+    .graph-rag-content {
+        padding: 24px 16px !important;
+        justify-content: center !important;
+        height: 100% !important;
+    }
+
+    .kynex-hud-console {
+        font-size: 0.65rem !important;
+        padding: 10px 14px !important;
+        margin-bottom: 15px !important;
+        width: 95% !important;
+    }
+
+    .kynex-title {
+        font-size: 2.4rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    .kynex-desc {
+        font-size: 0.92rem !important;
+        line-height: 1.4 !important;
+    }
 }
