@@ -1,7 +1,6 @@
 // ============================================
-// 🌌 PROJECT 11: BLACK HOLE GRAVITATIONAL LENSING CANVAS SHADER
-// Exact WebGL Raymarching Shader with Kerr Metric Matrix Bending,
-// Left Tilt (+22°), Concentric Ring Filaments & Keplerian Doppler Shift
+// 🌌 PROJECT 11: BLACK HOLE CANVAS SHADER (INSIDE CARD)
+// Renders 3D Relativistic Black Hole inside the right side of Project 11 card
 // ============================================
 
 (function () {
@@ -20,7 +19,7 @@
             }
         `;
 
-        // Fragment Shader: Black Hole Raymarching Shader (Tilted Left + Soft Copper Amber Glow)
+        // Fragment Shader: Black Hole Raymarching Shader inside card
         const fsSource = `
             precision highp float;
 
@@ -33,10 +32,10 @@
 
             #define MAX_STEPS 160
             #define STEP_SIZE 0.04
-            #define SCHWARZSCHILD_R 0.30
-            #define PHOTON_SPHERE 0.45
-            #define DISC_INNER 0.50
-            #define DISC_OUTER 2.20
+            #define SCHWARZSCHILD_R 0.26
+            #define PHOTON_SPHERE 0.38
+            #define DISC_INNER 0.42
+            #define DISC_OUTER 1.35
 
             // Matrix rotation around Z axis (Tilt towards left)
             mat3 rotateZ(float angle) {
@@ -101,13 +100,13 @@
                 return v;
             }
 
-            // Accretion Disc Volume Sample (Soft copper amber glow)
+            // Soft Copper Amber Accretion Disc Volume Sample
             vec4 sampleDisk(vec3 pos) {
                 float r = length(pos.xz);
                 if (r < DISC_INNER || r > DISC_OUTER) return vec4(0.0);
 
                 // Thin sheet plane
-                float thickness = 0.022 * (r / DISC_INNER);
+                float thickness = 0.024 * (r / DISC_INNER);
                 float h = exp(-abs(pos.y) * abs(pos.y) / (thickness * thickness));
                 if (h < 0.005) return vec4(0.0);
 
@@ -117,14 +116,14 @@
                 float t = uTime * uSpin * 0.4;
 
                 // Concentric Fine Ring Bands Pattern
-                float ringPattern1 = sin(r * 32.0 - t * 1.5) * 0.5 + 0.5;
-                float ringPattern2 = sin(r * 70.0 + t * 2.0) * 0.5 + 0.5;
+                float ringPattern1 = sin(r * 35.0 - t * 1.5) * 0.5 + 0.5;
+                float ringPattern2 = sin(r * 75.0 + t * 2.0) * 0.5 + 0.5;
                 float fineRings = pow(ringPattern1, 2.0) * 0.55 + pow(ringPattern2, 3.0) * 0.45;
 
                 vec2 uv = vec2(r * 3.5, phi * 2.5 + t * speed);
                 float n = fbm(uv);
                 
-                float density = smoothstep(DISC_OUTER, DISC_INNER + 0.3, r) * smoothstep(DISC_INNER, DISC_INNER + 0.12, r);
+                float density = smoothstep(DISC_OUTER, DISC_INNER + 0.25, r) * smoothstep(DISC_INNER, DISC_INNER + 0.1, r);
                 density *= h * (0.3 + 0.7 * fineRings) * (0.5 + 0.5 * n);
 
                 // Relativistic Doppler Beaming
@@ -135,35 +134,35 @@
                 }
 
                 // Soft Amber / Copper Spectrum
-                vec3 colInner = vec3(2.2, 1.6, 1.0); // Warm gold
-                vec3 colMid = vec3(1.6, 0.8, 0.15);  // Deep copper amber
-                vec3 colOuter = vec3(0.8, 0.2, 0.02); // Dark crimson
+                vec3 colInner = vec3(2.4, 1.8, 1.1); // Warm gold
+                vec3 colMid = vec3(1.7, 0.85, 0.16); // Deep copper amber
+                vec3 colOuter = vec3(0.85, 0.22, 0.02); // Dark crimson
 
                 float relR = (r - DISC_INNER) / (DISC_OUTER - DISC_INNER);
                 vec3 col = mix(colInner, colMid, smoothstep(0.0, 0.2, relR));
                 col = mix(col, colOuter, smoothstep(0.2, 1.0, relR));
 
-                col *= doppler * density * 1.6;
+                col *= doppler * density * 1.8;
 
-                return vec4(col, density * h * 0.38);
+                return vec4(col, density * h * 0.4);
             }
 
             void main() {
                 vec2 uv = (gl_FragCoord.xy - uResolution.xy * 0.5) / uResolution.y;
 
                 // Camera position setup
-                vec3 camPos = vec3(0.0, 0.22, -4.2);
-                vec3 rayDir = normalize(vec3(uv.x - 0.25, uv.y - 0.02, 1.6));
+                vec3 camPos = vec3(0.0, 0.22, -3.5);
+                vec3 rayDir = normalize(vec3(uv.x, uv.y, 1.5));
 
-                // Interactive + Auto Rotation + Tilted Towards Left (+0.38 rad / +22.0 Degrees)
-                float tiltAngle = 0.38; // +22.0 degree tilt leaning UPWARDS towards the LEFT!
-                float rotY = (uMouse.x * 2.0 - 1.0) * 0.4 + uTime * uSpin * 0.03;
-                float rotX = (uMouse.y * 2.0 - 1.0) * 0.2 + 0.22;
+                // Tilt Left Matrix (+0.38 rad / +22.0 Degrees)
+                float tiltAngle = 0.38;
+                float rotY = (uMouse.x * 2.0 - 1.0) * 0.35 + uTime * uSpin * 0.03;
+                float rotX = (uMouse.y * 2.0 - 1.0) * 0.18 + 0.22;
 
                 mat3 rotMat = rotateZ(tiltAngle) * rotateX(rotX) * rotateY(rotY);
 
-                // Shift black hole center rightwards (x = 0.60) so left text is unblocked
-                vec3 bhCenter = vec3(0.60, 0.0, 0.0);
+                // Shift black hole to right side inside card (x = 0.46)
+                vec3 bhCenter = vec3(0.46, 0.0, 0.0);
 
                 vec3 pos = rotMat * (camPos - bhCenter);
                 vec3 dir = rotMat * rayDir;
@@ -199,7 +198,7 @@
                     pos += dir * STEP_SIZE;
 
                     // Ray escaped
-                    if (r > 7.0) break;
+                    if (r > 6.0) break;
                 }
 
                 // Event horizon shadow mask
@@ -208,15 +207,15 @@
                 } else {
                     // Soft Photon sphere halo ring
                     float minR = length(pos);
-                    float halo = exp(-abs(minR - PHOTON_SPHERE) * 16.0) * 0.22;
-                    accumColor += vec3(2.0, 1.4, 0.7) * halo * (1.0 - accumAlpha);
+                    float halo = exp(-abs(minR - PHOTON_SPHERE) * 16.0) * 0.25;
+                    accumColor += vec3(2.2, 1.5, 0.75) * halo * (1.0 - accumAlpha);
                 }
 
                 // Soft Tone Mapping & Compression
-                vec3 finalCol = accumColor / (1.0 + accumColor * 0.6);
+                vec3 finalCol = accumColor / (1.0 + accumColor * 0.55);
                 finalCol = pow(finalCol, vec3(0.85));
 
-                gl_FragColor = vec4(finalCol, 1.0);
+                gl_FragColor = vec4(finalCol, accumAlpha);
             }
         `;
 
