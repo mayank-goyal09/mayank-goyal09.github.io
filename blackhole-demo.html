@@ -257,8 +257,8 @@
             <span class="hud-val">2.00 G M / c²</span>
         </div>
         <div class="hud-row">
-            <span>TILT & SHINE:</span>
-            <span class="hud-val">+22.0° LEFT // SOFT AMBER</span>
+            <span>FLUID PLASMA MULTI-RINGS:</span>
+            <span class="hud-val">+22.0° LEFT // 20 RINGS</span>
         </div>
         <div class="hud-row">
             <span>DISC TURBULENCE (u,v,t):</span>
@@ -285,7 +285,7 @@
                 }
             `;
 
-            // Fragment Shader: Soft Copper Amber Black Hole Shader Tilted Towards Left
+            // Fragment Shader: Liquid Plasma Multi-Ring Black Hole Shader
             const fsSource = `
                 precision highp float;
 
@@ -336,7 +336,7 @@
                     );
                 }
 
-                // Simplex-style noise for plasma filaments
+                // Simplex-style noise for liquid plasma turbulence
                 float hash(vec2 p) {
                     p = fract(p * vec2(123.34, 456.21));
                     p += dot(p, p + 45.32);
@@ -366,13 +366,13 @@
                     return v;
                 }
 
-                // Subtle Accretion Disc Sample (Non-overexposed soft copper amber glow)
+                // Liquid Plasma Multi-Ring Accretion Disc Sample
                 vec4 sampleDisk(vec3 pos) {
                     float r = length(pos.xz);
                     if (r < DISC_INNER || r > DISC_OUTER) return vec4(0.0);
 
                     // Thin sheet plane
-                    float thickness = 0.022 * (r / DISC_INNER);
+                    float thickness = 0.024 * (r / DISC_INNER);
                     float h = exp(-abs(pos.y) * abs(pos.y) / (thickness * thickness));
                     if (h < 0.005) return vec4(0.0);
 
@@ -381,41 +381,42 @@
                     float speed = 1.6 / sqrt(r);
                     float t = uTime * uSpin * 0.4;
 
-                    // Concentric Fine Ring Bands Pattern
-                    float ringPattern1 = sin(r * 32.0 - t * 1.5) * 0.5 + 0.5;
-                    float ringPattern2 = sin(r * 70.0 + t * 2.0) * 0.5 + 0.5;
-                    float fineRings = pow(ringPattern1, 2.0) * 0.55 + pow(ringPattern2, 3.0) * 0.45;
+                    // Liquid Swirling Fluid Distortion
+                    float liquidFlow = sin(phi * 5.0 - t * 2.2) * 0.12 + cos(r * 14.0 - t * 1.8) * 0.08;
+                    vec2 liquidUV = vec2(r * 4.5 + liquidFlow, phi * 3.5 + t * speed);
+                    float n = fbm(liquidUV * 1.8);
 
-                    vec2 uv = vec2(r * 3.5, phi * 2.5 + t * speed);
-                    float n = fbm(uv);
-                    
+                    // Multi-Frequency Razor-Thin Concentric Ring Filaments (15-20 sharp lines!)
+                    float r1 = sin(r * 65.0 - t * 1.5) * 0.5 + 0.5;
+                    float r2 = sin(r * 140.0 + t * 2.5) * 0.5 + 0.5;
+                    float r3 = sin(r * 260.0 - t * 3.5) * 0.5 + 0.5;
+                    float fineRings = pow(r1, 3.0) * 0.40 + pow(r2, 4.0) * 0.35 + pow(r3, 5.0) * 0.25;
+
                     float density = smoothstep(DISC_OUTER, DISC_INNER + 0.3, r) * smoothstep(DISC_INNER, DISC_INNER + 0.12, r);
-                    density *= h * (0.3 + 0.7 * fineRings) * (0.5 + 0.5 * n);
+                    density *= h * (0.25 + 0.75 * fineRings) * (0.5 + 0.5 * n);
 
-                    // Relativistic Doppler Beaming (Subtle boost)
+                    // Relativistic Doppler Beaming
                     float doppler = 1.0;
                     if (uDoppler > 0.5) {
                         float velAlongRay = sin(phi) * (pos.x > 0.0 ? 1.0 : -1.0);
                         doppler = pow(1.0 + velAlongRay * 0.3, 2.2);
                     }
 
-                    // Soft Amber / Copper Color Spectrum (No harsh pure white clipping)
-                    vec3 colInner = vec3(2.2, 1.6, 1.0); // Soft warm gold
+                    // Soft Amber / Copper Spectrum
+                    vec3 colInner = vec3(2.2, 1.6, 1.0); // Warm gold
                     vec3 colMid = vec3(1.6, 0.8, 0.15);  // Deep copper amber
-                    vec3 colOuter = vec3(0.8, 0.2, 0.02); // Dark crimson trail
+                    vec3 colOuter = vec3(0.8, 0.2, 0.02); // Dark crimson
 
                     float relR = (r - DISC_INNER) / (DISC_OUTER - DISC_INNER);
                     vec3 col = mix(colInner, colMid, smoothstep(0.0, 0.2, relR));
                     col = mix(col, colOuter, smoothstep(0.2, 1.0, relR));
 
-                    // Moderated brightness multiplier (1.6 instead of 4.2 to prevent overexposure)
                     col *= doppler * density * 1.6;
 
                     return vec4(col, density * h * 0.38);
                 }
 
                 void main() {
-                    // Aspect ratio corrected UV coordinates
                     vec2 uv = (gl_FragCoord.xy - uResolution.xy * 0.5) / uResolution.y;
 
                     // Camera position setup
@@ -476,7 +477,7 @@
                         accumColor += vec3(2.0, 1.4, 0.7) * halo * (1.0 - accumAlpha);
                     }
 
-                    // Soft Tone Mapping & Compression (Prevents over-exposure white out)
+                    // Soft Tone Mapping & Compression
                     vec3 finalCol = accumColor / (1.0 + accumColor * 0.6);
                     finalCol = pow(finalCol, vec3(0.85));
 
