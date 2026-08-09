@@ -1,6 +1,7 @@
 // ============================================
-// 🌌 PROJECT 11: BLACK HOLE CANVAS SHADER (INSIDE CARD)
-// Renders 3D Relativistic Black Hole inside the right side of Project 11 card
+// 🌌 PROJECT 11: BLACK HOLE CANVAS SHADER (LIQUID PLASMA MULTI-RING)
+// Dynamic Fluid Liquid Plasma Swirl + 15+ Fine Concentric Ring Filaments
+// Renders inside the right side of Project 11 card
 // ============================================
 
 (function () {
@@ -19,7 +20,7 @@
             }
         `;
 
-        // Fragment Shader: Black Hole Raymarching Shader inside card
+        // Fragment Shader: Liquid Plasma Multi-Ring Shader
         const fsSource = `
             precision highp float;
 
@@ -35,7 +36,7 @@
             #define SCHWARZSCHILD_R 0.26
             #define PHOTON_SPHERE 0.38
             #define DISC_INNER 0.42
-            #define DISC_OUTER 1.35
+            #define DISC_OUTER 1.45
 
             // Matrix rotation around Z axis (Tilt towards left)
             mat3 rotateZ(float angle) {
@@ -70,7 +71,7 @@
                 );
             }
 
-            // Simplex-style noise for plasma filaments
+            // Simplex-style noise for liquid plasma turbulence
             float hash(vec2 p) {
                 p = fract(p * vec2(123.34, 456.21));
                 p += dot(p, p + 45.32);
@@ -100,7 +101,7 @@
                 return v;
             }
 
-            // Soft Copper Amber Accretion Disc Volume Sample
+            // Liquid Plasma Multi-Ring Accretion Disc Sample
             vec4 sampleDisk(vec3 pos) {
                 float r = length(pos.xz);
                 if (r < DISC_INNER || r > DISC_OUTER) return vec4(0.0);
@@ -115,16 +116,19 @@
                 float speed = 1.6 / sqrt(r);
                 float t = uTime * uSpin * 0.4;
 
-                // Concentric Fine Ring Bands Pattern
-                float ringPattern1 = sin(r * 35.0 - t * 1.5) * 0.5 + 0.5;
-                float ringPattern2 = sin(r * 75.0 + t * 2.0) * 0.5 + 0.5;
-                float fineRings = pow(ringPattern1, 2.0) * 0.55 + pow(ringPattern2, 3.0) * 0.45;
+                // Liquid Swirling Fluid Distortion
+                float liquidFlow = sin(phi * 5.0 - t * 2.2) * 0.12 + cos(r * 14.0 - t * 1.8) * 0.08;
+                vec2 liquidUV = vec2(r * 4.5 + liquidFlow, phi * 3.5 + t * speed);
+                float n = fbm(liquidUV * 1.8);
 
-                vec2 uv = vec2(r * 3.5, phi * 2.5 + t * speed);
-                float n = fbm(uv);
-                
+                // Multi-Frequency Razor-Thin Concentric Ring Filaments (15-20 sharp lines!)
+                float r1 = sin(r * 65.0 - t * 1.5) * 0.5 + 0.5;
+                float r2 = sin(r * 140.0 + t * 2.5) * 0.5 + 0.5;
+                float r3 = sin(r * 260.0 - t * 3.5) * 0.5 + 0.5;
+                float fineRings = pow(r1, 3.0) * 0.40 + pow(r2, 4.0) * 0.35 + pow(r3, 5.0) * 0.25;
+
                 float density = smoothstep(DISC_OUTER, DISC_INNER + 0.25, r) * smoothstep(DISC_INNER, DISC_INNER + 0.1, r);
-                density *= h * (0.3 + 0.7 * fineRings) * (0.5 + 0.5 * n);
+                density *= h * (0.25 + 0.75 * fineRings) * (0.4 + 0.6 * n);
 
                 // Relativistic Doppler Beaming
                 float doppler = 1.0;
@@ -133,7 +137,7 @@
                     doppler = pow(1.0 + velAlongRay * 0.3, 2.2);
                 }
 
-                // Soft Amber / Copper Spectrum
+                // Soft Copper Amber Spectrum
                 vec3 colInner = vec3(2.4, 1.8, 1.1); // Warm gold
                 vec3 colMid = vec3(1.7, 0.85, 0.16); // Deep copper amber
                 vec3 colOuter = vec3(0.85, 0.22, 0.02); // Dark crimson
@@ -142,9 +146,9 @@
                 vec3 col = mix(colInner, colMid, smoothstep(0.0, 0.2, relR));
                 col = mix(col, colOuter, smoothstep(0.2, 1.0, relR));
 
-                col *= doppler * density * 1.8;
+                col *= doppler * density * 1.9;
 
-                return vec4(col, density * h * 0.4);
+                return vec4(col, density * h * 0.42);
             }
 
             void main() {
@@ -161,8 +165,8 @@
 
                 mat3 rotMat = rotateZ(tiltAngle) * rotateX(rotX) * rotateY(rotY);
 
-                // Shift black hole to right side inside card (x = 0.46)
-                vec3 bhCenter = vec3(0.46, 0.0, 0.0);
+                // Shift black hole center rightwards (x = 0.65) so text on left is completely clear
+                vec3 bhCenter = vec3(0.65, 0.0, 0.0);
 
                 vec3 pos = rotMat * (camPos - bhCenter);
                 vec3 dir = rotMat * rayDir;
