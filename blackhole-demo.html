@@ -257,7 +257,7 @@
             <span class="hud-val">2.00 G M / c²</span>
         </div>
         <div class="hud-row">
-            <span>FLUID PLASMA MULTI-RINGS:</span>
+            <span>STABLE PARALLAX:</span>
             <span class="hud-val">+22.0° LEFT // 20 RINGS</span>
         </div>
         <div class="hud-row">
@@ -285,7 +285,7 @@
                 }
             `;
 
-            // Fragment Shader: Liquid Plasma Multi-Ring Black Hole Shader
+            // Fragment Shader: Stable Parallax Black Hole Shader
             const fsSource = `
                 precision highp float;
 
@@ -296,12 +296,12 @@
                 uniform float uBendingMult;
                 uniform float uSpin;
 
-                #define MAX_STEPS 160
-                #define STEP_SIZE 0.04
+                #define MAX_STEPS 180
+                #define STEP_SIZE 0.035
                 #define SCHWARZSCHILD_R 0.42
                 #define PHOTON_SPHERE 0.63
                 #define DISC_INNER 0.68
-                #define DISC_OUTER 2.80
+                #define DISC_OUTER 2.90
 
                 // Matrix rotation around Z axis (Tilt towards left)
                 mat3 rotateZ(float angle) {
@@ -371,10 +371,10 @@
                     float r = length(pos.xz);
                     if (r < DISC_INNER || r > DISC_OUTER) return vec4(0.0);
 
-                    // Thin sheet plane
-                    float thickness = 0.024 * (r / DISC_INNER);
+                    // Thin sheet plane with comfortable thickness tolerance
+                    float thickness = 0.035 * (r / DISC_INNER);
                     float h = exp(-abs(pos.y) * abs(pos.y) / (thickness * thickness));
-                    if (h < 0.005) return vec4(0.0);
+                    if (h < 0.003) return vec4(0.0);
 
                     // Angle & spiral coordinates
                     float phi = atan(pos.z, pos.x);
@@ -423,10 +423,12 @@
                     vec3 camPos = vec3(0.0, 0.22, -4.5);
                     vec3 rayDir = normalize(vec3(uv.x - 0.20, uv.y - 0.02, 1.6));
 
-                    // Interactive + Auto Rotation + Tilted Towards Left (+0.38 rad / +22.0 Degrees)
-                    float tiltAngle = 0.38; // +22.0 degree tilt leaning UPWARDS towards the LEFT!
-                    float rotY = (uMouse.x * 2.0 - 1.0) * 0.4 + uTime * uSpin * 0.03;
-                    float rotX = (uMouse.y * 2.0 - 1.0) * 0.2 + 0.22; // Pitch angle
+                    // Tilt Left Matrix (+0.38 rad / +22.0 Degrees)
+                    float tiltAngle = 0.38;
+
+                    // Controlled subtle mouse parallax (prevents ring disappearing!)
+                    float rotY = (uMouse.x - 0.5) * 0.12 + uTime * uSpin * 0.03;
+                    float rotX = (uMouse.y - 0.5) * 0.08 + 0.22;
 
                     mat3 rotMat = rotateZ(tiltAngle) * rotateX(rotX) * rotateY(rotY);
 
@@ -471,7 +473,7 @@
                     if (hitEventHorizon) {
                         accumColor *= 0.0;
                     } else {
-                        // Soft, non-blown-out Photon sphere halo ring
+                        // Soft Photon sphere halo ring
                         float minR = length(pos);
                         float halo = exp(-abs(minR - PHOTON_SPHERE) * 16.0) * 0.22;
                         accumColor += vec3(2.0, 1.4, 0.7) * halo * (1.0 - accumAlpha);
