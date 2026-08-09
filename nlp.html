@@ -1235,112 +1235,53 @@
     </div>
 
 
-    <!-- PROJECT 11: KYNEX AI -->
+    <!-- PROJECT 11: KYNEX AI (AURORA BACKGROUND) -->
     <div class="scroll-wrapper">
         <div class="sticky-container">
             <div class="header-content">
                 <div class="fade-up-text delay-1">
-                    <h1 class="main-title">
-                        <span class="highlight">Project 11</span>
+                    <h1 class="main-title p11-main-title">
+                        <span>Project 11</span>
                     </h1>
                 </div>
-                <p class="subtitle fade-up-text delay-2">Graph-RAG & Semantic NLP Engine: Constructing talent networks and taxonomies.</p>
+                <p class="subtitle fade-up-text delay-2 p11-subtitle">Graph-RAG & Semantic NLP Engine: Constructing talent networks and taxonomies.</p>
             </div>
 
-            <!-- Multi-Layered Animated Aurora Sky Background for Project 11 -->
-            <div id="project-11-bg">
-                <div class="aurora-sky-container">
-                    <div class="aurora-blob aurora-blob-1"></div>
-                    <div class="aurora-blob aurora-blob-2"></div>
-                    <div class="aurora-blob aurora-blob-3"></div>
-                    <div class="aurora-beam"></div>
-                    <!-- Twinkling Stars Field -->
-                    <div class="aurora-stars-container">
-                        <div class="a-star star-p1"></div>
-                        <div class="a-star star-p2"></div>
-                        <div class="a-star star-p3"></div>
-                        <div class="a-star star-p4"></div>
-                        <div class="a-star star-p5"></div>
-                        <div class="a-star star-p6"></div>
-                        <div class="a-star star-p7"></div>
-                        <div class="a-star star-p8"></div>
-                        <div class="a-star star-p9"></div>
-                        <div class="a-star star-p10"></div>
-                        <div class="a-star star-p11"></div>
-                        <div class="a-star star-p12"></div>
-                    </div>
-                </div>
+            <!-- Canvas Shader Aurora Background for Project 11 -->
+            <div id="project-11-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden;">
+                <canvas id="auroraCanvas11" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
             </div>
 
             <div class="card-container" id="kynex-card">
-                <div class="card-inner graph-rag-card">
-                    <!-- Aurora Card Inner Glow Ray -->
-                    <div class="aurora-card-glow"></div>
-
-                    <div class="graph-nodes-overlay">
-                        <!-- High-tech Constellation Network SVG with Floating Nodes -->
-                        <svg class="graph-network-svg" viewBox="0 0 800 400" preserveAspectRatio="none">
-                            <path d="M 100 100 C 250 80, 550 80, 700 100" class="graph-edge-line" />
-                            <path d="M 100 100 C 80 200, 80 250, 120 300" class="graph-edge-line" />
-                            <path d="M 700 100 C 720 200, 720 250, 680 300" class="graph-edge-line" />
-                            <path d="M 120 300 Q 400 340 680 300" class="graph-edge-line" />
-                            <path d="M 100 100 Q 400 200 680 300" class="graph-edge-line" style="stroke-dasharray: 4,4;" />
-                            
-                            <g class="graph-node-point" transform="translate(100, 100)">
-                                <circle r="4" class="node-dot-p" />
-                                <circle r="8" class="node-ring-p" />
-                                <text x="14" y="4" class="node-text-label">spaCy::Extract</text>
-                            </g>
-                            <g class="graph-node-point" transform="translate(700, 100)">
-                                <circle r="4" class="node-dot-p" />
-                                <circle r="8" class="node-ring-p" />
-                                <text x="-80" y="4" class="node-text-label">NetworkX::Graph</text>
-                            </g>
-                            <g class="graph-node-point" transform="translate(680, 300)">
-                                <circle r="4" class="node-dot-p" />
-                                <circle r="8" class="node-ring-p" />
-                                <text x="-85" y="16" class="node-text-label">GloVe::100D</text>
-                            </g>
-                            <g class="graph-node-point" transform="translate(120, 300)">
-                                <circle r="4" class="node-dot-p" />
-                                <circle r="8" class="node-ring-p" />
-                                <text x="14" y="16" class="node-text-label">Cosine::Similarity</text>
-                            </g>
-                        </svg>
-                    </div>
-
-                    <div class="graph-rag-content">
-                        <div class="k-badge fade-up-text delay-1 floating-element"
-                            style="background: rgba(139, 92, 246, 0.2); border-color: rgba(192, 132, 252, 0.4); box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);">
-                            <div class="dot" style="background: #c084fc;"></div>
-                            <span style="color: #f0abfc;">Graph-RAG & Aurora Semantic NLP</span>
+                <div class="card-inner aurora-kynex-card">
+                    <div class="aurora-card-content">
+                        <!-- Floating Pill Badge -->
+                        <div class="a-badge fade-up-text delay-1">
+                            <div class="a-dot"></div>
+                            <span>Graph-RAG & Semantic Engine</span>
                         </div>
 
-                        <!-- Graph-RAG HUD console -->
-                        <div class="kynex-hud-console fade-up-text delay-2 floating-element" style="animation-delay: 0.5s;">
-                            <div class="console-row">
-                                <span class="hud-prompt">Resume Matcher ></span>
-                                <span class="hud-io">"React.js" ➔ [GloVe Vector Cosine Sim] ➔ Software Engineering (HIGH)</span>
-                            </div>
-                            <div class="console-row" style="margin-top: 4px;">
-                                <span class="hud-graph">Graph Centrality: co-occurrence edge weight = 0.89</span>
-                            </div>
-                        </div>
-
-                        <h1 class="kynex-title fade-up-text delay-3">
-                            <span>Kynex </span><span
-                                style="color: #c084fc; text-shadow: 0 0 25px rgba(192, 132, 252, 0.8);">AI</span>
+                        <!-- Aurora UI Style Title matching 21st.dev -->
+                        <h1 class="a-title fade-up-text delay-2">
+                            <span>Kynex </span><span class="a-title-purple">AI</span>
                         </h1>
 
-                        <p class="kynex-desc fade-up-text delay-4">
-                            A high-performance semantic parsing engine that constructs co-occurrence skill graphs from CVs and filters professional fluff to map candidates against 75+ specialized industry domains.
+                        <!-- Aurora UI Style Subtitle matching 21st.dev -->
+                        <p class="a-desc fade-up-text delay-3">
+                            A shimmering Graph-RAG & Semantic NLP engine parsing resumes, building co-occurrence networks, and mapping talent across 75+ industry domains using 100D GloVe vector space.
                         </p>
 
-                        <div class="k-actions fade-up-text delay-5">
+                        <!-- Tech Floating Tag Pills -->
+                        <div class="a-tags fade-up-text delay-4">
+                            <span class="a-tag">spaCy POS Gating</span>
+                            <span class="a-tag">NetworkX Graph Centrality</span>
+                            <span class="a-tag">100D GloVe Vector Cosine Sim</span>
+                        </div>
+
+                        <!-- Action Button -->
+                        <div class="a-actions fade-up-text delay-5">
                             <a href="https://github.com/mayank-goyal09/kynex-ai" target="_blank"
-                                class="explore-btn"
-                                style="margin-top: 0; background: linear-gradient(135deg, #7c3aed, #c084fc); color: #fff; border-color: #c084fc; box-shadow: 0 0 30px rgba(192, 132, 252, 0.5);">Explore
-                                Kynex AI →</a>
+                                class="explore-btn a-explore-btn">Explore Repository →</a>
                         </div>
                     </div>
                 </div>
@@ -1355,6 +1296,7 @@
     <script src="project4-beams.js" defer></script>
     <script src="nlp.js" defer></script>
     <script src="project8-shader.js" defer></script>
+    <script src="project11-aurora.js" defer></script>
     <script src="components/ui/lamp.js" defer></script>
     <script src="components/ui/crystal-trail.js" defer></script>
     <script src="components/ui/neural-noise.js" defer></script>
