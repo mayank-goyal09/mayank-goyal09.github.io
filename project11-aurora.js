@@ -1,7 +1,6 @@
 // ============================================
-// 🌌 PROJECT 11: BLACK HOLE CANVAS SHADER (LIQUID PLASMA MULTI-RING)
-// Dynamic Fluid Liquid Plasma Swirl + 15+ Fine Concentric Ring Filaments
-// Renders inside the right side of Project 11 card
+// 🌌 PROJECT 11: BLACK HOLE CANVAS SHADER (STABLE PARALLAX & LIQUID PLASMA)
+// Fixed camera tilt bounds so ring NEVER disappears on mouse movement!
 // ============================================
 
 (function () {
@@ -20,7 +19,7 @@
             }
         `;
 
-        // Fragment Shader: Liquid Plasma Multi-Ring Shader
+        // Fragment Shader: Stable Parallax Liquid Plasma Multi-Ring Shader
         const fsSource = `
             precision highp float;
 
@@ -31,12 +30,12 @@
             uniform float uBendingMult;
             uniform float uSpin;
 
-            #define MAX_STEPS 160
-            #define STEP_SIZE 0.04
+            #define MAX_STEPS 180
+            #define STEP_SIZE 0.035
             #define SCHWARZSCHILD_R 0.26
             #define PHOTON_SPHERE 0.38
             #define DISC_INNER 0.42
-            #define DISC_OUTER 1.45
+            #define DISC_OUTER 1.65
 
             // Matrix rotation around Z axis (Tilt towards left)
             mat3 rotateZ(float angle) {
@@ -106,10 +105,10 @@
                 float r = length(pos.xz);
                 if (r < DISC_INNER || r > DISC_OUTER) return vec4(0.0);
 
-                // Thin sheet plane
-                float thickness = 0.024 * (r / DISC_INNER);
+                // Thin sheet plane with comfortable thickness tolerance
+                float thickness = 0.035 * (r / DISC_INNER);
                 float h = exp(-abs(pos.y) * abs(pos.y) / (thickness * thickness));
-                if (h < 0.005) return vec4(0.0);
+                if (h < 0.003) return vec4(0.0);
 
                 // Angle & spiral coordinates
                 float phi = atan(pos.z, pos.x);
@@ -160,13 +159,15 @@
 
                 // Tilt Left Matrix (+0.38 rad / +22.0 Degrees)
                 float tiltAngle = 0.38;
-                float rotY = (uMouse.x * 2.0 - 1.0) * 0.35 + uTime * uSpin * 0.03;
-                float rotX = (uMouse.y * 2.0 - 1.0) * 0.18 + 0.22;
+
+                // Controlled, subtle mouse parallax (prevents ring disappearing!)
+                float rotY = (uMouse.x - 0.5) * 0.10 + uTime * uSpin * 0.03;
+                float rotX = (uMouse.y - 0.5) * 0.06 + 0.22;
 
                 mat3 rotMat = rotateZ(tiltAngle) * rotateX(rotX) * rotateY(rotY);
 
-                // Shift black hole center rightwards (x = 0.65) so text on left is completely clear
-                vec3 bhCenter = vec3(0.65, 0.0, 0.0);
+                // Shift black hole center rightwards (x = 0.62)
+                vec3 bhCenter = vec3(0.62, 0.0, 0.0);
 
                 vec3 pos = rotMat * (camPos - bhCenter);
                 vec3 dir = rotMat * rayDir;
@@ -202,7 +203,7 @@
                     pos += dir * STEP_SIZE;
 
                     // Ray escaped
-                    if (r > 6.0) break;
+                    if (r > 7.0) break;
                 }
 
                 // Event horizon shadow mask
