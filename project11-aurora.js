@@ -1,7 +1,8 @@
 // ============================================
 // 🌌 PROJECT 11: AURORA BACKGROUND CANVAS SHADER
-// Multi-layered animated aurora sky effect with pulsing radial gradients & twinkling stars
-// Inspired by 21st.dev / Aceternity AuroraBackground
+// Exact implementation of 21st.dev AuroraBackground Component
+// gradientColors: ["rgba(99,102,241,0.2)", "rgba(139,92,246,0.2)"]
+// pulseDuration: 8s | starCount: 80
 // ============================================
 
 (function () {
@@ -14,8 +15,8 @@
         let height = 0;
         let time = 0;
 
-        // Star field configuration
-        const STAR_COUNT = 100;
+        // Star count matching demoProps: 80 stars
+        const STAR_COUNT = 80;
         const stars = [];
 
         function resize() {
@@ -30,9 +31,9 @@
                 stars.push({
                     x: Math.random() * width,
                     y: Math.random() * height,
-                    radius: Math.random() * 1.4 + 0.4,
-                    baseAlpha: Math.random() * 0.6 + 0.25,
-                    twinkleSpeed: Math.random() * 0.03 + 0.01,
+                    radius: Math.random() * 1.2 + 0.4,
+                    baseAlpha: Math.random() * 0.5 + 0.2,
+                    twinkleSpeed: (Math.random() * 0.02 + 0.01),
                     phase: Math.random() * Math.PI * 2
                 });
             }
@@ -45,53 +46,55 @@
         resize();
         initStars();
 
-        // Animated radial gradient blobs simulating dynamic polar aurora light
+        // Exact gradient colors from 21st.dev AuroraBackgroundProps:
+        // rgba(99,102,241,0.2) and rgba(139,92,246,0.2)
         const auroraBlobs = [
-            { xRatio: 0.25, yRatio: 0.35, rRatio: 0.55, color: '139, 92, 246', speedX: 0.0004, speedY: 0.0006, phase: 0 },
-            { xRatio: 0.75, yRatio: 0.45, rRatio: 0.60, color: '99, 102, 241', speedX: 0.0005, speedY: 0.0003, phase: 2.1 },
-            { xRatio: 0.50, yRatio: 0.70, rRatio: 0.65, color: '217, 70, 239', speedX: 0.0003, speedY: 0.0005, phase: 4.2 },
-            { xRatio: 0.35, yRatio: 0.80, rRatio: 0.50, color: '168, 85, 247', speedX: 0.0006, speedY: 0.0004, phase: 1.4 }
+            { xRatio: 0.35, yRatio: 0.40, rRatio: 0.65, color: '99, 102, 241', baseAlpha: 0.20, speed: 0.0007, phase: 0 },
+            { xRatio: 0.65, yRatio: 0.50, rRatio: 0.70, color: '139, 92, 246', baseAlpha: 0.22, speed: 0.0005, phase: 2.5 },
+            { xRatio: 0.45, yRatio: 0.65, rRatio: 0.60, color: '168, 85, 247', baseAlpha: 0.18, speed: 0.0006, phase: 4.0 }
         ];
 
         function draw() {
             time += 1;
             ctx.clearRect(0, 0, width, height);
 
-            // 1. Deep Space Base Gradient
+            // 1. Deep Dark Base Background (#06020a / #050209)
             const bgGrad = ctx.createLinearGradient(0, 0, 0, height);
-            bgGrad.addColorStop(0, '#07030e');
-            bgGrad.addColorStop(0.5, '#0d051c');
+            bgGrad.addColorStop(0, '#06020a');
+            bgGrad.addColorStop(0.5, '#0b0416');
             bgGrad.addColorStop(1, '#050209');
             ctx.fillStyle = bgGrad;
             ctx.fillRect(0, 0, width, height);
 
-            // 2. Render Pulsing & Drifting Radial Aurora Lights
+            // 2. Render 8s Pulsing & Floating Radial Gradients matching 21st.dev
             auroraBlobs.forEach((blob) => {
-                const cx = (blob.xRatio + Math.sin(time * blob.speedX + blob.phase) * 0.15) * width;
-                const cy = (blob.yRatio + Math.cos(time * blob.speedY + blob.phase) * 0.15) * height;
-                const radius = blob.rRatio * Math.max(width, height) * (1 + Math.sin(time * 0.001 + blob.phase) * 0.12);
+                // 8s pulse period (~480 frames at 60fps)
+                const pulse = Math.sin((time / 480) * Math.PI * 2 + blob.phase);
+                const cx = (blob.xRatio + pulse * 0.08) * width;
+                const cy = (blob.yRatio + Math.cos((time / 480) * Math.PI * 2 + blob.phase) * 0.08) * height;
+                const radius = blob.rRatio * Math.max(width, height) * (1 + pulse * 0.08);
+                const currentAlpha = blob.baseAlpha + pulse * 0.05;
 
-                const alpha = 0.30 + Math.sin(time * 0.0015 + blob.phase) * 0.08;
                 const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius);
-                grad.addColorStop(0, `rgba(${blob.color}, ${alpha})`);
-                grad.addColorStop(0.5, `rgba(${blob.color}, ${alpha * 0.35})`);
+                grad.addColorStop(0, `rgba(${blob.color}, ${currentAlpha})`);
+                grad.addColorStop(0.5, `rgba(${blob.color}, ${currentAlpha * 0.4})`);
                 grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
                 ctx.fillStyle = grad;
                 ctx.fillRect(0, 0, width, height);
             });
 
-            // 3. Render Twinkling Stars
+            // 3. Render 80 Twinkling Stars
             stars.forEach(star => {
                 star.phase += star.twinkleSpeed;
-                const currentAlpha = star.baseAlpha + Math.sin(star.phase) * 0.35;
-                const alphaClamped = Math.max(0.1, Math.min(1, currentAlpha));
+                const currentAlpha = star.baseAlpha + Math.sin(star.phase) * 0.3;
+                const alphaClamped = Math.max(0.08, Math.min(0.95, currentAlpha));
 
                 ctx.beginPath();
                 ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
                 ctx.fillStyle = `rgba(255, 255, 255, ${alphaClamped})`;
-                ctx.shadowBlur = 4;
-                ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
+                ctx.shadowBlur = 3;
+                ctx.shadowColor = 'rgba(255, 255, 255, 0.7)';
                 ctx.fill();
                 ctx.shadowBlur = 0;
             });
