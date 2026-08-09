@@ -124,6 +124,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (p.card.id === 'radar-card') {
                     p.card.style.setProperty('--radar-progress', p.currentProgress.toFixed(4));
                 }
+                if (p.card.id === 'scribble-card') {
+                    p.card.style.setProperty('--scribble-progress', p.currentProgress.toFixed(4));
+                }
+                if (p.card.id === 'kynex-card') {
+                    p.card.style.setProperty('--kynex-progress', p.currentProgress.toFixed(4));
+                }
             }
         });
 
