@@ -72,7 +72,7 @@ function spawn(): Particle {
     off: wide ? rand(-0.4, 0.4) : rand(-0.1, 0.1),
     speed: rand(0.0001, 0.0004),
     size: Math.round(rand(7, 13)),
-    hue: rand(190, 320),
+    hue: rand(340, 380),
     colorful: Math.random() < 0.3 && t < 0.55,
     life: rand(0.5, 1),
     wAmp: rand(0.02, 0.1),
