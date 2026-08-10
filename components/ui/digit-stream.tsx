@@ -65,11 +65,11 @@ const randDigit = () =>
   Math.random() < 0.5 ? (Math.random() < 0.5 ? '7' : '0') : String(Math.floor(Math.random() * 10));
 
 function spawn(): Particle {
-  const wide = Math.random() < 0.28;
+  const wide = Math.random() < 0.65;
   const t = Math.random();
   return {
     t,
-    off: wide ? rand(-0.16, 0.16) : rand(-0.03, 0.03),
+    off: wide ? rand(-0.4, 0.4) : rand(-0.1, 0.1),
     speed: rand(0.0001, 0.0004),
     size: Math.round(rand(7, 13)),
     hue: rand(190, 320),
