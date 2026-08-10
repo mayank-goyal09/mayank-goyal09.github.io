@@ -65,11 +65,11 @@ const randDigit = () =>
   Math.random() < 0.5 ? (Math.random() < 0.5 ? '7' : '0') : String(Math.floor(Math.random() * 10));
 
 function spawn(): Particle {
-  const wide = Math.random() < 0.65;
+  const wide = Math.random() < 0.85;
   const t = Math.random();
   return {
     t,
-    off: wide ? rand(-0.4, 0.4) : rand(-0.1, 0.1),
+    off: wide ? rand(-0.9, 0.9) : rand(-0.3, 0.3),
     speed: rand(0.0001, 0.0004),
     size: Math.round(rand(7, 13)),
     hue: rand(340, 380),
@@ -191,7 +191,7 @@ export function DigitStream(props: DigitStreamProps) {
         const wy = disp * pt.dAy * Math.sin(dt * pt.dFy + pt.dPy);
         const x = (c.x + -tan.y * totalOff + wx) * w;
         const y = (c.y + tan.x * totalOff + wy) * h;
-        const coreFade = 1 - Math.min(1, Math.abs(totalOff) / 0.22);
+        const coreFade = 1 - Math.min(1, Math.abs(totalOff) / 1.0);
         const alpha = (0.25 * coreFade * pt.life + 0.02) * bright.current;
         c2.font = `${pt.size}px ui-monospace, "SFMono-Regular", Menlo, monospace`;
         c2.fillStyle = spark && pt.colorful
