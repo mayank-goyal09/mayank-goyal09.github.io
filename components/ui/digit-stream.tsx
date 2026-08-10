@@ -191,7 +191,7 @@ export function DigitStream(props: DigitStreamProps) {
         const wy = disp * pt.dAy * Math.sin(dt * pt.dFy + pt.dPy);
         const x = (c.x + -tan.y * totalOff + wx) * w;
         const y = (c.y + tan.x * totalOff + wy) * h;
-        const coreFade = 1 - Math.min(1, Math.abs(totalOff) / 3.0);
+        const coreFade = 1.0;
         const alpha = (0.25 * coreFade * pt.life + 0.02) * bright.current;
         c2.font = `${pt.size}px ui-monospace, "SFMono-Regular", Menlo, monospace`;
         c2.fillStyle = spark && pt.colorful
