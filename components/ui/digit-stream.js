@@ -192,7 +192,7 @@
         const x = (c.x + -tan.y * totalOff + wx) * w;
         const y = (c.y + tan.x * totalOff + wy) * h;
 
-        const coreFade = 1 - Math.min(1, Math.abs(totalOff) / 3.0);
+        const coreFade = 1.0;
         const alpha = (0.25 * coreFade * pt.life + 0.02) * bright;
 
         ctx.font = `${pt.size}px ui-monospace, "SFMono-Regular", Menlo, monospace`;
