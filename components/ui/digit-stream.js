@@ -2,11 +2,11 @@
 (function () {
   const settings = {
     particleCount: 1790,
-    speed: 0.67,
-    flowStrength: 0.66,
+    speed: 0.74,
+    flowStrength: 0.75,
     disperseStrength: 2,
-    idleDim: 0.6,
-    snakeAmplitude: 0.5,
+    idleDim: 0.54,
+    snakeAmplitude: 0.53,
     color: '#ebeeff',
     background: '#000000',
     colorfulSparks: true,
