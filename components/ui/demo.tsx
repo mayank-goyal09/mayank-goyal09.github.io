@@ -9,7 +9,7 @@ const settings = {
   disperseStrength: 2,
   idleDim: 0.54,
   snakeAmplitude: 0.53,
-  color: '#ebeeff',
+  color: '#8b0000',
   background: '#000000',
   colorfulSparks: true,
 }; 
