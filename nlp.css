@@ -2812,9 +2812,9 @@ body.nlp-body {
     left: -220px;
     right: -220px;
     background: radial-gradient(ellipse 100% 70% at center, 
-        rgba(6, 182, 212, 0.4) 0%, 
-        rgba(8, 145, 178, 0.22) 45%, 
-        rgba(21, 94, 117, 0.1) 72%, 
+        rgba(120, 31, 31, 0.45) 0%, 
+        rgba(185, 28, 28, 0.25) 45%, 
+        rgba(120, 31, 31, 0.1) 72%, 
         transparent 88%);
     filter: blur(60px);
     z-index: -1;
@@ -2826,51 +2826,54 @@ body.nlp-body {
 .ocr-hud-card {
     width: 100%;
     height: 100%;
-    background: #060b0d;
+    background: #0d0505;
     border-radius: 20px;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(6, 182, 212, 0.2);
+    border: 1px solid rgba(120, 31, 31, 0.3);
 }
 
 .ocr-hud-content {
-    padding: 20px 40px 20px 40px !important;
+    width: 58% !important;
+    padding: 30px 0 30px 50px !important;
     justify-content: center !important;
-    align-items: center !important;
+    align-items: flex-start !important;
     height: 100% !important;
     box-sizing: border-box !important;
     position: relative !important;
     display: flex;
     flex-direction: column;
     z-index: 2;
+    max-width: 580px;
 }
 
 .medical-hud-console {
-    background: rgba(6, 182, 212, 0.03);
-    border: 1px solid rgba(6, 182, 212, 0.18);
-    color: #67e8f9;
-    padding: 15px 20px;
+    background: rgba(120, 31, 31, 0.03);
+    border: 1px solid rgba(120, 31, 31, 0.22);
+    color: #ff9999;
+    padding: 10px 16px;
     border-radius: 12px;
     font-family: 'Fira Code', monospace;
-    font-size: 0.8rem;
-    margin-bottom: 25px;
+    font-size: 0.75rem;
+    margin-bottom: 12px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    width: 85%;
-    max-width: 600px;
-    text-shadow: 0 0 4px rgba(6, 182, 212, 0.25);
-    box-shadow: inset 0 0 15px rgba(6, 182, 212, 0.05);
+    gap: 8px;
+    width: 100%;
+    max-width: 480px;
+    text-shadow: 0 0 4px rgba(120, 31, 31, 0.25);
+    box-shadow: inset 0 0 15px rgba(120, 31, 31, 0.05);
+    align-self: flex-start;
 }
 
 .medical-hud-console .console-tag {
-    color: #06b6d4;
+    color: #ef4444;
     font-weight: bold;
     margin-right: 8px;
 }
 
 .prediction-line {
-    border-top: 1px dashed rgba(6, 182, 212, 0.2);
+    border-top: 1px dashed rgba(120, 31, 31, 0.25);
     padding-top: 10px;
     display: flex;
     flex-direction: column;
@@ -2884,8 +2887,8 @@ body.nlp-body {
 }
 
 .icd-code {
-    background: rgba(6, 182, 212, 0.15);
-    color: #22d3ee;
+    background: rgba(120, 31, 31, 0.15);
+    color: #f87171;
     padding: 2px 6px;
     border-radius: 4px;
     font-weight: bold;
@@ -2911,43 +2914,80 @@ body.nlp-body {
 
 .icd-bar {
     height: 100%;
-    background: linear-gradient(90deg, #0891b2, #22d3ee);
-    box-shadow: 0 0 8px rgba(6, 182, 212, 0.5);
+    background: linear-gradient(90deg, #781f1f, #ef4444);
+    box-shadow: 0 0 8px rgba(120, 31, 31, 0.5);
     border-radius: 3px;
 }
 
 .icd-pct {
-    color: #22d3ee;
+    color: #f87171;
     font-weight: bold;
     min-width: 45px;
     text-align: right;
 }
 
 .ocr-title {
-    font-size: 4.5rem !important;
+    font-size: 3.2rem !important;
     font-family: 'Inter', sans-serif !important;
     font-weight: 800 !important;
     line-height: 1.05 !important;
-    margin-bottom: 16px !important;
+    margin-bottom: 8px !important;
     margin-top: 0 !important;
     letter-spacing: -0.02em !important;
-    text-align: center !important;
+    text-align: left !important;
     color: #ffffff !important;
 }
 
+.ocr-title-red {
+    background: linear-gradient(135deg, #ef4444 0%, #781f1f 100%);
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-weight: 800 !important;
+    text-shadow: 0 0 30px rgba(120, 31, 31, 0.5);
+}
+
 .ocr-desc {
-    font-size: 1.18rem !important;
+    font-size: 0.95rem !important;
     font-family: 'Inter', sans-serif !important;
     font-weight: 300 !important;
     text-transform: none !important;
-    max-width: 680px !important;
-    line-height: 1.6 !important;
-    margin-bottom: 0 !important;
+    max-width: 480px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 12px !important;
     margin-top: 0 !important;
     color: rgba(255, 255, 255, 0.78) !important;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9) !important;
     letter-spacing: normal !important;
-    text-align: center;
+    text-align: left !important;
+}
+
+.ocr-tags {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+    align-self: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.ocr-tag {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(120, 31, 31, 0.25);
+    color: #ff9999;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.72rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.ocr-tag:hover {
+    background: rgba(120, 31, 31, 0.2);
+    border-color: rgba(120, 31, 31, 0.6);
+    transform: translateY(-2px);
+    color: #fff;
 }
 
 #project-10-bg {
@@ -2958,18 +2998,18 @@ body.nlp-body {
     z-index: 0;
     overflow: hidden;
     background: radial-gradient(ellipse 140% 65% at center, 
-        rgba(8, 145, 178, 0.32) 0%, 
-        rgba(21, 94, 117, 0.2) 40%, 
-        rgba(6, 30, 38, 0.1) 72%, 
-        #02080a 98%) !important;
+        rgba(120, 31, 31, 0.35) 0%, 
+        rgba(185, 28, 28, 0.18) 40%, 
+        rgba(120, 31, 31, 0.08) 72%, 
+        #0a0202 98%) !important;
 }
 
 .medical-grid {
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(120, 31, 31, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(120, 31, 31, 0.03) 1px, transparent 1px);
     background-size: 40px 40px;
     opacity: 0.7;
     z-index: 1;
@@ -2982,11 +3022,11 @@ body.nlp-body {
     height: 2px;
     background: linear-gradient(90deg, 
         transparent 0%, 
-        rgba(6, 182, 212, 0.2) 20%, 
-        rgba(34, 211, 238, 0.7) 50%, 
-        rgba(6, 182, 212, 0.2) 80%, 
+        rgba(120, 31, 31, 0.25) 20%, 
+        rgba(239, 68, 68, 0.7) 50%, 
+        rgba(120, 31, 31, 0.25) 80%, 
         transparent 100%);
-    box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+    box-shadow: 0 0 10px rgba(120, 31, 31, 0.5);
     z-index: 4;
     opacity: 0.4;
     animation: scanSweepOcr 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
@@ -3360,6 +3400,9 @@ body.nlp-body {
     .ocr-hud-content {
         padding: 24px 16px !important;
         justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
         height: 100% !important;
     }
     
@@ -3373,19 +3416,26 @@ body.nlp-body {
     .prediction-item {
         gap: 6px !important;
     }
-    
+
     .icd-bar-container {
         width: 70px !important;
     }
-
+    
     .ocr-title {
         font-size: 2.4rem !important;
         margin-bottom: 10px !important;
+        text-align: center !important;
     }
 
     .ocr-desc {
         font-size: 0.92rem !important;
         line-height: 1.4 !important;
+        text-align: center !important;
+    }
+
+    .ocr-tags {
+        justify-content: center !important;
+        align-self: center !important;
     }
 
     /* Project 11 mobile overrides */
