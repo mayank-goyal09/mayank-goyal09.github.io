@@ -1184,11 +1184,14 @@
                     <!-- Scanner Lines -->
                     <div class="scanner-sweep-line"></div>
                     
+                    <!-- WebGL/2D Canvas for Helical Orbits (Inside Card Behind Text) -->
+                    <canvas id="orbitalCanvas10" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; border-radius: 20px;"></canvas>
+                    
                     <div class="ocr-hud-content">
                         <div class="k-badge fade-up-text delay-1"
-                            style="background: rgba(6, 182, 212, 0.15); border-color: rgba(6, 182, 212, 0.35);">
-                            <div class="dot" style="background: #06b6d4;"></div>
-                            <span style="color: #67e8f9;">Tesseract OCR & Machine Learning</span>
+                            style="background: rgba(120, 31, 31, 0.15); border-color: rgba(120, 31, 31, 0.35);">
+                            <div class="dot" style="background: #781F1F;"></div>
+                            <span style="color: #ff9999;">Tesseract OCR & Machine Learning</span>
                         </div>
 
                         <!-- Medical Diagnostic HUD Simulation -->
@@ -1214,18 +1217,24 @@
                         </div>
 
                         <h1 class="ocr-title fade-up-text delay-3">
-                            <span>Dr. Scribble </span><span
-                                style="color: #06b6d4; text-shadow: 0 0 20px rgba(6, 182, 212, 0.6);">Scanner</span>
+                            <span>Dr. Scribble </span><span class="ocr-title-red">Scanner</span>
                         </h1>
 
                         <p class="ocr-desc fade-up-text delay-4">
                             An optimized clinical intelligence engine designed to transcribe handwritten medical notes via Tesseract OCR and run sparse multi-class classifiers to output top-5 likely ICD-9 diagnostic codes.
                         </p>
 
+                        <!-- Tech Skill Pills -->
+                        <div class="ocr-tags fade-up-text delay-4">
+                            <span class="ocr-tag">Tesseract OCR Engine</span>
+                            <span class="ocr-tag">ICD-9 Code Mapping</span>
+                            <span class="ocr-tag">Sparse Classifier</span>
+                        </div>
+
                         <div class="k-actions fade-up-text delay-5">
                             <a href="https://github.com/mayank-goyal09/Dr-Scribble-Scanner" target="_blank"
                                 class="explore-btn"
-                                style="margin-top: 0; background: linear-gradient(135deg, #0891b2, #06b6d4); color: #fff; border-color: #06b6d4; box-shadow: 0 0 25px rgba(6, 182, 212, 0.4);">Explore
+                                style="margin-top: 0; background: linear-gradient(135deg, #781f1f, #b91c1c); color: #fff; border-color: #781f1f; box-shadow: 0 0 25px rgba(120, 31, 31, 0.45);">Explore
                                 Scribble Scanner →</a>
                         </div>
                     </div>
@@ -1322,6 +1331,7 @@
     <script src="nlp.js" defer></script>
     <script src="project8-shader.js" defer></script>
     <script src="project11-aurora.js" defer></script>
+    <script src="project10-orbital.js" defer></script>
     <script src="components/ui/lamp.js" defer></script>
     <script src="components/ui/crystal-trail.js" defer></script>
     <script src="components/ui/neural-noise.js" defer></script>
