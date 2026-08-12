@@ -739,6 +739,14 @@
       "github": "https://github.com/mayank-goyal09/vibe-cooking"
     },
     {
+      "category": "Generative AI",
+      "name": "OmniMatch AI — Alignment Engine",
+      "description": "Highly-optimized RAG engine indexing PDFs, DOCX, and TXT files instantly into a FAISS Vector Space. Streams cognitive critiques using Llama 3.3 (Groq API) to map skill gaps.",
+      "tech": ["Python", "LangChain", "Streamlit", "FAISS", "Groq API", "Pydantic"],
+      "stats": "FAISS Vector Space RAG, streams Llama 3.3 cognitive critiques, Pydantic data models",
+      "github": "https://github.com/mayank-goyal09/OmniAlign-Engine"
+    },
+    {
       "category": "NLP",
       "name": "Why Summarizer",
       "description": "An AI-driven engine that connects your Git history to Jira context, ensuring institutional knowledge never fades. The missing link between what your code does and why it was written.",
