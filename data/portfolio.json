@@ -801,6 +801,30 @@
       "tech": ["Python", "DistilBERT", "ONNX Runtime", "Streamlit", "FastAPI"],
       "stats": "Real-time CBT reframing engine, 5 distortion classifications, sub-20ms ONNX speed",
       "github": "https://github.com/mayank-goyal09/mindful-thought-checker"
+    },
+    {
+      "category": "NLP",
+      "name": "Drift Radar",
+      "description": "A machine learning dashboard designed to process unstructured mechanic notes, clean industrial jargon, automatically cluster failure categories using HDBSCAN, and flag emerging data drift.",
+      "tech": ["Python", "HDBSCAN", "YAKE", "Streamlit"],
+      "stats": "HDBSCAN & YAKE ML Pipeline, auto-clustering, data drift detection",
+      "github": "https://github.com/mayank-goyal09/mechanic-notes-drift-radar"
+    },
+    {
+      "category": "NLP",
+      "name": "Dr. Scribble Scanner",
+      "description": "An optimized clinical intelligence engine designed to transcribe handwritten medical notes via Tesseract OCR and run sparse multi-class classifiers to output top-5 likely ICD-9 diagnostic codes.",
+      "tech": ["Python", "Tesseract OCR", "Sparse Classifier", "ICD-9 Mapping"],
+      "stats": "Handwriting OCR, ICD-9 multi-class classification, Tesseract engine",
+      "github": "https://github.com/mayank-goyal09/Dr-Scribble-Scanner"
+    },
+    {
+      "category": "NLP",
+      "name": "Kynex AI",
+      "description": "A high-performance semantic parsing engine that constructs co-occurrence skill graphs from CVs and filters professional fluff to map candidates against 75+ specialized industry domains using 100D GloVe vector space.",
+      "tech": ["Python", "spaCy", "NetworkX", "GloVe Vectors", "Cosine Similarity"],
+      "stats": "Graph-RAG skill graphs, 100D GloVe vector space, spaCy POS gating",
+      "github": "https://github.com/mayank-goyal09/kynex-ai"
     }
   ]
 }
