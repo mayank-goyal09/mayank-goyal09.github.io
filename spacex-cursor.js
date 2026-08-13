@@ -1,6 +1,6 @@
 // 🚀 SpaceX Custom Cursor (Ultra-High Performance Canvas Pool & Zero-Lag Architecture)
 (() => {
-  // Only initialize once
+  // Only initialize once (Verification comment for git push)
   if (document.getElementById("spacex-cursor")) return;
 
   const initCursor = () => {
