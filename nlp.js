@@ -114,22 +114,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     content.style.opacity = p.currentProgress.toFixed(3);
                     content.style.transform = `translateY(${(30 - p.currentProgress * 30).toFixed(1)}px)`;
                 }
-                
-                if (p.card.id === 'nuance-card') {
-                    p.card.style.setProperty('--lamp-progress', p.currentProgress.toFixed(4));
-                }
-                if (p.card.id === 'sentinel-card') {
-                    p.card.style.setProperty('--sentinel-progress', p.currentProgress.toFixed(4));
-                }
-                if (p.card.id === 'radar-card') {
-                    p.card.style.setProperty('--radar-progress', p.currentProgress.toFixed(4));
-                }
-                if (p.card.id === 'scribble-card') {
-                    p.card.style.setProperty('--scribble-progress', p.currentProgress.toFixed(4));
-                }
-                if (p.card.id === 'kynex-card') {
-                    p.card.style.setProperty('--kynex-progress', p.currentProgress.toFixed(4));
-                }
+            }
+
+            // Set project-specific CSS custom properties for scroll-linked visual effects
+            if (p.card.id === 'nuance-card') {
+                p.card.style.setProperty('--lamp-progress', p.currentProgress.toFixed(4));
+            } else if (p.card.id === 'sentinel-card') {
+                p.card.style.setProperty('--sentinel-progress', p.currentProgress.toFixed(4));
+            } else if (p.card.id === 'radar-card') {
+                p.card.style.setProperty('--radar-progress', p.currentProgress.toFixed(4));
+            } else if (p.card.id === 'scribble-card') {
+                p.card.style.setProperty('--scribble-progress', p.currentProgress.toFixed(4));
+            } else if (p.card.id === 'kynex-card') {
+                p.card.style.setProperty('--kynex-progress', p.currentProgress.toFixed(4));
             }
         });
 
