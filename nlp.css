@@ -2698,10 +2698,7 @@ body.nlp-body {
     pointer-events: none;
 }
 
-.crystal-trail-container .fade-up-text {
-    opacity: 1 !important;
-    transform: none !important;
-}
+
 
 .crystal-trail-container .radar-title {
     font-size: 4.5rem !important;
